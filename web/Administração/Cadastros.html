@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastros Rutimóveis</title>
+    <link rel="shortcut icon" href="../src/lg01.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="../Css/cad.css">
+
+
+</head>
+<body>
+<div id="Geral">
+<div id="heaad">
+<div id="heaad_button">
+<img src="../src/Logo novo lar 01 PNG.png" alt="" width="50">      <button title="Novo Cadastro" onclick="NovoCad()">NOVO CADASTRO</button>  <button title="Tela cheia /F11"  onclick="toggleFullScreen()"><i class="fa-solid fa-desktop"></i></button>   <button title="Menu" onclick="Menu()"><i class="fa-solid fa-bars"></i></button>
+</div>
+</div>
+<div id="body">
+<div id="body_div1">
+ <h1 id="h1_body_div1">Cadastros Novo lar</h1>
+ <div id="div_menu">
+  <button onclick=" MT01()">Lista de Destaques</button> <button  onclick=" MT02()">Lista de Casas</button> <button  onclick=" MT05()">Lista de Sobrados</button> <button  onclick=" MT03()">Lista de Apartamentos</button >
+  <button  onclick=" MT06()">Lista de Galpões</button>      <button  onclick=" MT07()">Lista de Terrenos</button>    <button  onclick=" MT08()">Lista de Lojas</button>
+  <button  onclick=" MT04()">Lista Chacáras / Sítios</button>
+ <img src="../src/Logo novo lar 01 PNG.png" alt="" width="200"> 
+ </div>
+</div>
+<div id="body_div2">
+    <div id="novocad">
+   <i id="sair" class="fa-solid fa-delete-left" onclick="sair()"></i>
+   <br>
+   <h1 id="h1_n_cad">Cadastro</h1>
+   <br>
+    <label id="lbl_codigo" for=""> <p>Atenção! O Código é o indentificador principal do cadastro. Só o alterar em caso de exceção!</p><br>Código:<br>
+   <input  type="text" id="codigo" placeholder="Código do Cadastro">
+   </label>
+   <br><br>
+   <select id="select_listas">
+        <option value=""> Anúnciar na lista de:</option>
+         <option value="Lista Destaques"> Destaques</option>
+          <option value="Lista Casas"> Casas </option>
+           <option value="Lista Sobrados"> Sobrados</option>
+            <option value="Lista Apartamentos"> Apartamentos</option>
+             <option value="Lista Galpões"> Galpões</option>
+              <option value="Lista Terrenos"> Terrenos</option>
+                 <option value="Lista Lojas"> Loja</option>
+                   <option value="Lista Chácaras e Sítios"> Chácaras/Sítios</option>
+   </select>
+      <br>
+       <input id="input_img" type="file" accept="image/*" hidden>
+       <label for="">Titulo:<br>
+           <input id="titulo" type="text" placeholder="Titulo, Nome, Apelido...">
+       </label>
+       <br>
+       <label for="">Rua/Av:<br>
+           <input id="rua" type="text" placeholder="Rua/Av...">
+       </label>
+       <br>
+        <label for="">Nº:<br>
+       <input id="numero" type="text" placeholder="Nº...">
+       </label>
+       <br>
+       <label for="">Bairro:<br>
+           <input id="bairro" type="text" placeholder="Bairro...">
+       </label>
+       <br>
+       <label for="">Cidade:<br>
+           <input id="cidade" type="text" placeholder="Cidade...">
+       </label>
+       <br>
+       <label for="">
+          <input id="input_UF" type="text" value="SP" placeholder="UF"> <label id="p_desc"> UF</label> 
+       </label>
+       <br>
+        <label for="">CEP <br>
+          <input id="input_cep" type="text" oninput="aplicarMascaraCEP(event)"  value="" placeholder="CEP..."> 
+       </label>
+       <br>
+       <label for="">Complemento do imóvel (Referência):<br> 
+           <textarea name="" id="endereço" placeholder="Complemento andar, apartamento, Bloco..."></textarea>
+       </label>
+       <br><br>
+       <select name="" id="select_venda">
+           <option value="">Imóvel disponivel para?</option>
+             <option value="Compra">Venda</option>
+               <option value="Locação">Locação</option>
+                 <option value="Compra ou Locação">Venda ou Locação</option>
+       </select>
+       <br>
+       <br><p>Prencha o valor para venda, locação ou "ambos"</p><br>
+       <label for="">Valor para Venda<br>
+           <input id="valor" type="text" placeholder="00,00"> <label id="p_desc"> R$</label>
+       </label>
+        <br>
+       <label for="">Valor para Locação<br>
+           <input id="valorLoc" type="text" placeholder="00,00"> <label id="p_desc"> R$</label>
+       </label>
+       <br>
+       <label  for="">Desconto Avista de: 00%<br>
+           <input id="desconto" type="number" placeholder="00"> <label id="p_desc"> %</label>
+       </label>
+       <br>
+        <label for="">Valor do Condomínio<br>
+           <input id="valorCond" type="text" placeholder="00,00"> <label id="p_desc"> R$</label>
+       </label>
+       <br>
+       <label for="">Valor do IPTU<br>
+           <input id="valorIPTU" type="text" placeholder="00,00"> <label id="p_desc"> R$</label>
+       </label>
+         <br> 
+        <label for="">Área Construída<br>
+        <input id="Area_metragen" type="text" placeholder="m²"><label id="p_desc">m²</label>
+        </label>
+       <br> 
+        <label for="">Quintal - Area externa m²<br>
+        <input id="Quint_quant" type="text" placeholder="Quantidade">/ <input id="Quint_metragen" type="text" placeholder="m²"><label id="p_desc">m²</label>
+       </label>
+       <br> 
+        <label for="">Salas / m²<br>
+        <input id="salas_quant" type="text" placeholder="Quantidade">/ <input id="salas_metragen" type="text" placeholder="m²"><label id="p_desc">m²</label>
+       </label>
+       <br>
+       <label for="">Varandas <br>
+        <input id="varanda_quant" type="text" placeholder="Quantidade">  
+       </label>
+       <br>
+       <label for="">Dormitórios <br>
+        <input id="Quarto_quant" type="text" placeholder="Quantidade">  
+       </label>
+       <br>
+       <label for="">Suite <br>
+        <input id="suite_quant" type="text" placeholder="Quantidade">  
+       </label>
+       <br>
+       <label for="">Banheiros  <br>
+        <input id="banheiro_quant" type="text" placeholder="Quantidade">
+       </label>
+        <br>
+        <label for="">Piscinas - Quant/M²<br>
+        <input id="piscinas_quant" type="text" placeholder="Quantidade">/ <input id="piscinas_metragen" type="text" placeholder="m²"><label id="p_desc">m²</label>
+       </label>
+        <br>
+        <label for=""> Area terreno  - M² <br>
+        <input id="playg_quant" type="text" placeholder="m²"><label id="p_desc">m²</label><br> <label for=""> Campo de Areia m²<br><input id="playg_metragen" type="text" placeholder="m²"><label id="p_desc">m²</label></label> 
+       </label>
+        <br>
+       <label for="">Andares<br>
+        <input id="andar_quant" type="text" placeholder="Quantidade"> 
+       </label>
+         <br>
+       <label for="">Vagas / Garagem <br>
+        <input id="vagas_quant" type="text" placeholder="Quantidade"> 
+       </label>
+        <br>
+       <label for="">Duplex ?<br>
+       <select name="" id="duplex">
+         <option value="não">Não</option>
+           <option value="sim">Sim</option>
+       </select>
+        <br>
+       <label for="">Triplex ?<br>
+       <select name="" id="Triplex">
+         <option value="não">Não</option>
+           <option value="sim">Sim</option>
+       </select>
+       </label>
+       <br><br>
+       <label for="">Nome do Proprietário<br>
+        <input id="nome_proprietario" type="text" placeholder="Proprietário"> 
+       </label>
+        <br>
+       <label for="">Tel do Proprietário<br>
+        <input id="Tel_proprietario" type="tel" placeholder="11 90000 0000"> 
+       </label>
+       <br>
+       <label for="">CPF do Proprietário<br>
+        <input id="cpf_proprietario"  oninput="aplicarMascaraCPF(event)" type="text" placeholder="000.000.000-00"> Opcional.
+       </label>
+        <br><br>
+        <p id="lbl_codigo" >Os campos abaixo servem para assinalar o imóvel como suspenso no caso de intensão de compra ou 
+           Vendido, no caso de venda .
+        </p>
+         <br><br>
+       <label for="">Imóvel em Suspensão<br>
+         <select name=""  onclick="selectS()"  id="suspensão">
+            <option value="">Não</option>
+              <option value="Não">Não</option>
+                <option value="Sim">Sim</option>
+         </select> Data: <input type="text" name="" id="suspensãoData" maxlength="10" placeholder="DD/MM/AAAA" oninput="formatarDataS(this)"> <label onclick="limparC1()">X</label>
+       </label>
+         <br>
+       <label for="">Imóvel Vendido<br>
+         <select name="" onclick="selectV()" id="vendido">
+           <option value="">Não</option>
+             <option value="Não">Não</option>
+               <option value="Sim">Sim</option>
+         </select>  Data: <input type="text" name="" id="vendidoData" maxlength="10" placeholder="DD/MM/AAAA" oninput="formatarDataV(this)"> <label onclick="limparC2()">X</label>
+       </label>
+       <br> <br>
+       <label for="">Descrição da Imagem de capa (resumida!):<br>
+           <textarea name="" id="obs" placeholder="Mensagem..."></textarea>
+       </label>
+       <br><br>
+       <div id="myProgress" style="display:none">
+           <div id="myBar">10%</div>
+       </div>
+       <br> 
+       <br>
+       <p>Adicione uma imagem da fachada do Imóvel para salvar o cadastro</p>
+       <label id="lbl_IMG" onclick="Start()"> Salvar <i class="fa-solid fa-image" onclick="Start()"></i></label>
+       <label id="salve_alt" for="" onclick="Salvarcad()">Salvar alterações</label>
+       <br><br>
+       <label id="lbl_limpar" for="" onclick="limpar()">Limpar Campos</label>
+       <br><br><br>
+    </div>
+   </div>
+   
+   <div id="cad_imagem" >
+ 
+     <div id="imgs">   
+        <i id="sair_" class="fa-solid fa-delete-left" onclick="sairIMGcad()"></i> Sair
+         <h1>Imagens</h1>
+       
+        <h2 id="h2_imóvel">Imovél</h2>
+        <h4 id="end_edt"></h4>
+        <h4 id="h4_codigo">Código</h4>  
+
+        <div id="borda">
+        <h3 id="h3_img1">Imagem 01</h3>
+        <input class="input_visible" id="files_img" type="file">
+         <img id="edt_img1" src="../src/Rutimoveis img.png" alt="Rut_Img" onclick="img1()" >
+          <div id="myProgressIMG1" style="display:none">
+           <div id="myBarIMG1">10%</div>
+         </div>
+        <button onclick="img_edt()"><i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br> 
+       </button>
+        <label for="">Texto da imagem 1 <br>
+        <input id="input_edt_img" type="text" placeholder="Digite texto..." >
+       </label></div>
+      <div id="borda">
+      <h3 id="h3_img2">Imagem 02</h3>
+       <input  class="input_visible"  id="files_img2" type="file">
+       <img id="edt_img2" src="../src/Rutimoveis img.png" alt=""onclick="img2()">
+         <div id="myProgressIMG2" style="display:none">
+           <div id="myBarIMG2">10%</div> </div>
+            <button onclick="img_edt2()"> <i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br>
+           </button>
+        <label for="">Texto da imagem 2 <br>
+       <input id="input_edt_img2" type="text" placeholder="Digite texto..." >
+       </label> </div>
+       <div id="borda">
+      <h3 id="h3_img3">Imagem 03</h3>
+       <input  class="input_visible"  id="files_img3" type="file">
+        <img id="edt_img3" src="../src/Rutimoveis img.png" alt=""onclick="img3()">
+           <div id="myProgressIMG3" style="display:none">
+           <div id="myBarIMG3">10%</div></div>
+            <button onclick="img_edt3()"> <i id="i_add_img" class="fa-solid fa-images"></i>  Adicionar imagem <br>
+           </button>
+         <label for="">Texto da imagem 3 <br>
+        <input id="input_edt_img3" type="text" placeholder="Digite texto..." >
+       </label></div>
+     <div id="borda">
+      <h3 id="h3_img4">Imagem 04</h3>
+       <input  class="input_visible"  id="files_img4" type="file">
+        <img id="edt_img4" src="../src/Rutimoveis img.png" alt=""onclick="img4()">
+         <div id="myProgressIMG4" style="display:none">
+           <div id="myBarIMG4">10%</div></div>
+            <button onclick="img_edt4()"> <i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br>
+           </button>
+           <label for="">Texto da imagem 4 <br>
+        <input id="input_edt_img4" type="text"placeholder="Digite texto..."  >
+       </label></div>
+      <div id="borda">
+      <h3 id="h3_img4">Imagem 05</h3>
+        <input  class="input_visible"  id="files_img5" type="file">
+         <img id="edt_img5" src="../src/Rutimoveis img.png" alt=""onclick="img5()">
+           <div id="myProgressIMG5" style="display:none">
+           <div id="myBarIMG5">10%</div></div>
+            <button onclick="img_edt5()"> <i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br>
+           </button>
+         <label for="">Texto da imagem 5 <br>
+         <input id="input_edt_img5" type="text" placeholder="Digite texto..." >
+       </label></div>
+      <div id="borda">
+      <h3 id="h3_img6">Imagem 06</h3>
+        <input  class="input_visible"  id="files_img6" type="file">
+          <img id="edt_img6" src="../src/Rutimoveis img.png" alt=""onclick="img6()">
+            <div id="myProgressIMG6" style="display:none">
+           <div id="myBarIMG6">10%</div></div>
+           <button onclick="img_edt6()"><i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br>
+           </button>
+          <label for="">Texto da imagem 6 <br>
+         <input id="input_edt_img6" type="text"placeholder="Digite texto..."  >
+        </label></div>
+     <div id="borda">
+      <h3 id="h3_img7">Imagem 07</h3>
+        <input  class="input_visible"  id="files_img7" type="file">
+         <img id="edt_img7" src="../src/Rutimoveis img.png" alt=""onclick="img7()">
+          <div id="myProgressIMG7" style="display:none">
+            <div id="myBarIMG7">10%</div></div>
+             <button onclick="img_edt7()"><i id="i_add_img" class="fa-solid fa-images"></i> Adicionar imagem <br>
+           </button>
+         <label for="">Texto da imagem 7 <br>
+        <input id="input_edt_img7" type="text" placeholder="Digite texto..." >
+       </label><p></div>
+    </div>
+    <br><br>
+     <button id='salvarIMG' onclick="salvarIMG()" >Salvar</button>
+       <br><br>
+       <i id="sairr" class="fa-solid fa-delete-left" onclick="sairIMGcad()"></i> 
+      <div id='div_input_oculta'>
+        <input id="img" type='text'><input id="img2" type='text'><input id="img3" type='text'><input id="img4" type='text'>
+         <input id="img5" type='text'><input id="img6" type='text'><input id="img7" type='text'>
+          <input id="vd" type='text'> <input id="vd2" type='text'> <input id="vd3" type='text'>
+           <input id="id" type='text'>
+            <input id="obs2" type='text'><input id="obs3" type='text'><input id="obs4" type='text'><input id="obs5" type='text'>
+              <input id="obs6" type='text'><input id="obs7" type='text'><input id="obs8" type='text'><input id="obs9" type='text'>
+                <input id="obs10" type='text'>
+       </div>
+   </div>
+      
+   <div id="cad_videos" >
+     <div id="vds">
+        <i id="sair_" class="fa-solid fa-delete-left" onclick="sairVD()"> </i> Sair
+        <h1>Vídeos</h1>
+        <h2 id="h2_imóvel_v">Imovél</h2>
+        <h4 id="end_edt_v"></h4>
+        <h4 id="h4_codigo_v">Código</h4>  
+       <div id="borda">
+        <h3 id="h3_vd1">Video 01</h3>
+        <input class="input_visible_V" id="files_vd" type="file" accept="video/mp4"> 
+        <video id="id_video"  muted playsinline controls>
+          <source  src="../src/Banner para imobiliária fotografia casa vermelho e branco.mp4" type="video/mp4">
+          Seu navegador não suporta a tag de vídeo.
+        </video>
+          <div id="myProgressVD1" style="display:none">
+           <div id="myBarVD1">10%</div></div>
+           <button onclick="vd_edt()"><i id="i_add_vd" class="fa-solid fa-video"></i> Adicionar vídeo <br> 
+           </button>
+         <label for="">Texto do vídeo 01 <br>
+        <input id="input_edt_vd" type="text" placeholder="Digite texto..." >
+       </label></div>
+        <div id="borda">
+         <h3 id="h3_vd2">Video 02</h3>
+        <input class="input_visible_V" id="files_vd2" type="file" accept="video/mp4" > 
+        <video id="id_video2"  muted playsinline controls>
+          <source  src="../src/Banner para imobiliária fotografia casa vermelho e branco.mp4" type="video/mp4">
+          Seu navegador não suporta a tag de vídeo.
+        </video>
+         <div id="myProgressVD2" style="display:none">
+           <div id="myBarVD2">10%</div></div>
+           <button onclick="vd_edt2()"><i id="i_add_vd" class="fa-solid fa-video"></i> Adicionar vídeo <br> 
+           </button>
+         <label for="">Texto do vídeo 02 <br>
+        <input id="input_edt_vd2" type="text" placeholder="Digite texto..." >
+       </label></div>
+      <div id="borda">
+         <h3 id="h3_vd3">Video 03</h3>
+        <input class="input_visible_V" id="files_vd3" type="file"accept="video/mp4" > 
+        <video id="id_video3" muted playsinline  controls>
+          <source src="../src/Banner para imobiliária fotografia casa vermelho e branco.mp4" type="video/mp4">
+          Seu navegador não suporta a tag de vídeo.
+        </video>
+           <div id="myProgressVD3" style="display:none">
+            <div id="myBarVD3">10%</div></div>
+               <button onclick="vd_edt3()"><i id="i_add_vd" class="fa-solid fa-video"></i> Adicionar vídeo <br>
+           </button>
+         <label for="">Texto do vídeo 03 <br>
+        <input id="input_edt_vd3" type="text" placeholder="Digite texto..." >
+       </label></div>
+      <br><br>
+     <button id='salvarVD' onclick="salvarVD()" >Salvar</button>
+      <br><br>
+       <i id="sairr" class="fa-solid fa-delete-left" onclick="sairVD()"></i> 
+       </div> </div>
+        <div id="divList">
+        <i id="sair" class="fa-solid fa-delete-left" onclick="sairlista()"></i>
+       <h2 id="h2Lista">Lista </h2>
+       <div id="listas">
+     </div>
+  </div>
+ <script src="../Js/cad.js"></script>
+</body>
+</html>
