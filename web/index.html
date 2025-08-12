@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rutimóveis</title>
-   <link rel="shortcut icon" href="src/lg01.png" type="image/x-icon">
-   
-    <meta property="og:title" content="Rutimóveis e seu novo Lar!">
+     <link rel="shortcut icon" href="src/lg01.png" type="image/x-icon">  
+    <meta property="og:title" content="Rutimóveis, seu novo Lar está aqui!">
     <meta property="og:description" content="Confira imóveis incriveis a baixo custo do imovel!">
     <meta property="og:image" content="https://carloseapp.github.io/Rutimoveis/web/src/Rutimoveis-img.png">
     <meta property="og:url" content="https://carloseapp.github.io/Rutimoveis/web/index.html">
@@ -24,83 +23,110 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-     <link rel="stylesheet" href="css/index.css">
- </head>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    
+</head>
 <body>
-<div id="DivGeral">
-<div id="divHeaad">
- <div id="heaad_apresent">
-   <label id="lbl1_heaad" for="">Rutimóveis</label>    <label id="lbl2_heaad" for=""onclick='procura()'>Oque procura?</label> <label id="lbl3_heaad" for=""onclick='whatsapp()'>WhatsApp <i id='i_whats' class="fa-brands fa-whatsapp"></i></label>
-</div>
-    <div id="heaad_btns">
-    <a href="#banner" onclick="casa()" id="btn1_heaad" title="Casa">Casa <i class="fa-solid fa-house"></i></a>   <button id="h1_pesquisa" onclick="Pesquisador()">Pesquisar <i id="pesq-1" class="fa-solid fa-magnifying-glass"></i> </button> <button id="btn3_heaad" onclick="toggleFullScreen()" title="Tela cheia"><i class="fa-solid fa-desktop"></i></button> 
-     <button id="btn4_heaad" title="" onclick="Menu_head()">Menu  <i class="fa-solid fa-bars"></i></button>
-</div>
-</div>
-<div id="div_Mostruario">
-  <div id="div_m1">
-  <h2>Mostruário</h2>
-  </div>
- 
-</div>
-  <div id="DivBody">
-    <br>   
-    <div id="banner"> 
-      <img src="src/Banner para imobiliária fotografia casa vermelho e branco.gif" width="100%" alt="Banner">
-     </div>         
-      <div id="Procura">
-       <h1>Busque aqui</h1>
-        <div id="selector1">
-          <select name=""title='Oque procura?' id="select_lista1">
-             <option value="Lista Destaques">Oque você procura? </option>
-             <option value="Lista Destaques"> Destaques</option>
-             <option value="Lista Casas"> Casas </option>
-             <option value="Lista Sobrados"> Sobrados</option>
-             <option value="Lista Apartamentos"> Apartamentos</option>
-             <option value="Lista Galpões"> Galpões</option>
-             <option value="Lista Terrenos"> Terrenos</option>
-             <option value="Lista Lojas"> Loja</option>
-             <option value="Lista Chácaras e Sítios"> Chácaras/Sítios</option>
-           </select>
-           <select name=""title='Comprar ou Alugar?' id="select_comprar_alugar">
-              <option value="">Comprar ou Alugar? </option>
-              <option value="Compra"> Comprar</option>
-              <option value="Locação"> Alugar</option>
-           </select>
-            <button id="buscas" onclick="buscaragora()">Buscar <i id="pesq-1" class="fa-solid fa-magnifying-glass"></i></button>         
-         </div>
-      </div>  
-       <img id="img_whats"  src="src/Whats.png" onclick="Zap()" alt="WhatsApp" width="50">    
-      <div id="body1">
-        <h1 id="h1_destaque"  onclick="vision1()">EM DESTAQUE</h1>
-        <button title="itens" id="itens_" > </button>
-        <div id="lista01"></div>     
+    <div id="div_Geral">
+        <div id="div_container">
+           <div id="div_header">
+             <div id="header01">
+                <h1>Rutimóveis</h1>  <button title="Tela cheia" onclick="toggleFullScreen()"><i class="fa-solid fa-desktop"></i></button> <button id="heaad_compartilhar" onclick="CompartilhamentoP()" title="Compartilhar Pagina"> <i class="fa-solid fa-square-share-nodes"></i></button> 
+             </div>
+             <div id="header02">
+              <button id="heaad_menu" onclick="Menu()" title="Menu Lateral"></button>  <button id="btnHeadPesquisa" onclick="Pesquisar()" title="Botão de pesquisa"> <i id="pesq-3" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i>  Pesquisar</button> <button onclick="whats()">WhatsApp <i class="fa-brands fa-whatsapp"></i></button> 
+            </div>
+           </div>
+             <div id="menu_lateral">
+        <div id="MenuIMG"> <img src="src/Rutimoveis img.png" alt="" width="100%"></div> 
+        <ul>
+          <li><a href="#">🏠 Início</a></li>
+          <li><a onclick="Jogos()"> Cad</a></li>
+          <li><a onclick="PDFS()">📄 PDFs</a></li>
+          <li><a onclick="INSTA()"><img src="#" alt="" width="22"> Instagran</a></li>
+          <li><a onclick=" ZAP()"><img src="#" alt="" width="22"> WhatsApp</a></li>
+          <li><a href="#">📦 Sobre</a></li>
+          <li><a onclick="ADMIN()">👨‍💼 Administração</a></li>
+          <li><a id="exitMenu" onclick="exit()"><i class="fa-solid fa-delete-left"></i> Fecha </a></li>
+          
+          <!-- Adicione mais itens se quiser -->
+        </ul>
       </div>
-       <div id="divListaPesquisa">
-         <h2 id="RRListP">Resultado da pesquisa:</h2>
-          <a id="alist" href="#select_comprar_alugar"></a>
-       <div id="listaPesquisa"></div>
-   </div>        
-</div>
-<div id="DivFooter"> 
-   <div id="paragrafo_inicial">
-     <img src="src/LogoNovoLarPNG.png" alt="" width="100">
-        <p id="paragrafo_inf_cont"><h2>🏡 <b>Rut</b>imóveis – Soluções  Residenciais 🏡  </h2><br>
-        <b>  "A <b>Rut</b>imóveis é referência no mercado imobiliário , oferecendo soluções completas em venda e locação de residências. <br>
-         Com compromisso, transparência e qualidade, ajudamos você a encontrar o imóvel ideal para viver ou investir.<br> Entre em contato e descubra como podemos transformar seu sonho em realidade!
-        </b>
-        </p>
-        <label id="lbl_contact" for="">
-          📞 Telefone: (11) 94886-5333 📧 E-mail: rutimoveis@gmail.com 📍Toda grande São Paulo e Região</label>       
-    </div>
-     <div id="sociais_contatos">
-         <a id="aa01" href="#" onclick="facebook()">Facebook <i class="fa-brands fa-facebook-f"></i></a> <a id="aa02" href="#" onclick="instagran()">Instagran <i class="fa-brands fa-instagram"></i></a> <a id="aa03" href="#" onclick="whatsapp()">WhatsApp <i class="fa-brands fa-whatsapp"></i></a>
-     </div>
-</div>
-<a id="a_click" title="a" href="#h1_destaque"> </a>
-<a id="a_mostruario" title="a" href="#lbl1_heaad"> </a>
+           <div id="div_body">
+            <a id="a_inputp" href="#body01" title="pesquisa"></a>
+            <div id="body01">
+                <div id="banner_pesqusa">
+                 <img src="src/BannerRT.gif" alt="Banner" width="100%" >
+                 <label id="labelPesquisa" for="">Pesquise por Rua, Bairros, Cidades ou Código do imóvel <br>
+                    <i id="pesq-1" onclick="pesquisar()" class="fa-solid fa-magnifying-glass" title="Pesquise">
+                     <input id="inputPesquisa" type="text" name="" id="" title="Pesquisar" placeholder="Pesquisar..."> <i id="i_setPesq" onclick="pesqSet()" class="fa-solid fa-check"></i>
+                   </i> 
+                 </label> 
+                  <h2>O que você Procura?</h2>
+                  <div id="bannerPesqFlex">         
+                    <div id="selectProcura">
+                        <select name="" id="selectListId_moradia" title="Selecione o que procura" onchange="clickSelect()">
+                          <option value="">Oque você procura?</option>
+                            <option value="Destaques">Destaques</option>
+                              <option value="Casas">Casas</option>
+                                <option value="Sobrados">Sobrados</option>
+                                  <option value="Apartamentos">Apartamentos</option>
+                                    <option value="Terrenos">Terrenos</option>
+                                      <option value="Lojas">Lojas</option>
+                                        <option value="Galpões">Galpões</option>
+                                          <option value="Armazens">Armazens</option>
+                                            <option value="Chacaras">Chácaras</option>
+                                              <option value="Sítios">Sítios</option>
+                          </select>
+                          <select name="" id="selecVL" title="Complemente a Pesquisa">
+                            <option value="">Complemento</option>
+                             <option value="Compra ou Locação">Comprar ou Locação</option>
+                               <option value="Compra">Comprar</option>
+                                <option value="Locação">Alugar</option>
+                          </select>
+                          <button id="butoomBuscar"  onclick="Buscar()" title="Botão de busca"><i id="pesq-2" class="fa-solid fa-magnifying-glass"></i>  Buscar</button>
+                          </div>  
+                       </div>
+                    </div>
+                </div>
+              <div id="body02">
+                <div id="resutPesquisa">
+                   <a id="a_result" href="#butoomBuscar" title="Lista Resultado"></a>
+                  <label id="fecharResultPesq" for="" onclick="fecharResulP()"><i class="fa-solid fa-delete-left"></i> Fechar</label>
+                  <h1>Resultado:</h1><p id="P_resutPesquisa">Encontrados</p>
+                  <br>
+                  <div id="listaPesquisa"> 
+                    <div id="listPesq"></div>
+                  </div>
+                </div>
+                <img src="src/Banner.png" alt="Banner" width="100%">
+                <h1 id="tituloLista"> Todos os Imóveis!</h1><p id="P_resutTodosIMV">Encontrados</p>
+                <br>
+                <div id="div_listGeral">
+                  <div id="listGeral"></div>
+                </div>
+                 
+              </div>
+               <div id="body03">
+                <h1 id="tituloLista"> Imóveis diversos</h1>
+                
+                <br>
+                 <img src="src/Banner.png" alt="Banner" width="100%">
+              </div>
+           </div>
+           <div id="div_footer">
+            <div id="footer01">
 
-    <script src="Js/index.js"></script>
+            </div>
+            <div id="footer02">
+
+            </div>
+           </div>
+
+        </div>
+
+    </div>
+  <script src="JS/index.js"></script>
 </body>
 </html>
