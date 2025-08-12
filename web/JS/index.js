@@ -490,6 +490,7 @@ function Pesquisar() {
 
 }
 //Menu Lateral
+sessionStorage.setItem('MENULateral', '')
 var BTN = document.getElementById('heaad_menu');
 BTN.className = 'fa-solid fa-bars'
 
@@ -670,6 +671,14 @@ var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
 });
 }
+
+//Whatsapp Rute sem informação aicionais
+function ZAP(){
+      whats()
+}
+function what(){
+    whats()
+}
 function whats(){
   
 var tell= sessionStorage.getItem('Tel_Whats');
@@ -718,7 +727,7 @@ Swal.close()
 });
 }
 
-
+// WhatsApp com Informações do imóvel
 function whatsapp(){
 var imgIMV= sessionStorage.getItem('IMGIMV')     
 var imovel= sessionStorage.getItem('CodIMV')    
@@ -767,3 +776,34 @@ Swal.fire('Sair')
 Swal.close()
 });
 }
+//Facebook
+function face(){
+    facebook()
+}
+function facebook(){
+ var url_face=localStorage.getItem('URL_facebook')
+ if(!url_face ||url_face==''){
+      var URL_facebook='https://www.facebook.com/share/1YP8t9Q7uR/'
+ }else{
+  var URL_facebook= url_face
+ }
+
+window.open(URL_facebook,'_blank')
+ Swal.fire(`Facebook`,``,'success')
+}; 
+//Instagran
+function INSTA(){
+    instagran()
+
+}
+
+function instagran(){
+  var URL_Intagran= localStorage.getItem('URL_Intagran')
+if(!URL_Intagran|| URL_Intagran==''){
+var url_Inst='https://www.instagram.com/rute.teixeira.370/profilecard/?igsh=MWltMzh6NjMwbXZrMA=='
+} else{
+var url_Inst= URL_Intagran;
+}
+Swal.fire(`Instagran`,``,'success')
+window.open(url_Inst,'_blank')
+};
