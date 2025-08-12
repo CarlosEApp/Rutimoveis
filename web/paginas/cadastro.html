@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administração Rutimóveis</title>
+    <link rel="shortcut icon" href="../src/lg01.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-messaging-compat.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <link rel="stylesheet" href="../css/cadastro.css">
+</head>
+
+<body>
+    <div id="div_geral">
+        <div id="div_container">
+            <a id="a_cad2" href="#" title="a"></a>
+            <div id="div_header">
+                <div id="header01">
+                    <h2>Cadastros</h2> <button  onclick='toggleFullScreen()'>tela <i class="fa-solid fa-desktop"></i></button> <button title="Menu">  <i class="fa-solid fa-bars"></i></button>
+                </div>
+                <div id="header02">
+                    <button onclick="NovoCad()">Novo Cadastro <i class="fa-solid fa-check-double"></i></button> <button onclick="Cadastrados()"> Cadastrados <i id="Icad" class="fa-solid fa-eye"></i></button><button onclick="ImoveisEX()">Imóveis <i id="I_movel" class="fa-solid fa-eye"></i></button>
+                </div>
+            </div>
+            <div id="div_vendasEX_flex">
+                <div id="div_vendasEX">
+
+                    <div class="div_V_X_S" id="div_excluidos">
+                       <i onclick="Fechar_ex()" id="Fechar_ex" class="fa-solid fa-delete-left"></i>
+                        <h2>Imóveis Excluidos</h2>
+                        <div id="excluidosList"></div>
+                    </div>
+
+                    <div class="div_V_X_S" id="div_vendidos">
+                         <i onclick="Fechar_vendidos()" id="Fechar_vendidos" class="fa-solid fa-delete-left"></i>
+                        <h2>Imóveis Vendidos</h2>
+                        <div id="vendidosList"></div>
+                    </div>
+
+                    <div class="div_V_X_S" id="div_suspenso">
+                         <i onclick="Fechar_suspensos()" id="Fechar_suspensos" class="fa-solid fa-delete-left"></i>
+                        <h2>Imóveis Suspensos</h2>
+                        <div id="esuspensosList"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div id="div_body">
+                <div id="listadeCad">
+                    <p id="plista">Selecione a lista do imóvel</p>
+                    <select name="" id="selectlista" onchange="selectlista()" title="Selecione a lista">
+                          <option value="">Lista do imóvel</option>
+                            <option value="Destaques">Destaques</option>
+                              <option value="Casas">Casas</option>
+                                <option value="Sobrados">Sobrados</option>
+                                  <option value="Apartamentos">Apartamentos</option>
+                                    <option value="Terrenos">Terrenos</option>
+                                      <option value="Lojas">Lojas</option>
+                                        <option value="Galpões">Galpões</option>
+                                          <option value="Armazens">Armazens</option>
+                                            <option value="Chacaras">Chácaras</option>
+                                              <option value="Sítios">Sítios</option>
+                          </select>
+                    <br>
+                    <p id="lbl_itens" for=""></p>
+                    <div id="div_lista">
+                        <div id="list">
+
+                        </div>
+                    </div>
+                </div>
+                <div id="NovoCadastro">
+                    <div id="cadUmFlex">
+                        <div id="cadUm">
+                            <i id="SSair" onclick="Ssair()" class="fa-solid fa-delete-left"></i><br>
+                            <h2 id="h2Cad">Cadastro</h2>
+                            <label id="p1" for="">Código automatico (Obrigatório.) <br> <input id="inputCodigo" type="text" placeholder="00000000"></label>
+                            <br>
+                            <p id="p2">Obrigatório </p>
+                            <select name="" id="selectListId_moradia" title="Selecione a lista">
+                          <option value="">Lista do imóvel</option>
+                            <option value="Destaques">Destaques</option>
+                              <option value="Casas">Casas</option>
+                                <option value="Sobrados">Sobrados</option>
+                                  <option value="Apartamentos">Apartamentos</option>
+                                    <option value="Terrenos">Terrenos</option>
+                                      <option value="Lojas">Lojas</option>
+                                        <option value="Galpões">Galpões</option>
+                                          <option value="Armazens">Armazens</option>
+                                            <option value="Chacaras">Chácaras</option>
+                                              <option value="Sítios">Sítios</option>
+                          </select>
+                            <br>
+                            <input class="inputUm" id="input_img" type="file" accept="image/*" hidden>
+                            <label id="p3" for="">Titulo: (Obrigatório) <br>
+          <input class="inputUm"  id="titulo" type="text" placeholder="Titulo, Nome, Apelido...">
+        </label>
+                            <br>
+                            <label for="">Rua/Av:<br>
+           <input  class="inputUm"  id="rua" type="text" placeholder="Rua/Av...">
+        </label>
+                            <br>
+                            <label for="">Nº:<br>
+         <input class="inputTres" id="numero" type="text" placeholder="000">
+        </label>
+                            <br>
+                            <label id="p4" id="p4" for="">Bairro: (Obrigatório)<br>
+         <input  class="inputUm"  id="bairro" type="text" placeholder="Bairro...">
+        </label>
+                            <br>
+                            <label id="p5" for="">Cidade: (Obrigatório)<br>
+         <input  class="inputUm"  id="cidade" type="text" placeholder="Cidade...">
+        </label>
+                            <br>
+                            <label for="">
+         <input class="inputTres"   id="input_UF" type="text" value="SP" placeholder="UF"> <label id="p_desc"> UF</label>
+                            </label>
+                            <br>
+                            <label for="">CEP <br>
+         <input class="inputDois" id="input_cep" type="text" oninput="aplicarMascaraCEP(event)"  value="" placeholder="0000.000"> 
+        </label>
+                            <br>
+                            <label for="">Complemento do imóvel (Referência.- Opicional)<br> 
+         <textarea name="" id="endereço" placeholder="Complemento andar, apartamento, Bloco..."></textarea>
+       </label>
+                             <br><br>
+                            <p id="p6">Obrigatório </p>
+                            <select name="" id="select_venda" title="Objetivo financeiro">
+           <option value="">Imóvel disponivel para? </option>
+             <option value="Compra">Venda</option>
+               <option value="Locação">Locação</option>
+                 <option value="Compra ou Locação">Venda ou Locação</option>
+       </select>
+                            <br>
+                            <br>
+                            <p><b>Prencha o valor para venda, locação ou "ambos"</b></p><br>
+                            <label id="p7" for="">Valor para Venda <br>
+         <input class="inputDois" id="valor" type="text" placeholder="00,00"> <label id="p_desc"> R$</label>
+                            </label>
+                            <br>
+                            <label id="p8" for="">Valor para Locação <br>
+         <input class="inputDois" id="valorLoc" type="text" placeholder="00,00"> <label id="p_desc"> R$</label>
+                            </label>
+                            <br>
+                            <label for="">Desconto Avista de: 00%  (Opcional.)<br>
+        <input class="inputTres" id="desconto" type="number" placeholder="00"> <label id="p_desc"> %</label>
+                            </label>
+                            <br>
+                            <label for="">Valor do Condomínio (Opcional.)<br>
+         <input  class="inputDois" id="valorCond" type="text" placeholder="00,00"> <label id="p_desc"> R$</label>
+                            </label>
+                            <br>
+                            <label for="">Valor do IPTU  (Opcional.)<br>
+         <input class="inputDois" id="valorIPTU" type="text" placeholder="00,00"> <label id="p_desc"> R$</label>
+                            </label>
+                            <br>
+                            <label for="">Área Construída (Opcional.)<br>
+         <input  class="inputTres" id="Area_metragen" type="text" placeholder="m²"><label id="p_desc">m²</label>
+                            </label>
+                            <br>
+                            <label for="">Quintal - Area externa m² (Opcional.)<br>
+         <input  class="inputTres" id="Quint_quant" type="text" placeholder="00">/ <input  class="inputTres" id="Quint_metragen" type="text" placeholder="m²"><label id="p_desc">m²</label>
+                            </label>
+                            <br>
+                            <label for="">Salas / m²<br>
+        <input  class="inputTres" id="salas_quant" type="text" placeholder="00">/ <input  class="inputTres" id="salas_metragen" type="text" placeholder="m²"><label id="p_desc">m²</label>
+                            </label>
+                            <br>
+                            <label for="">Varandas (Opcional.)<br>
+        <input  class="inputTres" id="varanda_quant" type="text" placeholder="00">  
+       </label>
+                            <br>
+                            <label for="">Dormitórios (Opcional.)<br>
+        <input  class="inputTres" id="Quarto_quant" type="text" placeholder="00">  
+       </label>
+                            <br>
+                            <label for="">Suite (Opcional.) <br>
+        <input  class="inputTres" id="suite_quant" type="text" placeholder="00">  
+       </label>
+                            <br>
+                            <label for="">Banheiros (Opcional.) <br>
+        <input  class="inputTres" id="banheiro_quant" type="text" placeholder="00">
+       </label>
+                            <br>
+                            <label for="">Piscinas - Quant/M² (Opcional.)<br>
+        <input  class="inputTres" id="piscinas_quant" type="text" placeholder="00">/ <input  class="inputTres" id="piscinas_metragen" type="text" placeholder="m²"><label id="p_desc">m²</label>
+                            </label>
+                            <br>
+                            <label for=""> Area terreno - M² (Opcional.) <br>
+        <input  class="inputTres" id="playg_quant" type="text" placeholder="m²"><label id="p_desc">m²</label><br>
+                            <br>
+                            <label for=""> Campo de Areia m²<br><input  class="inputTres" id="playg_metragen" type="text" placeholder="m²"><label id="p_desc">m²</label></label>
+                            </label>
+                            <br>
+                            <label for="">Andares (Opcional.)<br>
+        <input  class="inputTres" id="andar_quant" type="text" placeholder="00"> 
+       </label>
+                            <br>
+                            <label for="">Vagas / Garagem (Opcional.) <br>
+        <input  class="inputTres" id="vagas_quant" type="text" placeholder="00"> 
+       </label>
+                            <br>
+                            <label for="">Duplex ? (Opcional.)<br>
+       <select class="selectPlex" name="" id="duplex">
+           <option value="">Não</option>
+         <option value="não">Não</option>
+           <option value="sim">Sim</option>
+       </select>
+       </label>
+                            <br>
+                            <label for="">Triplex ? (Opcional.)<br>
+       <select class="selectPlex" name="" id="Triplex">
+         <option value="">Não</option>
+        <option value="não">Não</option>
+         <option value="sim">Sim</option>
+       </select>
+       </label>
+                            <br>
+                            <label for="">Nome do Proprietário  (Opcional.)  <br>
+        <input  class="inputUm"  id="nome_proprietario" type="text" placeholder="Proprietário"> 
+       </label>
+                            <br>
+                            <label for="">Tel do Proprietário  (Opcional.) <br>
+        <input  class="inputDois"  id="Tel_proprietario" type="tel" placeholder="11 91111 2222"> 
+       </label>
+                            <br>
+                            <label for="">CPF do Proprietário (Opcional.)<br>
+        <input class="inputDois"   id="cpf_proprietario"  oninput="aplicarMascaraCPF(event)" type="text" placeholder="000.000.000-00"> 
+       </label>
+                            <br><br>
+                            <label for="">Estado atual do imóvel! <br></label>
+                            <select name="" id="estadoAimóvel" onchange="selEAT()" title="Estado Atual do Imóvel">
+                            <option value="">Disponivel</option>
+                            <option value="Suspenso">Suspenso</option>
+                            <option value="Vendido">Vendido</option>
+                            </select>
+                            <div id="div_ETA">
+                                <input type="text" id="dadaETA" placeholder="Data: 00/00/0000"> - <input type="text" id="horaETA" placeholder="Hora; 00:00:00">
+                            </div>
+
+                            <br><br>
+                            <div id="butoon">
+                                <button id="btnSair" onclick="FecharCad()"><i class="fa-solid fa-delete-left"></i> Fechar</button><br>
+                                <button id="btnSalvar" onclick="proximo()"> Próximo <i class="fa-solid fa-location-arrow"></i></button>
+                                <br><br>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div id="cadUmFlex2">
+
+                        <div id="cadDois">
+                            <i id="SSair" onclick="Vvoltar()" class="fa-solid fa-delete-left"></i><br>
+                            <h2>Imagens do Imóvel</h2>
+                            <p id="parag">Selecione as imagens com a indentificação de cada Comodo.</p>
+                            <br>
+                            <label class="lbl_" id="lbl_titulo" for="">Titulo Imóvel</label>
+                            <label class="lbl_" id="lbl_codigo" for="">Codigo Imovel</label><br>
+
+                            <div class="Div_imagens" id="imagemUm">
+                                <label class="imgN" for="">1ª Imagem (Capa do imóvem )<br>
+                      <input class="file"  id="filesUm" type="file">
+                      <img class="imagens" id="imgUm" src="../src/Rutimoveis img.png" alt="">
+                       <input  class="inputUm"  id="inputImgUmTitulo" type="text" placeholder="Comodo Referência...">
+                       <br>  <div id="myProgressIMG1" title="Progresso">
+                         <div id="myBarIMG1">10%</div>
+                      </div><br>
+                        <input class="inputTres" id="inputImgUmMetros" type="number" placeholder="M²"> M²
+                       <br>
+                       <button class="salvar" onclick="IMG01()">1ª Imagem</button>
+                    </label>
+                            </div>
+                            <div class="Div_imagens" id="imagemDois">
+                                <label class="imgN" for="">2ª Imagem <br>
+                      <input class="file" id="filesDois" type="file">
+                      <img class="imagens" id="imgDois" src="../src/Rutimoveis img.png" alt="">
+                       <input  class="inputUm"  id="inputImgDoisTitulo" type="text" placeholder="Comodo Referência..."> 
+                       <br><div id="myProgressIMG2" title="Progresso">
+                         <div id="myBarIMG2">10%</div>
+                      </div> <br> <input class="inputTres" id="inputImgDoisMetros" type="number" placeholder="M²"> M²
+                       <br>
+                       <button class="salvar"  onclick="IMG02()">2ª Imagem</button>
+                    </label>
+                            </div>
+                            <div class="Div_imagens" id="imagemTres">
+                                <label class="imgN" for="">3ª Imagem <br>
+                      <input class="file"  id="filesTres" type="file">
+                      <img class="imagens" id="imgTres" src="../src/Rutimoveis img.png" alt="">
+                       <br>
+                       <input  class="inputUm"  id="inputImgTresTitulo" type="text"placeholder="Comodo Referência...">
+                        <br><div id="myProgressIMG3" title="Progresso">
+                         <div id="myBarIMG3">10%</div></div>
+                         <br> <input class="inputTres" id="inputImgTresMetros" type="number" placeholder="M²"> M²
+                       <br>
+                       <button class="salvar"  onclick="IMG03()">3ª Imagem</button>
+                    </label>
+                            </div>
+                            <div class="Div_imagens" id="imagemQuatro">
+                                <label class="imgN" for="">4ª Imagem <br>
+                      <input class="file"  id="filesQuatro" type="file">
+                      <img class="imagens" id="imgQuatro" src="../src/Rutimoveis img.png" alt="">
+                       <br>
+                       <input  class="inputUm"  id="inputImgQuatroTitulo" type="text"placeholder="Comodo Referência...">
+                        <br><div id="myProgressIMG4" title="Progresso">
+                         <div id="myBarIMG4">10%</div></div>
+                         <br> <input class="inputTres" id="inputImgQuatroMetros" type="number" placeholder="M²"> M²
+                        <br>
+                       <button class="salvar"  onclick="IMG04()">4ª Imagem</button>
+                    </label>
+                            </div>
+                            <div class="Div_imagens" id="imagemCinco">
+                                <label class="imgN" for="">5ª Imagem <br>
+                      <input class="file"  id="filesCinco" type="file">
+                      <img class="imagens" id="imgCinco" src="../src/Rutimoveis img.png" alt="">
+                       <br>
+                       <input  class="inputUm"  id="inputImgCincoTitulo" type="text"placeholder="Comodo Referência...">
+                        <br> <div id="myProgressIMG5" title="Progresso">
+                         <div id="myBarIMG5">10%</div></div>
+                         <br> <input class="inputTres" id="inputImgCincoMetros" type="number" placeholder="M²"> M²
+                       <br>
+                       <button class="salvar"  onclick="IMG05()">5ª Imagem</button>
+                    </label>
+                            </div>
+                            <div class="Div_imagens" id="imagemSeis">
+                                <label class="imgN" for="">6ª Imagem <br>
+                      <input class="file"  id="filesSeis" type="file">
+                      <img class="imagens" id="imgSeis" src="../src/Rutimoveis img.png" alt="">
+                       <br>
+                       <input  class="inputUm"  id="inputImgSeisTitulo" type="text"placeholder="Comodo Referência...">
+                        <br> <div id="myProgressIMG6" title="Progresso">
+                         <div id="myBarIMG6">10%</div></div>
+                         <br> <input class="inputTres" id="inputImgSeisMetros" type="number" placeholder="M²"> M²
+                       <br>
+                       <button class="salvar"  onclick="IMG06()">6ª Imagem</button>
+                    </label>
+                            </div>
+                            <div class="Div_imagens" id="imagemSete">
+                                <label class="imgN" for="">7ª Imagem <br>
+                      <input class="file"  id="filesSete" type="file">
+                      <img class="imagens" id="imgSete" src="../src/Rutimoveis img.png" alt="">
+                       <br>
+                       <input  class="inputUm"  id="inputImgSeteTitulo" type="text"placeholder="Comodo Referência...">
+                        <br> <div id="myProgressIMG7" title="Progresso">
+                         <div id="myBarIMG7">10%</div></div><br> <input class="inputTres" id="inputImgSeteMetros" type="number" placeholder="M²"> M²
+                       <br>
+                       <button class="salvar"  onclick="IMG07()">7ª Imagem</button>
+                    </label>
+                            </div>
+
+                            <br><br>
+                            <button id="voltarCad" onclick="voltarCad()">Voltar</button>
+
+                            <button id="SalvarCad" onclick="salvarCad()">Salvar Cadastro</button>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <div id="Cadastrados">
+
+                </div>
+                <div id="EmAnalize">
+
+                </div>
+                <div id="Vendidos">
+
+                </div>
+            </div>
+            <div id="divfooter">
+                <div id="footer01"></div>
+                <div id="footer02"></div>
+
+
+
+            </div>
+        </div>
+
+    </div>
+    <script src="../JS/cadastro.js"></script>
+
+</body>
+
+</html>
