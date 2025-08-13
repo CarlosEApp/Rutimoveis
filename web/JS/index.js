@@ -187,14 +187,14 @@ document.getElementById('face').addEventListener('click',function(){
     if (navigator.vibrate) {
 navigator.vibrate(200); // vibra por 200ms
 }
-var url = encodeURIComponent("https://carloseapp.github.io/Rutimoveis/web/index.html");
+var url = encodeURIComponent("https://rutimoveis.netlify.app/");
 window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
 });
 document.getElementById('whats').addEventListener('click',function(){
     if (navigator.vibrate) {
 navigator.vibrate(200); // vibra por 200ms
 }
-var url = "https://carloseapp.github.io/Rutimoveis/web/index.html";
+var url = "https://rutimoveis.netlify.app/";
 var img = `${doc.Titulo}: ${doc.IMG1}`;
 var cod=`${doc.Código}`
 var whatsappMessage =`Pagina Web: ${url}\n\n📷 ${img} \n\n Código: ${cod}\n\n`;
@@ -399,14 +399,14 @@ document.getElementById('face').addEventListener('click',function(){
     if (navigator.vibrate) {
 navigator.vibrate(200); // vibra por 200ms
 }
-var url = encodeURIComponent("https://carloseapp.github.io/Rutimoveis/web/index.html");
+var url = encodeURIComponent("https://rutimoveis.netlify.app/");
 window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
 });
 document.getElementById('whats').addEventListener('click',function(){
     if (navigator.vibrate) {
 navigator.vibrate(200); // vibra por 200ms
 }
-var url = "https://carloseapp.github.io/Rutimoveis/web/index.html";
+var url = "https://rutimoveis.netlify.app/";
 var img = `${doc.Titulo}: ${doc.IMG1}`;
 var cod=`${doc.Código}`
 var whatsappMessage =`Pagina Web: ${url}\n\n📷 ${img} \n\n Código: ${cod}\n\n`;
