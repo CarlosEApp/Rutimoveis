@@ -186,7 +186,6 @@ background-color: rgba(255, 255, 255, 0);
 font-size: clamp(0.950rem, 1vw + 0.5rem, 1.070rem);
 outline: none;
 color: rgb(255, 255, 255);
-
 }
 #inputPesquisa:hover{
 background-color: rgba(175, 175, 175, 0);
@@ -205,13 +204,13 @@ width: 100%;
 }
 #body02{
 width: 100%;
-background-color: aliceblue;
+background-color: rgb(244, 249, 255);
 color: rgb(46, 46, 46);
 outline: none;
 }
 #body03{
 width: 100%;
-background-color: rgb(255, 255, 255);
+background-color: rgb(244, 249, 255);
 color: rgb(46, 46, 46);
 margin-bottom: 20px;
 }
@@ -247,12 +246,6 @@ color: #eaf7ff;
 outline: none;
 font-weight: bold;
 }
-
-
-    
-  
-    
-
 #listPesq, #listGeral, #listDestaque{
 margin: auto;
 width: 99%;
@@ -344,11 +337,9 @@ color: aliceblue;
 border-radius: 4px;
 font-weight: bold;
 font-size: clamp(0.820rem, 1vw + 0.5rem, 0.820rem);
-
 }
 #div3_  #btn:hover{
 background-color: #b900b9;
-
 }
 #div4_{
 display: flex;
@@ -378,9 +369,9 @@ border-radius: 5px;
 font-size: clamp(0.750rem, 1vw + 0.5rem, 0.750rem);
 }
 #div2_ #lbl_8:hover{
-    background-color: #7c00cf;
-    color: aliceblue;
-    cursor: pointer;
+background-color: #7c00cf;
+color: aliceblue;
+cursor: pointer;
 }
 #fecharResultPesq{
 margin-bottom: 20px;
@@ -390,6 +381,9 @@ font-size: clamp(0.850rem, 1vw + 0.5rem, 0.850rem);
 #fecharResultPesq:hover{
 color: rgb(119, 1, 74);
 }
+#selectProcura #butoomBuscar{
+    padding: 12px;
+ }
 #resutPesquisa h1{
 margin-top: 20px;
 }
@@ -398,27 +392,21 @@ background-color: #a000c0;
 color: azure;
 border: 2px solid rgb(166, 0, 199);
 }
-
-
 .my-custom_alertlist{
-    max-width: 300px;
-    background-color: #860070;
-    color: #eaf7ff;
-    border-radius: 10px;
-   
+ max-width: 300px;
+ background-color: #860070;
+ color: #eaf7ff;
+ border-radius: 10px;
 }
 .my-custom_alert  h2{
     font-size: clamp(1.200rem, 1vw + 0.5rem, 1.400rem);
-
 }
 .my-custom_alert{
     font-size: clamp(1rem, 1vw + 0.5rem, 1.200rem);
-
 }
 .swal2-loader {
     border: 7px solid;
   border-color: #ff02ea #ff02ea  #ff02ea  transparent; /* azul */
-  
 }
 .my-custom_compartilhar{
   width: 300px;
@@ -449,10 +437,18 @@ font-size: 25px;
 font-size: 15px;
 font-weight: bold;
 }
+#P_resutPesquisa{
+    font-weight: bolder;
+    background-color: rgba(245, 245, 220, 0);
+    margin-top: 5px;
+    margin-bottom: 20px;
+}
 #P_resutTodosIMV, #P_resutDestaqueIMV{
     font-weight: bolder;
     margin-left: 35px;
-
+    background-color: rgba(245, 245, 220, 0);
+    margin-top: 5px;
+    margin-bottom: 20px;
 }
 #tituloLista{
     margin-left: 30px;
@@ -484,8 +480,6 @@ font-weight: bold;
     padding-top: 190px;
     background-color: rgb(14, 0, 11);
 }
-
-
 #divWhats{
 display: flex;
 justify-content: center;
@@ -523,13 +517,10 @@ color: aliceblue;
 max-width: 370px;
 border-radius: 30px;
 }
-
 .banner{
-
-    border-top: 10px solid rgb(138, 0, 119);
-    border-bottom: 10px solid rgb(88, 0, 77);
+border-top: 10px solid rgb(138, 0, 119);
+border-bottom: 10px solid rgb(88, 0, 77);
 }
-
 #MenuIMG{
 margin-top: 7px;
 }

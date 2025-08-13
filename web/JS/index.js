@@ -462,6 +462,11 @@ function Buscar(){
  var select1=document.getElementById('selectListId_moradia').value;  
 var select2=document.getElementById('selecVL').value; 
  var resutPesq=sessionStorage.getItem('ValorPesquisa')
+ if(!resutPesq|| resutPesq==''){
+
+ }else{
+    select1='Cadastros'
+ }
  var list = document.getElementById('listPesq');
 list.innerHTML = ''
 var firebaseConfig = {
