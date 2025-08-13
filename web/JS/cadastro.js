@@ -160,7 +160,7 @@ li.addEventListener('click', function() {
      <button id="btn_edite" title="">Editar</button>      
      <br><br>
      <button id="btn_excluir" title="">Excluir</button>        
-     <br><br><br><button id='sair'>Cancelar</button>
+     <br><br><br><button id='sair'>Sair</button>
      `,
     showCancelButton: false,
     showConfirmButton: false,
@@ -184,7 +184,7 @@ html: ` <div  class="menu-container">
 <input id='inputEx' type='text' placeHolder='Digite código...'>
 <br><br>
 <button id="SwalExCód" title="">Excluir <i class="fa-solid fa-trash"></i></button>
-<br><br>  <button id='Sair' class='cancelar'> Cancelar </button>
+<br><br>  <button id='Sair' class='cancelar'> Sair </button>
 </div>
 `,
 showCancelButton: false,
@@ -417,7 +417,7 @@ li.addEventListener('click', function() {
      <button id="btn_edite" title="">Editar</button>      
      <br><br>
      <button id="btn_excluir" title="">Excluir</button>        
-     <br><br><br><button id='sair'>Cancelar</button>
+     <br><br><br><button id='sair'>Sair</button>
      `,
     showCancelButton: false,
     showConfirmButton: false,
@@ -441,7 +441,7 @@ html: ` <div  class="menu-container">
 <input id='inputEx' type='text' placeHolder='Digite código...'>
 <br><br>
 <button id="SwalExCód" title="">Excluir <i class="fa-solid fa-trash"></i></button>
-<br><br>  <button id='Sair' class='cancelar'> Cancelar </button>
+<br><br>  <button id='Sair' class='cancelar'> Sair </button>
 </div>
 `,
 showCancelButton: false,
@@ -632,6 +632,7 @@ FecharCad()
 document.getElementById('listadeCad').style.display = 'none'
 //imóveis Cadastrados
 function Cadastrados() {
+ 
 document.getElementById('selectlista').value = ''
 var cad = document.getElementById('Icad');
 var list = document.getElementById('list');
@@ -659,6 +660,7 @@ document.getElementById('lbl_itens').innerHTML = `Total de Imóveis = ${itensL1}
 }, 2000)
 }
 function selectlista() {
+   var itens= 0
 document.getElementById('lbl_itens').style.display = 'none'
 sessionStorage.setItem('itensL1', '')
 var resp = document.getElementById('selectlista').value;
@@ -682,7 +684,7 @@ querySnapshot.forEach(doc => {
 var doc = doc.data();
 if(doc.EstadoAT=='Vendido'||doc.EstadoAT=='Suspenso'){
 }else{
-var itens = querySnapshot.size;
+itens++ 
 var div = document.createElement('div')
 var div2 = document.createElement('div')
 var div3 = document.createElement('div')
@@ -750,7 +752,7 @@ html: ` <div  class="menu-container">
 <input id='inputEx' type='text' placeHolder='Digite código...'>
 <br><br>
 <button id="SwalExCód" title="">Excluir <i class="fa-solid fa-trash"></i></button>
-<br><br>  <button id='Sair' class='cancelar'> Cancelar </button>
+<br><br>  <button id='Sair' class='cancelar'> Sair </button>
 </div>
 `,
 showCancelButton: false,

@@ -1,11 +1,220 @@
 
 
 
+//lista de destaques
+var itens= 0
+ var listD = document.getElementById('listDestaque');
+listD.innerHTML = ''
+var firebaseConfigure = {
+apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
+authDomain: "rutimoveis-bc114.firebaseapp.com",
+projectId: "rutimoveis-bc114",
+storageBucket: "rutimoveis-bc114.firebasestorage.app",
+messagingSenderId: "457038463744",
+appId: "1:457038463744:web:e357570db0a9a6ce3529e5",
+measurementId: "G-K330CH24NV"
+};
+firebase.initializeApp(firebaseConfigure);
+var db = firebase.firestore()
+var produtosRef = db.collection(`Cadastros`);
+produtosRef.get().then((querySnapshot) => {
+querySnapshot.forEach(doc => {
+var doc = doc.data();
+
+if(doc.EstadoAT==''&& doc.Lista1=='Destaques'){
+ itens++
+// Criando os elementos
+var li = document.createElement('div');
+var div1 = document.createElement('div');
+var div2 = document.createElement('div');
+var div3 = document.createElement('div');
+var div4 = document.createElement('div');
+
+var img = document.createElement('img');
+var lbl1 = document.createElement('label');
+var lbl2 = document.createElement('label');
+var lbl3 = document.createElement('label');
+var lbl4 = document.createElement('label');
+var lbl5 = document.createElement('label');
+var lbl6 = document.createElement('label');
+var lbl7 = document.createElement('label');
+var lbl8 = document.createElement('label');
+
+var btn = document.createElement('button');
+var btn2 = document.createElement('button');
+var btn3 = document.createElement('button');
+
+// Atribuindo IDs e classes
+li.id = 'li_';
+div1.id = 'div1_';
+div2.id = 'div2_';
+div3.id = 'div3_';
+div4.id = 'div4_';
+
+img.id = 'imgg';
+img.src = doc.IMG1; // Imagem do imóvel
+
+lbl1.id = 'lbl_1';
+lbl2.id = 'lbl_2';
+lbl3.id = 'lbl_3';
+lbl4.id = 'lbl_4';
+lbl5.id = 'lbl_5';
+lbl6.id = 'lbl_6';
+lbl7.id = 'lbl_7';
+lbl8.id = 'lbl_8';
+
+
+// Conteúdo dos labels
+lbl1.textContent = doc.Titulo;
+lbl2.textContent = `Bairro: ${doc.Bairro}`;
+if(!doc.ValorA|| doc.ValorA==''){
+lbl3.textContent = ``;
+}else{
+lbl3.textContent = `Locação: ${doc.ValorA} R$`||'';
+};
+if(!doc.ValorC|| doc.ValorC==''){
+lbl4.textContent = ``||'';
+}else{
+ lbl4.textContent = `Compra ${doc.ValorC} R$`||'';
+};
+if(!doc.Quartos||doc.Quartos==''){
+ lbl5.textContent = `🛏️(?)`
+}else{
+    lbl5.textContent = `🛏️(${doc.Quartos})`
+};
+if(!doc.Quartos||doc.Banheiro==''){
+lbl6.textContent = `🚿(?)`
+}else{
+lbl6.textContent = `🚿(${doc.Banheiro})`
+};
+if(!doc.Quartos||doc.Garagem==''){
+lbl7.textContent = `🚗(?)`
+}else{
+lbl7.textContent = `🚗(${doc.Garagem})`
+};
+lbl8.textContent = `${doc.Código}`
+lbl8.title='Código do Imóvel'
+
+lbl5.title='Quantidade de Quartos';
+lbl6.title='Quantidade de Banheiros';
+lbl7.title='Quantidade de Vagas de carro';
+
+
+btn.id = 'btn';
+btn.textContent = 'Ver Imóvel';
+btn.title='Ver ficha completa do Imóvel'
+
+btn2.id = 'btn2';
+btn2.className = 'fa-brands fa-whatsapp';
+btn2.title='Contato com Corretor via WhatsApp'
+
+btn2.id = 'btn3';
+btn3.className = 'fa-solid fa-square-share-nodes';
+btn3.title='Compartilhar Imóvel'
+
+// Montando a estrutura
+div1.appendChild(img);
+div2.appendChild(lbl1);
+div2.appendChild(document.createElement('br'));
+div2.appendChild(lbl2);
+div2.appendChild(document.createElement('br'));
+div2.appendChild(lbl8);
+div2.appendChild(document.createElement('br'));
+div2.appendChild(document.createElement('br'));
+div2.appendChild(lbl3);
+div2.appendChild(document.createElement('br'));
+div2.appendChild(lbl4);
+
+div3.appendChild(btn);
+div3.appendChild(btn2);
+div3.appendChild(btn3);
+
+div4.appendChild(lbl5);
+div4.appendChild(lbl6);
+div4.appendChild(lbl7);
+
+li.appendChild(div1);
+li.appendChild(div2);
+li.appendChild(div3);
+li.appendChild(div4);
+
+// Adicionando ao elemento principal (list)
+listD.appendChild(li);
+//sessionStorage.setItem('itensList1',itens)
+
+document.getElementById('P_resutDestaqueIMV').innerHTML=`Total de ${itens} Imóveis encontrados!`;
+
+
+
+lbl8.addEventListener('click',function(){
+ Swal.fire(`${doc.Código}`,'Código do Imóvel')
+});
+
+btn2.addEventListener('click',function(){
+    sessionStorage.setItem('CodIMV',doc.Código)
+    sessionStorage.setItem('IMGIMV',doc.IMG1)     
+    whatsapp()
+});
+
+btn3.addEventListener('click',function(){
+    if (navigator.vibrate) {
+navigator.vibrate(200); // vibra por 200ms
+}
+Swal.fire({
+title: `Compartilhar <i id='i_compart'  class="fa-solid fa-square-share-nodes"></i>`,
+html: `
+<br> 
+<button id="face" title="">Facebook <i class="fa-brands fa-facebook-f"></i></button>  
+<br><br>   
+<button id="whats" title="">WhatsApp <i id='i_whats_start' class="fa-brands fa-whatsapp"></i></button>            
+<br><br><br><button id='sair_'>Cancelar</button><br><br>
+`,
+background: 'rgb(255, 255, 255)', // Cor de fundo
+color: 'black', // Cor do texto
+showCancelButton: false,
+showConfirmButton: false,
+customClass: {
+popup: 'my-custom_compartilhar' // Aplica a classe CSS personalizada
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';
+}
+});
+document.getElementById('sair_').addEventListener('click',function(){
+Swal.close()
+});
+document.getElementById('face').addEventListener('click',function(){
+    if (navigator.vibrate) {
+navigator.vibrate(200); // vibra por 200ms
+}
+var url = encodeURIComponent("https://carloseapp.github.io/Rutimoveis/web/index.html");
+window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
+});
+document.getElementById('whats').addEventListener('click',function(){
+    if (navigator.vibrate) {
+navigator.vibrate(200); // vibra por 200ms
+}
+var url = "https://carloseapp.github.io/Rutimoveis/web/index.html";
+var img = `${doc.Titulo}: ${doc.IMG1}`;
+var cod=`${doc.Código}`
+var whatsappMessage =`Pagina Web: ${url}\n\n📷 ${img} \n\n Código: ${cod}\n\n`;
+var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
+window.open(whatsappLink, "_blank");
+});
+
+})
+}else{
+
+}
+})
+})
+
 
 
 
 
 //Lista Inicial de imóveis
+var itens= 0
  var listG = document.getElementById('listGeral');
 listG.innerHTML = ''
 var firebaseConfigure = {
@@ -24,7 +233,8 @@ produtosRef.get().then((querySnapshot) => {
 querySnapshot.forEach(doc => {
 var doc = doc.data();
 
-var itens=querySnapshot.size
+if(doc.EstadoAT==''){
+ itens++
 // Criando os elementos
 var li = document.createElement('div');
 var div1 = document.createElement('div');
@@ -205,6 +415,9 @@ window.open(whatsappLink, "_blank");
 });
 
 })
+}else{
+
+}
 })
 })
 
@@ -262,7 +475,7 @@ measurementId: "G-K330CH24NV"
 };
 firebase.initializeApp(firebaseConfig);
 var db = firebase.firestore()
-var produtosRef = db.collection(`Cadastros`);
+var produtosRef = db.collection(`${select1}`);
 produtosRef.get().then((querySnapshot) => {
 querySnapshot.forEach(doc => {
 var doc = doc.data();
@@ -276,6 +489,7 @@ removerAcentos(resutPesq.toLowerCase()) === removerAcentos(doc.Bairro?.toLowerCa
 removerAcentos(resutPesq.toLowerCase()) === removerAcentos(doc.Rua?.toLowerCase())||
 select1==doc.Lista1 && select2=='Compra ou Locação'||select1==doc.Lista1 && select2==doc.Lista2||select1==doc.Lista1 && doc.Lista2=='Compra ou Locação'
 ) {
+    if(doc.EstadoAT==''){
 itens++
 // Criando os elementos
 var li = document.createElement('div');
@@ -456,16 +670,16 @@ window.open(whatsappLink, "_blank");
 });
 
 })
+ }else{
 
+ }
 } else{
 
 }
 })
 
 })
-
 }
-
 
 //Abrir Pesquisa
 document.getElementById('labelPesquisa').style.display = 'none'
@@ -484,10 +698,7 @@ function Pesquisar() {
         IText.className = 'fa-solid fa-magnifying-glass';
         sessionStorage.setItem('ValorPesquisa','')
         document.getElementById('inputPesquisa').value='';
-        
     }
-
-
 }
 //Menu Lateral
 sessionStorage.setItem('MENULateral', '')
@@ -565,7 +776,7 @@ Swal.fire({
 title: ``,
 text: `Aguarde...`,
 background: 'rgba(255, 255, 255, 0)', // Cor de fundo
-color: '#ff02ea', // Cor do texto
+color: '#01d9ffff', // Cor do texto
 allowOutsideClick: false,
 showConfirmButton: false,
 customClass: {
@@ -602,7 +813,6 @@ Swal.close()
 }
 
 //Alerta iniciar
-
 function AlertaInicial(){
 Swal.fire({
 title: ``,
@@ -610,7 +820,7 @@ text: `Aguarde...`,
 html:` <h2>Bem Vindo(a)!</h2>
 `,
 background: 'rgba(255, 255, 255, 0)', // Cor de fundo
-color: '#ff02ea', // Cor do texto
+color: '#00c3ffff', // Cor do texto
 allowOutsideClick: false,
 showConfirmButton: false,
 customClass: {
