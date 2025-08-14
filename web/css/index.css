@@ -4,7 +4,7 @@ padding: 0%;
 }
 body{
 font-family: Verdana, Geneva, Tahoma, sans-serif;
-background-color: rgb(252, 235, 255);
+background-color: rgb(100, 74, 98);
 color: aliceblue;
 }
 #div_Geral{
@@ -262,7 +262,9 @@ border: 2px solid rgb(68, 68, 68);
 border-radius: 10px;
 box-shadow: 0 10px 20px rgba(0, 0, 0, 0.514);
 margin-bottom: 50px;
-margin-right: 10px;
+margin-right: 7px;
+margin-left: 7px;
+
 }
 #listPesq img, #listGeral img, #listDestaque img{
 width: 100%;
