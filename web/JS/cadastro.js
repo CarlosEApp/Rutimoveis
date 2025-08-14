@@ -3,36 +3,34 @@
 
 //fecher listas excluidos, vendidos e suspensos
 function Fechar_ex(){
-    var list = document.getElementById('excluidosList');
+var list = document.getElementById('excluidosList');
 list.innerHTML = ''
 document.getElementById('div_excluidos').style.display='none'
 };
 function Fechar_vendidos(){
-    var list2 = document.getElementById('vendidosList');
+var list2 = document.getElementById('vendidosList');
 list2.innerHTML = ''
 document.getElementById('div_vendidos').style.display='none'
 };
 function Fechar_suspensos(){
-    var list3 = document.getElementById('esuspensosList');
+var list3 = document.getElementById('esuspensosList');
 list3.innerHTML = ''
 document.getElementById('div_suspenso').style.display='none'
 };
 
 var exclian=setInterval(function(){
-    var resp1=document.getElementById('div_excluidos').style.display;
-    var resp2=document.getElementById('div_vendidos').style.display;
-    var resp3=document.getElementById('div_suspenso').style.display;
-    if(resp1=='none'&&resp2=='none'&&resp3=="none"){
-     var classes = document.getElementById('I_movel');
-     document.getElementById('div_vendasEX_flex').style.display = 'none';
-    classes.className = 'fa-solid fa-eye'
-    }
+var resp1=document.getElementById('div_excluidos').style.display;
+var resp2=document.getElementById('div_vendidos').style.display;
+var resp3=document.getElementById('div_suspenso').style.display;
+if(resp1=='none'&&resp2=='none'&&resp3=="none"){
+var classes = document.getElementById('I_movel');
+document.getElementById('div_vendasEX_flex').style.display = 'none';
+classes.className = 'fa-solid fa-eye'
+}
 },200)
-
-
 // botão div imóvel suspenso ou vendido. div abrerta ou fechada
 function selEAT() {
- var data = sessionStorage.getItem('data')
+var data = sessionStorage.getItem('data')
 var hora = sessionStorage.getItem('hora')
 var resp = document.getElementById('estadoAimóvel').value;
 if (resp == 'Suspenso' || resp == 'Vendido') {
@@ -45,7 +43,6 @@ document.getElementById('dadaETA').value='';
 document.getElementById('horaETA').value='';
 }
 }
-
 // botão abre e fecha Imoves EXcluidos
 document.getElementById('div_vendasEX_flex').style.display = 'none';
 function ImoveisEX() {
@@ -109,7 +106,6 @@ swal(`${doc.Titulo}`, `Valor Venda: ${doc.CompraV}\nValor Locação: ${doc.Loca�
 })
 })
 }
-
 //imoveis Vendidos
 var list2 = document.getElementById('vendidosList');
 list2.innerHTML = ''
@@ -136,14 +132,12 @@ var lbl1 = document.createElement('label');
 var lbl2 = document.createElement('label');
 var br1 = document.createElement('br');
 var br2 = document.createElement('br');
-
 img.id = 'imgg';
 li.id = 'li_';
 lbl1.id = 'lbl_'
 lbl2.id = 'lbl_2'
 lbl1.textContent = doc.Titulo;
 lbl2.textContent = doc.Código;
-
 img.src = doc.IMG1
 li.appendChild(img)
 li.appendChild(lbl1)
@@ -151,41 +145,16 @@ li.appendChild(br1)
 li.appendChild(lbl2)
 list2.appendChild(li)
 li.addEventListener('click', function() {
-    Swal.fire({
- title: `Edite ou exclua este imóvel!`,
- html: `
-     <div id='divWhats'>
-     <p>Copie:</p><label id='Código'></label> </div>
-     <br><br>    
-     <button id="btn_edite" title="">Editar</button>      
-     <br><br>
-     <button id="btn_excluir" title="">Excluir</button>        
-     <br><br><br><button id='sair'>Sair</button>
-     `,
-    showCancelButton: false,
-    showConfirmButton: false,
-    customClass: {
-    popup: 'my-custom_CadExCód' // Aplica a classe CSS personalizada
-  },
-    didOpen: () => {
-    document.body.style.paddingRight = '0px';
-  }
-});
-document.getElementById('Código').innerHTML=doc.Código
- document.getElementById('sair').addEventListener('click',function(){
- Swal.close()
- });
-  document.getElementById('btn_excluir').addEventListener('click',function(){
 Swal.fire({
-title: `Excluir Arquivo!`,
-html: ` <div  class="menu-container">
-<p>Digite o código e click em Excluir. <br> A exclusão não podera ser desfeita!</p>
-<br>
-<input id='inputEx' type='text' placeHolder='Digite código...'>
+title: `Edite ou exclua este imóvel!`,
+html: `
+<div id='divWhats'>
+<p>Copie:</p><label id='Código'></label> </div>
+<br><br>    
+<button id="btn_edite" title="">Editar</button>      
 <br><br>
-<button id="SwalExCód" title="">Excluir <i class="fa-solid fa-trash"></i></button>
-<br><br>  <button id='Sair' class='cancelar'> Sair </button>
-</div>
+<button id="btn_excluir" title="">Excluir</button>        
+<br><br><br><button id='sair'>Sair</button>
 `,
 showCancelButton: false,
 showConfirmButton: false,
@@ -196,243 +165,11 @@ didOpen: () => {
 document.body.style.paddingRight = '0px';
 }
 });
-document.getElementById('Sair').addEventListener('click', function() {
-Swal.close('click')
-});
-document.getElementById('SwalExCód').addEventListener('click', function() {
- var data = sessionStorage.getItem('data')
-var hora = sessionStorage.getItem('hora')
-var respC = doc.Código;
-var respINP = document.getElementById('inputEx').value;
-if (respC == respINP) {
-var dbex = firebase.firestore();
-var documento = doc.Código;
-var titulo = doc.Titulo;
-var bairro = doc.Bairro;
-var rua = doc.Rua;
-var numero_ = doc.Numero
-var cidade = doc.Cidade;
-var valorA = doc.ValorA;
-var valorc = doc.ValorC;
-var img = doc.IMG1;
-var dex = firebase.firestore();
-dex.collection('CódigosExcluidos').doc(doc.Código).set({
-Documento: documento,
-Titulo: titulo,
-IMG: img,
-Rua: rua,
-Bairro: bairro,
-Cidade: cidade,
-CompraV: valorc,
-LocaçãoV: valorA,
-Data: data,
-Hora: hora,
-Numero: numero_,
-});
-dbex.collection(`${doc.Lista1}`).doc(respINP).delete();
-setTimeout(function() {
-var db = firebase.firestore();
-db.collection(`Cadastros`).doc(respC).delete();
-}, 1200)
-Swal.fire({
-title: `Deletando Arquivos... `,
-text: `Aguarde...`,
-allowOutsideClick: false,
-showConfirmButton: false,
-didOpen: () => {
-Swal.showLoading();
-document.body.style.paddingRight = '0px';
-}
-})
-setTimeout(function() {
-Swal.fire('Excluido!', 'Cadastro excluido com sucesso!', 'success')
-var list = document.getElementById('list');
-list.innerHTML = '';
-window.location.reload()
-}, 4000)
-}
-})
-
- });
-
-document.getElementById('btn_edite').addEventListener('click',function(){
-
-document.getElementById('titulo').value = doc.Titulo; //1
-document.getElementById('cidade').value = doc.Cidade; //2
-document.getElementById('rua').value = doc.Rua; //3
-document.getElementById('bairro').value = doc.Bairro; //4
-document.getElementById('selectListId_moradia').value = doc.Lista1; //5
-document.getElementById('select_venda').value = doc.Lista2; //6
-document.getElementById('valorLoc').value = doc.ValorA; //7
-document.getElementById('valor').value = doc.ValorC; //8
-document.getElementById('inputCodigo').value = doc.Código; //9
-document.getElementById('numero').value = doc.Numero; //10
-document.getElementById('input_UF').value = doc.UF; //11
-document.getElementById('input_cep').value = doc.CEP; //12
-document.getElementById('desconto').value = doc.Desconto; //13
-document.getElementById('valorCond').value = doc.VCond; //14
-document.getElementById('valorIPTU').value = doc.Viptu; //15
-document.getElementById('Area_metragen').value = doc.AreaM; //16
-document.getElementById('Quint_quant').value = doc.Quintal; //17
-document.getElementById('Quint_metragen').value = doc.QuintalM; //18
-document.getElementById('salas_quant').value = doc.Sala; //19
-document.getElementById('salas_metragen').value = doc.SalaM; //20
-document.getElementById('varanda_quant').value = doc.Varanda; //21
-document.getElementById('Quarto_quant').value = doc.Quartos; //22
-document.getElementById('suite_quant').value = doc.Suite; //23
-document.getElementById('banheiro_quant').value = doc.Banheiro; //24
-document.getElementById('piscinas_quant').value = doc.Piscina; //25
-document.getElementById('piscinas_metragen').value = doc.PiscinaM; //26
-document.getElementById('playg_quant').value = doc.Playg; //27
-document.getElementById('playg_metragen').value = doc.PlaygM; //28
-document.getElementById('andar_quant').value = doc.Andares; //29
-document.getElementById('vagas_quant').value = doc.Garagem; //30
-document.getElementById('duplex').value = doc.Duplex; //31
-document.getElementById('Triplex').value = doc.Triplex; //32
-document.getElementById('nome_proprietario').value = doc.NomeP; //33
-document.getElementById('Tel_proprietario').value = doc.TelP; //34
-document.getElementById('cpf_proprietario').value = doc.CpfP; //35
-document.getElementById('endereço').value = doc.End; //36
-document.getElementById('estadoAimóvel').value = doc.EstadoAT; //65
-if (doc.EATdata && doc.EstadoAT) {
-var result = doc.EATdata.split('-');
-var um = result[0]
-var dois = result[1]
-document.getElementById('dadaETA').value = um; //66
-document.getElementById('horaETA').value = dois; //67
-document.getElementById('div_ETA').style.display = 'block'
-} else {
-document.getElementById('dadaETA').value = ''; //66
-document.getElementById('horaETA').value = ''; //67
-document.getElementById('div_ETA').style.display = 'none'
-}
-//IMGs
-document.getElementById('imgUm').src = doc.IMG1
-document.getElementById('inputImgUmTitulo').value = doc.Img1T; //39
-document.getElementById('inputImgUmMetros').value = doc.Img1M; //40
-
-document.getElementById('imgDois').src = doc.IMG2; //41
-document.getElementById('inputImgDoisTitulo').value = doc.Img2T; //43
-document.getElementById('inputImgDoisMetros').value = doc.Img2M; //44
-
-document.getElementById('imgTres').src = doc.IMG3; //45
-document.getElementById('inputImgTresTitulo').value = doc.Img3T; //47
-document.getElementById('inputImgTresMetros').value = doc.Img3M; //48
-
-document.getElementById('imgQuatro').src = doc.IMG4; //49
-document.getElementById('inputImgQuatroTitulo').value = doc.Img4T; //51
-document.getElementById('inputImgQuatroMetros').value = doc.Img4M; //52
-
-document.getElementById('imgCinco').src = doc.IMG5; //53
-document.getElementById('inputImgCincoTitulo').value = doc.Img5T; //55
-document.getElementById('inputImgCincoMetros').value = doc.Img5M; //56
-
-document.getElementById('imgSeis').src = doc.IMG6; //57
-document.getElementById('inputImgSeisTitulo').value = doc.Img6T; //59
-document.getElementById('inputImgSeisMetros').value = doc.Img6M; //60
-
-document.getElementById('imgSete').src = doc.IMG7; //61
-document.getElementById('inputImgSeteTitulo').value = doc.Img7T; //63
-document.getElementById('inputImgSeteMetros').value = doc.Img7M; //64
-var editedata = doc.EditeData
-if (!editedata || editedata == '') {
-var editedata = `${doc.Data},${doc.Hora}`
-sessionStorage.setItem('Editecad', editedata)
-} else {
-sessionStorage.setItem('Editecad', doc.EditeData)
-}
-var suspenso = doc.Suspenso
-if (!suspenso || suspenso == '') {
-sessionStorage.setItem('Suspenso', '')
-} else {
-sessionStorage.setItem('Suspenso', suspenso)
-}
-document.getElementById('selectlista').value = ''
-var cad = document.getElementById('Icad');
-document.getElementById('listadeCad').style.display = 'none'
-cad.className = 'fa-solid fa-eye';
-document.getElementById('cadUmFlex').style.display = 'block'
-document.getElementById('p1').style.color = 'rgb(255, 255, 255)'
-document.getElementById('p2').style.color = 'rgb(255, 255, 255)'
-document.getElementById('p3').style.color = 'rgb(255, 255, 255)'
-document.getElementById('p4').style.color = 'rgb(255, 255, 255)'
-document.getElementById('p5').style.color = 'rgb(255, 255, 255)'
-document.getElementById('p6').style.color = 'rgb(255, 255, 255)'
-document.getElementById('p7').style.color = 'rgb(255, 255, 255)'
-document.getElementById('p8').style.color = 'rgb(255, 255, 255)'
-ImoveisEX()
- });
-});
-} else {
-}
-})
-})
- 
-//imóveis suspensos
-var list3 = document.getElementById('esuspensosList');
-list3.innerHTML = ''
-var firebaseConfige = {
-apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
-authDomain: "rutimoveis-bc114.firebaseapp.com",
-projectId: "rutimoveis-bc114",
-storageBucket: "rutimoveis-bc114.firebasestorage.app",
-messagingSenderId: "457038463744",
-appId: "1:457038463744:web:e357570db0a9a6ce3529e5",
-measurementId: "G-K330CH24NV"
-};
-firebase.initializeApp(firebaseConfige);
-var db = firebase.firestore()
-var produtosRef = db.collection(`Cadastros`);
-produtosRef.get().then((querySnapshot) => {
-querySnapshot.forEach(doc => {
-var doc = doc.data();
-if (doc.EstadoAT == 'Suspenso') {
-var itens = querySnapshot.size;
-var li = document.createElement('ul');
-var img = document.createElement('img');
-var lbl1 = document.createElement('label');
-var lbl2 = document.createElement('label');
-var br1 = document.createElement('br');
-var br2 = document.createElement('br');
-img.id = 'imgg';
-li.id = 'li_';
-lbl1.id = 'lbl_'
-lbl2.id = 'lbl_2'
-lbl1.textContent = doc.Titulo;
-lbl2.textContent = doc.Código;
-img.src = doc.IMG1
-li.appendChild(img)
-li.appendChild(lbl1)
-li.appendChild(br1)
-li.appendChild(lbl2)
-list3.appendChild(li)
-li.addEventListener('click', function() {
-    
-   Swal.fire({
- title: `Edite ou exclua este imóvel!`,
- html: `
-     <div id='divWhats'>
-      <p>Copie:</p><label id='Código'></label> </div>
-     <br><br>    
-     <button id="btn_edite" title="">Editar</button>      
-     <br><br>
-     <button id="btn_excluir" title="">Excluir</button>        
-     <br><br><br><button id='sair'>Sair</button>
-     `,
-    showCancelButton: false,
-    showConfirmButton: false,
-    customClass: {
-    popup: 'my-custom_CadExCód' // Aplica a classe CSS personalizada
-  },
-    didOpen: () => {
-    document.body.style.paddingRight = '0px';
-  }
-});
 document.getElementById('Código').innerHTML=doc.Código
- document.getElementById('sair').addEventListener('click',function(){
- Swal.close()
- });
-  document.getElementById('btn_excluir').addEventListener('click',function(){
+document.getElementById('sair').addEventListener('click',function(){
+Swal.close()
+});
+document.getElementById('btn_excluir').addEventListener('click',function(){
 Swal.fire({
 title: `Excluir Arquivo!`,
 html: ` <div  class="menu-container">
@@ -509,9 +246,7 @@ window.location.reload()
 }, 4000)
 }
 })
-
- });
-
+});
 document.getElementById('btn_edite').addEventListener('click',function(){
 document.getElementById('titulo').value = doc.Titulo; //1
 document.getElementById('cidade').value = doc.Cidade; //2
@@ -566,27 +301,267 @@ document.getElementById('div_ETA').style.display = 'none'
 document.getElementById('imgUm').src = doc.IMG1
 document.getElementById('inputImgUmTitulo').value = doc.Img1T; //39
 document.getElementById('inputImgUmMetros').value = doc.Img1M; //40
-
 document.getElementById('imgDois').src = doc.IMG2; //41
 document.getElementById('inputImgDoisTitulo').value = doc.Img2T; //43
 document.getElementById('inputImgDoisMetros').value = doc.Img2M; //44
-
 document.getElementById('imgTres').src = doc.IMG3; //45
 document.getElementById('inputImgTresTitulo').value = doc.Img3T; //47
 document.getElementById('inputImgTresMetros').value = doc.Img3M; //48
-
 document.getElementById('imgQuatro').src = doc.IMG4; //49
 document.getElementById('inputImgQuatroTitulo').value = doc.Img4T; //51
 document.getElementById('inputImgQuatroMetros').value = doc.Img4M; //52
-
 document.getElementById('imgCinco').src = doc.IMG5; //53
 document.getElementById('inputImgCincoTitulo').value = doc.Img5T; //55
 document.getElementById('inputImgCincoMetros').value = doc.Img5M; //56
-
 document.getElementById('imgSeis').src = doc.IMG6; //57
 document.getElementById('inputImgSeisTitulo').value = doc.Img6T; //59
 document.getElementById('inputImgSeisMetros').value = doc.Img6M; //60
-
+document.getElementById('imgSete').src = doc.IMG7; //61
+document.getElementById('inputImgSeteTitulo').value = doc.Img7T; //63
+document.getElementById('inputImgSeteMetros').value = doc.Img7M; //64
+var editedata = doc.EditeData
+if (!editedata || editedata == '') {
+var editedata = `${doc.Data},${doc.Hora}`
+sessionStorage.setItem('Editecad', editedata)
+} else {
+sessionStorage.setItem('Editecad', doc.EditeData)
+}
+var suspenso = doc.Suspenso
+if (!suspenso || suspenso == '') {
+sessionStorage.setItem('Suspenso', '')
+} else {
+sessionStorage.setItem('Suspenso', suspenso)
+}
+document.getElementById('selectlista').value = ''
+var cad = document.getElementById('Icad');
+document.getElementById('listadeCad').style.display = 'none'
+cad.className = 'fa-solid fa-eye';
+document.getElementById('cadUmFlex').style.display = 'block'
+document.getElementById('p1').style.color = 'rgb(255, 255, 255)'
+document.getElementById('p2').style.color = 'rgb(255, 255, 255)'
+document.getElementById('p3').style.color = 'rgb(255, 255, 255)'
+document.getElementById('p4').style.color = 'rgb(255, 255, 255)'
+document.getElementById('p5').style.color = 'rgb(255, 255, 255)'
+document.getElementById('p6').style.color = 'rgb(255, 255, 255)'
+document.getElementById('p7').style.color = 'rgb(255, 255, 255)'
+document.getElementById('p8').style.color = 'rgb(255, 255, 255)'
+ImoveisEX()
+});
+});
+} else {
+}
+})
+})
+//imóveis suspensos
+var list3 = document.getElementById('esuspensosList');
+list3.innerHTML = ''
+var firebaseConfige = {
+apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
+authDomain: "rutimoveis-bc114.firebaseapp.com",
+projectId: "rutimoveis-bc114",
+storageBucket: "rutimoveis-bc114.firebasestorage.app",
+messagingSenderId: "457038463744",
+appId: "1:457038463744:web:e357570db0a9a6ce3529e5",
+measurementId: "G-K330CH24NV"
+};
+firebase.initializeApp(firebaseConfige);
+var db = firebase.firestore()
+var produtosRef = db.collection(`Cadastros`);
+produtosRef.get().then((querySnapshot) => {
+querySnapshot.forEach(doc => {
+var doc = doc.data();
+if (doc.EstadoAT == 'Suspenso') {
+var itens = querySnapshot.size;
+var li = document.createElement('ul');
+var img = document.createElement('img');
+var lbl1 = document.createElement('label');
+var lbl2 = document.createElement('label');
+var br1 = document.createElement('br');
+var br2 = document.createElement('br');
+img.id = 'imgg';
+li.id = 'li_';
+lbl1.id = 'lbl_'
+lbl2.id = 'lbl_2'
+lbl1.textContent = doc.Titulo;
+lbl2.textContent = doc.Código;
+img.src = doc.IMG1
+li.appendChild(img)
+li.appendChild(lbl1)
+li.appendChild(br1)
+li.appendChild(lbl2)
+list3.appendChild(li)
+li.addEventListener('click', function() {
+Swal.fire({
+title: `Edite ou exclua este imóvel!`,
+html: `
+<div id='divWhats'>
+<p>Copie:</p><label id='Código'></label> </div>
+<br><br>    
+<button id="btn_edite" title="">Editar</button>      
+<br><br>
+<button id="btn_excluir" title="">Excluir</button>        
+<br><br><br><button id='sair'>Sair</button>
+`,
+showCancelButton: false,
+showConfirmButton: false,
+customClass: {
+popup: 'my-custom_CadExCód' // Aplica a classe CSS personalizada
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';
+}
+});
+document.getElementById('Código').innerHTML=doc.Código
+document.getElementById('sair').addEventListener('click',function(){
+Swal.close()
+});
+document.getElementById('btn_excluir').addEventListener('click',function(){
+Swal.fire({
+title: `Excluir Arquivo!`,
+html: ` <div  class="menu-container">
+<p>Digite o código e click em Excluir. <br> A exclusão não podera ser desfeita!</p>
+<br>
+<input id='inputEx' type='text' placeHolder='Digite código...'>
+<br><br>
+<button id="SwalExCód" title="">Excluir <i class="fa-solid fa-trash"></i></button>
+<br><br>  <button id='Sair' class='cancelar'> Sair </button>
+</div>
+`,
+showCancelButton: false,
+showConfirmButton: false,
+customClass: {
+popup: 'my-custom_CadExCód' // Aplica a classe CSS personalizada
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';
+}
+});
+document.getElementById('Sair').addEventListener('click', function() {
+Swal.close('click')
+});
+document.getElementById('SwalExCód').addEventListener('click', function() {
+var data = sessionStorage.getItem('data')
+var hora = sessionStorage.getItem('hora')
+var respC = doc.Código;
+var respINP = document.getElementById('inputEx').value;
+if (respC == respINP) {
+var dbex = firebase.firestore();
+var documento = doc.Código;
+var titulo = doc.Titulo;
+var bairro = doc.Bairro;
+var rua = doc.Rua;
+var numero_ = doc.Numero
+var cidade = doc.Cidade;
+var valorA = doc.ValorA;
+var valorc = doc.ValorC;
+var img = doc.IMG1;
+var dex = firebase.firestore();
+dex.collection('CódigosExcluidos').doc(doc.Código).set({
+Documento: documento,
+Titulo: titulo,
+IMG: img,
+Rua: rua,
+Bairro: bairro,
+Cidade: cidade,
+CompraV: valorc,
+LocaçãoV: valorA,
+Data: data,
+Hora: hora,
+Numero: numero_,
+});
+dbex.collection(`${doc.Lista1}`).doc(respINP).delete();
+setTimeout(function() {
+var db = firebase.firestore();
+db.collection(`Cadastros`).doc(respC).delete();
+}, 1200)
+Swal.fire({
+title: `Deletando Arquivos... `,
+text: `Aguarde...`,
+allowOutsideClick: false,
+showConfirmButton: false,
+didOpen: () => {
+Swal.showLoading();
+document.body.style.paddingRight = '0px';
+}
+})
+setTimeout(function() {
+Swal.fire('Excluido!', 'Cadastro excluido com sucesso!', 'success')
+var list = document.getElementById('list');
+list.innerHTML = '';
+window.location.reload()
+}, 4000)
+}
+})
+});
+document.getElementById('btn_edite').addEventListener('click',function(){
+document.getElementById('titulo').value = doc.Titulo; //1
+document.getElementById('cidade').value = doc.Cidade; //2
+document.getElementById('rua').value = doc.Rua; //3
+document.getElementById('bairro').value = doc.Bairro; //4
+document.getElementById('selectListId_moradia').value = doc.Lista1; //5
+document.getElementById('select_venda').value = doc.Lista2; //6
+document.getElementById('valorLoc').value = doc.ValorA; //7
+document.getElementById('valor').value = doc.ValorC; //8
+document.getElementById('inputCodigo').value = doc.Código; //9
+document.getElementById('numero').value = doc.Numero; //10
+document.getElementById('input_UF').value = doc.UF; //11
+document.getElementById('input_cep').value = doc.CEP; //12
+document.getElementById('desconto').value = doc.Desconto; //13
+document.getElementById('valorCond').value = doc.VCond; //14
+document.getElementById('valorIPTU').value = doc.Viptu; //15
+document.getElementById('Area_metragen').value = doc.AreaM; //16
+document.getElementById('Quint_quant').value = doc.Quintal; //17
+document.getElementById('Quint_metragen').value = doc.QuintalM; //18
+document.getElementById('salas_quant').value = doc.Sala; //19
+document.getElementById('salas_metragen').value = doc.SalaM; //20
+document.getElementById('varanda_quant').value = doc.Varanda; //21
+document.getElementById('Quarto_quant').value = doc.Quartos; //22
+document.getElementById('suite_quant').value = doc.Suite; //23
+document.getElementById('banheiro_quant').value = doc.Banheiro; //24
+document.getElementById('piscinas_quant').value = doc.Piscina; //25
+document.getElementById('piscinas_metragen').value = doc.PiscinaM; //26
+document.getElementById('playg_quant').value = doc.Playg; //27
+document.getElementById('playg_metragen').value = doc.PlaygM; //28
+document.getElementById('andar_quant').value = doc.Andares; //29
+document.getElementById('vagas_quant').value = doc.Garagem; //30
+document.getElementById('duplex').value = doc.Duplex; //31
+document.getElementById('Triplex').value = doc.Triplex; //32
+document.getElementById('nome_proprietario').value = doc.NomeP; //33
+document.getElementById('Tel_proprietario').value = doc.TelP; //34
+document.getElementById('cpf_proprietario').value = doc.CpfP; //35
+document.getElementById('endereço').value = doc.End; //36
+document.getElementById('estadoAimóvel').value = doc.EstadoAT; //65
+if (doc.EATdata && doc.EstadoAT) {
+var result = doc.EATdata.split('-');
+var um = result[0]
+var dois = result[1]
+document.getElementById('dadaETA').value = um; //66
+document.getElementById('horaETA').value = dois; //67
+document.getElementById('div_ETA').style.display = 'block'
+} else {
+document.getElementById('dadaETA').value = ''; //66
+document.getElementById('horaETA').value = ''; //67
+document.getElementById('div_ETA').style.display = 'none'
+}
+//IMGs
+document.getElementById('imgUm').src = doc.IMG1
+document.getElementById('inputImgUmTitulo').value = doc.Img1T; //39
+document.getElementById('inputImgUmMetros').value = doc.Img1M; //40
+document.getElementById('imgDois').src = doc.IMG2; //41
+document.getElementById('inputImgDoisTitulo').value = doc.Img2T; //43
+document.getElementById('inputImgDoisMetros').value = doc.Img2M; //44
+document.getElementById('imgTres').src = doc.IMG3; //45
+document.getElementById('inputImgTresTitulo').value = doc.Img3T; //47
+document.getElementById('inputImgTresMetros').value = doc.Img3M; //48
+document.getElementById('imgQuatro').src = doc.IMG4; //49
+document.getElementById('inputImgQuatroTitulo').value = doc.Img4T; //51
+document.getElementById('inputImgQuatroMetros').value = doc.Img4M; //52
+document.getElementById('imgCinco').src = doc.IMG5; //53
+document.getElementById('inputImgCincoTitulo').value = doc.Img5T; //55
+document.getElementById('inputImgCincoMetros').value = doc.Img5M; //56
+document.getElementById('imgSeis').src = doc.IMG6; //57
+document.getElementById('inputImgSeisTitulo').value = doc.Img6T; //59
+document.getElementById('inputImgSeisMetros').value = doc.Img6M; //60
 document.getElementById('imgSete').src = doc.IMG7; //61
 document.getElementById('inputImgSeteTitulo').value = doc.Img7T; //63
 document.getElementById('inputImgSeteMetros').value = doc.Img7M; //64
@@ -624,7 +599,6 @@ ImoveisEX()
 })
 })
 }
-
 //fechar cadastro
 function Ssair() {
 FecharCad()
@@ -632,7 +606,6 @@ FecharCad()
 document.getElementById('listadeCad').style.display = 'none'
 //imóveis Cadastrados
 function Cadastrados() {
- 
 document.getElementById('selectlista').value = ''
 var cad = document.getElementById('Icad');
 var list = document.getElementById('list');
@@ -660,7 +633,7 @@ document.getElementById('lbl_itens').innerHTML = `Total de Imóveis = ${itensL1}
 }, 2000)
 }
 function selectlista() {
-   var itens= 0
+var itens= 0
 document.getElementById('lbl_itens').style.display = 'none'
 sessionStorage.setItem('itensL1', '')
 var resp = document.getElementById('selectlista').value;
@@ -716,7 +689,6 @@ label3.textContent = ''
 label3.className = 'fa-solid fa-pen-to-square'
 label4.textContent = ''
 label4.className = 'fa-solid fa-trash';
-
 div2.appendChild(img);
 div3.appendChild(label1);
 div3.appendChild(br1);
@@ -735,7 +707,6 @@ img.addEventListener('click', function() {
 var url_ = doc.IMG1;
 if (url_.includes("Rutimoveis")) {
 var imagem = '../src/Rutimoveis img.png';
-
 } else {
 var imagem = doc.IMG1;
 }
@@ -921,7 +892,6 @@ document.getElementById('p8').style.color = 'rgb(255, 255, 255)'
 });
 }
 })
-
 })
 }
 //Salvar cadastro
@@ -944,7 +914,6 @@ window.location.reload()
 }, 5000)
 };
 sessionStorage.setItem('Editecad', '')
-
 function salvarCad() {
 var titulo = document.getElementById('titulo').value; //1
 var cidade = document.getElementById('cidade').value; //2
@@ -1011,7 +980,6 @@ var img7M = document.getElementById('inputImgSeteMetros').value; //64
 var data = sessionStorage.getItem('data')
 var hora = sessionStorage.getItem('hora')
 var editedata = sessionStorage.getItem('Editecad')
-
 var firebaseConfig = {
 apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
 authDomain: "rutimoveis-bc114.firebaseapp.com",
@@ -1184,7 +1152,6 @@ appId: "1:457038463744:web:e357570db0a9a6ce3529e5",
 measurementId: "G-K330CH24NV"
 };
 firebase.initializeApp(firebaseConfigure);
-
 var fileButton = document.getElementById('filesUm');
 fileButton.addEventListener('change', function(e) {
 var file = e.target.files[0];
@@ -1203,7 +1170,6 @@ i = 1;
 var elem = document.getElementById("myBarIMG1");
 var width = 1;
 var id = setInterval(frame, 30);
-
 function frame() {
 if (width >= 100) {
 clearInterval(id);
@@ -1226,7 +1192,6 @@ elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
 })
 })
 };
-
 function IMG02() {
 document.getElementById('filesDois').click();
 var código = document.getElementById('inputCodigo').value;
@@ -1256,7 +1221,6 @@ i = 1;
 var elem = document.getElementById("myBarIMG2");
 var width = 1;
 var id = setInterval(frame, 30);
-
 function frame() {
 if (width >= 100) {
 clearInterval(id);
@@ -1279,7 +1243,6 @@ elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
 })
 })
 };
-
 function IMG03() {
 document.getElementById('filesTres').click();
 var código = document.getElementById('inputCodigo').value;
@@ -1332,7 +1295,6 @@ elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
 })
 })
 };
-
 function IMG04() {
 document.getElementById('filesQuatro').click();
 var código = document.getElementById('inputCodigo').value;
@@ -1385,7 +1347,6 @@ elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
 })
 })
 };
-
 function IMG05() {
 document.getElementById('filesCinco').click();
 var código = document.getElementById('inputCodigo').value;
@@ -1438,7 +1399,6 @@ elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
 })
 })
 };
-
 function IMG06() {
 document.getElementById('filesSeis').click();
 var código = document.getElementById('inputCodigo').value;
@@ -1491,7 +1451,6 @@ elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
 })
 })
 };
-
 function IMG07() {
 document.getElementById('filesSete').click();
 var código = document.getElementById('inputCodigo').value;
@@ -1544,7 +1503,6 @@ elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
 })
 })
 };
-
 function LimparC() {
 sessionStorage.setItem('Editecad', '')
 document.getElementById('inputCodigo').value = ''; //00
@@ -1708,7 +1666,6 @@ let formattedValue = value.replace(/^(\d{2})(\d)/, '($1) $2')
 
 e.target.value = formattedValue;
 });
-
 function formatarCPF(cpf) {
 cpf = cpf.replace(/\D/g, ""); // Remove todos os caracteres não numéricos
 cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
@@ -1716,18 +1673,15 @@ cpf = cpf.replace(/(\d{3})(\d)/, "$1.$2");
 cpf = cpf.replace(/(\d{3})(\d{1,2})$/, "$1-$2");
 return cpf;
 }
-
 function aplicarMascaraCPF(event) {
 let input = event.target;
 input.value = formatarCPF(input.value);
 };
-
 function formatarCEP(cep) {
 cep = cep.replace(/\D/g, ""); // Remove caracteres não numéricos
 cep = cep.replace(/(\d{5})(\d)/, "$1-$2"); // Adiciona o hífen no formato XXXXX-XXX
 return cep;
 }
-
 function aplicarMascaraCEP(event_) {
 event_.target.value = formatarCEP(event_.target.value);
 }
@@ -1745,7 +1699,6 @@ document.getElementById('a_cad2').click()
 sessionStorage.setItem('SessiCodigo', ``)
 document.getElementById('cadUmFlex').style.display = 'None'
 document.getElementById('cadUmFlex2').style.display = 'none'
-
 function NovoCad() {
 document.getElementById('div_vendasEX_flex').style.display = 'none'
 document.getElementById('selectlista').value = ''

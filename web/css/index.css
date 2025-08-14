@@ -192,7 +192,7 @@ background-color: rgba(175, 175, 175, 0);
 }
 #labelPesquisa{
 margin-left: 28px;
-font-size: clamp(0.600rem, 1vw + 0.5rem, 0.850rem);
+font-size: clamp(0.850rem, 1vw + 0.5rem, 0.950rem);
 color: rgb(212, 211, 211);
 border-radius: 10px;
 font-family: Verdana, Geneva, Tahoma, sans-serif;
