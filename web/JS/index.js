@@ -782,31 +782,47 @@ measurementId: "G-K330CH24NV"
 };
 firebase.initializeApp(firebaseConfig);
 var psw = firebase.firestore()
-psw.collection('Password')
+psw.collection('Password').doc('passwords').get().then((doc)=>{
+    var data= doc.data()
+     sessionStorage.setItem('PassW01',data.Senha);
+     sessionStorage.setItem('PassW02',data.Master1);
+       sessionStorage.setItem('PassW03',data.Master2);
+ 
+})
 
 //Botão Admin
 function ADMIN() {
 
      Swal.fire({
-        title: `Administração! <i class="fa-sharp-duotone fa-solid fa-lock"></i>`,
+        title: ``,
         html: `
-         <br>
-         <label>Digite Password:<br>
+         <label>Password administração! <i class="fa-sharp-duotone fa-solid fa-lock"></i><br><br>
          <input id='inputSwalAdimin' type='password' placeholder='Password'><i id='visao' class="fa-solid fa-eye"></i>
          <br> <br>  
-         <button id="enter" title="start">Click </button>
-        <br><br><br><button id='sair_'>Sair,Cancelar</button>
+         <button id="enter" title="start">Enter </button>  <button id='sair_'>Cancelar</button>
        `,
        showCancelButton: false,
        showConfirmButton: false,
        customClass: {
-       popup: 'my-custom_login_Swl' // Aplica a classe CSS personalizada
+       popup: 'my-custom_login_SwlADM' // Aplica a classe CSS personalizada
        },
         didOpen: () => {
        document.body.style.paddingRight = '0px';
        }
     });
       document.getElementById("inputSwalAdimin").blur();
+       document.getElementById('visao').addEventListener('click', function() {
+     var visao_= document.getElementById('inputSwalAdimin');
+     var classe= document.getElementById('visao');
+        if(visao_.type=='password'){
+         visao_.type='text'
+         classe.className='fa-solid fa-eye-low-vision'
+        } else{
+           visao_.type='password'
+            classe.className='fa-solid fa-eye'
+        }
+        
+  })
   
  
     document.getElementById('sair_').addEventListener('click',function(){
@@ -816,7 +832,9 @@ function ADMIN() {
     var resp= document.getElementById('inputSwalAdimin').value;
     var pass1= sessionStorage.getItem('PassW01');
     var pass2= sessionStorage.getItem('PassW02');
-    if(resp===pass1|| resp===pass2){
+    var pass3=  sessionStorage.getItem('PassW03')
+     //swal(`P1= ${pass1} , P2= ${pass2},P3= ${pass3}`)
+    if(resp===pass1|| resp===pass2||resp===pass3 ){
            window.open('paginas/cadastro.html', '_blank')
             Swal.close()
     }else{
