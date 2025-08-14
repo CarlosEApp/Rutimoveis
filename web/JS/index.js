@@ -415,7 +415,7 @@ AlertaListaV()
 var itens3 = 0;
 var select1=document.getElementById('selectListId_moradia').value;  
 var select2=document.getElementById('selecVL').value; 
-var resutPesq=sessionStorage.getItem('ValorPesquisa')
+var resutPesq = (sessionStorage.getItem('ValorPesquisa') || '').trim();
 if(!resutPesq|| resutPesq==''){
 }else{
 select1='Cadastros'
