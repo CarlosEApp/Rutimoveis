@@ -769,9 +769,60 @@ function toggleFullScreen() {
         }
     }
 }
-//Adiministração
+//Adiministração Password
+
+var firebaseConfig = {
+apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
+authDomain: "rutimoveis-bc114.firebaseapp.com",
+projectId: "rutimoveis-bc114",
+storageBucket: "rutimoveis-bc114.firebasestorage.app",
+messagingSenderId: "457038463744",
+appId: "1:457038463744:web:e357570db0a9a6ce3529e5",
+measurementId: "G-K330CH24NV"
+};
+firebase.initializeApp(firebaseConfig);
+var psw = firebase.firestore()
+psw.collection('Password')
+
+//Botão Admin
 function ADMIN() {
-    window.open('paginas/cadastro.html', '_blank')
+
+     Swal.fire({
+        title: `Administração! <i class="fa-sharp-duotone fa-solid fa-lock"></i>`,
+        html: `
+         <br>
+         <label>Digite Password:<br>
+         <input id='inputSwalAdimin' type='password' placeholder='Password'><i id='visao' class="fa-solid fa-eye"></i>
+         <br> <br>  
+         <button id="enter" title="start">Click </button>
+        <br><br><br><button id='sair_'>Sair,Cancelar</button>
+       `,
+       showCancelButton: false,
+       showConfirmButton: false,
+       customClass: {
+       popup: 'my-custom_login_Swl' // Aplica a classe CSS personalizada
+       },
+        didOpen: () => {
+       document.body.style.paddingRight = '0px';
+       }
+    });
+      document.getElementById("inputSwalAdimin").blur();
+  
+ 
+    document.getElementById('sair_').addEventListener('click',function(){
+        Swal.close()
+    });
+    document.getElementById('enter').addEventListener('click',function(){
+    var resp= document.getElementById('inputSwalAdimin').value;
+    var pass1= sessionStorage.getItem('PassW01');
+    var pass2= sessionStorage.getItem('PassW02');
+    if(resp===pass1|| resp===pass2){
+           window.open('paginas/cadastro.html', '_blank')
+            Swal.close()
+    }else{
+        Swal.fire('Senha Incorreta!','','error')
+    }
+    });
 }
 
 //Alerta de lista vazia
@@ -1022,3 +1073,4 @@ var url_Inst= URL_Intagran;
 Swal.fire(`Instagran`,``,'success')
 window.open(url_Inst,'_blank')
 };
+
