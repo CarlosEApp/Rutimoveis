@@ -1785,3 +1785,35 @@ document.webkitCancelFullScreen();
 setTimeout(function() {
 document.getElementById('a_cad2').click()
 }, 2000)
+
+const campos = [
+  'inputCodigo', 'selectListId_moradia', 'titulo', 'rua','numero', 'bairro', 'cidade', 'input_UF', 'input_cep',
+  'endereço','select_venda', 'valor','valorLoc',
+  'desconto', 'valorCond', 'valorIPTU', 'Area_metragen', 'Quint_quant',
+  'Quint_metragen', 'salas_quant', 'salas_metragen', 'varanda_quant',
+  'Quarto_quant', 'suite_quant', 'banheiro_quant', 'piscinas_quant',
+  'piscinas_metragen', 'playg_quant', 'playg_metragen', 'andar_quant',
+  'vagas_quant', 'duplex', 'Triplex', 'nome_proprietario', 'Tel_proprietario',
+  'cpf_proprietario', 'estadoAimóvel', 'dadaETA', 'horaETA',
+  'inputImgUmTitulo', 'inputImgUmMetros', 'inputImgDoisTitulo', 'inputImgDoisMetros',
+  'inputImgTresTitulo', 'inputImgTresMetros', 'inputImgQuatroTitulo', 'inputImgQuatroMetros',
+  'inputImgCincoTitulo', 'inputImgCincoMetros', 'inputImgSeisTitulo', 'inputImgSeisMetros',
+  'inputImgSeteTitulo', 'inputImgSeteMetros'
+];
+
+// Adiciona o evento Enter para cada campo
+campos.forEach((id, index) => {
+  const campo = document.getElementById(id);
+  if (campo) {
+    campo.addEventListener('keydown', function(event) {
+      if (event.key === 'Enter') {
+        event.preventDefault(); // Evita envio de formulário
+        const proximoCampo = campos[index + 1];
+        if (proximoCampo) {
+          const elemento = document.getElementById(proximoCampo);
+          if (elemento) elemento.focus();
+        }
+      }
+    });
+  }
+});
