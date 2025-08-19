@@ -44,12 +44,8 @@ divIMGs.addEventListener('mousemove', (e) => {
 });
 
 
-
 //codigo de entrada
-
-
 var codigo =sessionStorage.getItem('Mostruario')
-
 
 var firebaseConfig = {
 apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
@@ -66,34 +62,7 @@ var db=firebase.firestore()
 db.collection('Cadastros').doc(codigo).get().then((doc) => {
     var data= doc.data()
     //alert(data.IMG4)
-
-document.getElementById('rua').innerHTML=`Rua: ${data.Rua}`
-document.getElementById('numero').innerHTML=`Nº: ${data.Numero}`
-document.getElementById('bairro').innerHTML=`Bairro: ${data.Bairro}`
-document.getElementById('cidade').innerHTML=`Cidade: ${data.Cidade}`
-document.getElementById('uf').innerHTML=`UF:(${data.UF})`
-if(!data.ValorC||data.ValorC==''){
-
-} else{
-  document.getElementById('venda').innerHTML=`Compra: ${data.ValorC} R$`
-}
-if(!data.ValorA||data.ValorA==''){
-
-}else{
-document.getElementById('locaçao').innerHTML=`Locação: ${data.ValorA} R$`
-}
-if(!data.VCond||data.VCond==''){
-
-}else{
-document.getElementById('condominio').innerHTML=`Condomínio: ${data.VCond} R$`
-}
-if(!data.Viptu||data.Viptu==''){
-
-}else{
-document.getElementById('iptu').innerHTML=`IPTU: ${data.Viptu} R$`
-}
-
- document.getElementById('tituloH2').innerHTML=data.Titulo
+     document.getElementById('tituloH2').innerHTML=data.Titulo
  document.getElementById('codigoH2').innerHTML=data.Código
 
  document.getElementById('img1').src= data.IMG1;
@@ -125,6 +94,116 @@ document.getElementById('iptu').innerHTML=`IPTU: ${data.Viptu} R$`
                     //      document.getElementById('p7Img').innerHTML=`${data.Img7M} m²`
 
     
+
+document.getElementById('rua').innerHTML=`Rua: ${data.Rua}`
+document.getElementById('numero').innerHTML=`Nº: ${data.Numero}`
+document.getElementById('bairro').innerHTML=`Bairro: ${data.Bairro}`
+document.getElementById('cidade').innerHTML=`Cidade: ${data.Cidade}`
+document.getElementById('uf').innerHTML=`UF:(${data.UF})`
+if(!data.ValorC||data.ValorC==''){
+
+} else{
+  document.getElementById('venda').innerHTML=`Compra: ${data.ValorC} R$`
+}
+if(!data.ValorA||data.ValorA==''){
+
+}else{
+document.getElementById('locaçao').innerHTML=`Locação: ${data.ValorA} R$`
+}
+if(!data.VCond||data.VCond==''){
+
+}else{
+document.getElementById('condominio').innerHTML=`Condomínio: ${data.VCond} R$`
+}
+if(!data.Viptu||data.Viptu==''){
+
+}else{
+document.getElementById('iptu').innerHTML=`IPTU: ${data.Viptu} R$`
+}
+if(!data.AreaM||data.AreaM==''){
+
+}else{
+document.getElementById('areaConst').innerHTML=`Area construida: ${data.AreaM} m²`
+}
+if(!data.Suite||data.Suite==''){
+
+}else{
+document.getElementById('suite').innerHTML=`Suíte: 🛏️(${data.Suite}) `
+}
+if(!data.Quartos||data.Quartos==''){
+
+}else{
+document.getElementById('quartos').innerHTML=`Quartos: 🛏️(${data.Quartos}) `
+}
+if(!data.Banheiro||data.Banheiro==''){
+
+}else{
+document.getElementById('banheiro').innerHTML=`Banheiros: 🚿(${data.Banheiro})`
+}
+if(!data.Quintal||data.Quintal==''){
+
+}else{
+  if(!data.QuintalM||data.QuintalM==''){
+document.getElementById('quintal').innerHTML=`Quintal: (${data.Quintal}) `
+}else{
+
+document.getElementById('quintal').innerHTML=`Quintal: (${data.Quintal}) ${data.QuintalM}m² `
+}
+}
+if(!data.Garagem||data.Garagem==''){
+
+}else{
+document.getElementById('garagem').innerHTML=`Garagem: 🚗(${data.Garagem}) `
+}
+if(!data.Piscina||data.Piscina==''){
+
+}else{
+  if(!data.PiscinaM||data.PiscinaM==''){
+
+document.getElementById('piscina').innerHTML=`Piscina: (${data.Piscina}) `
+}else{
+
+document.getElementById('piscina').innerHTML=`Piscina: (${data.Piscina}) ${data.PiscinaM}m² `
+}
+}
+  if(data.Duplex=='sim'){
+document.getElementById('duplex').innerHTML=`[Duplex] `
+}else{
+}
+if(data.Triplex=='sim'){
+ 
+document.getElementById('triplex').innerHTML=`[Triplex] `
+}else{
+}
+if(!data.Desconto||data.Desconto==''){
+ 
+
+}else{
+
+  document.getElementById('desconto').innerHTML=`Avista desconto de (${data.Desconto})% `
+}
+
+
+
+
 }).catch((err) => {
     
 });
+
+
+//Botão WhatsApp
+
+function corretora(){
+  var telefone=`11948865333`
+   var Titulo_=document.getElementById('tituloH2').innerHTML;
+    var codigo_=document.getElementById('codigoH2').innerHTML;
+     var IMG_=document.getElementById('img1').src;
+     var pag="https://rutimoveis.netlify.app/"
+     var result= `Pagina Web: ${pag}\n\n${Titulo_} -Imagem:  ${IMG_} `
+    swal(`${Titulo_} - ${codigo_}` )
+  
+var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
+var url = "https://wa.me/"+`${numero}?text= Imagem  ${encodeURIComponent(result)} - Rute corretora (cod: ${codigo_})  `;
+window.open(url, "_blank");
+Swal.fire(`WhatsApp`,``,'success') 
+}

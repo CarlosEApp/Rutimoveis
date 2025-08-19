@@ -3,7 +3,7 @@
     padding: 0%;
 }
 body{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     background-color: rgb(224, 225, 226);
 }
 #divGeral{
@@ -152,11 +152,12 @@ margin: 0px;
 #btnIMG button{
     font-size: clamp(1rem, 1vw + 0.5rem, 1.200rem);
     border: 0cap;
-    background-color: rgb(98, 1, 107);
+    background-color: rgb(67, 0, 73);
     color: aliceblue;
     padding:7px;
     border-radius: 7px;
     width: 35%;
+    cursor: pointer;
 }
 #divEndereço{
     margin: auto;
@@ -166,12 +167,20 @@ margin: 0px;
     padding: 20px;
     border-radius:10px;
 }
-#divEndereço label,#valores label{
+#divEndereço label,#divCad label{
     padding-bottom: 20px;
      font-size: clamp(1rem, 1vw + 0.5rem, 1.200rem);
    
 }
-#valores #venda,#valores #locação{
+#valores label{
+    padding-bottom: 20px;
+     font-size: clamp(1.300rem, 1vw + 0.5rem, 1.500rem);
+   
+}
+#valores h2 {
+ font-size: clamp(1.500rem, 1vw + 0.5rem, 1.900rem);
+}
+#valores #venda, #valores #locaçao{
     font-weight: bolder;
 }
 #valores{
@@ -179,13 +188,36 @@ margin: 0px;
     width: 80%;
     padding: 20px;
     margin-bottom: 30px;
+    font-family: 'Times New Roman', Times, serif;
 }
 #divCad{
     margin: auto;
-    width: 95%;
+    width: 80%;
 }
 
-
+#buttons{
+    margin: auto;
+    width: 90%;
+    text-align: center;
+    
+}
+#buttons button{
+    cursor: pointer;
+    width: 70%;
+    padding: 15px;
+    border: 0cap;
+    background-color: rgb(31, 0, 59);
+    color: aliceblue;
+    margin-top: 100px;
+    margin-bottom: 150px;
+    max-width: 600px;
+    border-radius: 7px;
+        font-size: clamp(1rem, 1vw + 0.5rem, 1.100rem);
+}
+#buttons button:hover, #btnIMG button:hover{
+    background-color: rgb(136, 0, 148);
+    color: rgb(60, 255, 0);
+}
 
 
 
