@@ -2,6 +2,7 @@
 
 
 //lista de destaques
+sessionStorage.setItem('Mostruario','')
 var itens1= 0
 var listD = document.getElementById('listDestaque');
 listD.innerHTML = ''
@@ -16,11 +17,11 @@ measurementId: "G-K330CH24NV"
 };
 firebase.initializeApp(firebaseConfigure);
 var db = firebase.firestore()
-var produtosRef = db.collection(`Cadastros`);
+var produtosRef = db.collection(`Destaques`);
 produtosRef.get().then((querySnapshot) => {
 querySnapshot.forEach(doc => {
 var doc = doc.data();
-if(doc.EstadoAT==''&& doc.Lista1=='Destaques'){
+if( !doc.EstadoAT|| doc.EstadoAT===''){
 itens1++
 // Criando os elementos
 var li = document.createElement('div');
@@ -122,6 +123,10 @@ li.appendChild(div3);
 li.appendChild(div4);
 // Adicionando ao elemento principal (list)
 listD.appendChild(li);
+btn.addEventListener('click',function(){
+    sessionStorage.setItem('Mostruario',doc.Código)
+ window.open('../paginas/mostruario.html')
+});
 //sessionStorage.setItem('itensList1',itens)
 document.getElementById('P_resutDestaqueIMV').innerHTML=`Total de ${itens1} Imóveis encontrados!`;
 lbl8.addEventListener('click',function(){
@@ -192,6 +197,7 @@ window.open(whatsappLink, "_blank");
 })
 
 //Lista Inicial de imóveis
+sessionStorage.setItem('Mostruario','')
 var itens2= 0
 var listG = document.getElementById('listGeral');
 listG.innerHTML = ''
@@ -312,6 +318,10 @@ li.appendChild(div3);
 li.appendChild(div4);
 // Adicionando ao elemento principal (list)
 listG.appendChild(li);
+btn.addEventListener('click',function(){
+    sessionStorage.setItem('Mostruario',doc.Código)
+ window.open('../paginas/mostruario.html')
+});
 //sessionStorage.setItem('itensList1',itens)
 document.getElementById('P_resutTodosIMV').innerHTML=`Total de ${itens2} Imóveis encontrados!`;
 lbl8.addEventListener('click',function(){
@@ -422,6 +432,7 @@ sessionStorage.setItem('IMGIMV','')
 sessionStorage.setItem('itensList1','')
 document.getElementById('P_resutPesquisa').innerHTML=''
 AlertaListaV()
+sessionStorage.setItem('Mostruario','')
 var itens3 = 0;
 var select1=document.getElementById('selectListId_moradia').value;  
 var select2=document.getElementById('selecVL').value; 
@@ -559,6 +570,10 @@ li.appendChild(div3);
 li.appendChild(div4);
 // Adicionando ao elemento principal (list)
 list.appendChild(li);
+btn.addEventListener('click',function(){
+    sessionStorage.setItem('Mostruario',doc.Código)
+ window.open('../paginas/mostruario.html')
+});
 sessionStorage.setItem('itensList1',itens3)
 document.getElementById('P_resutPesquisa').innerHTML=`Total de ${itens3} Imóveis encontrados!`;
 document.getElementById('resutPesquisa').style.display='block'
@@ -865,9 +880,7 @@ document.body.style.paddingRight = '0px';
 });
 setTimeout(function(){
 Swal.close()
-        if (navigator.vibrate) {
-navigator.vibrate(300); // vibra por 200ms
-}
+
 },7000)
 }
 AlertaInicial()

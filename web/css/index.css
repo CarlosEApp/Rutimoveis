@@ -298,7 +298,7 @@ position: relative;
 border: none;
 font-size: 14px;
 }
-#listPesq #li_::after,#listGeral #li_::after {
+#listPesq #li_::after,#listGeral #li_::after,#listDestaque #li_::after {
 content: "";
 position: absolute;
 width: 0%;

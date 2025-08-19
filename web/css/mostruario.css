@@ -1,0 +1,254 @@
+*{
+    margin: 0%;
+    padding: 0%;
+}
+body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: rgb(224, 225, 226);
+}
+#divGeral{
+    margin: auto;
+    width: 100%;
+    min-height: 100vh;
+    max-width: 1200px;
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 150px;
+
+    
+}
+::-webkit-scrollbar {
+width: 10px;
+margin-left: 15px;
+/* Largura da barra de rolagem */
+cursor: pointer;   
+margin: 0px;
+
+}        
+::-webkit-scrollbar-thumb {
+margin-left: 15px;
+background-color: rgba(99, 1, 70, 0.993);
+/* Cor do polegar da barra de rolagem */
+margin-top: 1px;
+border-radius: 7px;
+cursor: pointer;
+margin: 0px;
+min-height: 30vh; 
+
+}
+::-webkit-scrollbar-thumb:hover {
+background-color: rgb(158, 1, 150); 
+margin: 0px; 
+min-height: 37vh;       
+
+}       
+::-webkit-scrollbar-track {
+/* Cor da trilha da barra de rolagem */
+margin-left: 15px;    
+background-color: rgb(85, 85, 85);
+border-radius: 7px;
+cursor: pointer;
+margin-bottom: 2px;
+margin-top: 2px;
+margin: 0px;
+
+}
+#divHeader{
+    margin: auto;
+    width: 100%;
+    max-width: 1200px;
+    padding-top: 20px;
+    border-bottom: 5px solid rgb(146, 146, 146);
+    padding-bottom: 20px;
+    position: fixed;
+    z-index: 9999;
+     background-color: rgb(255, 255, 255);
+}
+#lblVoltar{
+    margin-bottom: 15px;
+    margin-left: 10px;
+}
+#header, #header2{
+    margin-left: 20px;
+    margin-right: 20px;
+   
+}
+#divHeader h2{
+    font-size: clamp(1.300rem, 1vw + 0.5rem, 1.400rem);
+}
+#divHeader #codigoH2{
+     font-size: clamp(1rem, 1vw + 0.5rem, 1.100rem);
+}
+#divBody{
+    width: 100%;
+    min-height: 100vh;
+    margin-bottom: 70px;
+    padding-bottom: 50px;
+       background-color: rgb(255, 255, 255);
+}
+#codigoH2{
+    float: right;
+    margin-right: 20px;
+}
+#divIMGs{
+    margin: auto;
+    width: 95%;
+    max-width: 1100px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow-x: auto;
+    margin-bottom: 10px;
+    padding-top: 170px;
+    
+}
+#divIMGs div{
+    margin: auto;
+    width: 98%;
+    margin-right: 30px;
+    margin-left: 10px;
+    background-color: rgb(255, 254, 255);
+    padding: 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    
+     
+    
+}
+#divIMGs img{
+    margin: auto;
+    max-width: 90%;
+    min-width: 650px;
+    border-radius: 10px;
+     cursor: grab;
+     max-height: 50vh;
+}
+#divIMGs h3{
+    margin-top: 20px;
+    margin-left: 10px;
+    color: rgb(48, 48, 48);
+    font-size: clamp(1rem, 1vw + 0.5rem, 1.200rem);
+
+
+}
+#divIMGs p{
+    float: right;
+    margin-right: 50px;
+    color: aliceblue;
+    font-size: 15px;
+}
+#btnIMG{
+    margin: auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    
+}
+
+
+
+#btnIMG button{
+    font-size: clamp(1rem, 1vw + 0.5rem, 1.200rem);
+    border: 0cap;
+    background-color: rgb(98, 1, 107);
+    color: aliceblue;
+    padding:7px;
+    border-radius: 7px;
+    width: 35%;
+}
+#divEndereço{
+    margin: auto;
+    width: 80%;
+    margin-top: 30px;
+    border: 3px solid rgb(168, 167, 167);
+    padding: 20px;
+    border-radius:10px;
+}
+#divEndereço label,#valores label{
+    padding-bottom: 20px;
+     font-size: clamp(1rem, 1vw + 0.5rem, 1.200rem);
+   
+}
+#valores #venda,#valores #locação{
+    font-weight: bolder;
+}
+#valores{
+    margin: auto;
+    width: 80%;
+    padding: 20px;
+    margin-bottom: 30px;
+}
+#divCad{
+    margin: auto;
+    width: 95%;
+}
+
+
+
+
+
+
+@media(max-width: 1000px){
+#divIMGs img{
+    margin: auto;
+    max-width: 90%;
+    min-width: 600px;
+    border-radius: 10px;
+}
+}
+@media(max-width: 940px){
+#divIMGs img{
+    margin: auto;
+        max-width: 90%;
+    min-width: 560px;
+    border-radius: 10px;
+}
+}
+@media(max-width: 840px){
+#divIMGs img{
+    margin: auto;
+    max-width: 90%;
+    min-width: 530px;
+    border-radius: 10px;
+}
+}
+@media(max-width: 740px){
+#divIMGs img{
+    margin: auto;
+    max-width: 95%;
+    min-width: 500px;
+    border-radius: 10px;
+}
+}
+@media(max-width: 640px){
+#divIMGs img{
+    margin: auto;
+    max-width: 95%;
+    min-width: 500px;
+    border-radius: 10px;
+}
+}
+@media(max-width: 560px){
+#divIMGs img{
+    margin: auto;
+    max-width: 100%;
+    min-width: 400px;
+    border-radius: 10px;
+}
+}
+@media(max-width: 440px){
+#divIMGs img{
+    margin: auto;
+    max-width: 95%;
+    min-width: 380px;
+    border-radius: 10px;
+}
+}
+@media(max-width: 390px){
+#divIMGs img{
+    margin: auto;
+    max-width: 95%;
+    min-width: 350px;
+    border-radius: 10px;
+}
+}
