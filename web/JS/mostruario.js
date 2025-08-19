@@ -200,8 +200,6 @@ function corretora(){
      var IMG_=document.getElementById('img1').src;
      var pag="https://rutimoveis.netlify.app/"
      var result= `Pagina Web: ${pag}\n\n${Titulo_} -Imagem:  ${IMG_} `
-    swal(`${Titulo_} - ${codigo_}` )
-  
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
 var url = "https://wa.me/"+`${numero}?text= Imagem  ${encodeURIComponent(result)} - Rute corretora (cod: ${codigo_})  `;
 window.open(url, "_blank");
