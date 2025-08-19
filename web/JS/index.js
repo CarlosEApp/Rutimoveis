@@ -125,7 +125,7 @@ li.appendChild(div4);
 listD.appendChild(li);
 btn.addEventListener('click',function(){
     sessionStorage.setItem('Mostruario',doc.Código)
- window.open('../paginas/mostruario.html')
+window.open('paginas/mostruario.html','_blank')
 });
 //sessionStorage.setItem('itensList1',itens)
 document.getElementById('P_resutDestaqueIMV').innerHTML=`Total de ${itens1} Imóveis encontrados!`;
@@ -320,7 +320,7 @@ li.appendChild(div4);
 listG.appendChild(li);
 btn.addEventListener('click',function(){
     sessionStorage.setItem('Mostruario',doc.Código)
- window.open('../paginas/mostruario.html')
+window.open('paginas/mostruario.html','_blank')
 });
 //sessionStorage.setItem('itensList1',itens)
 document.getElementById('P_resutTodosIMV').innerHTML=`Total de ${itens2} Imóveis encontrados!`;
@@ -572,7 +572,7 @@ li.appendChild(div4);
 list.appendChild(li);
 btn.addEventListener('click',function(){
     sessionStorage.setItem('Mostruario',doc.Código)
- window.open('../paginas/mostruario.html')
+ window.open('paginas/mostruario.html','_blank')
 });
 sessionStorage.setItem('itensList1',itens3)
 document.getElementById('P_resutPesquisa').innerHTML=`Total de ${itens3} Imóveis encontrados!`;

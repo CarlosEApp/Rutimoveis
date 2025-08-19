@@ -195,7 +195,7 @@ margin: 0px;
     margin: auto;
     max-width: 90%;
     min-width: 600px;
-    border-radius: 10px;
+  
 }
 }
 @media(max-width: 940px){
@@ -203,7 +203,7 @@ margin: 0px;
     margin: auto;
         max-width: 90%;
     min-width: 560px;
-    border-radius: 10px;
+    
 }
 }
 @media(max-width: 840px){
@@ -211,7 +211,7 @@ margin: 0px;
     margin: auto;
     max-width: 90%;
     min-width: 530px;
-    border-radius: 10px;
+    
 }
 }
 @media(max-width: 740px){
@@ -219,7 +219,7 @@ margin: 0px;
     margin: auto;
     max-width: 95%;
     min-width: 500px;
-    border-radius: 10px;
+   
 }
 }
 @media(max-width: 640px){
@@ -227,7 +227,7 @@ margin: 0px;
     margin: auto;
     max-width: 95%;
     min-width: 500px;
-    border-radius: 10px;
+   
 }
 }
 @media(max-width: 560px){
@@ -235,7 +235,7 @@ margin: 0px;
     margin: auto;
     max-width: 100%;
     min-width: 400px;
-    border-radius: 10px;
+    
 }
 }
 @media(max-width: 440px){
@@ -243,7 +243,7 @@ margin: 0px;
     margin: auto;
     max-width: 95%;
     min-width: 380px;
-    border-radius: 10px;
+  
 }
 }
 @media(max-width: 390px){
@@ -251,6 +251,6 @@ margin: 0px;
     margin: auto;
     max-width: 95%;
     min-width: 350px;
-    border-radius: 10px;
+    
 }
 }
