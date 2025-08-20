@@ -378,15 +378,16 @@ font-weight: bolder;
 width: 30%;
 padding: 10px;
 border: 0cap;
-background-color: #4b003e;
+background-color: #9c009c;;
 cursor: pointer;
 color: aliceblue;
 border-radius: 5px;
 font-weight: bold;
 font-size: clamp(0.820rem, 1vw + 0.5rem, 0.820rem);
 }
-#div3_  #btn:hover{
-background-color: #9c009c;
+#div3_ #btn:hover{
+background-color: #cc00cc;
+color: #f2fbff;
 }
 #div4_{
 display: flex;
@@ -418,7 +419,7 @@ font-size: clamp(0.750rem, 1vw + 0.5rem, 0.750rem);
 }
 #div2_ #lbl_8:hover{
 background-color: #7c00cf;
-color: aliceblue;
+color: rgb(246, 252, 255);
 cursor: pointer;
 }
 #fecharResultPesq{

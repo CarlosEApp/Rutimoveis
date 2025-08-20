@@ -197,6 +197,8 @@ text-rendering: geometricPrecision;
 margin: auto;
 width: 90%;
 text-align: center;
+margin-top: 100px;
+margin-bottom: 150px;
 }
 #buttons button{
 cursor: pointer;
@@ -205,16 +207,18 @@ padding: 15px;
 border: 0cap;
 background-color: rgb(31, 0, 59);
 color: aliceblue;
-margin-top: 100px;
-margin-bottom: 150px;
 max-width: 600px;
-border-radius: 7px;
+border-radius: 5px;
 font-size: clamp(1rem, 1vw + 0.5rem, 1.100rem);
 text-rendering: geometricPrecision;
+margin: 7px;
 }
 #buttons button:hover, #btnIMG button:hover{
 background-color: rgb(99, 0, 86);
 color: rgb(60, 255, 0);
+}
+#buttons p{
+    font-size: clamp(0.700, 1vw + 0.5rem, 0.800rem);
 }
 
 @media(max-width: 1000px){
