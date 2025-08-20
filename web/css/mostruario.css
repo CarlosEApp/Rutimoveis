@@ -1,20 +1,20 @@
 *{
-    margin: 0%;
-    padding: 0%;
+margin: 0%;
+padding: 0%;
 }
 body{
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(224, 225, 226);
+font-family: Arial, Helvetica, sans-serif;
+background-color: rgb(224, 225, 226);
 }
 #divGeral{
-    margin: auto;
-    width: 100%;
-    min-height: 100vh;
-    max-width: 1200px;
-    background-color: rgb(255, 255, 255);
-    padding-bottom: 150px;
+margin: auto;
+width: 100%;
+min-height: 100vh;
+max-width: 1200px;
+background-color: rgb(255, 255, 255);
+padding-bottom: 150px;
 
-    
+
 }
 ::-webkit-scrollbar {
 width: 10px;
@@ -53,236 +53,223 @@ margin: 0px;
 
 }
 #divHeader{
-    margin: auto;
-    width: 100%;
-    max-width: 1200px;
-    padding-top: 20px;
-    border-bottom: 5px solid rgb(146, 146, 146);
-    padding-bottom: 20px;
-    position: fixed;
-    z-index: 9999;
-     background-color: rgb(255, 255, 255);
+margin: auto;
+width: 100%;
+max-width: 1200px;
+padding-top: 20px;
+border-bottom: 5px solid rgb(146, 146, 146);
+padding-bottom: 20px;
+position: fixed;
+z-index: 9999;
+background-color: rgb(255, 255, 255);
 }
 #lblVoltar{
-    margin-bottom: 15px;
-    margin-left: 10px;
+margin-bottom: 15px;
+margin-left: 10px;
 }
 #header, #header2{
-    margin-left: 20px;
-    margin-right: 20px;
-   
+margin-left: 20px;
+margin-right: 20px;
+
 }
 #divHeader h2{
-    font-size: clamp(1.300rem, 1vw + 0.5rem, 1.400rem);
+font-size: clamp(1.300rem, 1vw + 0.5rem, 1.400rem);
 }
 #divHeader #codigoH2{
-     font-size: clamp(1rem, 1vw + 0.5rem, 1.100rem);
+font-size: clamp(1rem, 1vw + 0.5rem, 1.100rem);
 }
 #divBody{
-    width: 100%;
-    min-height: 100vh;
-    margin-bottom: 70px;
-    padding-bottom: 50px;
-       background-color: rgb(255, 255, 255);
+width: 100%;
+min-height: 100vh;
+margin-bottom: 70px;
+padding-bottom: 50px;
+background-color: rgb(255, 255, 255);
 }
 #codigoH2{
-    float: right;
-    margin-right: 20px;
+float: right;
+margin-right: 20px;
 }
 #divIMGs{
-    margin: auto;
-    width: 95%;
-    max-width: 1100px;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    overflow-x: auto;
-    margin-bottom: 10px;
-    padding-top: 155px;
-     background-color: rgb(246, 251, 255);
-    
-    
+margin: auto;
+width: 95%;
+max-width: 1100px;
+display: flex;
+justify-content: space-around;
+align-items: center;
+overflow-x: auto;
+margin-bottom: 10px;
+padding-top: 155px;
+background-color: rgb(246, 251, 255);
 }
 #divIMGs div{
-    margin: auto;
-    width: 98%;
-    margin-right: 30px;
-    margin-left: 10px;
-    background-color: rgba(219, 218, 219, 0);
-    padding: 10px;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    
-     
-    
+margin: auto;
+width: 98%;
+margin-right: 30px;
+margin-left: 10px;
+background-color: rgba(219, 218, 219, 0);
+padding: 10px;
+border-radius: 5px;
+margin-bottom: 10px;
 }
 #divIMGs img{
-    margin: auto;
-    max-width: 90%;
-    min-width: 650px;
-    border-radius: 3px;
-     cursor: grab;
-     max-height: 50vh;
+margin: auto;
+max-width: 90%;
+min-width: 650px;
+border-radius: 3px;
+cursor: grab;
+max-height: 50vh;
 }
 #divIMGs h3{
-    margin-top: 20px;
-    margin-left: 10px;
-    color: rgb(48, 48, 48);
-    font-size: clamp(1rem, 1vw + 0.5rem, 1.200rem);
-
-
+margin-top: 20px;
+margin-left: 10px;
+color: rgb(48, 48, 48);
+font-size: clamp(1rem, 1vw + 0.5rem, 1.200rem);
 }
 #divIMGs p{
-    float: right;
-    margin-right: 50px;
-    color: aliceblue;
-    font-size: 15px;
+float: right;
+margin-right: 50px;
+color: aliceblue;
+font-size: 15px;
 }
 #btnIMG{
-    margin: auto;
-    width: 80%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    
+margin: auto;
+width: 80%;
+display: flex;
+justify-content: space-around;
+align-items: center;
 }
-
-
-
 #btnIMG button{
-    font-size: clamp(1rem, 1vw + 0.5rem, 1.200rem);
-    border: 0cap;
-    background-color: rgb(67, 0, 73);
-    color: aliceblue;
-    padding:7px;
-    border-radius: 7px;
-    width: 35%;
-    cursor: pointer;
+font-size: clamp(1rem, 1vw + 0.5rem, 1.200rem);
+border: 0cap;
+background-color: rgb(82, 82, 82);
+color: aliceblue;
+padding:7px;
+border-radius: 7px;
+width: 35%;
+max-width: 200px;
+cursor: pointer;
 }
 #divEndereço{
-    margin: auto;
-    width: 80%;
-    margin-top: 30px;
-    border: 3px solid rgb(168, 167, 167);
-    padding: 20px;
-    border-radius:10px;
+margin: auto;
+width: 80%;
+margin-top: 30px;
+border: 3px solid rgb(168, 167, 167);
+padding: 20px;
+border-radius:7px;
 }
 #divEndereço label,#divCad label{
-    padding-bottom: 20px;
-     font-size: clamp(1rem, 1vw + 0.5rem, 1.200rem);
-   
+padding-bottom: 20px;
+font-size: clamp(1rem, 1vw + 0.5rem, 1.200rem);
+text-rendering: geometricPrecision;
 }
 #valores label{
-    padding-bottom: 20px;
-     font-size: clamp(1.300rem, 1vw + 0.5rem, 1.500rem);
-   
+padding-bottom: 20px;
+font-size: clamp(1.300rem, 1vw + 0.5rem, 1.500rem);
+
 }
 #valores h2 {
- font-size: clamp(1.500rem, 1vw + 0.5rem, 1.900rem);
+font-size: clamp(1.500rem, 1vw + 0.5rem, 1.900rem);
+text-rendering: geometricPrecision;
 }
 #valores #venda, #valores #locaçao{
-    font-weight: bolder;
+font-weight: bolder;
 }
 #valores{
-    margin: auto;
-    width: 80%;
-    padding: 20px;
-    margin-bottom: 30px;
-    font-family: 'Times New Roman', Times, serif;
+margin: auto;
+width: 80%;
+padding: 20px;
+margin-bottom: 30px;
+font-family: 'Times New Roman', Times, serif;
+border: 3px solid rgb(168, 167, 167);
+padding: 20px;
+border-radius:7px;
+text-rendering: geometricPrecision;
 }
 #divCad{
-    margin: auto;
-    width: 80%;
+margin: auto;
+width: 80%;
+border: 3px solid rgb(168, 167, 167);
+padding: 20px;
+border-radius:7px;
+text-rendering: geometricPrecision;
 }
-
 #buttons{
-    margin: auto;
-    width: 90%;
-    text-align: center;
-    
+margin: auto;
+width: 90%;
+text-align: center;
 }
 #buttons button{
-    cursor: pointer;
-    width: 70%;
-    padding: 15px;
-    border: 0cap;
-    background-color: rgb(31, 0, 59);
-    color: aliceblue;
-    margin-top: 100px;
-    margin-bottom: 150px;
-    max-width: 600px;
-    border-radius: 7px;
-        font-size: clamp(1rem, 1vw + 0.5rem, 1.100rem);
+cursor: pointer;
+width: 70%;
+padding: 15px;
+border: 0cap;
+background-color: rgb(31, 0, 59);
+color: aliceblue;
+margin-top: 100px;
+margin-bottom: 150px;
+max-width: 600px;
+border-radius: 7px;
+font-size: clamp(1rem, 1vw + 0.5rem, 1.100rem);
+text-rendering: geometricPrecision;
 }
 #buttons button:hover, #btnIMG button:hover{
-    background-color: rgb(136, 0, 148);
-    color: rgb(60, 255, 0);
+background-color: rgb(99, 0, 86);
+color: rgb(60, 255, 0);
 }
-
-
-
 
 @media(max-width: 1000px){
 #divIMGs img{
-    margin: auto;
-    max-width: 90%;
-    min-width: 600px;
-  
+margin: auto;
+max-width: 90%;
+min-width: 600px;
 }
 }
 @media(max-width: 940px){
 #divIMGs img{
-    margin: auto;
-        max-width: 90%;
-    min-width: 560px;
-    
+margin: auto;
+max-width: 90%;
+min-width: 560px;
 }
 }
 @media(max-width: 840px){
 #divIMGs img{
-    margin: auto;
-    max-width: 90%;
-    min-width: 530px;
-    
+margin: auto;
+max-width: 90%;
+min-width: 530px;
 }
 }
 @media(max-width: 740px){
 #divIMGs img{
-    margin: auto;
-    max-width: 95%;
-    min-width: 500px;
-   
+margin: auto;
+max-width: 95%;
+min-width: 500px;
 }
 }
 @media(max-width: 640px){
 #divIMGs img{
-    margin: auto;
-    max-width: 95%;
-    min-width: 500px;
-   
+margin: auto;
+max-width: 95%;
+min-width: 500px;
 }
 }
 @media(max-width: 560px){
 #divIMGs img{
-    margin: auto;
-    max-width: 100%;
-    min-width: 400px;
-    
+margin: auto;
+max-width: 100%;
+min-width: 400px;
 }
 }
 @media(max-width: 440px){
 #divIMGs img{
-    margin: auto;
-    max-width: 95%;
-    min-width: 380px;
-  
+margin: auto;
+max-width: 95%;
+min-width: 380px;
 }
 }
 @media(max-width: 390px){
 #divIMGs img{
-    margin: auto;
-    max-width: 95%;
-    min-width: 350px;
-    
+margin: auto;
+max-width: 95%;
+min-width: 350px;
 }
 }
