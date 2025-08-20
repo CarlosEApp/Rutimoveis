@@ -213,7 +213,7 @@ function AlertaInicial(){
 Swal.fire({
 title: ``,
 text: `Aguarde...`,
-html:` <h2>Bem Vindo(a)!</h2>
+html:` <h2>Trazendo as informações...(a)!</h2>
 `,
 background: 'rgba(255, 255, 255, 0)', // Cor de fundo
 color: '#00c3ffff', // Cor do texto
