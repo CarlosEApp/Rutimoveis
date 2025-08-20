@@ -62,6 +62,7 @@ var db=firebase.firestore()
 db.collection('Cadastros').doc(codigo).get().then((doc) => {
     var data= doc.data()
     //alert(data.IMG4)
+    document.getElementById("OBSText").innerHTML=data.End
 
      document.getElementById('tituloH2').innerHTML=data.Titulo
      document.getElementById('codigoH2').innerHTML=data.Código
