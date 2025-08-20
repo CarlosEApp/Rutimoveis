@@ -68,7 +68,7 @@ lbl3.textContent = `Locação: ${doc.ValorA} R$`||'';
 if(!doc.ValorC|| doc.ValorC==''){
 lbl4.textContent = ``||'';
 }else{
-lbl4.textContent = `Compra ${doc.ValorC} R$`||'';
+lbl4.textContent = `Compra: ${doc.ValorC} R$`||'';
 };
 if(!doc.Quartos||doc.Quartos==''){
 lbl5.textContent = `🛏️(?)`
@@ -263,7 +263,7 @@ lbl3.textContent = `Locação: ${doc.ValorA} R$`||'';
 if(!doc.ValorC|| doc.ValorC==''){
 lbl4.textContent = ``||'';
 }else{
-lbl4.textContent = `Compra ${doc.ValorC} R$`||'';
+lbl4.textContent = `Compra: ${doc.ValorC} R$`||'';
 };
 if(!doc.Quartos||doc.Quartos==''){
 lbl5.textContent = `🛏️(?)`
@@ -515,7 +515,7 @@ lbl3.textContent = `Locação: ${doc.ValorA} R$`||'';
 if(!doc.ValorC|| doc.ValorC==''){
 lbl4.textContent = ``||'';
 }else{
-lbl4.textContent = `Compra ${doc.ValorC} R$`||'';
+lbl4.textContent = `Compra: ${doc.ValorC} R$`||'';
 };
 if(!doc.Quartos||doc.Quartos==''){
 lbl5.textContent = `🛏️(?)`

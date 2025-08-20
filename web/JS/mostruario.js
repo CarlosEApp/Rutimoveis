@@ -190,7 +190,6 @@ if(!data.Desconto||data.Desconto==''){
     
 });
 
-
 //Botão WhatsApp
 
 function corretora(){
@@ -205,3 +204,32 @@ var url = "https://wa.me/"+`${numero}?text= Imagem  ${encodeURIComponent(result)
 window.open(url, "_blank");
 Swal.fire(`WhatsApp`,``,'success') 
 }
+
+
+
+
+//Alerta iniciar
+function AlertaInicial(){
+Swal.fire({
+title: ``,
+text: `Aguarde...`,
+html:` <h2>Bem Vindo(a)!</h2>
+`,
+background: 'rgba(255, 255, 255, 0)', // Cor de fundo
+color: '#00c3ffff', // Cor do texto
+allowOutsideClick: false,
+showConfirmButton: false,
+customClass: {
+popup: 'my-custom_alert' // Aplica a classe CSS personalizada
+},
+didOpen: () => {
+Swal.showLoading();
+document.body.style.paddingRight = '0px';        
+}
+});
+setTimeout(function(){
+Swal.close()
+
+},7000)
+}
+AlertaInicial()
