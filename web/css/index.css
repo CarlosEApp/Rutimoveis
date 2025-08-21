@@ -423,7 +423,7 @@ padding-left: 10px;
 padding-right: 10px;
 margin-right: 10px;
 background-color: #69696900;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.514);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.514);
 color: rgb(34, 34, 34);
 border-radius: 5px;
 font-size: clamp(0.750rem, 1vw + 0.5rem, 0.750rem);

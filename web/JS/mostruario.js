@@ -184,9 +184,9 @@ var Titulo_=document.getElementById('tituloH2').innerHTML;
 var codigo_=document.getElementById('codigoH2').innerHTML;
 var IMG_=document.getElementById('img1').src;
 var pag="https://rutimoveis.netlify.app/"
-var result= `Pagina Web: ${pag}\n\n${Titulo_} -Imagem:  ${IMG_} `
+var result= `Pagina Web: ${pag}\n\n${Titulo_} \n\n Imagem do imóvel:  ${IMG_} `
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
-var url = "https://wa.me/"+`${numero}?text= Imagem  ${encodeURIComponent(result)} - Rute corretora (cod: ${codigo_})  `;
+var url = "https://wa.me/"+`${numero}?text= ${encodeURIComponent(result)} - Código: ${codigo_}  `;
 window.open(url, "_blank");
 Swal.fire(`WhatsApp`,``,'success') 
 }
