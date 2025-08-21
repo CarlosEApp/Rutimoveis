@@ -131,42 +131,42 @@ document.getElementById('areaConst').innerHTML=`Area construida: ${data.AreaM} m
 }
 if(!data.Suite||data.Suite==''){
 }else{
-document.getElementById('suite').innerHTML=`Suíte: 🛏️(${data.Suite}) `
+document.getElementById('suite').innerHTML=`Suíte: [${data.Suite}]🛏️ `
 }
 if(!data.Quartos||data.Quartos==''){
 }else{
-document.getElementById('quartos').innerHTML=`Quartos: 🛏️(${data.Quartos}) `
+document.getElementById('quartos').innerHTML=`Quartos: [${data.Quartos}]🛏️ `
 }
 if(!data.Banheiro||data.Banheiro==''){
 }else{
-document.getElementById('banheiro').innerHTML=`Banheiros: 🚿(${data.Banheiro})`
+document.getElementById('banheiro').innerHTML=`Banheiros: [${data.Banheiro}]🚿`
 }
 if(!data.Quintal||data.Quintal==''){
 }else{
 if(!data.QuintalM||data.QuintalM==''){
-document.getElementById('quintal').innerHTML=`Quintal: (${data.Quintal}) `
+document.getElementById('quintal').innerHTML=`Quintal: [${data.Quintal}] `
 }else{
-document.getElementById('quintal').innerHTML=`Quintal: (${data.Quintal}) ${data.QuintalM}m² `
+document.getElementById('quintal').innerHTML=`Quintal: [${data.Quintal}] - ${data.QuintalM}m² `
 }
 }
 if(!data.Garagem||data.Garagem==''){
 }else{
-document.getElementById('garagem').innerHTML=`Garagem: 🚗(${data.Garagem}) `
+document.getElementById('garagem').innerHTML=`Garagem: [${data.Garagem}]🚗 `
 }
 if(!data.Piscina||data.Piscina==''){
 }else{
 if(!data.PiscinaM||data.PiscinaM==''){
-document.getElementById('piscina').innerHTML=`Piscina: (${data.Piscina}) `
+document.getElementById('piscina').innerHTML=`Piscina: [${data.Piscina}] `
 }else{
-document.getElementById('piscina').innerHTML=`Piscina: (${data.Piscina}) ${data.PiscinaM}m² `
+document.getElementById('piscina').innerHTML=`Piscina: [${data.Piscina}] - ${data.PiscinaM}m² `
 }
 }
 if(data.Duplex=='sim'){
-document.getElementById('duplex').innerHTML=`[Duplex] `
+document.getElementById('duplex').innerHTML=`(Duplex) `
 }else{
 }
 if(data.Triplex=='sim'){
-document.getElementById('triplex').innerHTML=`[Triplex] `
+document.getElementById('triplex').innerHTML=`(Triplex) `
 }else{
 }
 if(!data.Desconto||data.Desconto==''){

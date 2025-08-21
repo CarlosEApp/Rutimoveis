@@ -20,7 +20,6 @@ padding-bottom: 150px;
 width: 10px;
 margin-left: 15px;
 /* Largura da barra de rolagem */
-cursor: pointer;   
 margin: 0px;
 
 }        
@@ -30,7 +29,7 @@ background-color: rgba(99, 1, 70, 0.993);
 /* Cor do polegar da barra de rolagem */
 margin-top: 1px;
 border-radius: 7px;
-cursor: pointer;
+cursor: grab;  
 margin: 0px;
 min-height: 30vh; 
 
@@ -46,7 +45,6 @@ min-height: 37vh;
 margin-left: 15px;    
 background-color: rgb(85, 85, 85);
 border-radius: 7px;
-cursor: pointer;
 margin-bottom: 2px;
 margin-top: 2px;
 margin: 0px;
