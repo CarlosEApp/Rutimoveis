@@ -160,6 +160,7 @@ background-color: rgb(161, 0, 156);
 border: 1px solid rgb(97, 38, 58);
 color: aliceblue;
 outline: none;
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.514);
 }
 #pesq-1{
 width: 85%;
@@ -175,6 +176,7 @@ font-weight: bold;
 cursor: pointer;
 border: 3px solid rgba(209, 172, 216, 0.856);
 outline: none;
+box-shadow: 0 10px 20px rgba(0, 0, 0, 0.514);
 }
 #pesq-1:hover{
 color: rgb(255, 255, 255);
@@ -262,8 +264,8 @@ flex-wrap: wrap;
 #listGeral #li_,
 #listDestaque #li_ {
   flex: 1 1 20%;
-  min-width: 330px; /* reduzido para telas menores */
-  max-width: 370px;
+  min-width: 300px; /* reduzido para telas menores */
+  max-width: 320px;
   border: 2px solid rgb(68, 68, 68);
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.514);
@@ -286,8 +288,8 @@ flex-wrap: wrap;
   #listPesq #li_,
   #listGeral #li_,
   #listDestaque #li_ {
-    min-width: 220px;
-    flex: 1 1 30%;
+    min-width: 300px;
+    flex: 1 1 22%;
   }
 }
 
@@ -303,7 +305,7 @@ flex-wrap: wrap;
   #listPesq #li_,
   #listGeral #li_,
   #listDestaque #li_ {
-    flex: 1 1 100%;
+    flex: 1 1 90%;
   }
 }
 
@@ -384,6 +386,7 @@ color: aliceblue;
 border-radius: 5px;
 font-weight: bold;
 font-size: clamp(0.820rem, 1vw + 0.5rem, 0.820rem);
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.514);
 }
 #div3_ #btn:hover{
 background-color: #cc00cc;
@@ -412,7 +415,7 @@ padding-left: 10px;
 padding-right: 10px;
 margin-right: 10px;
 background-color: #69696900;
-border: 1px solid rgb(34, 34, 34);
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.514);
 color: rgb(34, 34, 34);
 border-radius: 5px;
 font-size: clamp(0.750rem, 1vw + 0.5rem, 0.750rem);

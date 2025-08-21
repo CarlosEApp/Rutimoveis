@@ -71,19 +71,19 @@ lbl4.textContent = ``||'';
 lbl4.textContent = `Compra: ${doc.ValorC} R$`||'';
 };
 if(!doc.Quartos||doc.Quartos==''){
-lbl5.textContent = `🛏️(?)`
+lbl5.textContent = `🛏️[?]`
 }else{
-lbl5.textContent = `🛏️(${doc.Quartos})`
+lbl5.textContent = `🛏️[${doc.Quartos}]`
 };
 if(!doc.Quartos||doc.Banheiro==''){
-lbl6.textContent = `🚿(?)`
+lbl6.textContent = `🚿[?]`
 }else{
-lbl6.textContent = `🚿(${doc.Banheiro})`
+lbl6.textContent = `🚿[${doc.Banheiro}]`
 };
 if(!doc.Quartos||doc.Garagem==''){
-lbl7.textContent = `🚗(?)`
+lbl7.textContent = `🚗[?]`
 }else{
-lbl7.textContent = `🚗(${doc.Garagem})`
+lbl7.textContent = `🚗[${doc.Garagem}]`
 };
 lbl8.textContent = `${doc.Código}`
 lbl8.title='Código do Imóvel'
@@ -124,7 +124,7 @@ li.appendChild(div4);
 // Adicionando ao elemento principal (list)
 listD.appendChild(li);
 btn.addEventListener('click',function(){
-    sessionStorage.setItem('Mostruario',doc.Código)
+sessionStorage.setItem('Mostruario',doc.Código)
 window.open('paginas/mostruario.html','_blank')
 });
 //sessionStorage.setItem('itensList1',itens)
@@ -266,19 +266,19 @@ lbl4.textContent = ``||'';
 lbl4.textContent = `Compra: ${doc.ValorC} R$`||'';
 };
 if(!doc.Quartos||doc.Quartos==''){
-lbl5.textContent = `🛏️(?)`
+lbl5.textContent = `🛏️[?]`
 }else{
-lbl5.textContent = `🛏️(${doc.Quartos})`
+lbl5.textContent = `🛏️[${doc.Quartos}]`
 };
 if(!doc.Quartos||doc.Banheiro==''){
-lbl6.textContent = `🚿(?)`
+lbl6.textContent = `🚿[?]`
 }else{
-lbl6.textContent = `🚿(${doc.Banheiro})`
+lbl6.textContent = `🚿[${doc.Banheiro}]`
 };
 if(!doc.Quartos||doc.Garagem==''){
-lbl7.textContent = `🚗(?)`
+lbl7.textContent = `🚗[?]`
 }else{
-lbl7.textContent = `🚗(${doc.Garagem})`
+lbl7.textContent = `🚗[${doc.Garagem}]`
 };
 lbl8.textContent = `${doc.Código}`
 lbl8.title='Código do Imóvel'
@@ -319,7 +319,7 @@ li.appendChild(div4);
 // Adicionando ao elemento principal (list)
 listG.appendChild(li);
 btn.addEventListener('click',function(){
-    sessionStorage.setItem('Mostruario',doc.Código)
+sessionStorage.setItem('Mostruario',doc.Código)
 window.open('paginas/mostruario.html','_blank')
 });
 //sessionStorage.setItem('itensList1',itens)
@@ -390,6 +390,8 @@ window.open(whatsappLink, "_blank");
 }
 })
 })
+
+//click no select oque procura, 'limpa os campos para nova pesquisa'.
 function clickSelect(){
 document.getElementById('inputPesquisa').value=''
 sessionStorage.setItem('ValorPesquisa','')
@@ -397,14 +399,13 @@ sessionStorage.setItem('ValorPesquisa','')
 
 //Pesquisar
 document.getElementById("pesq-1").addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-      // Chama a função desejada
-     pesqSet();
-    }
-  });
+if (event.key === "Enter") {
+// Chama a função desejada
+pesqSet();
+}
+});
 sessionStorage.setItem('ValorPesquisa','')
 function pesqSet(){
-
 document.getElementById('selectListId_moradia').value='';  
 document.getElementById('selecVL').value=''; 
 var pesq=document.getElementById('inputPesquisa').value;
@@ -424,7 +425,7 @@ document.getElementById('resutPesquisa').style.display='none'
 }
 //botão Buscar pesquisa
 function Buscar(){
-            if (navigator.vibrate) {
+if (navigator.vibrate) {
 navigator.vibrate(200); // vibra por 200ms
 }
 sessionStorage.setItem('CodIMV','')   
@@ -465,7 +466,6 @@ if(
 removerAcentos(resutPesq.toLowerCase()) === removerAcentos(doc.Código?.toLowerCase()) ||
 removerAcentos(resutPesq.toLowerCase()) === removerAcentos(doc.Cidade?.toLowerCase()) ||
 removerAcentos(resutPesq.toLowerCase()) === removerAcentos(doc.Bairro?.toLowerCase())||
-
 select1===doc.Lista1 && select2=='Compra ou Locação'||select1===doc.Lista1 && select2===doc.Lista2||select1===doc.Lista1 && doc.Lista2=='Compra ou Locação'
 ) {
 if(doc.EstadoAT==''){
@@ -518,19 +518,19 @@ lbl4.textContent = ``||'';
 lbl4.textContent = `Compra: ${doc.ValorC} R$`||'';
 };
 if(!doc.Quartos||doc.Quartos==''){
-lbl5.textContent = `🛏️(?)`
+lbl5.textContent = `🛏️[?]`
 }else{
-lbl5.textContent = `🛏️(${doc.Quartos})`
+lbl5.textContent = `🛏️[${doc.Quartos}]`
 };
 if(!doc.Quartos||doc.Banheiro==''){
-lbl6.textContent = `🚿(?)`
+lbl6.textContent = `🚿[?]`
 }else{
-lbl6.textContent = `🚿(${doc.Banheiro})`
+lbl6.textContent = `🚿[${doc.Banheiro}]`
 };
 if(!doc.Quartos||doc.Garagem==''){
-lbl7.textContent = `🚗(?)`
+lbl7.textContent = `🚗[?]`
 }else{
-lbl7.textContent = `🚗(${doc.Garagem})`
+lbl7.textContent = `🚗[${doc.Garagem}]`
 };
 lbl8.textContent = `${doc.Código}`
 lbl8.title='Código do Imóvel'
@@ -571,8 +571,8 @@ li.appendChild(div4);
 // Adicionando ao elemento principal (list)
 list.appendChild(li);
 btn.addEventListener('click',function(){
-    sessionStorage.setItem('Mostruario',doc.Código)
- window.open('paginas/mostruario.html','_blank')
+sessionStorage.setItem('Mostruario',doc.Código)
+window.open('paginas/mostruario.html','_blank')
 });
 sessionStorage.setItem('itensList1',itens3)
 document.getElementById('P_resutPesquisa').innerHTML=`Total de ${itens3} Imóveis encontrados!`;
@@ -647,10 +647,11 @@ window.open(whatsappLink, "_blank");
 })
 })
 }
+
 //Abrir Pesquisa
 document.getElementById('labelPesquisa').style.display = 'none'
 function Pesquisar() {
-            if (navigator.vibrate) {
+if (navigator.vibrate) {
 navigator.vibrate(200); // vibra por 200ms
 }
 var resp = document.getElementById('labelPesquisa').style.display;
@@ -666,12 +667,13 @@ sessionStorage.setItem('ValorPesquisa','')
 document.getElementById('inputPesquisa').value='';
 }
 }
+
 //Menu Lateral
 sessionStorage.setItem('MENULateral', '')
 var BTN = document.getElementById('heaad_menu');
 BTN.className = 'fa-solid fa-bars'
 function Menu() {
-            if (navigator.vibrate) {
+if (navigator.vibrate) {
 navigator.vibrate(200); // vibra por 200ms
 }
 var BTN = document.getElementById('heaad_menu');
@@ -686,16 +688,19 @@ sessionStorage.setItem('MENULateral', '')
 document.getElementById("menu_lateral").classList.remove("menu-ativo");
 }
 }
+
 //fechar Menu
 function fecharMenu() {
 sessionStorage.setItem('MENULateral', '')
 document.getElementById("menu_lateral").classList.remove("menu-ativo");
 Menu() 
 }
+
 //Exite menu
 function exit() {
 Menu()
 }
+
 //Time Relogio
 setInterval(function() {
 const newDate = new Date()
@@ -711,9 +716,10 @@ const timeString = `${hours}:${minutes}:${seconds}`;
 sessionStorage.setItem('data', data)
 sessionStorage.setItem('hora', timeString)
 }, 1000)
+
 // Tela Cheia
 function toggleFullScreen() {
-    if (navigator.vibrate) {
+if (navigator.vibrate) {
 navigator.vibrate(200); // vibra por 200ms
 }
 if ((document.fullScreenElement && document.fullScreenElement !== null) ||
@@ -735,6 +741,7 @@ document.webkitCancelFullScreen();
 }
 }
 }
+
 //Adiministração Password
 var firebaseConfig = {
 apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
@@ -755,7 +762,7 @@ sessionStorage.setItem('PassW03',data.Master2);
 })
 //Botão Admin
 function ADMIN() {
-    if (navigator.vibrate) {
+if (navigator.vibrate) {
 navigator.vibrate(200); // vibra por 200ms
 }
 Swal.fire({
@@ -773,11 +780,11 @@ popup: 'my-custom_login_SwlADM' // Aplica a classe CSS personalizada
 },
 didOpen: () => {
 document.body.style.paddingRight = '0px';
-  // Escuta a tecla Enter dentro do popup
-  var popup = Swal.getPopup();
-  popup.addEventListener("keydown", function(event) {
-    if (event.key === "Enter") {
-      document.getElementById("enter").click();
+// Escuta a tecla Enter dentro do popup
+var popup = Swal.getPopup();
+popup.addEventListener("keydown", function(event) {
+if (event.key === "Enter") {
+document.getElementById("enter").click();
 }}
 )
 }
@@ -798,7 +805,7 @@ document.getElementById('sair_').addEventListener('click',function(){
 Swal.close()
 });
 document.getElementById('enter').addEventListener('click',function(){
-    if (navigator.vibrate) {
+if (navigator.vibrate) {
 navigator.vibrate(200); // vibra por 200ms
 }
 var resp= document.getElementById('inputSwalAdimin').value;
@@ -810,10 +817,9 @@ if(resp===pass1|| resp===pass2||resp===pass3 ){
 window.open('paginas/cadastro.html', '_blank')
 Swal.close()
 }else{
-    setTimeout(function(){
-    Swal.fire('Senha Incorreta!','','error')
-    },1000)
-
+setTimeout(function(){
+Swal.fire('Senha Incorreta!','','error')
+},1000)
 }
 });
 Menu() 
@@ -837,6 +843,7 @@ Swal.showLoading();
 document.body.style.paddingRight = '0px';        
 }
 });
+
 setTimeout(function(){
 var respl=  sessionStorage.getItem('itensList1')
 if(!respl||respl==''){
@@ -859,6 +866,7 @@ Swal.close()
 }
 },7000)
 }
+
 //Alerta iniciar
 function AlertaInicial(){
 Swal.fire({
@@ -880,7 +888,6 @@ document.body.style.paddingRight = '0px';
 });
 setTimeout(function(){
 Swal.close()
-
 },7000)
 }
 AlertaInicial()
@@ -928,6 +935,7 @@ var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
 });
 }
+
 //Whatsapp Rute sem informação aicionais
 function ZAP(){
 whats()
@@ -935,7 +943,6 @@ Menu()
 }
 function what(){
 whats()
-
 }
 function whats(){
 if (navigator.vibrate) {
@@ -986,9 +993,10 @@ Swal.fire('Sair')
 Swal.close()
 });
 }
+
 // WhatsApp com Informações do imóvel
 function whatsapp(){
-    if (navigator.vibrate) {
+if (navigator.vibrate) {
 navigator.vibrate(200); // vibra por 200ms
 }
 var imgIMV= sessionStorage.getItem('IMGIMV')     
@@ -1038,13 +1046,14 @@ Swal.fire('Sair')
 Swal.close()
 });
 }
+
 //Facebook
 function face(){
 facebook()
 Menu() 
 }
 function facebook(){
-    if (navigator.vibrate) {
+if (navigator.vibrate) {
 navigator.vibrate(200); // vibra por 200ms
 }
 var url_face=localStorage.getItem('URL_facebook')
@@ -1056,13 +1065,14 @@ var URL_facebook= url_face
 window.open(URL_facebook,'_blank')
 Swal.fire(`Facebook`,``,'success')
 }; 
+
 //Instagran
 function INSTA(){
 instagran()
 Menu() 
 }
 function instagran(){
-    if (navigator.vibrate) {
+if (navigator.vibrate) {
 navigator.vibrate(200); // vibra por 200ms
 }
 var URL_Intagran= localStorage.getItem('URL_Intagran')
@@ -1075,14 +1085,14 @@ Swal.fire(`Instagran`,``,'success')
 window.open(url_Inst,'_blank')
 };
 function init(){
-        if (navigator.vibrate) {
+if (navigator.vibrate) {
 navigator.vibrate(200); // vibra por 200ms
 }
-   Menu() 
+Menu() 
 }
 function sobre(){
-        if (navigator.vibrate) {
+if (navigator.vibrate) {
 navigator.vibrate(200); // vibra por 200ms
 }
-   Menu() 
+Menu() 
 }

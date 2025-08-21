@@ -118,9 +118,9 @@ min-width: 650px;
 border-radius: 3px;
 cursor: grab;
 max-height: 50vh;
+box-shadow: 0 7px 15px rgba(0, 0, 0, 0.514);
 }
 #divIMGs h3{
-
 color: rgb(244, 252, 255);
 font-size: clamp(1rem, 1vw + 0.5rem, 1.200rem);
 bottom: 37px; 
@@ -151,16 +151,16 @@ color: aliceblue;
 padding:7px;
 border-radius: 7px;
 width: 35%;
-max-width: 200px;
+max-width: 150px;
 cursor: pointer;
 }
 #divEndereço{
 margin: auto;
-width: 80%;
-margin-top: 30px;
-border: 3px solid rgb(168, 167, 167);
+width: 90%;
 padding: 20px;
 border-radius:7px;
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.514);
+margin-bottom: 30px;
 }
 #divEndereço label,#divCad label{
 padding-bottom: 20px;
@@ -181,33 +181,37 @@ font-weight: bolder;
 }
 #valores{
 margin: auto;
-width: 80%;
+width: 90%;
 padding: 20px;
-margin-bottom: 30px;
+margin-bottom: 50px;
 font-family: 'Times New Roman', Times, serif;
-border: 3px solid rgb(168, 167, 167);
 padding: 20px;
 border-radius:7px;
 text-rendering: geometricPrecision;
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.514);
 }
 #divCad{
 margin: auto;
-width: 80%;
-border: 3px solid rgb(168, 167, 167);
+width: 90%;
 padding: 20px;
 border-radius:7px;
 text-rendering: geometricPrecision;
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.514);
+margin-bottom: 30px;
 }
 #buttons{
 margin: auto;
-width: 90%;
+width: 82%;
 text-align: center;
 margin-top: 100px;
 margin-bottom: 150px;
+box-shadow: 0 5px 10px rgba(0, 0, 0, 0.514);
+border-radius: 33px;
+padding-bottom: 50px;
 }
 #buttons button{
 cursor: pointer;
-width: 70%;
+width: 80%;
 padding: 15px;
 border: 0cap;
 background-color: rgb(31, 0, 59);
@@ -227,8 +231,13 @@ color: rgb(60, 255, 0);
 }
 #OBS{
     margin: auto;
-    width: 80%;
+    width:90%;
     margin-top: 50px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.514);
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    
 }
 #OBSText{
     width: 90%;
@@ -236,13 +245,35 @@ color: rgb(60, 255, 0);
     max-width: 700px;
     min-width: 300px;
     font-size: clamp(1rem, 1vw + 0.5rem, 1.100rem);
-    border: 2p solid rgb(63, 63, 63);
     border-radius: 7px;
+    border: 0cap;
+
 }
 #OBS #lbl_obs{
     font-weight: bolder;
      font-size: clamp(1.100rem, 1vw + 0.5rem, 1.300rem);
 }
+
+#imgfototext{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.514);
+     margin-top: 50px;
+     margin-bottom: 50px;
+}
+#divfotoText{
+    width: 100%;
+    min-height: 40vh;
+}
+#P_fototext{
+    margin: auto;
+    width: 73%;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
 
 @media(max-width: 1000px){
 #divIMGs img{
