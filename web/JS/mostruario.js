@@ -131,15 +131,15 @@ document.getElementById('areaConst').innerHTML=`Area construida: ${data.AreaM} m
 }
 if(!data.Suite||data.Suite==''){
 }else{
-document.getElementById('suite').innerHTML=`Suíte: [${data.Suite}]🛏️ `
+document.getElementById('suite').innerHTML=`Suíte: [${data.Suite}] 🛏️ `
 }
 if(!data.Quartos||data.Quartos==''){
 }else{
-document.getElementById('quartos').innerHTML=`Quartos: [${data.Quartos}]🛏️ `
+document.getElementById('quartos').innerHTML=`Quartos: [${data.Quartos}] 🛏️ `
 }
 if(!data.Banheiro||data.Banheiro==''){
 }else{
-document.getElementById('banheiro').innerHTML=`Banheiros: [${data.Banheiro}]🚿`
+document.getElementById('banheiro').innerHTML=`Banheiros: [${data.Banheiro}] 🚿`
 }
 if(!data.Quintal||data.Quintal==''){
 }else{
@@ -151,7 +151,7 @@ document.getElementById('quintal').innerHTML=`Quintal: [${data.Quintal}] - ${dat
 }
 if(!data.Garagem||data.Garagem==''){
 }else{
-document.getElementById('garagem').innerHTML=`Garagem: [${data.Garagem}]🚗 `
+document.getElementById('garagem').innerHTML=`Garagem: [${data.Garagem}] 🚗 `
 }
 if(!data.Piscina||data.Piscina==''){
 }else{
