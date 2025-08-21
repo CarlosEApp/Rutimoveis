@@ -264,8 +264,8 @@ flex-wrap: wrap;
 #listGeral #li_,
 #listDestaque #li_ {
   flex: 1 1 20%;
-  min-width: 300px; /* reduzido para telas menores */
-  max-width: 320px;
+  min-width: 320px; /* reduzido para telas menores */
+  max-width: 330px;
   border: 2px solid rgb(68, 68, 68);
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.514);
@@ -305,7 +305,15 @@ flex-wrap: wrap;
   #listPesq #li_,
   #listGeral #li_,
   #listDestaque #li_ {
-    flex: 1 1 90%;
+    flex: 1 1 95%;
+  }
+}
+@media (max-width: 568px) {
+  #listPesq #li_,
+  #listGeral #li_,
+  #listDestaque #li_ {
+     min-width: 330px; 
+    flex: 1 1 98%;
   }
 }
 
