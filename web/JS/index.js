@@ -130,6 +130,7 @@ window.open('paginas/mostruario.html','_blank')
 
 //click imagem
 img.addEventListener('click',function(){
+  vibração()
 Swal.fire({
 title: '',
 html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
@@ -149,10 +150,11 @@ document.body.style.paddingRight = '0px';
 }
 });
 document.getElementById('btimgSair').addEventListener('click',function(){
+  vibração()
 Swal.close()
 })
 document.getElementById('imgSwal').src= doc.IMG1
-alert(data.IMG1)
+//alert(data.IMG1)
 });
 //sessionStorage.setItem('itensList1',itens)
 document.getElementById('P_resutDestaqueIMV').innerHTML=`Total de ${itens1} Imóveis encontrados!`;
@@ -173,7 +175,7 @@ sessionStorage.setItem('IMGIMV',doc.IMG1)
 whatsapp()
 });
 btn3.addEventListener('click',function(){
-vibrar()
+vibração()
 Swal.fire({
 title: `Compartilhar <i id='i_compart'  class="fa-solid fa-square-share-nodes"></i>`,
 html: `
@@ -195,19 +197,16 @@ document.body.style.paddingRight = '0px';
 }
 });
 document.getElementById('sair_').addEventListener('click',function(){
+  vibração()
 Swal.close()
 });
 document.getElementById('face').addEventListener('click',function(){
-if (navigator.vibrate) {
-navigator.vibrate(200); // vibra por 200ms
-}
+ vibração()
 var url = encodeURIComponent("https://rutimoveis.netlify.app/");
 window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
 });
 document.getElementById('whats').addEventListener('click',function(){
-if (navigator.vibrate) {
-navigator.vibrate(200); // vibra por 200ms
-}
+ vibração()
 var url = "https://rutimoveis.netlify.app/";
 var img = `${doc.Titulo}: ${doc.IMG1}`;
 var cod=`${doc.Código}`
@@ -350,6 +349,7 @@ window.open('paginas/mostruario.html','_blank')
 
 //click imagem
 img.addEventListener('click',function(){
+  vibração()
 Swal.fire({
 title: '',
 html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
@@ -369,16 +369,18 @@ document.body.style.paddingRight = '0px';
 }
 });
 document.getElementById('btimgSair').addEventListener('click',function(){
+  vibração()
 Swal.close()
 
 })
 document.getElementById('imgSwal').src= doc.IMG1
-alert(data.IMG1)
+//alert(data.IMG1)
 });
 
 //sessionStorage.setItem('itensList1',itens)
 document.getElementById('P_resutTodosIMV').innerHTML=`Total de ${itens2} Imóveis encontrados!`;
 lbl8.addEventListener('click',function(){
+  vibração()
 Swal.fire({
 customClass: {
 popup: 'my-custom_compartilhar' // Aplica a classe CSS personalizada
@@ -395,7 +397,7 @@ sessionStorage.setItem('IMGIMV',doc.IMG1)
 whatsapp()
 });
 btn3.addEventListener('click',function(){
-vibrar()
+vibração()
 Swal.fire({
 title: `Compartilhar <i id='i_compart'  class="fa-solid fa-square-share-nodes"></i>`,
 html: `
@@ -420,12 +422,12 @@ document.getElementById('sair_').addEventListener('click',function(){
 Swal.close()
 });
 document.getElementById('face').addEventListener('click',function(){
-vibrar()
+
 var url = encodeURIComponent("https://rutimoveis.netlify.app/");
 window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
 });
 document.getElementById('whats').addEventListener('click',function(){
-vibrar()
+
 var url = "https://rutimoveis.netlify.app/";
 var img = `${doc.Titulo}: ${doc.IMG1}`;
 var cod=`${doc.Código}`
@@ -459,6 +461,7 @@ document.getElementById('selecVL').value='';
 var pesq=document.getElementById('inputPesquisa').value;
 sessionStorage.setItem('ValorPesquisa',pesq)
 sessionStorage.setItem('itensList1','')
+
 Buscar()
 };
 //fechar lista pesquisa e busca
@@ -642,8 +645,8 @@ document.body.style.paddingRight = '0px';
 }
 });
 document.getElementById('imgSwal').src= doc.IMG1
-alert(data.IMG1)
-document.getElementById('btimgSair').addEventListener('click',function(){
+//alert(data.IMG1)
+document.getElementById('btimgSair').addEventListener('click',function(){   
 Swal.close()
 })
 
@@ -1150,8 +1153,6 @@ Menu()
 
 
 //Vibração no menu lateral
-
-
 
 
 // Recupera valor salvo
