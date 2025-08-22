@@ -270,6 +270,33 @@ color: rgb(60, 255, 0);
     text-align: center;
     margin-bottom: 40px;
 }
+.swal2-popup.fullscreen-popup {
+  width: 95% !important;
+  min-width: 390px;
+  padding: 2px !important;
+  border-radius: 0 !important;
+  z-index: 99999;
+}
+#imgSwal{
+    border-radius: 10px;
+}
+ #btimgSair{
+  min-width: 20%;
+  border: 0cap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.514);
+  cursor: pointer;
+  background-color: #7c00cf;
+  color: aliceblue;
+  padding: 10px;
+  border-radius: 7px;
+  font-size: 15px;
+
+}
+#btimgSair:hover{
+  background-color: rgb(155, 0, 160);
+
+}
+
 
 
 
@@ -307,6 +334,16 @@ margin: auto;
 max-width: 95%;
 min-width: 500px;
 }
+.fullscreen-popup img{
+    min-width: 390px;
+  
+  
+  }
+  #btimgSair{
+    display: none;
+  }
+
+
 }
 @media(max-width: 560px){
 #divIMGs img{

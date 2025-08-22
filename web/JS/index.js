@@ -127,6 +127,31 @@ btn.addEventListener('click',function(){
 sessionStorage.setItem('Mostruario',doc.Código)
 window.open('paginas/mostruario.html','_blank')
 });
+
+//click imagem
+img.addEventListener('click',function(){
+Swal.fire({
+  title: '',
+  html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
+   <br><br> <butoon id='btimgSair'> Sair </button>
+  `,
+  showConfirmButton: false,
+  background: 'transparent',
+  backdrop: `
+    rgba(0,0,0,0.9)
+  `,
+  allowOutsideClick: true,
+  customClass: {
+    popup: 'fullscreen-popup'
+  }
+});
+document.getElementById('btimgSair').addEventListener('click',function(){
+    Swal.close()
+
+})
+document.getElementById('imgSwal').src= doc.IMG1
+alert(data.IMG1)
+});
 //sessionStorage.setItem('itensList1',itens)
 document.getElementById('P_resutDestaqueIMV').innerHTML=`Total de ${itens1} Imóveis encontrados!`;
 lbl8.addEventListener('click',function(){
@@ -322,6 +347,32 @@ btn.addEventListener('click',function(){
 sessionStorage.setItem('Mostruario',doc.Código)
 window.open('paginas/mostruario.html','_blank')
 });
+
+//click imagem
+img.addEventListener('click',function(){
+Swal.fire({
+  title: '',
+  html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
+   <br><br> <butoon id='btimgSair'> Sair </button>
+  `,
+  showConfirmButton: false,
+  background: 'transparent',
+  backdrop: `
+    rgba(0,0,0,0.9)
+  `,
+  allowOutsideClick: true,
+  customClass: {
+    popup: 'fullscreen-popup'
+  }
+});
+document.getElementById('btimgSair').addEventListener('click',function(){
+    Swal.close()
+
+})
+document.getElementById('imgSwal').src= doc.IMG1
+alert(data.IMG1)
+});
+
 //sessionStorage.setItem('itensList1',itens)
 document.getElementById('P_resutTodosIMV').innerHTML=`Total de ${itens2} Imóveis encontrados!`;
 lbl8.addEventListener('click',function(){
@@ -574,6 +625,31 @@ btn.addEventListener('click',function(){
 sessionStorage.setItem('Mostruario',doc.Código)
 window.open('paginas/mostruario.html','_blank')
 });
+//click imagem
+img.addEventListener('click',function(){
+Swal.fire({
+  title: '',
+  html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
+   <br><br> <butoon id='btimgSair'> Sair </button>
+  `,
+  showConfirmButton: false,
+  background: 'transparent',
+  backdrop: `
+    rgba(0,0,0,0.9)
+  `,
+  allowOutsideClick: true,
+  customClass: {
+    popup: 'fullscreen-popup'
+  }
+});
+document.getElementById('btimgSair').addEventListener('click',function(){
+    Swal.close()
+
+})
+document.getElementById('imgSwal').src= doc.IMG1
+alert(data.IMG1)
+});
+
 sessionStorage.setItem('itensList1',itens3)
 document.getElementById('P_resutPesquisa').innerHTML=`Total de ${itens3} Imóveis encontrados!`;
 document.getElementById('resutPesquisa').style.display='block'
@@ -1036,8 +1112,10 @@ document.getElementById('imgWhats').addEventListener('click',function(){
 swal('','',`${imagem}`)
 })
 document.getElementById('btn_whats').addEventListener('click',function(){
+var pag="https://rutimoveis.netlify.app/"
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
-var url = "https://wa.me/"+`${numero}?text= Rute corretora (cod: ${imovel}) Imóvel - Imagem do Imóvel: ${encodeURIComponent(imgIMV)}`;
+var resul=`Pagina web: ${pag} \n\n Imagem: ${imgIMV}\n\n Código: ${imovel}`
+var url = "https://wa.me/"+`${numero}?text=  ${encodeURIComponent(resul)}`;
 window.open(url, "_blank");
 Swal.fire(`WhatsApp`,``,'success')       
 });
