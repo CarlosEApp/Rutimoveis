@@ -310,6 +310,11 @@ flex-wrap: wrap;
 
 }
 
+.my-custom_vibra_Swl {
+  animation: vibra 0.3s ease-in-out;
+  border-radius: 12px;
+}
+
 /* Responsividade para telas menores */
 @media (max-width: 1680px) {
   #listPesq #li_,

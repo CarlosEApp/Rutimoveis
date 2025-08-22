@@ -131,26 +131,25 @@ window.open('paginas/mostruario.html','_blank')
 //click imagem
 img.addEventListener('click',function(){
 Swal.fire({
-  title: '',
-  html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
-   <br><br> <butoon id='btimgSair'> Sair </button>
-  `,
-  showConfirmButton: false,
-  background: 'transparent',
-  backdrop: `
-    rgba(0,0,0,0.9)
-  `,
- allowOutsideClick: true,
-  customClass: {
-    popup: 'fullscreen-popup'
-  },
-  didOpen: () => {
+title: '',
+html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
+<br><br> <butoon id='btimgSair'> Sair </button>
+`,
+showConfirmButton: false,
+background: 'transparent',
+backdrop: `
+rgba(0,0,0,0.9)
+`,
+allowOutsideClick: true,
+customClass: {
+popup: 'fullscreen-popup'
+},
+didOpen: () => {
 document.body.style.paddingRight = '0px';
-  }
+}
 });
 document.getElementById('btimgSair').addEventListener('click',function(){
-    Swal.close()
-
+Swal.close()
 })
 document.getElementById('imgSwal').src= doc.IMG1
 alert(data.IMG1)
@@ -174,9 +173,7 @@ sessionStorage.setItem('IMGIMV',doc.IMG1)
 whatsapp()
 });
 btn3.addEventListener('click',function(){
-if (navigator.vibrate) {
-navigator.vibrate(200); // vibra por 200ms
-}
+vibrar()
 Swal.fire({
 title: `Compartilhar <i id='i_compart'  class="fa-solid fa-square-share-nodes"></i>`,
 html: `
@@ -354,25 +351,25 @@ window.open('paginas/mostruario.html','_blank')
 //click imagem
 img.addEventListener('click',function(){
 Swal.fire({
-  title: '',
-  html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
-   <br><br> <butoon id='btimgSair'> Sair </button>
-  `,
-  showConfirmButton: false,
-  background: 'transparent',
-  backdrop: `
-    rgba(0,0,0,0.9)
-  `,
-   allowOutsideClick: true,
-  customClass: {
-    popup: 'fullscreen-popup'
-  },
-  didOpen: () => {
+title: '',
+html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
+<br><br> <butoon id='btimgSair'> Sair </button>
+`,
+showConfirmButton: false,
+background: 'transparent',
+backdrop: `
+rgba(0,0,0,0.9)
+`,
+allowOutsideClick: true,
+customClass: {
+popup: 'fullscreen-popup'
+},
+didOpen: () => {
 document.body.style.paddingRight = '0px';
-  }
+}
 });
 document.getElementById('btimgSair').addEventListener('click',function(){
-    Swal.close()
+Swal.close()
 
 })
 document.getElementById('imgSwal').src= doc.IMG1
@@ -398,9 +395,7 @@ sessionStorage.setItem('IMGIMV',doc.IMG1)
 whatsapp()
 });
 btn3.addEventListener('click',function(){
-if (navigator.vibrate) {
-navigator.vibrate(200); // vibra por 200ms
-}
+vibrar()
 Swal.fire({
 title: `Compartilhar <i id='i_compart'  class="fa-solid fa-square-share-nodes"></i>`,
 html: `
@@ -425,16 +420,12 @@ document.getElementById('sair_').addEventListener('click',function(){
 Swal.close()
 });
 document.getElementById('face').addEventListener('click',function(){
-if (navigator.vibrate) {
-navigator.vibrate(200); // vibra por 200ms
-}
+vibrar()
 var url = encodeURIComponent("https://rutimoveis.netlify.app/");
 window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
 });
 document.getElementById('whats').addEventListener('click',function(){
-if (navigator.vibrate) {
-navigator.vibrate(200); // vibra por 200ms
-}
+vibrar()
 var url = "https://rutimoveis.netlify.app/";
 var img = `${doc.Titulo}: ${doc.IMG1}`;
 var cod=`${doc.Código}`
@@ -482,9 +473,7 @@ document.getElementById('resutPesquisa').style.display='none'
 }
 //botão Buscar pesquisa
 function Buscar(){
-if (navigator.vibrate) {
-navigator.vibrate(200); // vibra por 200ms
-}
+vibração()
 sessionStorage.setItem('CodIMV','')   
 sessionStorage.setItem('IMGIMV','')  
 sessionStorage.setItem('itensList1','')
@@ -633,33 +622,32 @@ window.open('paginas/mostruario.html','_blank')
 });
 //click imagem
 img.addEventListener('click',function(){
+  vibração()
 Swal.fire({
-  title: '',
-  html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
-   <br><br> <butoon id='btimgSair'> Sair </button>
-  `,
-  showConfirmButton: false,
-  background: 'transparent',
-  backdrop: `
-    rgba(0,0,0,0.9)
-  `,
-  allowOutsideClick: true,
-  customClass: {
-    popup: 'fullscreen-popup'
-  },
-  didOpen: () => {
+title: '',
+html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
+<br><br> <butoon id='btimgSair'> Sair </button>
+`,
+showConfirmButton: false,
+background: 'transparent',
+backdrop: `
+rgba(0,0,0,0.9)
+`,
+allowOutsideClick: true,
+customClass: {
+popup: 'fullscreen-popup'
+},
+didOpen: () => {
 document.body.style.paddingRight = '0px';
-  }
+}
 });
 document.getElementById('imgSwal').src= doc.IMG1
 alert(data.IMG1)
 document.getElementById('btimgSair').addEventListener('click',function(){
-    Swal.close()
-
+Swal.close()
 })
 
 });
-
 sessionStorage.setItem('itensList1',itens3)
 document.getElementById('P_resutPesquisa').innerHTML=`Total de ${itens3} Imóveis encontrados!`;
 document.getElementById('resutPesquisa').style.display='block'
@@ -681,9 +669,7 @@ sessionStorage.setItem('IMGIMV',doc.IMG1)
 whatsapp()
 });
 btn3.addEventListener('click',function(){
-if (navigator.vibrate) {
-navigator.vibrate(200); // vibra por 200ms
-}
+vibração()
 Swal.fire({
 title: `Compartilhar <i id='i_compart'  class="fa-solid fa-square-share-nodes"></i>`,
 html: `
@@ -708,16 +694,12 @@ document.getElementById('sair_').addEventListener('click',function(){
 Swal.close()
 });
 document.getElementById('face').addEventListener('click',function(){
-if (navigator.vibrate) {
-navigator.vibrate(200); // vibra por 200ms
-}
+vibração()
 var url = encodeURIComponent("https://rutimoveis.netlify.app/");
 window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
 });
 document.getElementById('whats').addEventListener('click',function(){
-if (navigator.vibrate) {
-navigator.vibrate(200); // vibra por 200ms
-}
+vibração()
 var url = "https://rutimoveis.netlify.app/";
 var img = `${doc.Titulo}: ${doc.IMG1}`;
 var cod=`${doc.Código}`
@@ -737,9 +719,7 @@ window.open(whatsappLink, "_blank");
 //Abrir Pesquisa
 document.getElementById('labelPesquisa').style.display = 'none'
 function Pesquisar() {
-if (navigator.vibrate) {
-navigator.vibrate(200); // vibra por 200ms
-}
+vibração()
 var resp = document.getElementById('labelPesquisa').style.display;
 var IText = document.getElementById('pesq-3');
 if (!resp || resp == 'none') {
@@ -759,9 +739,7 @@ sessionStorage.setItem('MENULateral', '')
 var BTN = document.getElementById('heaad_menu');
 BTN.className = 'fa-solid fa-bars'
 function Menu() {
-if (navigator.vibrate) {
-navigator.vibrate(200); // vibra por 200ms
-}
+vibração()
 var BTN = document.getElementById('heaad_menu');
 var MENU_ = sessionStorage.getItem('MENULateral')
 if (!MENU_ || MENU_ == '') {
@@ -785,6 +763,7 @@ Menu()
 //Exite menu
 function exit() {
 Menu()
+vibração()
 }
 
 //Time Relogio
@@ -805,9 +784,7 @@ sessionStorage.setItem('hora', timeString)
 
 // Tela Cheia
 function toggleFullScreen() {
-if (navigator.vibrate) {
-navigator.vibrate(200); // vibra por 200ms
-}
+vibração()
 if ((document.fullScreenElement && document.fullScreenElement !== null) ||
 (!document.mozFullScreen && !document.webkitIsFullScreen)) {
 if (document.documentElement.requestFullScreen) {
@@ -848,9 +825,7 @@ sessionStorage.setItem('PassW03',data.Master2);
 })
 //Botão Admin
 function ADMIN() {
-if (navigator.vibrate) {
-navigator.vibrate(200); // vibra por 200ms
-}
+vibração()
 Swal.fire({
 title: ``,
 html: `
@@ -891,9 +866,7 @@ document.getElementById('sair_').addEventListener('click',function(){
 Swal.close()
 });
 document.getElementById('enter').addEventListener('click',function(){
-if (navigator.vibrate) {
-navigator.vibrate(200); // vibra por 200ms
-}
+vibração()
 var resp= document.getElementById('inputSwalAdimin').value;
 var pass1= sessionStorage.getItem('PassW01');
 var pass2= sessionStorage.getItem('PassW02');
@@ -978,9 +951,7 @@ Swal.close()
 }
 AlertaInicial()
 function CompartilhamentoP(){
-if (navigator.vibrate) {
-navigator.vibrate(200); // vibra por 200ms
-}
+vibração()
 Swal.fire({
 title: `Compartilhar <i id='i_compart'  class="fa-solid fa-square-share-nodes"></i>`,
 html: `
@@ -1026,9 +997,11 @@ window.open(whatsappLink, "_blank");
 function ZAP(){
 whats()
 Menu() 
+vibração()
 }
 function what(){
 whats()
+vibração()
 }
 function whats(){
 if (navigator.vibrate) {
@@ -1082,9 +1055,7 @@ Swal.close()
 
 // WhatsApp com Informações do imóvel
 function whatsapp(){
-if (navigator.vibrate) {
-navigator.vibrate(200); // vibra por 200ms
-}
+vibração()
 var imgIMV= sessionStorage.getItem('IMGIMV')     
 var imovel= sessionStorage.getItem('CodIMV')    
 var tell= sessionStorage.getItem('Tel_Whats');
@@ -1141,9 +1112,7 @@ facebook()
 Menu() 
 }
 function facebook(){
-if (navigator.vibrate) {
-navigator.vibrate(200); // vibra por 200ms
-}
+vibração()
 var url_face=localStorage.getItem('URL_facebook')
 if(!url_face ||url_face==''){
 var URL_facebook='https://www.facebook.com/share/1YP8t9Q7uR/'
@@ -1156,13 +1125,12 @@ Swal.fire(`Facebook`,``,'success')
 
 //Instagran
 function INSTA(){
+vibração()
 instagran()
 Menu() 
 }
 function instagran(){
-if (navigator.vibrate) {
-navigator.vibrate(200); // vibra por 200ms
-}
+
 var URL_Intagran= localStorage.getItem('URL_Intagran')
 if(!URL_Intagran|| URL_Intagran==''){
 var url_Inst='https://www.instagram.com/rute.teixeira.370/profilecard/?igsh=MWltMzh6NjMwbXZrMA=='
@@ -1173,14 +1141,64 @@ Swal.fire(`Instagran`,``,'success')
 window.open(url_Inst,'_blank')
 };
 function init(){
-if (navigator.vibrate) {
-navigator.vibrate(200); // vibra por 200ms
-}
+vibrar()
 Menu() 
 }
 function sobre(){
-if (navigator.vibrate) {
-navigator.vibrate(200); // vibra por 200ms
-}
+vibrar()
 Menu() 
 }
+
+
+
+//Vibração no menu lateral
+
+
+
+
+// Recupera valor salvo
+var vibrar = localStorage.getItem('Vibar') || 'off'; // valor padrão: 'off'
+
+// Exibe alerta com opção marcada
+function Config(){
+Swal.fire({
+  title: `Opção atual: ${vibrar === 'on' ? '🔛 On' : '🔘 Off'}`,
+  input: 'radio',
+  inputOptions: {
+    on: '🔛 On',
+    off: '🔘 Off'
+  },
+  inputValue: vibrar, // marca a opção salva
+  inputValidator: (value) => {
+    if (!value) {
+      return 'Você precisa escolher uma opção!';
+    }
+  },
+  showCancelButton: false,
+  confirmButtonText: 'Confirmar',
+  customClass: {
+    popup: 'my-custom_vibra_Swl'
+  },
+  didOpen: () => {
+    document.body.style.paddingRight = '0px';
+  }
+}).then((result) => {
+  if (result.isConfirmed) {
+    localStorage.setItem('Vibar', result.value); // salva nova escolha
+    Swal.fire(`Você escolheu: ${result.value === 'on' ? 'On' : 'Off'}`);
+    setTimeout(function(){
+   window.location.reload()
+    },1000)
+  }
+});
+}
+
+
+//função vibratória
+
+  function vibração() {
+    var vib = localStorage.getItem('Vibar')
+    if (vib === 'on' && navigator.vibrate) {
+      navigator.vibrate(200);
+    }
+  }

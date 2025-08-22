@@ -3,16 +3,19 @@
 
 //fecher listas excluidos, vendidos e suspensos
 function Fechar_ex(){
+   vibração()
 var list = document.getElementById('excluidosList');
 list.innerHTML = ''
 document.getElementById('div_excluidos').style.display='none'
 };
 function Fechar_vendidos(){
+   vibração()
 var list2 = document.getElementById('vendidosList');
 list2.innerHTML = ''
 document.getElementById('div_vendidos').style.display='none'
 };
 function Fechar_suspensos(){
+   vibração()
 var list3 = document.getElementById('esuspensosList');
 list3.innerHTML = ''
 document.getElementById('div_suspenso').style.display='none'
@@ -30,6 +33,7 @@ classes.className = 'fa-solid fa-eye'
 },200)
 // botão div imóvel suspenso ou vendido. div abrerta ou fechada
 function selEAT() {
+   vibração()
 var data = sessionStorage.getItem('data')
 var hora = sessionStorage.getItem('hora')
 var resp = document.getElementById('estadoAimóvel').value;
@@ -46,6 +50,7 @@ document.getElementById('horaETA').value='';
 // botão abre e fecha Imoves EXcluidos
 document.getElementById('div_vendasEX_flex').style.display = 'none';
 function ImoveisEX() {
+   vibração()
 var classes = document.getElementById('I_movel');
 var janela = document.getElementById('div_vendasEX_flex').style.display;
 if (janela == 'block') {
@@ -170,6 +175,7 @@ document.getElementById('sair').addEventListener('click',function(){
 Swal.close()
 });
 document.getElementById('btn_excluir').addEventListener('click',function(){
+  vibração()
 Swal.fire({
 title: `Excluir Arquivo!`,
 html: ` <div  class="menu-container">
@@ -194,6 +200,7 @@ document.getElementById('Sair').addEventListener('click', function() {
 Swal.close('click')
 });
 document.getElementById('SwalExCód').addEventListener('click', function() {
+  vibração()
 var data = sessionStorage.getItem('data')
 var hora = sessionStorage.getItem('hora')
 var respC = doc.Código;
@@ -413,9 +420,11 @@ document.body.style.paddingRight = '0px';
 });
 document.getElementById('Código').innerHTML=doc.Código
 document.getElementById('sair').addEventListener('click',function(){
+  vibração()
 Swal.close()
 });
 document.getElementById('btn_excluir').addEventListener('click',function(){
+  vibração()
 Swal.fire({
 title: `Excluir Arquivo!`,
 html: ` <div  class="menu-container">
@@ -602,10 +611,12 @@ ImoveisEX()
 //fechar cadastro
 function Ssair() {
 FecharCad()
+ vibração()
 }
 document.getElementById('listadeCad').style.display = 'none'
 //imóveis Cadastrados
 function Cadastrados() {
+   vibração()
 document.getElementById('selectlista').value = ''
 var cad = document.getElementById('Icad');
 var list = document.getElementById('list');
@@ -640,6 +651,7 @@ var resp = document.getElementById('selectlista').value;
 var list = document.getElementById('list');
 list.innerHTML = ''
 itensL1()
+ vibração()
 var firebaseConfigure = {
 apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
 authDomain: "rutimoveis-bc114.firebaseapp.com",
@@ -915,7 +927,7 @@ window.location.reload()
 };
 sessionStorage.setItem('Editecad', '')
 function salvarCad() {
-
+vibração()
   var titulo = document.getElementById('titulo').value.trim(); //1
   var cidade = document.getElementById('cidade').value.trim(); //2
   var rua = document.getElementById('rua').value.trim(); //3
@@ -1122,6 +1134,7 @@ EstadoAT: estadoAT,
 EATdata: eatdata,
 })
 mostrarAlertaSalvar()
+ vibração()
 }
 //alerta
 function mostrarAlerta() {
@@ -1141,6 +1154,7 @@ Swal.close()
 };
 //botões IMGs
 function IMG01() {
+   vibração()
 document.getElementById('filesUm').click();
 var código = document.getElementById('inputCodigo').value;
 var firebaseConfigure = {
@@ -1194,6 +1208,7 @@ elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
 })
 };
 function IMG02() {
+ vibração()
 document.getElementById('filesDois').click();
 var código = document.getElementById('inputCodigo').value;
 var firebaseConfigure = {
@@ -1245,6 +1260,7 @@ elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
 })
 };
 function IMG03() {
+ vibração()
 document.getElementById('filesTres').click();
 var código = document.getElementById('inputCodigo').value;
 var firebaseConfigure = {
@@ -1297,6 +1313,7 @@ elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
 })
 };
 function IMG04() {
+ vibração()
 document.getElementById('filesQuatro').click();
 var código = document.getElementById('inputCodigo').value;
 var firebaseConfigure = {
@@ -1349,6 +1366,7 @@ elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
 })
 };
 function IMG05() {
+  vibração()
 document.getElementById('filesCinco').click();
 var código = document.getElementById('inputCodigo').value;
 var firebaseConfigure = {
@@ -1401,6 +1419,7 @@ elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
 })
 };
 function IMG06() {
+ vibração()
 document.getElementById('filesSeis').click();
 var código = document.getElementById('inputCodigo').value;
 var firebaseConfigure = {
@@ -1453,6 +1472,7 @@ elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
 })
 };
 function IMG07() {
+ vibração()
 document.getElementById('filesSete').click();
 var código = document.getElementById('inputCodigo').value;
 var firebaseConfigure = {
@@ -1505,6 +1525,7 @@ elem.innerHTML = width + "%"; // Atualiza o texto do rótulo
 })
 };
 function LimparC() {
+ vibração()
 sessionStorage.setItem('Editecad', '')
 document.getElementById('inputCodigo').value = ''; //00
 document.getElementById('titulo').value = ''; //1
@@ -1584,6 +1605,7 @@ document.getElementById('p8').style.color = 'rgb(255, 255, 255)'
 }
 //botão proxima fase do cadastro
 function proximo() {
+  vibração()
 var cidade = document.getElementById('cidade').value;
 var bairro = document.getElementById('bairro').value;
 var lista1 = document.getElementById('selectListId_moradia').value;
@@ -1689,6 +1711,7 @@ event_.target.value = formatarCEP(event_.target.value);
 //Voltar ficha 1 cadastro
 function Vvoltar() {
 voltarCad()
+ vibração()
 }
 //Voltar ficha 1 cadastro
 function voltarCad() {
@@ -1738,6 +1761,7 @@ Swal.fire('Novo cadastro!', `Cadastre um novo imóvel.<br>Código gerado: <b>${c
 }
 //fechar cadastro
 function FecharCad() {
+  vibração()
 document.getElementById('cadUmFlex').style.display = 'None';
 LimparC()
 document.getElementById("a_cad2").click()
@@ -1763,6 +1787,7 @@ sessionStorage.setItem('hora', timeString)
 }, 1000)
 // Tela Cheia
 function toggleFullScreen() {
+    vibração()
 if ((document.fullScreenElement && document.fullScreenElement !== null) ||
 (!document.mozFullScreen && !document.webkitIsFullScreen)) {
 if (document.documentElement.requestFullScreen) {
@@ -1817,3 +1842,13 @@ campos.forEach((id, index) => {
     });
   }
 });
+
+
+//função vibratória
+
+  function vibração() {
+    var vib = localStorage.getItem('Vibar')
+    if (vib === 'on' && navigator.vibrate) {
+      navigator.vibrate(200);
+    }
+  }
