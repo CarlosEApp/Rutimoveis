@@ -290,7 +290,7 @@ flex-wrap: wrap;
   z-index: 99999;
 }
 #imgSwal{
-    border-radius: 10px;
+    border-radius: 4px;
 }
  #btimgSair{
   min-width: 20%;
@@ -299,10 +299,11 @@ flex-wrap: wrap;
   cursor: pointer;
   background-color: #7c00cf;
   color: aliceblue;
-  padding: 10px;
+  padding: 7px;
   border-radius: 7px;
   font-size: 15px;
-
+  padding-left: 20px;
+  padding-right: 20px;
 }
 #btimgSair:hover{
   background-color: rgb(155, 0, 160);
