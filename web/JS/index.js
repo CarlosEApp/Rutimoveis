@@ -1141,11 +1141,9 @@ Swal.fire(`Instagran`,``,'success')
 window.open(url_Inst,'_blank')
 };
 function init(){
-vibrar()
 Menu() 
 }
 function sobre(){
-vibrar()
 Menu() 
 }
 
