@@ -140,9 +140,12 @@ Swal.fire({
   backdrop: `
     rgba(0,0,0,0.9)
   `,
-  allowOutsideClick: true,
+ allowOutsideClick: true,
   customClass: {
     popup: 'fullscreen-popup'
+  },
+  didOpen: () => {
+document.body.style.paddingRight = '0px';
   }
 });
 document.getElementById('btimgSair').addEventListener('click',function(){
@@ -360,9 +363,12 @@ Swal.fire({
   backdrop: `
     rgba(0,0,0,0.9)
   `,
-  allowOutsideClick: true,
+   allowOutsideClick: true,
   customClass: {
     popup: 'fullscreen-popup'
+  },
+  didOpen: () => {
+document.body.style.paddingRight = '0px';
   }
 });
 document.getElementById('btimgSair').addEventListener('click',function(){
@@ -640,14 +646,18 @@ Swal.fire({
   allowOutsideClick: true,
   customClass: {
     popup: 'fullscreen-popup'
+  },
+  didOpen: () => {
+document.body.style.paddingRight = '0px';
   }
 });
+document.getElementById('imgSwal').src= doc.IMG1
+alert(data.IMG1)
 document.getElementById('btimgSair').addEventListener('click',function(){
     Swal.close()
 
 })
-document.getElementById('imgSwal').src= doc.IMG1
-alert(data.IMG1)
+
 });
 
 sessionStorage.setItem('itensList1',itens3)

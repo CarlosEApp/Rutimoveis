@@ -215,3 +215,29 @@ Swal.close()
 },7000)
 }
 AlertaInicial()
+
+function img1(){
+    Swal.fire({
+  title: '',
+  html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
+   <br><br> <butoon id='btimgSair'> Sair </button>
+  `,
+  showConfirmButton: false,
+  background: 'transparent',
+  backdrop: `
+    rgba(0,0,0,0.9)
+  `,
+  allowOutsideClick: true,
+  customClass: {
+    popup: 'fullscreen-popup'
+  }
+});
+document.getElementById('imgSwal').src= doc.IMG1
+alert(data.IMG1)
+document.getElementById('btimgSair').addEventListener('click',function(){
+    Swal.close()
+
+})
+
+
+}
