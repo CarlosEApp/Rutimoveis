@@ -99,6 +99,8 @@ btn2.title='Contato com Corretor via WhatsApp'
 btn2.id = 'btn3';
 btn3.className = 'fa-solid fa-square-share-nodes';
 btn3.title='Compartilhar Imóvel'
+img.alt=`${doc.Titulo}`
+li.title=`${doc.Titulo}`
 // Montando a estrutura
 div1.appendChild(img);
 div2.appendChild(lbl1);
@@ -318,6 +320,8 @@ btn2.title='Contato com Corretor via WhatsApp'
 btn2.id = 'btn3';
 btn3.className = 'fa-solid fa-square-share-nodes';
 btn3.title='Compartilhar Imóvel'
+img.alt=`${doc.Titulo}`
+li.title=`${doc.Titulo}`
 // Montando a estrutura
 div1.appendChild(img);
 div2.appendChild(lbl1);
@@ -595,6 +599,8 @@ btn2.title='Contato com Corretor via WhatsApp'
 btn2.id = 'btn3';
 btn3.className = 'fa-solid fa-square-share-nodes';
 btn3.title='Compartilhar Imóvel'
+img.alt=`${doc.Titulo}`
+li.title=`${doc.Titulo}`
 // Montando a estrutura
 div1.appendChild(img);
 div2.appendChild(lbl1);

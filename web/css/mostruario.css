@@ -272,6 +272,7 @@ color: rgb(60, 255, 0);
 }
 .swal2-popup.fullscreen-popup {
   width: 95% !important;
+  max-width: 1100px;
   min-width: 390px;
   padding: 2px !important;
   border-radius: 0 !important;
@@ -305,8 +306,25 @@ color: rgb(60, 255, 0);
 #lblScrem:hover{
   color: rgb(167, 0, 144);
 }
+@media(max-width: 1300px){
+  .swal2-popup.fullscreen-popup {
+  width: 95% !important;
+  max-width: 1000px;
+  min-width: 390px;
+  padding: 2px !important;
+  border-radius: 0 !important;
+  z-index: 99999;
+}}
 
 @media(max-width: 1000px){
+  .swal2-popup.fullscreen-popup {
+  width: 95% !important;
+  max-width: 800px;
+  min-width: 390px;
+  padding: 2px !important;
+  border-radius: 0 !important;
+  z-index: 99999;
+}
 #divIMGs img{
 margin: auto;
 max-width: 90%;
@@ -321,6 +339,14 @@ min-width: 560px;
 }
 }
 @media(max-width: 840px){
+  .swal2-popup.fullscreen-popup {
+  width: 95% !important;
+  max-width: 700px;
+  min-width: 390px;
+  padding: 2px !important;
+  border-radius: 0 !important;
+  z-index: 99999;
+  }
 #divIMGs img{
 margin: auto;
 max-width: 90%;
