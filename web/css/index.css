@@ -276,8 +276,8 @@ flex-wrap: wrap;
   border-radius: 10px;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.514);
   margin: 15px;
+  margin-bottom: 50px;
 }
-
 /* Container flexível */
 #listPesq,
 #listGeral,
@@ -769,8 +769,6 @@ font-weight: bold;
     margin-right: 10px;
     border-radius: 5px;
 }
-
-
 #supenpesquisa{
   margin: auto;
  width: 100%;
@@ -782,30 +780,23 @@ padding-bottom: 50px;
 top: 5%;
 text-align: center;
 z-index: 888;
-
+display: none;
 }
-
 #hh2{
   width: 100%;
   text-align: center;
   margin-left: 20px;
-
 }
-
 #imgg{
   min-height: 25vh;
   max-height: 28vh;
 }
-
-
 @media(max-width: 840px){
-  
 #imgg{
   min-height: 27vh;
 }
 #banner_pesqusa button{
 width: 80%;
-
 }
 }
 @media(max-width: 600px){
@@ -814,14 +805,12 @@ width: 80%;
 }
 #banner_pesqusa button{
 width: 90%;
-
 }
 }
 @media(max-width: 500px){
 #banner_pesqusa button{
 width: 95%;
 margin-right: 12px;
-
 }
 }
 
