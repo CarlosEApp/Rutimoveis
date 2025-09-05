@@ -321,7 +321,12 @@ flex-wrap: wrap;
   animation: vibra 0.3s ease-in-out;
   border-radius: 12px;
 }
-
+  .fullscreen-popup{
+    min-width: 390px;
+    z-index: 9999;
+  
+  
+  }
 /* Responsividade para telas menores */
 @media (max-width: 1680px) {
   #listPesq #li_,
@@ -394,6 +399,7 @@ flex-wrap: wrap;
   }
   .fullscreen-popup img{
     min-width: 390px;
+    z-index: 9999;
   
   
   }
@@ -658,6 +664,7 @@ border-radius: 50%;
 margin-right: 10px;
 cursor: pointer;
 margin-bottom: 10px;
+
 }
 #btn_whats{
 width: 55%;
@@ -693,7 +700,7 @@ min-height: 30vh;
 background-color: #9c019c;
 color: white;
 transition: left 0rgba(117, 2, 111, 0.957);
-z-index: 1000;
+z-index: 997;
 padding: 0px;
 overflow-y: auto;
 }
@@ -812,6 +819,9 @@ width: 90%;
 width: 95%;
 margin-right: 12px;
 }
+}
+.fullscreen-popup #imgSwal{
+  z-index: 9999;
 }
 
 
