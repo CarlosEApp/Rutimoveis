@@ -306,7 +306,17 @@ color: rgb(60, 255, 0);
 #lblScrem:hover{
   color: rgb(167, 0, 144);
 }
+#img1,#img2,#img3,#img4,#img5,#img6,#img7{
+min-height: 45vh;
+}
+@media(max-width: 1600px){
+  #img1,#img2,#img3,#img4,#img5,#img6,#img7{
+min-height: 43vh;
+}}
 @media(max-width: 1300px){
+  #img1,#img2,#img3,#img4,#img5,#img6,#img7{
+min-height: 41vh;
+}
   .swal2-popup.fullscreen-popup {
   width: 95% !important;
   max-width: 1000px;
@@ -317,6 +327,9 @@ color: rgb(60, 255, 0);
 }}
 
 @media(max-width: 1000px){
+  #img1,#img2,#img3,#img4,#img5,#img6,#img7{
+min-height:40vh;
+}
   .swal2-popup.fullscreen-popup {
   width: 95% !important;
   max-width: 800px;
@@ -354,6 +367,9 @@ min-width: 530px;
 }
 }
 @media(max-width: 740px){
+    #img1,#img2,#img3,#img4,#img5,#img6,#img7{
+min-height:37vh;
+}
 #divIMGs img{
 margin: auto;
 max-width: 95%;
@@ -361,6 +377,9 @@ min-width: 500px;
 }
 }
 @media(max-width: 640px){
+  #img1,#img2,#img3,#img4,#img5,#img6,#img7{
+min-height:36vh;
+}
 #divIMGs img{
 margin: auto;
 max-width: 95%;
@@ -376,6 +395,9 @@ min-width: 500px;
 
 }
 @media(max-width: 560px){
+    #img1,#img2,#img3,#img4,#img5,#img6,#img7{
+min-height:35vh;
+}
 #divIMGs img{
 margin: auto;
 max-width: 100%;

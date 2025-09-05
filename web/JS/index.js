@@ -625,9 +625,12 @@ li.appendChild(div3);
 li.appendChild(div4);
 // Adicionando ao elemento principal (list)
 list.appendChild(li);
+Pesquisar()
+document.getElementById('a_result').click
 btn.addEventListener('click',function(){
 sessionStorage.setItem('Mostruario',doc.Código)
 window.open('paginas/mostruario.html','_blank')
+
 });
 //click imagem
 img.addEventListener('click',function(){
@@ -726,17 +729,17 @@ window.open(whatsappLink, "_blank");
 }
 
 //Abrir Pesquisa
-document.getElementById('labelPesquisa').style.display = 'none'
+document.getElementById('supenpesquisa').style.display = 'none'
 function Pesquisar() {
 vibração()
-var resp = document.getElementById('labelPesquisa').style.display;
+var resp = document.getElementById('supenpesquisa').style.display;
 var IText = document.getElementById('pesq-3');
 if (!resp || resp == 'none') {
-document.getElementById('labelPesquisa').style.display = 'block'
+document.getElementById('supenpesquisa').style.display = 'block'
 IText.className = 'fa-solid fa-delete-left';
 document.getElementById('a_inputp').click()
 } else {
-document.getElementById('labelPesquisa').style.display = 'none'
+document.getElementById('supenpesquisa').style.display = 'none'
 IText.className = 'fa-solid fa-magnifying-glass';
 sessionStorage.setItem('ValorPesquisa','')
 document.getElementById('inputPesquisa').value='';
