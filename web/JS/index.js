@@ -625,7 +625,12 @@ li.appendChild(div3);
 li.appendChild(div4);
 // Adicionando ao elemento principal (list)
 list.appendChild(li);
+if(!resutPesq||resutPesq==''){
+
+}else{
 Pesquisar()
+}
+
 document.getElementById('a_result').click
 btn.addEventListener('click',function(){
 sessionStorage.setItem('Mostruario',doc.Código)
