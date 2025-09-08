@@ -136,7 +136,6 @@ img.addEventListener('click',function(){
 Swal.fire({
 title: '',
 html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
-<br><br> <butoon id='btimgSair'> Sair </button>
 `,
 showConfirmButton: false,
 background: 'transparent',
@@ -151,12 +150,12 @@ didOpen: () => {
 document.body.style.paddingRight = '0px';
 }
 });
-document.getElementById('btimgSair').addEventListener('click',function(){
-  vibração()
-Swal.close()
-})
+
 document.getElementById('imgSwal').src= doc.IMG1
 //alert(data.IMG1)
+document.getElementById('imgSwal').addEventListener('click', function(){
+    Swal.close()
+})
 });
 //sessionStorage.setItem('itensList1',itens)
 document.getElementById('P_resutDestaqueIMV').innerHTML=`Total de ${itens1} Imóveis encontrados!`;
@@ -357,7 +356,6 @@ img.addEventListener('click',function(){
 Swal.fire({
 title: '',
 html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
-<br><br> <butoon id='btimgSair'> Sair </button>
 `,
 showConfirmButton: false,
 background: 'transparent',
@@ -372,13 +370,12 @@ didOpen: () => {
 document.body.style.paddingRight = '0px';
 }
 });
-document.getElementById('btimgSair').addEventListener('click',function(){
-  vibração()
-Swal.close()
 
-})
 document.getElementById('imgSwal').src= doc.IMG1
 //alert(data.IMG1)
+document.getElementById('imgSwal').addEventListener('click', function(){
+    Swal.close()
+})
 });
 
 //sessionStorage.setItem('itensList1',itens)
@@ -643,7 +640,6 @@ img.addEventListener('click',function(){
 Swal.fire({
 title: '',
 html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
-<br><br> <butoon id='btimgSair'> Sair </button>
 `,
 showConfirmButton: false,
 background: 'transparent',
@@ -660,8 +656,8 @@ document.body.style.paddingRight = '0px';
 });
 document.getElementById('imgSwal').src= doc.IMG1
 //alert(data.IMG1)
-document.getElementById('btimgSair').addEventListener('click',function(){   
-Swal.close()
+document.getElementById('imgSwal').addEventListener('click', function(){
+    Swal.close()
 })
 
 });
@@ -1064,10 +1060,7 @@ var url = "https://wa.me/"+`${numero}?text= Pedido de contato Rute corretora-(Ru
 window.open(url, "_blank");
 Swal.fire(`WhatsApp`,``,'success')       
 });
-document.getElementById('sair_').addEventListener('click',function(){
-Swal.fire('Sair')
-Swal.close()
-});
+
 }
 
 // WhatsApp com Informações do imóvel

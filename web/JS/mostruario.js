@@ -224,7 +224,7 @@ vibração()
 Swal.fire({
 title: '',
 html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
-<br><br> <butoon id='btimgSair'> Sair </button>
+
 `,
 showConfirmButton: false,
 background: 'transparent',
@@ -240,18 +240,15 @@ document.body.style.paddingRight = '0px';
 }
 });
 document.getElementById('imgSwal').src= document.getElementById('img1').src;
-
-document.getElementById('btimgSair').addEventListener('click',function(){
-Swal.close()
+document.getElementById('imgSwal').addEventListener('click', function(){
+    Swal.close()
 })
-
 }
 function img2(){
 vibração()
 Swal.fire({
 title: '',
 html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
-<br><br> <butoon id='btimgSair'> Sair </button>
 `,
 showConfirmButton: false,
 background: 'transparent',
@@ -267,18 +264,15 @@ document.body.style.paddingRight = '0px';
 }
 });
 document.getElementById('imgSwal').src= document.getElementById('img2').src;
-
-document.getElementById('btimgSair').addEventListener('click',function(){
-Swal.close()
+document.getElementById('imgSwal').addEventListener('click', function(){
+    Swal.close()
 })
 }
-
 function img3(){
 vibração()
 Swal.fire({
 title: '',
 html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
-<br><br> <butoon id='btimgSair'> Sair </button>
 `,
 showConfirmButton: false,
 background: 'transparent',
@@ -294,9 +288,8 @@ document.body.style.paddingRight = '0px';
 }
 });
 document.getElementById('imgSwal').src= document.getElementById('img3').src;
-
-document.getElementById('btimgSair').addEventListener('click',function(){
-Swal.close()
+document.getElementById('imgSwal').addEventListener('click', function(){
+    Swal.close()
 })
 }
 function img4(){
@@ -304,7 +297,6 @@ vibração()
 Swal.fire({
 title: '',
 html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
-<br><br> <butoon id='btimgSair'> Sair </button>
 `,
 showConfirmButton: false,
 background: 'transparent',
@@ -320,9 +312,8 @@ document.body.style.paddingRight = '0px';
 }
 });
 document.getElementById('imgSwal').src= document.getElementById('img4').src;
-
-document.getElementById('btimgSair').addEventListener('click',function(){
-Swal.close()
+document.getElementById('imgSwal').addEventListener('click', function(){
+    Swal.close()
 })
 }
 function img5(){
@@ -330,7 +321,6 @@ vibração()
 Swal.fire({
 title: '',
 html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
-<br><br> <butoon id='btimgSair'> Sair </button>
 `,
 showConfirmButton: false,
 background: 'transparent',
@@ -346,18 +336,15 @@ document.body.style.paddingRight = '0px';
 }
 });
 document.getElementById('imgSwal').src= document.getElementById('img5').src;
-
-document.getElementById('btimgSair').addEventListener('click',function(){
-Swal.close()
+document.getElementById('imgSwal').addEventListener('click', function(){
+    Swal.close()
 })
 }
-
 function img6(){
 vibração()
 Swal.fire({
 title: '',
 html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
-<br><br> <butoon id='btimgSair'> Sair </button>
 `,
 showConfirmButton: false,
 background: 'transparent',
@@ -373,18 +360,15 @@ document.body.style.paddingRight = '0px';
 }
 });
 document.getElementById('imgSwal').src= document.getElementById('img6').src;
-
-document.getElementById('btimgSair').addEventListener('click',function(){
-Swal.close()
+document.getElementById('imgSwal').addEventListener('click', function(){
+    Swal.close()
 })
 }
-
 function img7(){
 vibração()
 Swal.fire({
 title: '',
 html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
-<br><br> <butoon id='btimgSair'> Sair </button>
 `,
 showConfirmButton: false,
 background: 'transparent',
@@ -400,9 +384,8 @@ document.body.style.paddingRight = '0px';
 }
 });
 document.getElementById('imgSwal').src= document.getElementById('img7').src;
-
-document.getElementById('btimgSair').addEventListener('click',function(){
-Swal.close()
+document.getElementById('imgSwal').addEventListener('click', function(){
+    Swal.close()
 })
 }
 
