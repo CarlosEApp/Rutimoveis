@@ -805,9 +805,9 @@ margin-right: 12px;
 z-index: 9999;
 }
 #selectProcura select{
-background-color: rgba(246, 247, 255, 0.897);
-color: rgb(73, 73, 73);
-border-radius: 12px;
+background-color: rgb(246, 248, 255);
+color: rgb(49, 49, 49);
+border-radius: 5px;
 margin-right: 12px;
 
 }
