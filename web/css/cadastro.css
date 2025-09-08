@@ -1,0 +1,669 @@
+
+
+*{
+margin: 0%;
+padding: 0%;
+}
+body{
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+background-color: rgb(66, 71, 109);
+color: aliceblue;
+}
+#div_Geral{
+width: 100%;
+margin: auto;
+}
+#div_container{
+margin: auto;
+width: 100%;
+max-width: 1920px;
+min-height: 100vh;
+background-color: rgb(206, 209, 255);
+background-color: rgb(48, 0, 94);
+}
+::-webkit-scrollbar {
+width: 7px;
+margin-left: 5px;
+/* Largura da barra de rolagem */
+cursor: pointer;   
+margin: 0px;
+}        
+::-webkit-scrollbar-thumb {
+margin-left: 15px;
+background-color: rgb(148, 0, 153);
+/* Cor do polegar da barra de rolagem */
+margin-top: 1px;
+border-radius: 7px;
+cursor: pointer;
+margin: 0px;
+min-height: 37vh; 
+}
+::-webkit-scrollbar-thumb:hover {
+background-color: rgb(4, 99, 231); 
+margin: 0px; 
+min-height: 37vh;       
+}       
+::-webkit-scrollbar-track {
+/* Cor da trilha da barra de rolagem */
+margin-left: 15px;    
+background-color: rgba(0, 0, 0, 0.588);
+border-radius: 7px;
+cursor: pointer;
+margin-bottom: 2px;
+margin-top: 2px;
+margin: 0px;
+}
+#div_header{
+margin: auto;
+width: 100%;
+max-width: 1920px;
+position: fixed;
+background-color: rgb(98, 0, 163);
+padding-bottom: 20px;
+z-index: 9999;
+}
+#header02{
+display: flex;
+justify-content: space-between;
+margin-top: 10px;
+}
+#header01{
+display: flex;
+justify-content: space-between;
+padding: 5px;
+margin-left: 10px;
+}
+#header02 button,#header01 button{
+border: 0cap;
+background-color: rgba(240, 248, 255, 0);
+color: aliceblue;
+cursor: pointer;
+margin-left: 20px;
+margin-right: 20px;
+font-size: clamp(0.875rem, 1vw + 0.5rem, 0.900rem);
+}
+#header02 button:hover, #header01 button:hover{
+color: rgb(0, 255, 242);
+}
+#NovoCadastro{
+  width: 100%;
+  max-width: 1920px;
+  min-height: 100vh;
+}
+#NovoCadastro{
+margin: auto;
+width: 100%;
+max-width: 800px;
+padding-top: 100px;
+padding-bottom: 200px;
+}
+#cadUm, #cadDois{
+padding: 20px;
+padding-bottom: 300px;
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+background-color: rgb(64, 0, 124);
+border-radius: 20px;
+}
+#cadUmFlex,#cadUmFlex2{
+display: none;
+}
+#cadUm h2, #cadDois h2{
+margin-top: 10px;
+margin-bottom: 20px;
+color: rgb(243, 243, 243);
+}
+#cadUm textarea{
+padding: 12px;
+background-color: rgb(66, 66, 66);
+color: rgb(255, 255, 255);
+width: 80%;
+max-width: 500px;
+min-width:350px ;
+max-height: 10vh;
+min-height: 5vh;
+cursor: pointer;
+font-size: clamp(0.800rem, 1vw + 0.5rem, 0.900rem);
+margin-top: 3px;
+border-radius: 10px;
+}
+#cadUm label{
+font-size: clamp(0.750rem, 1vw + 0.5rem, 0.700rem);
+color: rgb(216, 216, 216);
+
+}
+#cadUm p{
+margin-bottom: 3px;
+font-size: clamp(0.750rem, 1vw + 0.5rem, 0.700rem);
+color: rgb(216, 216, 216);
+}
+#inputCodigo{
+width: 30%;
+padding: 10px;
+border-radius: 10px;
+color: rgb(16, 241, 0);
+background-color: rgb(31, 0, 12);
+font-size: clamp(0.800rem, 1vw + 0.5rem, 0.900rem);
+border: 2px solid rgb(174, 160, 139);
+margin-top: 3px;
+ outline: none;
+}
+#cadUm select{
+width: 60%;
+padding: 10px;
+border: 0cap;
+background-color: rgb(251, 250, 255);
+color: rgb(12, 12, 12);
+cursor: pointer;
+font-size: 15px;
+margin-top: 5px;
+ outline: none;
+}
+#cadUm select option{
+background-color: rgb(19, 10, 44);
+color: aliceblue;
+}
+.inputUm{
+width: 90%;
+padding: 10px;
+cursor: pointer;
+border-color: rgba(240, 248, 255, 0);
+outline: none;
+border: 0cap;
+border-radius: 4px;
+color: rgb(12, 12, 12);
+font-size: clamp(0.800rem, 1vw + 0.5rem, 0.900rem);
+margin-top: 3px;
+background-color: rgb(243, 244, 255);
+}
+.inputDois{
+width: 37%;
+padding: 10px;
+cursor: pointer;
+border-color: rgba(240, 248, 255, 0);
+outline: none;
+border: 0cap;
+border-radius: 4px;
+color: rgb(20, 20, 20);
+font-size: clamp(0.800rem, 1vw + 0.5rem, 0.900rem);
+text-align: center;
+margin-top: 3px;
+margin-right: 3px;
+margin-bottom: 5px;
+background-color: rgb(243, 244, 255);
+}
+.inputTres{
+width: 12%;
+padding: 10px;
+cursor: pointer;
+border-color: rgba(240, 248, 255, 0);
+outline: none;
+border: 0cap;
+border-radius: 4px;
+color: rgb(20, 20, 20);
+font-size: clamp(0.800rem, 1vw + 0.5rem, 0.900rem);
+text-align: center;
+margin-top: 3px;
+margin-right: 3px;
+background-color: rgb(243, 244, 255);
+}
+#butoon{
+margin: auto;
+width: 95%;
+}
+#btnSair:hover{
+color: rgb(255, 255, 255);
+}
+#btnSalvar:hover{
+color: rgb(45, 0, 58);
+background-color: rgb(0, 208, 236);
+  outline: none;
+}
+.file{
+    display: none;
+}
+.imagens{
+    width: 95%;
+    max-width: 400px;
+    max-height: 25vh;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.Div_imagens{
+    padding-bottom: 30px;
+    padding-top: 30px;
+    margin-bottom: 50px;
+     border-bottom: 10px solid rgb(0, 238, 255);
+      border-top: 10px solid rgb(0, 238, 255);
+    border-radius: 20px;
+}
+#cadDois button,#btnSair, #btnSalvar{
+    width: 85%;
+    padding: 10px;
+    cursor: pointer;
+    border: 1px solid rgb(17, 164, 233);
+    background-color: rgb(54, 55, 110);
+    border-radius: 7px;
+    color: aliceblue;
+    margin-left: 28px;
+    margin-top: 30px;
+    outline: none;
+}
+#cadDois button:hover,#btnSair:hover, #btnSalvar:hover{
+    background-color: rgb(0, 192, 240);
+    color: rgb(126, 1, 126);
+}
+#lbl_codigo{
+    margin-bottom: 10px;
+    width: 100%;
+    padding-bottom: 30px;
+
+}
+.imgN{
+    font-size: 18px;
+    font-weight: bold;
+}
+#parag{
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+ #cadUm .selectPlex{
+    max-width: 19%;
+}
+.lbl_{
+    margin-top: 10px;
+    color: rgb(204, 203, 255);
+    font-weight: bold;
+    font-size: 18px;
+}
+#myProgressIMG1 {
+ width: 80%;
+ background-color:rgb(134, 130, 130);
+ display: none;
+ border-radius: 7px;
+ margin-bottom: 3px;
+ margin-left: 10%;
+ margin-top: 10px;
+}   
+#myBarIMG1 {
+  width: 1%;
+  /* Começa com 1% */
+  height: 20px;
+   background-color:rgb(123, 2, 87);
+  text-align: center;
+  /* Centraliza horizontalmente */
+  line-height: 15px;
+  /* Centraliza verticalmente */
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  font-weight: bold;
+}
+#myProgressIMG2 {
+ width: 80%;
+ background-color:rgb(134, 130, 130);
+ display: none;
+ border-radius: 7px;
+ margin-bottom: 3px;
+ margin-left: 10%;
+ margin-top: 10px;
+}   
+#myBarIMG2 {
+  width: 1%;
+  /* Começa com 1% */
+  height: 20px;
+   background-color:rgb(123, 2, 87);
+  text-align: center;
+  /* Centraliza horizontalmente */
+  line-height: 15px;
+  /* Centraliza verticalmente */
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  font-weight: bold;
+}
+#myProgressIMG3 {
+ width: 80%;
+ background-color:rgb(134, 130, 130);
+ display: none;
+ border-radius: 7px;
+ margin-bottom: 3px;
+ margin-left: 10%;
+ margin-top: 10px;
+}   
+#myBarIMG3 {
+  width: 1%;
+  /* Começa com 1% */
+  height: 20px;
+   background-color:rgb(123, 2, 87);
+  text-align: center;
+  /* Centraliza horizontalmente */
+  line-height: 15px;
+  /* Centraliza verticalmente */
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  font-weight: bold;
+}
+#myProgressIMG4 {
+ width: 80%;
+ background-color:rgb(134, 130, 130);
+ display: none;
+ border-radius: 7px;
+ margin-bottom: 3px;
+ margin-left: 10%;
+ margin-top: 10px;
+}   
+#myBarIMG4 {
+  width: 1%;
+  /* Começa com 1% */
+  height: 20px;
+   background-color:rgb(123, 2, 87);
+  text-align: center;
+  /* Centraliza horizontalmente */
+  line-height: 15px;
+  /* Centraliza verticalmente */
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  font-weight: bold;
+}
+#myProgressIMG5 {
+ width: 80%;
+ background-color:rgb(134, 130, 130);
+ display: none;
+ border-radius: 7px;
+ margin-bottom: 3px;
+ margin-left: 10%;
+ margin-top: 10px;
+}   
+#myBarIMG5 {
+  width: 1%;
+  /* Começa com 1% */
+  height: 20px;
+   background-color:rgb(123, 2, 87);
+  text-align: center;
+  /* Centraliza horizontalmente */
+  line-height: 15px;
+  /* Centraliza verticalmente */
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  font-weight: bold;
+}
+#myProgressIMG6 {
+ width: 80%;
+ background-color:rgb(134, 130, 130);
+ display: none;
+ border-radius: 7px;
+ margin-bottom: 3px;
+ margin-left: 10%;
+ margin-top: 10px;
+}   
+#myBarIMG6 {
+  width: 1%;
+  /* Começa com 1% */
+  height: 20px;
+   background-color:rgb(123, 2, 87);
+  text-align: center;
+  /* Centraliza horizontalmente */
+  line-height: 15px;
+  /* Centraliza verticalmente */
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  font-weight: bold;
+}
+#myProgressIMG7 {
+ width: 80%;
+ background-color:rgb(134, 130, 130);
+ display: none;
+ border-radius: 7px;
+ margin-bottom: 3px;
+ margin-left: 10%;
+ margin-top: 10px;
+}   
+#myBarIMG7 {
+  width: 1%;
+  /* Começa com 1% */
+  height: 20px;
+   background-color:rgb(123, 2, 87);
+  text-align: center;
+  /* Centraliza horizontalmente */
+  line-height: 15px;
+  /* Centraliza verticalmente */
+  color: rgb(255, 255, 255);
+  border-radius: 5px;
+  font-weight: bold;
+}
+#listadeCad{
+  margin: auto;
+  width: 98%;
+  max-width: 800px;
+  padding-top: 100px;
+  display: none;
+}
+#selectlista{
+  width: 70%;
+  padding: 12px;
+  cursor: pointer;
+  background-color: rgb(255, 255, 255);
+  color: rgb(15, 15, 15);
+  border-radius: 4px;
+  outline: none;
+  margin-left: 20px;
+  min-width: 340px;
+  font-size: 16px;
+  border-radius: 10px;
+  
+}
+#selectlista option{
+  background-color: rgb(255, 255, 255);
+  color: rgb(37, 37, 37);
+  cursor: pointer;
+    
+}
+#plista{
+  margin-left: 30px;
+  font-size: clamp(1.200rem, 1vw + 0.5rem, 1.280rem);
+  color: rgb(255, 255, 255);
+  font-family: Arial, Helvetica, sans-serif;
+}
+#div_lista{
+  width: 96%;
+  margin: auto;
+  padding: 10px;
+  background-color: rgba(240, 255, 255, 0);
+  margin-top: 10px;
+}
+#list{
+  margin: auto;
+  width: 99%;
+  margin-top: 10px;
+  color: rgb(255, 255, 255);
+  padding-bottom:30px;
+  margin-bottom: 30px;
+}
+#list #divlista_{
+  width: 97%;
+  padding: 5px;
+  display: flex;
+  justify-content:space-between;
+  align-items: center;
+  background-color: blueviolet;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+#list img{
+  max-width: 80px;
+  max-height: 80vh;
+  margin-right:10px;
+  border-radius: 4px;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, 0);
+ padding: 1px;
+}
+#list img:hover{
+  background-color: rgb(0, 183, 255);
+}
+#lbl1, #lbl2{
+  margin-right: 10px;
+font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+}
+#lbl3:hover{
+ cursor: pointer;
+ color: aqua;
+}
+#lbl4:hover{
+  cursor: pointer;
+  color: rgb(255, 0, 0);
+}
+#lbl_itens{
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.200rem);
+  color: rgb(255, 255, 255);
+  font-weight: bolder;
+  margin-left: 30px;
+}
+#SSair:hover{
+  color: red;
+  cursor: pointer;
+}
+#div_body{
+  width: 100%;
+  max-width: 1920px;
+  min-height: 99vh;
+}
+#divfooter{
+  width: 100%;
+  max-width: 1920px;
+  background-color: rgb(5, 0, 12);
+  height: 10vh;
+}
+.my-custom_CadExCód{
+  max-width: 370px;
+  border-radius: 15px;
+  background-color: #ffffff;
+   box-shadow: 0 7px 15px rgba(0, 0, 0, 0.603);
+}
+.my-custom_CadExCód p{
+  font-size: 13px;
+  font-weight: bold;
+}
+.my-custom_CadExCód input, .my-custom_PesqCódigo input{
+  width: 80%;
+  padding: 7px;
+  border: 2px solid #e0e0e0;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 14px;
+  outline: none;  
+}
+.my-custom_CadExCód button, .my-custom_PesqCódigo button{
+  width: 60%;
+  padding: 7px;
+  border: 1px solid rgb(233, 233, 233);
+  background-color: #dce3ff;
+  border-radius: 3px;
+  cursor: pointer;
+}
+.my-custom_CadExCód button:hover, .my-custom_PesqCódigo button:hover{
+  background-color: #f0efff;
+  color: #c50202;
+    border: 1px solid rgb(255, 0, 0);
+}
+#cadUm input,#cadDois input{
+  max-width: 1000px;
+}
+#div_vendasEX_flex{  
+    width: 100%;
+  max-width: 1920px;
+  display: none;
+
+}
+#div_vendasEX{
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 1920px;
+  background-color: #dce3ff;
+  padding-top: 100px;
+  color: black;
+  flex-wrap: wrap;
+}
+.div_V_X_S{
+  width: 95%;
+  max-width: 460px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 70px;
+  background-color: rgba(0, 255, 255, 0);
+  cursor: pointer;
+  border: 5px solid blueviolet;
+    border-bottom: 20px solid blueviolet;
+  padding-bottom: 20px;
+  border-radius: 20px;
+  margin-top: 30px;
+  
+
+}
+.div_V_X_S ul{
+  display: flex;
+  align-items: center;
+  margin-top: 30px;
+  padding: 5px;
+
+}
+.div_V_X_S ul:hover{
+  background-color: #3c175f;
+  color: #dce3ff;
+  border-radius: 15px;
+}
+.div_V_X_S ul:hover #imgg{
+    border: 2px solid rgb(255, 255, 255);
+}
+#imgg{
+  max-width: 70px;
+  max-height: 70;
+  margin-right: 10px;
+  cursor: pointer;
+  margin-left: 10px;
+  border-radius: 7px;
+  border: 2px solid rgb(126, 1, 126);
+}
+#lbl_{
+  cursor: pointer;
+  margin-right: 10px;
+}
+#lbl_2{
+  cursor: pointer;
+  margin-right: 10px;
+  color: #c50202;
+}
+#div_vendasEX h2{
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+#div_ETA{
+  display: none;
+}
+#div_ETA input{
+  margin-top: 5px;
+  width: 25%;
+  padding: 10px;
+  border-radius: 7px;
+  cursor: pointer;
+  outline: none;
+}
+#Fechar_vendidos, #Fechar_suspensos,#Fechar_ex{
+  margin-top: 10px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+#Fechar_vendidos:hover, #Fechar_suspensos:hover,#Fechar_ex:hover{
+  color: #c50202;
+}
+@media screen and (max-width: 600px) {
+  .google-message {
+    display: none;
+  }
+}
