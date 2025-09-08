@@ -131,15 +131,15 @@ document.getElementById('areaConst').innerHTML=`Area construida: ${data.AreaM} m
 }
 if(!data.Suite||data.Suite==''){
 }else{
-document.getElementById('suite').innerHTML=`Suíte: [${data.Suite}] 🛏️ `
+document.getElementById('suite').innerHTML=`🛏️ [${data.Suite}] Suíte`
 }
 if(!data.Quartos||data.Quartos==''){
 }else{
-document.getElementById('quartos').innerHTML=`Quartos: [${data.Quartos}] 🛏️ `
+document.getElementById('quartos').innerHTML=`🛏️ [${data.Quartos}]  Quartos `
 }
 if(!data.Banheiro||data.Banheiro==''){
 }else{
-document.getElementById('banheiro').innerHTML=`Banheiros: [${data.Banheiro}] 🚿`
+document.getElementById('banheiro').innerHTML=`🚿 [${data.Banheiro}] Banheiros `
 }
 if(!data.Quintal||data.Quintal==''){
 }else{
@@ -151,7 +151,7 @@ document.getElementById('quintal').innerHTML=`Quintal: [${data.Quintal}] - ${dat
 }
 if(!data.Garagem||data.Garagem==''){
 }else{
-document.getElementById('garagem').innerHTML=`Garagem: [${data.Garagem}] 🚗 `
+document.getElementById('garagem').innerHTML=`🚗[${data.Garagem}] Vagas/Garagem: `
 }
 if(!data.Piscina||data.Piscina==''){
 }else{
@@ -179,7 +179,7 @@ document.getElementById('desconto').innerHTML=`Avista desconto de (${data.Descon
 
 //Botão WhatsApp
 function corretora(){
-  vibração()
+vibração()
 var telefone=`11948865333`
 var Titulo_=document.getElementById('tituloH2').innerHTML;
 var codigo_=document.getElementById('codigoH2').innerHTML;
@@ -212,7 +212,7 @@ document.body.style.paddingRight = '0px';
 }
 });
 setTimeout(function(){
- vibração()
+vibração()
 Swal.close()
 },7000)
 }
@@ -220,189 +220,189 @@ AlertaInicial()
 
 //FullScrem imagens swal
 function img1(){
- vibração()
-    Swal.fire({
-  title: '',
-  html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
-   <br><br> <butoon id='btimgSair'> Sair </button>
-  `,
-  showConfirmButton: false,
-  background: 'transparent',
-  backdrop: `
-    rgba(0,0,0,0.9)
-  `,
-  allowOutsideClick: true,
-  customClass: {
-    popup: 'fullscreen-popup'
-  },
-  didOpen: () => {
+vibração()
+Swal.fire({
+title: '',
+html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
+<br><br> <butoon id='btimgSair'> Sair </button>
+`,
+showConfirmButton: false,
+background: 'transparent',
+backdrop: `
+rgba(0,0,0,0.9)
+`,
+allowOutsideClick: true,
+customClass: {
+popup: 'fullscreen-popup'
+},
+didOpen: () => {
 document.body.style.paddingRight = '0px';
-  }
+}
 });
 document.getElementById('imgSwal').src= document.getElementById('img1').src;
 
 document.getElementById('btimgSair').addEventListener('click',function(){
-    Swal.close()
+Swal.close()
 })
 
 }
 function img2(){
 vibração()
-    Swal.fire({
-  title: '',
-  html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
-   <br><br> <butoon id='btimgSair'> Sair </button>
-  `,
-  showConfirmButton: false,
-  background: 'transparent',
-  backdrop: `
-    rgba(0,0,0,0.9)
-  `,
-  allowOutsideClick: true,
-  customClass: {
-    popup: 'fullscreen-popup'
-  },
-  didOpen: () => {
+Swal.fire({
+title: '',
+html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
+<br><br> <butoon id='btimgSair'> Sair </button>
+`,
+showConfirmButton: false,
+background: 'transparent',
+backdrop: `
+rgba(0,0,0,0.9)
+`,
+allowOutsideClick: true,
+customClass: {
+popup: 'fullscreen-popup'
+},
+didOpen: () => {
 document.body.style.paddingRight = '0px';
-  }
+}
 });
 document.getElementById('imgSwal').src= document.getElementById('img2').src;
 
 document.getElementById('btimgSair').addEventListener('click',function(){
-    Swal.close()
+Swal.close()
 })
 }
 
 function img3(){
-  vibração()
-    Swal.fire({
-  title: '',
-  html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
-   <br><br> <butoon id='btimgSair'> Sair </button>
-  `,
-  showConfirmButton: false,
-  background: 'transparent',
-  backdrop: `
-    rgba(0,0,0,0.9)
-  `,
-  allowOutsideClick: true,
-  customClass: {
-    popup: 'fullscreen-popup'
-  },
-  didOpen: () => {
+vibração()
+Swal.fire({
+title: '',
+html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
+<br><br> <butoon id='btimgSair'> Sair </button>
+`,
+showConfirmButton: false,
+background: 'transparent',
+backdrop: `
+rgba(0,0,0,0.9)
+`,
+allowOutsideClick: true,
+customClass: {
+popup: 'fullscreen-popup'
+},
+didOpen: () => {
 document.body.style.paddingRight = '0px';
-  }
+}
 });
 document.getElementById('imgSwal').src= document.getElementById('img3').src;
 
 document.getElementById('btimgSair').addEventListener('click',function(){
-    Swal.close()
+Swal.close()
 })
 }
 function img4(){
-  vibração()
-    Swal.fire({
-  title: '',
-  html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
-   <br><br> <butoon id='btimgSair'> Sair </button>
-  `,
-  showConfirmButton: false,
-  background: 'transparent',
-  backdrop: `
-    rgba(0,0,0,0.9)
-  `,
-  allowOutsideClick: true,
-  customClass: {
-    popup: 'fullscreen-popup'
-  },
-  didOpen: () => {
+vibração()
+Swal.fire({
+title: '',
+html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
+<br><br> <butoon id='btimgSair'> Sair </button>
+`,
+showConfirmButton: false,
+background: 'transparent',
+backdrop: `
+rgba(0,0,0,0.9)
+`,
+allowOutsideClick: true,
+customClass: {
+popup: 'fullscreen-popup'
+},
+didOpen: () => {
 document.body.style.paddingRight = '0px';
-  }
+}
 });
 document.getElementById('imgSwal').src= document.getElementById('img4').src;
 
 document.getElementById('btimgSair').addEventListener('click',function(){
-    Swal.close()
+Swal.close()
 })
 }
 function img5(){
- vibração()
-    Swal.fire({
-  title: '',
-  html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
-   <br><br> <butoon id='btimgSair'> Sair </button>
-  `,
-  showConfirmButton: false,
-  background: 'transparent',
-  backdrop: `
-    rgba(0,0,0,0.9)
-  `,
-  allowOutsideClick: true,
-  customClass: {
-    popup: 'fullscreen-popup'
-  },
-  didOpen: () => {
+vibração()
+Swal.fire({
+title: '',
+html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
+<br><br> <butoon id='btimgSair'> Sair </button>
+`,
+showConfirmButton: false,
+background: 'transparent',
+backdrop: `
+rgba(0,0,0,0.9)
+`,
+allowOutsideClick: true,
+customClass: {
+popup: 'fullscreen-popup'
+},
+didOpen: () => {
 document.body.style.paddingRight = '0px';
-  }
+}
 });
 document.getElementById('imgSwal').src= document.getElementById('img5').src;
 
 document.getElementById('btimgSair').addEventListener('click',function(){
-    Swal.close()
+Swal.close()
 })
 }
 
 function img6(){
-  vibração()
-    Swal.fire({
-  title: '',
-  html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
-   <br><br> <butoon id='btimgSair'> Sair </button>
-  `,
-  showConfirmButton: false,
-  background: 'transparent',
-  backdrop: `
-    rgba(0,0,0,0.9)
-  `,
-  allowOutsideClick: true,
-  customClass: {
-    popup: 'fullscreen-popup'
-  },
-  didOpen: () => {
+vibração()
+Swal.fire({
+title: '',
+html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
+<br><br> <butoon id='btimgSair'> Sair </button>
+`,
+showConfirmButton: false,
+background: 'transparent',
+backdrop: `
+rgba(0,0,0,0.9)
+`,
+allowOutsideClick: true,
+customClass: {
+popup: 'fullscreen-popup'
+},
+didOpen: () => {
 document.body.style.paddingRight = '0px';
-  }
+}
 });
 document.getElementById('imgSwal').src= document.getElementById('img6').src;
 
 document.getElementById('btimgSair').addEventListener('click',function(){
-    Swal.close()
+Swal.close()
 })
 }
 
 function img7(){
-  vibração()
-    Swal.fire({
-  title: '',
-  html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
-   <br><br> <butoon id='btimgSair'> Sair </button>
-  `,
-  showConfirmButton: false,
-  background: 'transparent',
-  backdrop: `
-    rgba(0,0,0,0.9)
-  `,
-  allowOutsideClick: true,
-  customClass: {
-    popup: 'fullscreen-popup'
-  },
-  didOpen: () => {
+vibração()
+Swal.fire({
+title: '',
+html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
+<br><br> <butoon id='btimgSair'> Sair </button>
+`,
+showConfirmButton: false,
+background: 'transparent',
+backdrop: `
+rgba(0,0,0,0.9)
+`,
+allowOutsideClick: true,
+customClass: {
+popup: 'fullscreen-popup'
+},
+didOpen: () => {
 document.body.style.paddingRight = '0px';
-  }
+}
 });
 document.getElementById('imgSwal').src= document.getElementById('img7').src;
 
 document.getElementById('btimgSair').addEventListener('click',function(){
-    Swal.close()
+Swal.close()
 })
 }
 
@@ -449,9 +449,9 @@ document.webkitCancelFullScreen();
 
 //função vibratória
 
-  function vibração() {
-    var vib = localStorage.getItem('Vibar')
-    if (vib === 'on' && navigator.vibrate) {
-      navigator.vibrate(200);
-    }
-  }
+function vibração() {
+var vib = localStorage.getItem('Vibar')
+if (vib === 'on' && navigator.vibrate) {
+navigator.vibrate(200);
+}
+}
