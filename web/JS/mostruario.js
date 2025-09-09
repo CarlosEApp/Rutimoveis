@@ -151,7 +151,7 @@ document.getElementById('quintal').innerHTML=`Quintal: [${data.Quintal}] - ${dat
 }
 if(!data.Garagem||data.Garagem==''){
 }else{
-document.getElementById('garagem').innerHTML=`🚗[${data.Garagem}] Vagas/Garagem: `
+document.getElementById('garagem').innerHTML=`🚗 [${data.Garagem}] Vagas/Garagem: `
 }
 if(!data.Piscina||data.Piscina==''){
 }else{
