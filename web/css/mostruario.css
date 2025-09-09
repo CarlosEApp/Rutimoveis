@@ -324,6 +324,7 @@ min-height: 45vh;
 #piscina{
     display: flex;
     align-items: center;
+    text-rendering: geometricPrecision;
 }
 @media(max-width: 1600px){
 #img1,#img2,#img3,#img4,#img5,#img6,#img7{
