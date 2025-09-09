@@ -316,7 +316,7 @@ color: rgb(167, 0, 144);
 min-height: 45vh;
 }
 #pcs{
-    width: 22px;
+    width: 23px;
     margin-top: 5px;
     margin-right: 5px;
   
@@ -360,6 +360,12 @@ min-width: 600px;
 }
 }
 @media(max-width: 940px){
+    #pcs{
+    width: 22px;
+    margin-top: 5px;
+    margin-right: 5px;
+  
+}
 #divIMGs img{
 margin: auto;
 max-width: 90%;
@@ -367,6 +373,12 @@ min-width: 560px;
 }
 }
 @media(max-width: 840px){
+    #pcs{
+    width: 21px;
+    margin-top: 5px;
+    margin-right: 5px;
+  
+}
 .swal2-popup.fullscreen-popup {
 width: 95% !important;
 max-width: 700px;
