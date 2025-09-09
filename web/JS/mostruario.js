@@ -127,7 +127,7 @@ document.getElementById('iptu').innerHTML=`IPTU: ${data.Viptu} R$`
 }
 if(!data.AreaM||data.AreaM==''){
 }else{
-document.getElementById('areaConst').innerHTML=`Area construida: ${data.AreaM} m`
+document.getElementById('areaConst').innerHTML=`Area construida: ${data.AreaM}m`
 }
 if(!data.Suite||data.Suite==''){
 }else{
