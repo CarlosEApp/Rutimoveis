@@ -1050,6 +1050,10 @@ didOpen: () => {
 document.body.style.paddingRight = '0px';
 }
 });
+document.getElementById('sair_').addEventListener('click',function(){
+  Swal.close()
+
+})
 document.getElementById('imgWhats').src=`${imagem}`
 document.getElementById('imgWhats').addEventListener('click',function(){
 swal('','',`${imagem}`)
@@ -1157,11 +1161,7 @@ function sobre(){
 Menu() 
 }
 
-
-
 //Vibração no menu lateral
-
-
 // Recupera valor salvo
 var vibrar = localStorage.getItem('Vibar') || 'off'; // valor padrão: 'off'
 
