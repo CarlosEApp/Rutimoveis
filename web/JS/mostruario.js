@@ -156,9 +156,9 @@ document.getElementById('garagem').innerHTML=`🚗[${data.Garagem}] Vagas/Garage
 if(!data.Piscina||data.Piscina==''){
 }else{
 if(!data.PiscinaM||data.PiscinaM==''){
-document.getElementById('piscina').innerHTML=`Piscina: [${data.Piscina}] `
+document.getElementById('piscina').innerHTML=`<img id='pcs' src="../src/piscina.png" alt="Piscina" width="300">  [${data.Piscina}] Piscina `
 }else{
-document.getElementById('piscina').innerHTML=`Piscina: [${data.Piscina}] - ${data.PiscinaM}m² `
+document.getElementById('piscina').innerHTML=`<img id='pcs'  src="../src/piscina.png" alt="Piscina" width="300">   [${data.Piscina}] Piscina: ${data.PiscinaM}m² `
 }
 }
 if(data.Duplex=='sim'){

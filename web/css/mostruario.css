@@ -315,6 +315,15 @@ color: rgb(167, 0, 144);
 #img1,#img2,#img3,#img4,#img5,#img6,#img7{
 min-height: 45vh;
 }
+#pcs{
+    width: 22px;
+    margin-top: 5px;
+  
+}
+#piscina{
+    display: flex;
+    align-items: center;
+}
 @media(max-width: 1600px){
 #img1,#img2,#img3,#img4,#img5,#img6,#img7{
 min-height: 43vh;
@@ -372,6 +381,11 @@ min-width: 530px;
 }
 }
 @media(max-width: 740px){
+    #pcs{
+    width: 20px;
+    margin-top: 5px;
+  
+}
 #img1,#img2,#img3,#img4,#img5,#img6,#img7{
 min-height:36vh;
 }
@@ -382,6 +396,12 @@ min-width: 500px;
 }
 }
 @media(max-width: 640px){
+    #pcs{
+    width: 20px;
+    margin-top: 5px;
+  
+}
+    
 #img1,#img2,#img3,#img4,#img5,#img6,#img7{
 min-height:35vh;
 }
@@ -398,6 +418,11 @@ display: none;
 }
 }
 @media(max-width: 560px){
+    #pcs{
+    width: 19px;
+    margin-top: 5px;
+  
+}
 #img1,#img2,#img3,#img4,#img5,#img6,#img7{
 min-height:33vh;
 }
@@ -408,6 +433,11 @@ min-width: 400px;
 }    
 }
 @media(max-width: 440px){
+    #pcs{
+    width: 18px;
+    margin-top: 5px;
+  
+}
 #divIMGs img{
 margin: auto;
 max-width: 95%;
