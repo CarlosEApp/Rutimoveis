@@ -127,7 +127,7 @@ document.getElementById('iptu').innerHTML=`IPTU: ${data.Viptu} R$`
 }
 if(!data.AreaM||data.AreaM==''){
 }else{
-document.getElementById('areaConst').innerHTML=`Area construida: ${data.AreaM} m²`
+document.getElementById('areaConst').innerHTML=`Area construida: ${data.AreaM} m`
 }
 if(!data.Suite||data.Suite==''){
 }else{
@@ -146,7 +146,7 @@ if(!data.Quintal||data.Quintal==''){
 if(!data.QuintalM||data.QuintalM==''){
 document.getElementById('quintal').innerHTML=`Quintal: [${data.Quintal}] `
 }else{
-document.getElementById('quintal').innerHTML=`Quintal: [${data.Quintal}] - ${data.QuintalM}m² `
+document.getElementById('quintal').innerHTML=`Quintal: [${data.Quintal}] - ${data.QuintalM}m `
 }
 }
 if(!data.Garagem||data.Garagem==''){
@@ -158,7 +158,7 @@ if(!data.Piscina||data.Piscina==''){
 if(!data.PiscinaM||data.PiscinaM==''){
 document.getElementById('piscina').innerHTML=`<img id='pcs' src="../src/piscina.png" alt="Piscina" width="300">  [${data.Piscina}] Piscina `
 }else{
-document.getElementById('piscina').innerHTML=`<img id='pcs'  src="../src/piscina.png" alt="Piscina" width="300">   [${data.Piscina}] Piscina: ${data.PiscinaM}m² `
+document.getElementById('piscina').innerHTML=`<img id='pcs'  src="../src/piscina.png" alt="Piscina" width="300">   [${data.Piscina}] Piscina: ${data.PiscinaM}m `
 }
 }
 if(data.Duplex=='sim'){
