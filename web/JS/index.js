@@ -173,6 +173,7 @@ Swal.fire(`${doc.Código}`,'Código do Imóvel')
 btn2.addEventListener('click',function(){
 sessionStorage.setItem('CodIMV',doc.Código)
 sessionStorage.setItem('IMGIMV',doc.IMG1)     
+sessionStorage.setItem('Titulo_MV',doc.Titulo)  
 whatsapp()
 });
 btn3.addEventListener('click',function(){
@@ -394,7 +395,8 @@ Swal.fire(`${doc.Código}`,'Código do Imóvel')
 });
 btn2.addEventListener('click',function(){
 sessionStorage.setItem('CodIMV',doc.Código)
-sessionStorage.setItem('IMGIMV',doc.IMG1)     
+sessionStorage.setItem('IMGIMV',doc.IMG1)   
+sessionStorage.setItem('Titulo_MV',doc.Titulo)    
 whatsapp()
 });
 btn3.addEventListener('click',function(){
@@ -678,7 +680,8 @@ Swal.fire(`${doc.Código}`,'Código do Imóvel')
 });
 btn2.addEventListener('click',function(){
 sessionStorage.setItem('CodIMV',doc.Código)
-sessionStorage.setItem('IMGIMV',doc.IMG1)     
+sessionStorage.setItem('IMGIMV',doc.IMG1)    
+sessionStorage.setItem('Titulo_MV',doc.Titulo)  
 whatsapp()
 });
 btn3.addEventListener('click',function(){
@@ -1066,7 +1069,8 @@ Swal.fire(`WhatsApp`,``,'success')
 // WhatsApp com Informações do imóvel
 function whatsapp(){
 vibração()
-var imgIMV= sessionStorage.getItem('IMGIMV')     
+var titulo= sessionStorage.getItem('Titulo_MV') 
+var imgIMV= sessionStorage.getItem('IMGIMV')      
 var imovel= sessionStorage.getItem('CodIMV')    
 var tell= sessionStorage.getItem('Tel_Whats');
 var imagem= sessionStorage.getItem('Foto_zap');
@@ -1105,7 +1109,7 @@ swal('','',`${imagem}`)
 document.getElementById('btn_whats').addEventListener('click',function(){
 var pag="https://rutimoveis.netlify.app/"
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
-var resul=`Pagina web: ${pag} \n\n Imagem: ${imgIMV}\n\n Código: ${imovel}`
+var resul=`Pagina web: ${pag} \n\n${titulo}\n\n Imagem: ${imgIMV}\n\n Código: ${imovel}`
 var url = "https://wa.me/"+`${numero}?text=  ${encodeURIComponent(resul)}`;
 window.open(url, "_blank");
 Swal.fire(`WhatsApp`,``,'success')       
