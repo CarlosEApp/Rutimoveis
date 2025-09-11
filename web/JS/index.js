@@ -1213,11 +1213,21 @@ Swal.fire({
     }}
 
 
-const listDestaque = document.getElementById('listGeral');
+const listgeral = document.getElementById('listGeral');
 document.getElementById('btnNext').addEventListener('click', () => {
-  listDestaque.scrollBy({ left: 300, behavior: 'smooth' });
+  listgeral.scrollBy({ left: 300, behavior: 'smooth' });
 });
 
 document.getElementById('btnPrev').addEventListener('click', () => {
+  listgeral.scrollBy({ left: -300, behavior: 'smooth' });
+});
+
+const listDestaque = document.getElementById('listDestaque');
+document.getElementById('btnNext_').addEventListener('click', () => {
+  listDestaque.scrollBy({ left: 300, behavior: 'smooth' });
+});
+
+document.getElementById('btnPrev_').addEventListener('click', () => {
   listDestaque.scrollBy({ left: -300, behavior: 'smooth' });
 });
+
