@@ -822,6 +822,15 @@ color: aliceblue;
     text-rendering: geometricPrecision;
   
 }
+@media (orientation: landscape) {
+  body {
+    transform: rotate(-90deg);
+    transform-origin: center;
+    height: 100vw;
+    width: 100vh;
+    overflow: hidden;
+  }
+}
 
 
 

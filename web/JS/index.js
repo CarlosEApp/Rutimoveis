@@ -1210,5 +1210,11 @@ Swal.fire({
     var vib = localStorage.getItem('Vibar')
     if (vib === 'on' && navigator.vibrate) {
       navigator.vibrate(200);
-    }
+    }}
+
+    window.addEventListener("orientationchange", function() {
+  if (window.orientation === 90 || window.orientation === -90) {
+    alert("Por favor, use o dispositivo na orientação vertical.");
   }
+});
+
