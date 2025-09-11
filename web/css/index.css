@@ -215,6 +215,7 @@ align-items: center;
 padding-bottom: 50px;
 width: 100%;
 text-align: center;
+
 }
 #body02{
 width: 100%;
@@ -907,4 +908,7 @@ overflow: auto;
 #btnNext, #btnPrev,
 #btnNext_, #btnPrev_ {
   display: block; /* ou inline-block, dependendo do layout */
+}
+#body03{
+    padding-bottom: 30px;
 }
