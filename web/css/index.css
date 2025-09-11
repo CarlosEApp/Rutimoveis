@@ -822,16 +822,28 @@ color: aliceblue;
     text-rendering: geometricPrecision;
   
 }
-@media (orientation: landscape) {
-  body {
-    transform: rotate(-90deg);
-    transform-origin: center;
-    height: 100vw;
-    width: 100vh;
-    overflow: hidden;
-  }
+
+#carouselContainer {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  position: relative;
 }
 
+.carousel-list {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 10px;
+  width: 100%;
+}
 
+#carouselContainer button {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
 
 

@@ -1212,9 +1212,12 @@ Swal.fire({
       navigator.vibrate(200);
     }}
 
-    window.addEventListener("orientationchange", function() {
-  if (window.orientation === 90 || window.orientation === -90) {
-    alert("Por favor, use o dispositivo na orientação vertical.");
-  }
+
+const listDestaque = document.getElementById('listDestaque');
+document.getElementById('btnNext').addEventListener('click', () => {
+  listDestaque.scrollBy({ left: 300, behavior: 'smooth' });
 });
 
+document.getElementById('btnPrev').addEventListener('click', () => {
+  listDestaque.scrollBy({ left: -300, behavior: 'smooth' });
+});
