@@ -1119,7 +1119,6 @@ Swal.fire('Sair')
 Swal.close()
 });
 }
-
 //Facebook
 function face(){
 facebook()
@@ -1136,7 +1135,6 @@ var URL_facebook= url_face
 window.open(URL_facebook,'_blank')
 Swal.fire(`Facebook`,``,'success')
 }; 
-
 //Instagran
 function INSTA(){
 vibração()
@@ -1144,7 +1142,6 @@ instagran()
 Menu() 
 }
 function instagran(){
-
 var URL_Intagran= localStorage.getItem('URL_Intagran')
 if(!URL_Intagran|| URL_Intagran==''){
 var url_Inst='https://www.instagram.com/rute.teixeira.370/profilecard/?igsh=MWltMzh6NjMwbXZrMA=='
@@ -1161,10 +1158,7 @@ function sobre(){
 Menu() 
 }
 
-
-
 //Vibração no menu lateral
-
 
 // Recupera valor salvo
 var vibrar = localStorage.getItem('Vibar') || 'off'; // valor padrão: 'off'
@@ -1172,62 +1166,83 @@ var vibrar = localStorage.getItem('Vibar') || 'off'; // valor padrão: 'off'
 // Exibe alerta com opção marcada
 function Config(){
 Swal.fire({
-  title: `Opção atual: ${vibrar === 'on' ? '🔛 On' : '🔘 Off'}`,
-  input: 'radio',
-  inputOptions: {
-    on: '🔛 On',
-    off: '🔘 Off'
-  },
-  inputValue: vibrar, // marca a opção salva
-  inputValidator: (value) => {
-    if (!value) {
-      return 'Você precisa escolher uma opção!';
-    }
-  },
-  showCancelButton: false,
-  confirmButtonText: 'Confirmar',
-  customClass: {
-    popup: 'my-custom_vibra_Swl'
-  },
-  didOpen: () => {
-    document.body.style.paddingRight = '0px';
-  }
+title: `Opção atual: ${vibrar === 'on' ? '🔛 On' : '🔘 Off'}`,
+input: 'radio',
+inputOptions: {
+on: '🔛 On',
+off: '🔘 Off'
+},
+inputValue: vibrar, // marca a opção salva
+inputValidator: (value) => {
+if (!value) {
+return 'Você precisa escolher uma opção!';
+}
+},
+showCancelButton: false,
+confirmButtonText: 'Confirmar',
+customClass: {
+popup: 'my-custom_vibra_Swl'
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';
+}
 }).then((result) => {
-  if (result.isConfirmed) {
-    localStorage.setItem('Vibar', result.value); // salva nova escolha
-    Swal.fire(`Você escolheu: ${result.value === 'on' ? 'On' : 'Off'}`);
-    setTimeout(function(){
-   window.location.reload()
-    },1000)
-  }
+if (result.isConfirmed) {
+localStorage.setItem('Vibar', result.value); // salva nova escolha
+Swal.fire(`Você escolheu: ${result.value === 'on' ? 'On' : 'Off'}`);
+setTimeout(function(){
+window.location.reload()
+},1000)
+}
 });
 }
 
-
 //função vibratória
-
-  function vibração() {
-    var vib = localStorage.getItem('Vibar')
-    if (vib === 'on' && navigator.vibrate) {
-      navigator.vibrate(200);
-    }}
-
-
-const listgeral = document.getElementById('listGeral');
-document.getElementById('btnNext').addEventListener('click', () => {
-  listgeral.scrollBy({ left: 300, behavior: 'smooth' });
+function vibração() {
+var vib = localStorage.getItem('Vibar')
+if (vib === 'on' && navigator.vibrate) {
+navigator.vibrate(200);
+}}
+sessionStorage.setItem('scrolls','sk')
+function updateButtons(container, btnPrev, btnNext) {
+var scrollLeft = container.scrollLeft;
+var maxScrollLeft = container.scrollWidth - container.clientWidth;
+// Esconde o botão "anterior" se estiver no início
+btnPrev.style.display = scrollLeft <= 0 ? 'none' : 'block';
+// Esconde o botão "próximo" se estiver no final
+btnNext.style.display = scrollLeft >= maxScrollLeft ? 'none' : 'block';
+var sets=sessionStorage.getItem('scrolls')
+if(!sets||sets==''){
+}else{
+btnNext.style.display = 'block';
+document.getElementById('btnNext_').style.display='block'
+sessionStorage.setItem('scrolls','')
+}
+}
+function setupScrollButtons(containerId, btnPrevId, btnNextId, scrollAmount) {
+var container = document.getElementById(containerId);
+var btnPrev = document.getElementById(btnPrevId);
+var btnNext = document.getElementById(btnNextId);
+// Atualiza os botões ao carregar
+updateButtons(container, btnPrev, btnNext);
+// Atualiza os botões ao rolar
+container.addEventListener('scroll', () => {
+updateButtons(container, btnPrev, btnNext);
 });
-
-document.getElementById('btnPrev').addEventListener('click', () => {
-  listgeral.scrollBy({ left: -300, behavior: 'smooth' });
+btnNext.addEventListener('click', () => {
+container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
 });
-
-const listDestaque = document.getElementById('listDestaque');
-document.getElementById('btnNext_').addEventListener('click', () => {
-  listDestaque.scrollBy({ left: 300, behavior: 'smooth' });
+btnPrev.addEventListener('click', () => {
+container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
 });
-
-document.getElementById('btnPrev_').addEventListener('click', () => {
-  listDestaque.scrollBy({ left: -300, behavior: 'smooth' });
+container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+// Atualiza ao redimensionar a janela
+window.addEventListener('resize', () => {
+updateButtons(container, btnPrev, btnNext);
 });
+}
+// Aplica para os dois carrosséis
+setupScrollButtons('listGeral', 'btnPrev', 'btnNext', 300);
+setupScrollButtons('listDestaque', 'btnPrev_', 'btnNext_', 300);
+
 
