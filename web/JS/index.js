@@ -1213,7 +1213,7 @@ Swal.fire({
     }}
 
 
-const listDestaque = document.getElementById('listDestaque');
+const listDestaque = document.getElementById('listGeral');
 document.getElementById('btnNext').addEventListener('click', () => {
   listDestaque.scrollBy({ left: 300, behavior: 'smooth' });
 });
