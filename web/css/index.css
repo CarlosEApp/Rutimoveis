@@ -842,7 +842,7 @@ display: block;
 }
 #listGeral, #listDestaque{
 margin: auto;
-width: 90%;
+width: 82%;
 display: flex;
 justify-content: space-around ;
 align-items: center;
@@ -860,13 +860,62 @@ margin-top: 0%;
 margin-bottom: 50px;
 }
 
+@media (max-width: 1705px) {
+#listGeral, #listDestaque {
+margin: auto;
+width: 90%;
+display: flex;
+justify-content: space-around ;
+align-items: center;      /* Ativa rolagem horizontal */
 
+}
+
+}
+@media (max-width: 1605px) {
+#listGeral, #listDestaque { 
+margin: auto;
+width: 95%;
+display: flex;
+justify-content: space-around ;
+align-items: center;      /* Ativa rolagem horizontal */
+
+}
+
+}
+@media (max-width: 1405px) {
+#listGeral, #listDestaque {  
+margin: auto;
+width: 97%;
+display: flex;
+justify-content: space-around ;
+align-items: center;      /* Ativa rolagem horizontal */
+
+}
+
+}
+@media (max-width: 1005px) {
+#listGeral, #listDestaque {
+margin: auto;
+width: 98%;
+display: flex;
+justify-content: space-around ;
+align-items: center;      /* Ativa rolagem horizontal */
+
+}
+
+}
 
 /* Estilo para telas menores (tablet e celular) */
 @media (max-width: 768px) {
-  #listGeral, #listDestaque {
-    flex-wrap: nowrap;       /* Impede quebra de linha */
-    overflow-x: auto;        /* Ativa rolagem horizontal */
-    
-  }
+#listGeral, #listDestaque {
+flex-wrap: nowrap;       /* Impede quebra de linha */
+overflow-x: auto;  
+margin: auto;
+width: 99%;
+display: flex;
+justify-content: space-around ;
+align-items: center;      /* Ativa rolagem horizontal */
+
+}
+
 }
