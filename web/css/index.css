@@ -867,3 +867,13 @@ justify-content: space-around ;
 align-items: center;      /* Ativa rolagem horizontal */
 }
 }
+#colorh2{
+  max-width: 390px;
+  padding: 10px;
+  margin-left: 7%;
+}
+#colorh2 h2{
+  margin-top: 16px;
+  color: #6d0067;
+  
+}
