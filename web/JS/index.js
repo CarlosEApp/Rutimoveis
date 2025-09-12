@@ -213,7 +213,7 @@ var pag = `https://rutimoveis.netlify.app/paginas/mostruario.html/?codigo=${doc.
 var url = "https://rutimoveis.netlify.app/";
 var img = `${doc.Titulo}: ${pag}`;
 var cod=`${doc.Código}`
-var whatsappMessage =`Pagina Web: ${url}\n\n📷 ${img} \n\n Código: ${cod}\n\n`;
+var whatsappMessage =`Pagina Web: ${url}\n\n🏡 ${img} \n\n Código: ${cod}\n\n`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
 });
@@ -435,7 +435,7 @@ var pag = `https://rutimoveis.netlify.app/paginas/mostruario.html/?codigo=${doc.
 var url = "https://rutimoveis.netlify.app/";
 var img = `${doc.Titulo}: ${pag}`;
 var cod=`${doc.Código}`
-var whatsappMessage =`Pagina Web: ${url}\n\n📷 ${img} \n\n Código: ${cod}\n\n`;
+var whatsappMessage =`Pagina Web: ${url}\n\n🏡 ${img} \n\n Código: ${cod}\n\n`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
 });
@@ -721,7 +721,7 @@ var pag = `https://rutimoveis.netlify.app/paginas/mostruario.html/?codigo=${doc.
 var url = "https://rutimoveis.netlify.app/";
 var img = `${doc.Titulo}: ${pag}`;
 var cod=`${doc.Código}`
-var whatsappMessage =`Pagina Web: ${url}\n\n📷 ${img} \n\n Código: ${cod}\n\n`;
+var whatsappMessage =`Pagina Web: ${url}\n\n🏡 ${img} \n\n Código: ${cod}\n\n`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
 });
@@ -1109,7 +1109,7 @@ document.getElementById('btn_whats').addEventListener('click',function(){
 var pagina="https://rutimoveis.netlify.app/";
 var pag = `https://rutimoveis.netlify.app/paginas/mostruario.html/?codigo=${imovel}`
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
-var resul=`Pagina web: ${pagina} \n\n${titulo}\n\nVer Imóvel: ${pag}\n\n Código: ${imovel}`
+var resul=`Pagina web: ${pagina} \n\n${titulo}\n\n🏡 Ver Imóvel: ${pag}\n\n Código: ${imovel}`
 var url = "https://wa.me/"+`${numero}?text=  ${encodeURIComponent(resul)}`;
 window.open(url, "_blank");
 Swal.fire(`WhatsApp`,``,'success')       

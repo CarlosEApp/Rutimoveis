@@ -209,7 +209,7 @@ var codigo_=document.getElementById('codigoH2').innerHTML;
 var IMG_=document.getElementById('img1').src;
 var pag = `https://rutimoveis.netlify.app/paginas/mostruario.html/?codigo=${codigo_}`
 var pagina="https://rutimoveis.netlify.app/"
-var result= `Pagina Web: ${pagina}\n\n${Titulo_} \n\n  imóvel: ${pag} \n\n Código: ${codigo_} `
+var result= `Pagina Web: ${pagina}\n\n${Titulo_} \n\n 🏡 Ver imóvel: ${pag} \n\n Código: ${codigo_} `
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
 var url = "https://wa.me/"+`${numero}?text= ${encodeURIComponent(result)}  `;
 window.open(url, "_blank");
