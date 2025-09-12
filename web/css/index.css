@@ -505,7 +505,7 @@ color: rgb(119, 1, 74);
 padding: 12px;
 }
 #resutPesquisa h1{
-margin-top: 20px;
+margin-top: 10px;
 }
 #selectProcura #butoomBuscar:hover{
 background-color: #a000c0;
@@ -565,13 +565,11 @@ margin-bottom: 20px;
 }
 #P_resutTodosIMV, #P_resutDestaqueIMV{
 font-weight: bolder;
-margin-left: 35px;
 background-color: rgba(245, 245, 220, 0);
 margin-top: 5px;
 margin-bottom: 20px;
 }
 #tituloLista{
-margin-left: 30px;
 margin-top: 20px;
 }
 #sociais_contatos{
@@ -870,7 +868,7 @@ align-items: center;      /* Ativa rolagem horizontal */
 #colorh2{
   max-width: 390px;
   padding: 10px;
-  margin-left: 7%;
+  margin-left: 3%;
 }
 #colorh2 h2{
   margin-top: 16px;
