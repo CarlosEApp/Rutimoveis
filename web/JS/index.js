@@ -1057,6 +1057,9 @@ document.getElementById('imgWhats').src=`${imagem}`
 document.getElementById('imgWhats').addEventListener('click',function(){
 swal('','',`${imagem}`)
 })
+document.getElementById('sair_').addEventListener('click',function(){
+Swal.close()
+})
 document.getElementById('btn_whats').addEventListener('click',function(){
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
 var url = "https://wa.me/"+`${numero}?text= Pedido de contato Rute corretora-(Rutimóveis)`;
@@ -1105,6 +1108,9 @@ document.body.style.paddingRight = '0px';
 document.getElementById('imgWhats').src=`${imagem}`
 document.getElementById('imgWhats').addEventListener('click',function(){
 swal('','',`${imagem}`)
+})
+document.getElementById('sair_').addEventListener('click',function(){
+Swal.close()
 })
 document.getElementById('btn_whats').addEventListener('click',function(){
 var pag="https://rutimoveis.netlify.app/"
@@ -1203,6 +1209,46 @@ var vib = localStorage.getItem('Vibar')
 if (vib === 'on' && navigator.vibrate) {
 navigator.vibrate(200);
 }}
-
+sessionStorage.setItem('scrolls','sk')
+function updateButtons(container, btnPrev, btnNext) {
+var scrollLeft = container.scrollLeft;
+var maxScrollLeft = container.scrollWidth - container.clientWidth;
+// Esconde o botão "anterior" se estiver no início
+btnPrev.style.display = scrollLeft <= 0 ? 'none' : 'block';
+// Esconde o botão "próximo" se estiver no final
+btnNext.style.display = scrollLeft >= maxScrollLeft ? 'none' : 'block';
+var sets=sessionStorage.getItem('scrolls')
+if(!sets||sets==''){
+}else{
+btnNext.style.display = 'block';
+document.getElementById('btnNext_').style.display='block'
+sessionStorage.setItem('scrolls','')
+}
+}
+function setupScrollButtons(containerId, btnPrevId, btnNextId, scrollAmount) {
+var container = document.getElementById(containerId);
+var btnPrev = document.getElementById(btnPrevId);
+var btnNext = document.getElementById(btnNextId);
+// Atualiza os botões ao carregar
+updateButtons(container, btnPrev, btnNext);
+// Atualiza os botões ao rolar
+container.addEventListener('scroll', () => {
+updateButtons(container, btnPrev, btnNext);
+});
+btnNext.addEventListener('click', () => {
+container.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+});
+btnPrev.addEventListener('click', () => {
+container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+});
+container.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+// Atualiza ao redimensionar a janela
+window.addEventListener('resize', () => {
+updateButtons(container, btnPrev, btnNext);
+});
+}
+// Aplica para os dois carrosséis
+setupScrollButtons('listGeral', 'btnPrev', 'btnNext', 300);
+setupScrollButtons('listDestaque', 'btnPrev_', 'btnNext_', 300);
 
 
