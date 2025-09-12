@@ -1,5 +1,23 @@
 
 
+//Vendo de um link compartilhado
+
+ setTimeout(function(){
+  window.onload = function () {
+    var params = new URLSearchParams(window.location.search);
+    var codigo = params.get("codigo");
+
+    if (codigo) {
+      swal("Código capturado: " + codigo);
+      sessionStorage.setItem("Mostruario", codigo);
+    } else {
+      console.log("Nenhum código encontrado na URL.");
+      swal("Código capturado: " + codigo);
+    }
+  };
+ },3000)
+
+
 const btns = document.querySelectorAll('#btnIMG button');
 
 btns[0].addEventListener('click', () => {
@@ -39,6 +57,7 @@ divIMGs.scrollLeft = scrollLeft - walk;
 });
 
 //codigo de entrada
+function inicio(){
 var codigo =sessionStorage.getItem('Mostruario')
 var firebaseConfig = {
 apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
@@ -176,16 +195,21 @@ document.getElementById('desconto').innerHTML=`Avista desconto de (${data.Descon
 }).catch((err) => {
 
 });
-
+}
+setTimeout(function(){
+    inicio()
+},3000)
 //Botão WhatsApp
 function corretora(){
 vibração()
 var telefone=`11948865333`
+
 var Titulo_=document.getElementById('tituloH2').innerHTML;
 var codigo_=document.getElementById('codigoH2').innerHTML;
 var IMG_=document.getElementById('img1').src;
-var pag="https://rutimoveis.netlify.app/"
-var result= `Pagina Web: ${pag}\n\n${Titulo_} \n\n Imagem do imóvel: ${IMG_} \n\n Código: ${codigo_} `
+var pag = `https://rutimoveis.netlify.app/paginas/mostruario.html/?codigo=${codigo_}`
+var pagina="https://rutimoveis.netlify.app/"
+var result= `Pagina Web: ${pagina}\n\n${Titulo_} \n\n  imóvel: ${pag} \n\n Código: ${codigo_} `
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
 var url = "https://wa.me/"+`${numero}?text= ${encodeURIComponent(result)}  `;
 window.open(url, "_blank");

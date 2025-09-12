@@ -209,8 +209,9 @@ window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blan
 });
 document.getElementById('whats').addEventListener('click',function(){
  vibração()
+var pag = `https://rutimoveis.netlify.app/paginas/mostruario.html/?codigo=${doc.Código}`
 var url = "https://rutimoveis.netlify.app/";
-var img = `${doc.Titulo}: ${doc.IMG1}`;
+var img = `${doc.Titulo}: ${pag}`;
 var cod=`${doc.Código}`
 var whatsappMessage =`Pagina Web: ${url}\n\n📷 ${img} \n\n Código: ${cod}\n\n`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
@@ -430,9 +431,9 @@ var url = encodeURIComponent("https://rutimoveis.netlify.app/");
 window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
 });
 document.getElementById('whats').addEventListener('click',function(){
-
+var pag = `https://rutimoveis.netlify.app/paginas/mostruario.html/?codigo=${doc.Código}`
 var url = "https://rutimoveis.netlify.app/";
-var img = `${doc.Titulo}: ${doc.IMG1}`;
+var img = `${doc.Titulo}: ${pag}`;
 var cod=`${doc.Código}`
 var whatsappMessage =`Pagina Web: ${url}\n\n📷 ${img} \n\n Código: ${cod}\n\n`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
@@ -716,8 +717,9 @@ window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blan
 });
 document.getElementById('whats').addEventListener('click',function(){
 vibração()
+var pag = `https://rutimoveis.netlify.app/paginas/mostruario.html/?codigo=${doc.Código}`
 var url = "https://rutimoveis.netlify.app/";
-var img = `${doc.Titulo}: ${doc.IMG1}`;
+var img = `${doc.Titulo}: ${pag}`;
 var cod=`${doc.Código}`
 var whatsappMessage =`Pagina Web: ${url}\n\n📷 ${img} \n\n Código: ${cod}\n\n`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
@@ -731,7 +733,6 @@ window.open(whatsappLink, "_blank");
 })
 })
 }
-
 //Abrir Pesquisa
 document.getElementById('supenpesquisa').style.display = 'none'
 function Pesquisar() {
@@ -749,7 +750,6 @@ sessionStorage.setItem('ValorPesquisa','')
 document.getElementById('inputPesquisa').value='';
 }
 }
-
 //Menu Lateral
 sessionStorage.setItem('MENULateral', '')
 var BTN = document.getElementById('heaad_menu');
@@ -768,20 +768,17 @@ sessionStorage.setItem('MENULateral', '')
 document.getElementById("menu_lateral").classList.remove("menu-ativo");
 }
 }
-
 //fechar Menu
 function fecharMenu() {
 sessionStorage.setItem('MENULateral', '')
 document.getElementById("menu_lateral").classList.remove("menu-ativo");
 Menu() 
 }
-
 //Exite menu
 function exit() {
 Menu()
 vibração()
 }
-
 //Time Relogio
 setInterval(function() {
 const newDate = new Date()
@@ -797,7 +794,6 @@ const timeString = `${hours}:${minutes}:${seconds}`;
 sessionStorage.setItem('data', data)
 sessionStorage.setItem('hora', timeString)
 }, 1000)
-
 // Tela Cheia
 function toggleFullScreen() {
 vibração()
@@ -820,7 +816,6 @@ document.webkitCancelFullScreen();
 }
 }
 }
-
 //Adiministração Password
 var firebaseConfig = {
 apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
@@ -918,7 +913,6 @@ Swal.showLoading();
 document.body.style.paddingRight = '0px';        
 }
 });
-
 setTimeout(function(){
 var respl=  sessionStorage.getItem('itensList1')
 if(!respl||respl==''){
@@ -941,7 +935,6 @@ Swal.close()
 }
 },7000)
 }
-
 //Alerta iniciar
 function AlertaInicial(){
 Swal.fire({
@@ -1113,9 +1106,10 @@ document.getElementById('sair_').addEventListener('click',function(){
 Swal.close()
 })
 document.getElementById('btn_whats').addEventListener('click',function(){
-var pag="https://rutimoveis.netlify.app/"
+var pagina="https://rutimoveis.netlify.app/";
+var pag = `https://rutimoveis.netlify.app/paginas/mostruario.html/?codigo=${imovel}`
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
-var resul=`Pagina web: ${pag} \n\n${titulo}\n\n Imagem: ${imgIMV}\n\n Código: ${imovel}`
+var resul=`Pagina web: ${pagina} \n\n${titulo}\n\nVer Imóvel: ${pag}\n\n Código: ${imovel}`
 var url = "https://wa.me/"+`${numero}?text=  ${encodeURIComponent(resul)}`;
 window.open(url, "_blank");
 Swal.fire(`WhatsApp`,``,'success')       
