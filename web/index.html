@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rutimóveis soluções residenciais</title>
+   <link rel="shortcut icon" href="src/lg01.png" type="image/x-icon">  
+    <meta property="og:title" content="Rutimóveis soluções residenciais">
+    <meta property="og:description" content="Encontre imóveis incríveis em Itanhaém e região com preços que cabem no seu bolso. Casas, sobrados, apartamentos e muito mais. A Rutimóveis ajuda você a conquistar o sonho da casa própria com facilidade e confiança.">
+    <meta property="og:image" content="https://rutimoveis.netlify.app/assets/Rutimoveis-img.png">
+    <meta property="og:url" content="https://rutimoveis.netlify.app/">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-messaging-compat.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <link rel="stylesheet" href="css/index.css">
+    <meta name="google-site-verification" content="I5QDbpWaGPHDZCWZITuNbd94oKGkibaclmduJlckKqU" />
+    <meta name="msvalidate.01" content="91A47097945E8CDB896C9CA2D3B40518" />
+   
+
+    
+</head>
+<body>
+    <div id="div_Geral">
+        <div id="div_container">
+           <div id="div_header">
+             <div id="header01">
+                <h2><b>Rut</b>imóveis</h2>  <button title="Tela cheia" onclick="toggleFullScreen()"><i class="fa-solid fa-desktop"></i></button> <button id="heaad_compartilhar" onclick="CompartilhamentoP()" title="Compartilhar Pagina"> <i class="fa-solid fa-square-share-nodes"></i></button> 
+             </div>
+             <div id="header02">
+              <button id="heaad_menu" onclick="Menu()" title="Menu Lateral"></button>  <button id="btnHeadPesquisa" onclick="Pesquisar()" title="Botão de pesquisa"> <i id="pesq-3" onclick="pesquisar()" class="fa-solid fa-magnifying-glass"></i>  Pesquisar</button> <button onclick="whats()">WhatsApp <i class="fa-brands fa-whatsapp"></i></button> 
+            </div>
+           </div>
+             <div id="menu_lateral">
+        <div id="MenuIMG"> <img src="src/Rutimoveis img.png" alt="" width="100%"></div> 
+        <ul>
+          <li><a href="#" onclick="init()">🏠 Início</a></li>
+          <li><a onclick="face()"><img src="src/facebook.png" alt="" width="18"> Facebook</a></li>
+          <li><a onclick="INSTA()"><img src="src/Inst.png" alt="" width="18"> Instagran</a></li>
+          <li><a onclick=" ZAP()"><img src="src/whatsapp.png" alt="" width="20"> WhatsApp</a></li>
+          <li><a href="#lbl_contact" onclick="sobre()">📦 Sobre</a></li>
+           <li><a onclick="Config()">⚙️ Vibrar</a></li>
+          <li><a onclick="ADMIN()">👨‍💼 Administração</a></li>
+          <li><a id="exitMenu" onclick="exit()"><i class="fa-solid fa-delete-left"></i> Fecha </a></li>
+          
+          <!-- Adicione mais itens se quiser -->
+        </ul>
+      </div>
+           <div id="div_body">
+            <a id="a_inputp" href="#body01" title="pesquisa"></a>
+            <div id="body01">
+                <div id="banner_pesqusa">
+                 <img  src="src/BannerRT.gif" alt="Banner" width="100%" >
+                 <div id="supenpesquisa">
+                 <label id="labelPesquisa" for="">Pesquise por nome do bairro, cidade ou código do imóvel <br>
+                    <i id="pesq-1"class="fa-solid fa-magnifying-glass" title="Pesquise">
+                     <input id="inputPesquisa" type="text" name="" id="" title="Pesquisar" placeholder="Pesquisar..."> <i id="i_setPesq" onclick="pesqSet()" class="fa-solid fa-check"></i>
+                   </i> 
+                 </label> 
+                 </div>
+                  <h2 id="hh2">O que você Procura?</h2>
+            
+                  <div id="bannerPesqFlex">         
+                    <div id="selectProcura">
+                        <select name="" id="selectListId_moradia" title="Selecione o que procura" onchange="clickSelect()">
+                          <option value="">Oque você procura?</option>
+                            <option value="Destaques">Destaques</option>
+                              <option value="Casas">Casas</option>
+                                <option value="Sobrados">Sobrados</option>
+                                  <option value="Apartamentos">Apartamentos</option>
+                                    <option value="Terrenos">Terrenos</option>
+                                      <option value="Lojas">Lojas</option>
+                                        <option value="Galpões">Galpões</option>
+                                          <option value="Armazens">Armazens</option>
+                                            <option value="Chacaras">Chácaras</option>
+                                              <option value="Sítios">Sítios</option>
+                          </select>
+                          <select name="" id="selecVL" title="Complemente a Pesquisa">
+                             <option value="Compra ou Locação">Comprar ou Locação</option>
+                               <option value="Compra">Comprar</option>
+                                <option value="Locação">Alugar</option>
+                          </select>
+                          <button id="butoomBuscar"  onclick="Buscar()" title="Botão de busca"><i id="pesq-2" class="fa-solid fa-magnifying-glass"></i>  Buscar</button>
+                          </div>  
+                       </div>
+                    </div>
+                </div>
+              <div id="body02">
+                <div id="resutPesquisa">
+                   <div id="colorh2">
+                     <a id="a_result" href="#listPesq" title="Lista Resultado"></a>
+                    <label id="fecharResultPesq" for="" onclick="fecharResulP()"><i class="fa-solid fa-delete-left"></i> Fechar</label>
+                    <h2>Resultado:</h2><p id="P_resutPesquisa">Encontrados</p></div>
+                  <br>
+                   <div id="listaPesquisa"> 
+                     <div id="listPesq"></div>
+                  </div>
+                   <br>
+                </div>
+                   <img id="Banne_" class="banner" src="src/banner02.png" alt="Banner" width="100%">
+                    <div id="body03">
+                      <div id="colorh2">
+                <h2 id="tituloLista"> Imóveis em Destaque:</h2><p id="P_resutDestaqueIMV">Encontrados</p></div>
+                <br>
+                   <div id="div_listDestaque">
+                      <div id="listDestaque"></div>
+                </div>
+                <br>
+              </div>
+                 <img class="banner" src="src/banner03.png" alt="Banner" width="100%">
+                 <div  id="colorh2">
+                   <h2 id="tituloLista"> Todos os Imóveis:</h2><p id="P_resutTodosIMV">Encontrados</p></div>
+                   <br>
+                 <div id="div_listGeral">
+                    <div id="listGeral"></div>
+                    </div> 
+                 
+           </div>
+         
+           <div id="div_footer">
+            <div id="footer01">
+                 <div id="paragrafo_inicial">
+                 <img src="src/Logo novo lar 01 PNG.png" alt="" width="100">
+                    <p id="paragrafo_inf_cont"><h2>🏡 <b>Rut</b>imóveis – Soluções  Residenciais 🏡  </h2><br>
+                    <b>  "A <b>Rut</b>imóveis é referência no mercado imobiliário, oferecendo soluções completas em venda, locação e administração de imóveis. <br>
+                     Com compromisso, transparência e qualidade, ajudamos você a encontrar o imóvel ideal para viver ou investir.<br> Entre em contato e descubra como podemos transformar seu sonho em realidade!
+                    </b>
+                    </p>
+                    <label id="lbl_contact" for="">
+                      📞 Telefone: (11) 94886-5333 📧 E-mail: rutimoveis@gmail.com 📍Toda grande São Paulo e Região</label>       
+                </div>
+                
+            </div>
+            <div id="footer02">
+               <div id="sociais_contatos">
+              <a id="aa01" href="#" onclick="facebook()">Facebook <i class="fa-brands fa-facebook-f"></i></a> <a id="aa02" href="#" onclick="instagran()">Instagran <i class="fa-brands fa-instagram"></i></a> <a id="aa03" href="#" onclick="what()">WhatsApp <i class="fa-brands fa-whatsapp"></i></a>
+              </div>
+
+            </div>
+           </div>
+
+        </div>
+
+    </div>
+  <script src="JS/index.js"></script>
+</body>
+</html>
