@@ -488,10 +488,10 @@ document.getElementById('P_resutPesquisa').innerHTML=''
 AlertaListaV()
 sessionStorage.setItem('Mostruario','')
 var itens3 = 0;
-var select1=document.getElementById('selectListId_moradia').value;  
 var select2=document.getElementById('selecVL').value; 
 var resutPesq = (sessionStorage.getItem('ValorPesquisa') || '').trim();
 if(!resutPesq|| resutPesq==''){
+  var select1=document.getElementById('selectListId_moradia').value;  
 }else{
 select1='Cadastros'
 }
@@ -625,12 +625,8 @@ li.appendChild(div3);
 li.appendChild(div4);
 // Adicionando ao elemento principal (list)
 list.appendChild(li);
-if(!resutPesq||resutPesq==''){
 
-}else{
-Pesquisar()
-}
-
+sessionStorage.setItem('ffpsquisa', resutPesq)
 document.getElementById('a_result').click
 btn.addEventListener('click',function(){
 sessionStorage.setItem('Mostruario',doc.Código)
@@ -932,8 +928,16 @@ fecharResulP()
 document.getElementById('itensListInit').style.display='none'
 }else{
 Swal.close()
+var docresp=sessionStorage.getItem('ffpsquisa')
+if(!docresp||docresp==''){
+
+}else{
+  Pesquisar() 
+}
+
 }
 },7000)
+
 }
 //Alerta iniciar
 function AlertaInicial(){
