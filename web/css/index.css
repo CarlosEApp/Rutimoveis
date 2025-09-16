@@ -79,8 +79,8 @@ display: flex;
 justify-content: space-between;
 padding: 5px;
 margin-left: 10px;
-padding-top: 10px;
-padding-bottom: 10px;
+padding-top: 7px;
+padding-bottom: 7px;
 }
 #header01 h1{
 font-size: 25px;
@@ -647,7 +647,7 @@ margin-top: 7px;
 }
 #menu_lateral {
 position: fixed;
-top: 91px;
+top: 89px;
 left: -230px;
 width: 230px;
 height: 100%;
@@ -878,4 +878,7 @@ align-items: center;      /* Ativa rolagem horizontal */
   margin-top: 16px;
   color: #6d0067;
   
+}
+.banner{
+  margin-bottom: 0px;
 }
