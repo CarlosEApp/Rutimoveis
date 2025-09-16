@@ -65,6 +65,7 @@ max-width: 1920px;
 position: fixed;
 background-color: rgb(112, 1, 103);
 z-index: 999;
+font-family: 'Poppins', sans-serif;
 }
 #header02{
 display: flex;
@@ -657,6 +658,7 @@ transition: left 0rgba(117, 2, 111, 0.957);
 z-index: 997;
 padding: 0px;
 overflow-y: auto;
+font-family: 'Poppins', sans-serif;
 }
 #menu_lateral ul {
 list-style: none;
