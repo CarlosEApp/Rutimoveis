@@ -3,7 +3,7 @@ margin: 0%;
 padding: 0%;
 }
 body{
-font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-family: 'Poppins', sans-serif;
 background-color: rgb(100, 74, 98);
 color: aliceblue;
 text-rendering: geometricPrecision;
@@ -204,7 +204,7 @@ background-color: rgba(175, 175, 175, 0);
 font-size: clamp(0.850rem, 1vw + 0.5rem, 0.950rem);
 color: rgb(212, 211, 211);
 border-radius: 10px;
-font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-family: 'Poppins', sans-serif;
 margin-right: 40px;
 display: flex;
 flex-direction: column;
@@ -398,7 +398,7 @@ margin-left: 25px;
 color:  #270022;
 font-weight: bolder;
 outline: none;
-font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+font-family: 'Poppins', sans-serif;
 }
 #listPesq img:hover,#listGeral img:hover, #listDestaque img:hover {
 transform: scale(1.1); /* Ajusta o nível de zoom */
