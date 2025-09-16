@@ -86,6 +86,10 @@ background-color: rgb(255, 255, 255);
 float: right;
 margin-right: 20px;
 }
+#header h1{
+    display: flex;
+    align-items: center;
+}
 #divIMGs{
 margin: auto;
 width: 98%;
@@ -107,7 +111,7 @@ background-color: rgba(219, 218, 219, 0);
 padding: 10px;
 border-radius: 5px;
 margin-bottom: 10px;
-padding-top:37px;
+padding-top:25px;
 }
 #divIMGs img{
 margin: auto;
