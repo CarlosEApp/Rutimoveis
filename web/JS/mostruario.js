@@ -59,6 +59,7 @@ divIMGs.scrollLeft = scrollLeft - walk;
 //codigo de entrada
 function inicio(){
 var codigo =sessionStorage.getItem('Mostruario')
+casaCod()
 var firebaseConfig = {
 apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
 authDomain: "rutimoveis-bc114.firebaseapp.com",
@@ -128,6 +129,7 @@ document.getElementById('numero').innerHTML=`Nº: ${data.Numero}`
 document.getElementById('bairro').innerHTML=`Bairro: ${data.Bairro}`
 document.getElementById('cidade').innerHTML=`Cidade: ${data.Cidade}`
 document.getElementById('uf').innerHTML=`UF:(${data.UF})`
+sessionStorage.setItem('casaExist',data.Titulo)
 if(!data.ValorC||data.ValorC==''){
 } else{
 document.getElementById('venda').innerHTML=`Compra: ${data.ValorC} R$`
@@ -463,6 +465,17 @@ navigator.vibrate(200);
 }
 }
 
+function casaCod(){
+     setTimeout(function(){
+       var resposta= sessionStorage.getItem('casaExist')
+       if(!resposta || resposta==''){
+         Swal.fire('O Imovel que vc Procura pode não estar mais disponivel!','','warning')
+       } else{
+
+       }
+
+     },7000)
+}
 
 
 
