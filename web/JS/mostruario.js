@@ -475,7 +475,7 @@ function casaCod(){
      setTimeout(function(){
        var resposta= sessionStorage.getItem('casaExist')
        if(!resposta || resposta==''){
-         Swal.fire('Este Imovel não estar mais disponivel!','Você será redirecionado para a Pagina oficial da <b>Rut<b>imóveis','warning')
+         Swal.fire('Este Imovel não estar mais disponivel!','Você será redirecionado para a Pagina oficial <b>Rut<b>imóveis','warning')
          setTimeout(function(){
              window.open('https://rutimoveis.netlify.app/','_blank')
          },7000)
