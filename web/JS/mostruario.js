@@ -1,5 +1,12 @@
 
 
+
+
+
+
+
+sessionStorage.setItem('casaExist','')
+
 //Vendo de um link compartilhado
 
  setTimeout(function(){
@@ -59,7 +66,6 @@ divIMGs.scrollLeft = scrollLeft - walk;
 //codigo de entrada
 function inicio(){
 var codigo =sessionStorage.getItem('Mostruario')
-casaCod()
 var firebaseConfig = {
 apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
 authDomain: "rutimoveis-bc114.firebaseapp.com",
