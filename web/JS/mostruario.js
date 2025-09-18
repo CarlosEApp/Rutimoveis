@@ -479,7 +479,7 @@ function casaCod(){
          setTimeout(function(){
            //  window.open('https://rutimoveis.netlify.app/')
              window.location.href='https://rutimoveis.netlify.app/'
-         },7000)
+         },5000)
        
        } else{
 
