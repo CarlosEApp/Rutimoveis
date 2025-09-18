@@ -477,7 +477,8 @@ function casaCod(){
        if(!resposta || resposta==''){
          Swal.fire('"Este imóvel não está mais disponível."','Você será redirecionado para a Pagina oficial <b>Rut<b>imóveis','warning')
          setTimeout(function(){
-             window.open('https://rutimoveis.netlify.app/','_blank')
+           //  window.open('https://rutimoveis.netlify.app/')
+             window.location.href='https://rutimoveis.netlify.app/'
          },7000)
        
        } else{
