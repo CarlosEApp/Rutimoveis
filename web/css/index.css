@@ -240,8 +240,7 @@ width: 100%;
 max-width: 1920px;
 height: 93vh;
 background-color: rgb(14, 0, 11);
-border-top: 5px solid rgb(255, 255, 255);
-margin-top: 30px;
+margin-top: 12px;
 }
 #resutPesquisa{
 margin: auto;
