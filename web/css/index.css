@@ -817,6 +817,7 @@ text-rendering: geometricPrecision;
 display: flex;
 align-items: center;
 position: relative;
+ outline: none;
 }
 #listGeral, #listDestaque, #listPesq {
 margin: auto;
@@ -826,6 +827,7 @@ justify-content: space-around ;
 align-items: center;
 overflow: auto;
 flex-wrap: wrap;
+ outline: none;
 }
 #listGeral #li_, #listDestaque #li_,#listPesq #li_ {
 flex: 1 1 20%;
@@ -837,7 +839,38 @@ margin: 15px;
 margin-top: 0%;
 margin-bottom: 50px;
 font-weight: normal;
+ outline: none;
 }
+#divCards{
+max-width: 100%;
+min-height: 50vh;
+ outline: none;
+}
+#cards{
+margin: auto;
+width: 90%;
+display: flex;
+justify-content: space-around;
+align-items: center;
+padding: 10px;
+flex-wrap: wrap;
+ outline: none;
+}
+#cd1,#cd2,#cd3{
+ max-width: 450px;
+ min-width: 350px;
+ cursor: pointer;
+ margin-left: 5px;
+ margin-right: 5px;
+ margin-top: 20px;
+ outline: none;
+ margin-bottom: 20px;
+ 
+}
+#cards div:hover{
+  background-color: rgb(240, 240, 240);
+}
+
 @media (max-width: 1705px) {
 #listGeral, #listDestaque,#listPesq  {
 margin: auto;

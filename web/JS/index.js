@@ -1,6 +1,33 @@
 
 
 
+//Click card casa
+function cardCasa(){
+  document.getElementById('selectListId_moradia').value='Casas';
+document.getElementById('selecVL').value='Compra ou Locação';
+setTimeout(function(){
+Buscar()
+},1000)
+}
+//Click card sobrado
+function cardSobrado(){
+  document.getElementById('selectListId_moradia').value='Sobrados';
+document.getElementById('selecVL').value='Compra ou Locação';
+setTimeout(function(){
+Buscar()
+},1000)
+}
+//Click card apartamentos
+function cardAp(){
+  document.getElementById('selectListId_moradia').value='Apartamentos';
+document.getElementById('selecVL').value='Compra ou Locação';
+setTimeout(function(){
+Buscar()
+},1000)
+}
+
+
+
 //lista de destaques
 sessionStorage.setItem('Mostruario','')
 var itens1= 0
@@ -624,7 +651,7 @@ li.appendChild(div4);
 list.appendChild(li);
 
 sessionStorage.setItem('ffpsquisa', resutPesq)
-document.getElementById('a_result').click
+document.getElementById('a_result').click()
 btn.addEventListener('click',function(){
 sessionStorage.setItem('Mostruario',doc.Código)
 window.open('paginas/mostruario.html','_blank')
