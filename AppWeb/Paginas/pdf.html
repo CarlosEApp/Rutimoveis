@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="Pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASD PDF</title>
+    <link rel="shortcut icon" href="../src/Logo_ASD.png" type="image/x-icon">
+    <meta name="google-site-verification" content="Xrb0NKYEVJRcf-ALq_AaC9lSGkJQOnsSM8-E6JV_ijU" />
+    <meta property="og:title" content="ASD Logos e Design!">
+    <meta property="og:description" content="Confira: Design, Logos, Emoji, Animes, GIFs, PDFs... para você usar em seus projetos!">
+    <meta property="og:image" content="https://asdlogos.netlify.app/src/capaasd.png">
+    <meta property="og:url" content="https://asdlogos.netlify.app">
+    <meta property="og:type" content="website">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-messaging-compat.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+<style>
+*{
+margin: 0%;
+padding: 0%;
+}
+#div_PDF{
+margin: auto;
+width: 90%;
+max-width: 800px;
+min-width: 380px;
+min-height: 20vh;
+background-color: #ffffff00;
+padding-bottom: 50px;
+overflow: auto;
+}
+#div_PDF ul{
+display: flex;
+justify-content: space-between;
+align-items: center;
+margin-top: 30px;
+border-bottom: 2px solid rgba(94, 92, 92, 0);
+cursor: pointer;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+#div_PDF ul:hover{
+color: #00e1ff;
+}
+#div_PDF label{
+  font-size: clamp(0.975rem, 1vw + 0.5rem, 1rem);
+}
+#lbl2PDF,#lbl1PDF{
+margin-right: 20px;
+margin-bottom: 5px;
+font-size: 18px;
+font-weight: bold;
+cursor: pointer;
+}
+#body{
+margin: auto;
+width: 97%;
+max-width: 1000px;
+background-color: #040018;
+color: #dce3ff;
+padding-bottom: 100px;
+min-height: 93vh;
+}
+#div_head{
+padding-top: 60px;
+display: flex;
+justify-content: center;
+align-items: center;
+margin-bottom: 50px;
+}
+#div_head h1{
+font-size: 50px;
+}
+.my-custom_CadExCód{
+max-width: 370px;
+border-radius: 15px;
+background-color: #ffffff;
+}
+.my-custom_CadExCód button{
+width: 60%;
+padding: 7px;
+border: 1px solid rgba(233, 233, 233, 0);
+background-color: #dce3ff;
+border-radius: 3px;
+cursor: pointer;
+outline: none;
+}
+.my-custom_CadExCód button:hover{
+background-color: #f0efff;
+color: #011253;
+border: 1px solid rgb(0, 17, 202);
+}
+@media(max-width: 800px){
+#div_PDF label{
+font-size: 16px;
+}
+#div_PDF{
+margin: auto;
+width: 90%;
+min-height: 20vh;
+background-color: #ffffff00;
+padding-bottom: 50px;
+overflow: auto;
+}
+#body{
+margin: auto;
+width: 100%;
+background-color: #040018;
+color: #dce3ff;
+padding-bottom: 100px;
+min-height: 93vh;
+}
+}
+#img_{
+width: 25px;
+height: 25px;
+background-color: #00c6f8;
+padding: 5px;
+border-radius: 20px;
+margin-right: 10px;
+}
+@media(max-width: 600px){
+#div_PDF label{
+font-size: 15px;
+}}
+@media(max-width: 500px){
+#div_PDF label{
+font-size: 14px;
+}}
+@media(max-width: 370px){
+#div_PDF label{
+font-size: 13px;
+}}
+#div_PDF #lbl2PDF{
+  font-size: 18px;
+}
+</style>
+</head>
+<body>
+<div id="geral">
+<div id="body">
+    <div id="div_head">
+         <img src="../src/Logo_ASD.png" alt=""width='70'>
+                  <h1>SD PDFs</h1>
+
+</div>
+ <div id="div_body">
+ <div id="div_PDF">
+ <h1>Downloads PDFs</h1>
+<div id="listPDF">
+</div>
+</div>
+<div id="footer">
+</div>
+ <script>
+var firebaseConfig = {
+apiKey: "AIzaSyD7q-qzsIhACByHciJkDBI3yPuKK_bgHUM",
+authDomain: "logos-asd.firebaseapp.com",
+projectId: "logos-asd",
+storageBucket: "logos-asd.firebasestorage.app",
+messagingSenderId: "801633317687",
+appId: "1:801633317687:web:3a38f39b2e9861902e20b2",
+measurementId: "G-GJEW931Y73"
+};
+firebase.initializeApp(firebaseConfig);  
+var db = firebase.firestore();
+var produtosRef = db.collection(`PDF`);
+var listP= document.getElementById('listPDF');
+//listP.innerHTML = '';
+produtosRef.get().then((querySnapshot) => {
+querySnapshot.forEach(doc => {
+var doc = doc.data();
+var itens= querySnapshot.size;
+var li= document.createElement('ul');
+var img= document.createElement('img');
+var label1=document.createElement('label');
+var label2=document.createElement('label');
+var br1=document.createElement('br');
+var br2=document.createElement('br');
+li.id='ListaPDF';
+img.id='img_'
+label1.id='lbl1PDF'
+label1.title='Descrição'
+label2.id='lbl2PDF'
+label2.title='Opções de Download'
+img.src='../src/Logo PDF.png'
+label1.textContent=`${doc.nome}`
+label2.textContent=``
+label2.className='fa-solid fa-download'
+li.appendChild(img)
+li.appendChild(label1)
+li.appendChild(br1)
+li.appendChild(label2)
+listP.appendChild(li)
+img.addEventListener('click',function(){
+swal(`Descrição  do PDF:`,`${doc.OBS}\n________________________________________\n\nPara ver ou fazer o download click na seta para baixo!`,'../src/Logo PDF_.png')
+});
+label1.addEventListener('click',function(){
+swal(`Descrição  do PDF:`,`${doc.OBS}\n_________________________________________\n\nPara ver ou fazer o download click na seta para baixo!`,'../src/Logo PDF_.png')
+});
+
+label2.addEventListener('click', function(){
+    if (navigator.vibrate) {
+navigator.vibrate(200); // vibra por 200ms
+}
+Swal.fire({
+title: `Oque deseja fazer?`,
+html:` <div  class="menu-container">
+<br>
+<button id='Ver' title='Ver PDF'> Ver PDF </button>
+<br><br> 
+<button id='Baixar PDF' title='Baixar PDF' > Baixar PDF </button> 
+<br><br>
+<button id='Sair' class='cancelar' title='Cancelar'> Cancelar </button>
+</div>
+<br><br>
+`,
+showCancelButton: false,
+showConfirmButton: false,
+customClass: {
+popup: 'my-custom_CadExCód' // Aplica a classe CSS personalizada
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';
+}
+}); 
+document.getElementById('Sair').addEventListener('click',function() {
+Swal.close()
+})
+document.getElementById('Ver').addEventListener('click',function() {
+window.open(`${doc.url}`,'_blank')
+Swal.close()
+})
+document.getElementById('Baixar PDF').addEventListener('click', async (e) => {
+  if (navigator.vibrate) {
+navigator.vibrate(200); // vibra por 200ms
+}
+e.preventDefault();
+
+const response = await fetch(doc.url);
+const blob = await response.blob();
+
+const blobUrl = window.URL.createObjectURL(blob);
+const tempLink = document.createElement('a');
+tempLink.href = blobUrl;
+tempLink.download = `${doc.nome}.pdf`;
+document.body.appendChild(tempLink);
+tempLink.click();
+document.body.removeChild(tempLink);
+window.URL.revokeObjectURL(blobUrl);
+
+});
+
+})
+})
+})
+
+
+</script>
+
+</div>
+
+</body>
+</html>

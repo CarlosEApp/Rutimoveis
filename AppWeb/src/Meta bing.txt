@@ -1,0 +1,5 @@
+Meta bing
+
+ <meta name="msvalidate.01" content="91A47097945E8CDB896C9CA2D3B40518" />
+<meta name="google-site-verification" content="Xrb0NKYEVJRcf-ALq_AaC9lSGkJQOnsSM8-E6JV_ijU" />
+ 
