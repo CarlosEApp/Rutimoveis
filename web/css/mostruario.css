@@ -100,7 +100,7 @@ align-items: center;
 overflow-x: auto;
 margin-bottom: 10px;
 padding-top: 155px;
-background-color: rgb(246, 251, 255);
+background-color: rgb(240, 248, 255);
 }
 #divIMGs div{
 margin: auto;
@@ -108,10 +108,9 @@ width: 98%;
 margin-right: 30px;
 margin-left: 10px;
 background-color: rgba(219, 218, 219, 0);
-padding: 10px;
+padding: 5px;
 border-radius: 5px;
-margin-bottom: 10px;
-padding-top:25px;
+padding-top: 25px;
 }
 #divIMGs img{
 margin: auto;
@@ -119,7 +118,7 @@ max-width: 95%;
 min-width: 650px;
 border-radius: 3px;
 cursor: grab;
-max-height: 50vh;
+max-height: 61vh;
 box-shadow: 0 7px 15px rgba(0, 0, 0, 0.514);
 }
 #divIMGs h3{
@@ -129,8 +128,8 @@ bottom: 37px;
 position: relative;
 background-color: rgba(0, 0, 0, 0.411);
 padding: 5px;
-padding-bottom: 7px;
-padding-top: 7px;
+padding-bottom: 2px;
+padding-top: 2px;
 }
 #divIMGs p{
 float: right;
