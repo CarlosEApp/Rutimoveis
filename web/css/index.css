@@ -778,7 +778,7 @@ flex-wrap: wrap;
  outline: none;
 }
 #cd1,#cd2,#cd3{
- width: 330px;
+ width: 350px;
  cursor: pointer;
  margin-left: 5px;
  margin-right: 5px;
@@ -810,7 +810,7 @@ align-items: center;      /* Ativa rolagem horizontal */
 
  
 }
-#car
+
 #listGeral, #listDestaque, #listPesq  { 
 margin: auto;
 width: 95%;
@@ -846,16 +846,7 @@ justify-content: space-around ;
 align-items: center;      /* Ativa rolagem horizontal */
 }
 }
-@media (max-width: 1005px) {
-   #cd1,#cd2,#cd3{
- width:250px;
- cursor: pointer;
- margin-left: 5px;
- margin-right: 5px;
- margin-top: 40px;
- outline: none;
- 
-}}
+
 /* Estilo para telas menores (tablet e celular) */
 @media (max-width: 768px) {
 #listGeral, #listDestaque, #listPesq  {
@@ -885,83 +876,3 @@ align-items: center;      /* Ativa rolagem horizontal */
   font-size: clamp(1.500rem, 1vw + 0.5rem, 1.700rem);
 }
 
-@media (max-width: 1680px) {
-#listPesq #li_,
-#listGeral #li_,
-#listDestaque #li_ {
-flex: 1 1 20%;
-min-width: 300px;
-max-width: 330px;
-}
-}
-@media(max-width: 1300px){
-.swal2-popup.fullscreen-popup {
-width: 95% !important;
-max-width: 1000px;
-min-width: 390px;
-padding: 2px !important;
-border-radius: 0 !important;
-z-index: 99999;
-}}
-@media (max-width: 1200px) {
-#listPesq #li_,
-#listGeral #li_,
-#listDestaque #li_ {
-min-width: 300px;
-max-width: 310px;
-flex: 1 1 45%;
-}
-}
-@media(max-width: 1000px){
-.swal2-popup.fullscreen-popup {
-width: 95% !important;
-max-width: 800px;
-min-width: 390px;
-padding: 2px !important;
-border-radius: 0 !important;
-z-index: 99999;
-}}
-@media(max-width: 840px){
-.swal2-popup.fullscreen-popup {
-width: 95% !important;
-max-width: 700px;
-min-width: 390px;
-padding: 2px !important;
-border-radius: 0 !important;
-z-index: 99999;
-}
-}
-@media (max-width: 768px) {
-#listPesq #li_,
-#listGeral #li_,
-#listDestaque #li_ {
-min-width: 200px;
-max-width: 300px;
-flex: 1 1 95%;
-}
-}
-@media (max-width: 600px) {
-#listPesq #li_,
-#listGeral #li_,
-#listDestaque #li_ {
-min-width: 300px;
-max-width: 350px;
-flex: 1 1 95%;
-}
-.fullscreen-popup img{
-min-width: 390px;
-z-index: 9999;
-}
-#btimgSair{
-display: none;
-}
-}
-@media (max-width: 400px) {
-#listPesq #li_,
-#listGeral #li_,
-#listDestaque #li_ {
-min-width: 300px;
-max-width: 350px;
-flex: 1 1 95%;
-}
-}
