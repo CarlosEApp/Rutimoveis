@@ -23,33 +23,33 @@ background-color: rgb(83, 10, 81);
 
 }
 ::-webkit-scrollbar {
-width: 15px;
-margin-left: 15px;
+width: 5px;
+margin-left: 5px;
 /* Largura da barra de rolagem */
 cursor: pointer;   
 margin: 0px;
 
 }        
 ::-webkit-scrollbar-thumb {
-margin-left: 15px;
-background-color: rgba(49, 1, 36, 0.589);
+margin-left: 5px;
+background-color: rgb(88, 0, 81);
 /* Cor do polegar da barra de rolagem */
 margin-top: 1px;
 border-radius: 7px;
 cursor: pointer;
 margin: 0px;
-min-height: 37vh; 
+min-height: 17vh; 
 
 }
 ::-webkit-scrollbar-thumb:hover {
-background-color: rgb(122, 1, 112); 
+background-color: rgb(148, 0, 136); 
 margin: 0px; 
-min-height: 37vh; 
+min-height: 17vh; 
     
 }       
 ::-webkit-scrollbar-track {
 /* Cor da trilha da barra de rolagem */
-margin-left: 15px;    
+margin-left: 5px;    
 background-color: rgb(185, 185, 185);
 border-radius: 7px;
 cursor: pointer;
