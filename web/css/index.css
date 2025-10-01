@@ -875,4 +875,39 @@ align-items: center;      /* Ativa rolagem horizontal */
 #paragrafo_inicial #h1Footer{
   font-size: clamp(1.500rem, 1vw + 0.5rem, 1.700rem);
 }
+.estrelas input {
+  display: none;
+}
 
+.estrelas label {
+  color: #ccc;
+  cursor: pointer;
+     font-size: 4rem;
+}
+
+
+.estrelas input:checked ~ label {
+  color: #fc0;
+}
+#avaliação{
+  margin: auto;
+  width: 100%;
+  max-height: 90vh;
+  min-height: 40vh;
+  background-color: aliceblue;
+  margin-top: 60px;
+  padding-top: 50px;
+  margin-bottom: 35px;
+  
+}
+#Stars{
+  margin: auto;
+  width: 80%;
+  max-width: 1000px;
+  min-width: 390px;
+  text-align: center;
+}
+#Stars h2{
+  color: #818181;
+    font-size: clamp(1.700rem, 1vw + 0.5rem, 2rem);
+}

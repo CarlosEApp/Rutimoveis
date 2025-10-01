@@ -1234,3 +1234,31 @@ navigator.vibrate(200);
 
 
 
+document.addEventListener('DOMContentLoaded', function () {
+  const notaAVStars = parseInt(localStorage.getItem('AvaliaçãoStars'));
+  if (notaAVStars) {
+    const estrelasAtivas = notaAVStars / 2;
+    const labels = document.querySelectorAll('.label-estrela');
+    labels.forEach((label, index) => {
+      label.style.color = index < estrelasAtivas ? '#fc0' : '#ccc';
+      document.getElementById('lblNotaAV').innerHTML=`Nota ${notaAVStars}`
+    });
+  }
+});
+
+const estrelas = document.querySelectorAll('.estrelas input');
+const labels = document.querySelectorAll('.label-estrela');
+
+estrelas.forEach((estrela, index) => {
+  estrela.addEventListener('change', () => {
+    const nota = (index + 1) * 2;
+    localStorage.setItem('AvaliaçãoStars', nota);
+
+    labels.forEach((label, i) => {
+      label.style.color = i <= index ? '#fc0' : '#ccc';
+    });
+
+   // swal(`${nota}`, '', 'success');
+     document.getElementById('lblNotaAV').innerHTML=`Nota ${nota}`
+  });
+});
