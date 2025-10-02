@@ -1319,7 +1319,9 @@ function loginComGoogle() {
           document.getElementById("user-photo").src = user.photoURL;
           document.getElementById("user-name").textContent = "Olá, " + user.displayName;
            document.getElementById("user-email").textContent = user.email;
-        
+          document.getElementById('user-photo').style.display='block'
+         document.getElementById('user-name').style.display='block'
+         document.getElementById('user-email').style.display='block'
           localStorage.setItem('FotoUser', user.photoURL);
            localStorage.setItem('NomeUser', user.displayName);
         })
@@ -1360,7 +1362,9 @@ auth.onAuthStateChanged((user) => {
     document.getElementById("user-name").textContent = "Olá, " + user.displayName;
       document.getElementById("user-email").textContent = user.email;
        document.getElementById('btnGoogle').style.display='none'
-      
+       document.getElementById('user-photo').style.display='block'
+         document.getElementById('user-name').style.display='block'
+         document.getElementById('user-email').style.display='block'
          var dbb = firebase.firestore();
         dbb.collection("UsersPag").doc(user.uid).set({
          nome: user.displayName,
