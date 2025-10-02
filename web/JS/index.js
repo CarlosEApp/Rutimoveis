@@ -1288,12 +1288,13 @@ var provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: "select_account" }); // força seleção de conta
 var db = firebase.firestore();
 
-var stars= parseInt(localStorage.getItem('AvaliaçãoStar'));
+
 // Controle para evitar múltiplos popups
 let loginEmAndamento = false;
 
 // Função de login
 function loginComGoogle() {
+  var stars= parseInt(localStorage.getItem('AvaliaçãoStar'));
   if (loginEmAndamento) return;
   loginEmAndamento = true;
 
@@ -1349,21 +1350,48 @@ measurementId: "G-K330CH24NV"
 // Inicializa o Firebase apenas uma vez
 if (!firebase.apps.length) {
   firebase.initializeApp(firebaseConfig);
+ 
 }
 auth.onAuthStateChanged((user) => {
   if (user) {
+      var stars= parseInt(localStorage.getItem('AvaliaçãoStar'));
     // Usuário já está logado
     document.getElementById("user-photo").src = user.photoURL;
     document.getElementById("user-name").textContent = "Olá, " + user.displayName;
       document.getElementById("user-email").textContent = user.email;
        document.getElementById('btnGoogle').style.display='none'
+      
+         var dbb = firebase.firestore();
+        dbb.collection("UsersPag").doc(user.uid).set({
+         nome: user.displayName,
+        email: user.email,
+        foto: user.photoURL,
+        uid: user.uid,
+        Stars: stars,
+        criadoEm: firebase.firestore.FieldValue.serverTimestamp(),
+        });
+        setTimeout(function(){
+         var dbc = firebase.firestore();
+         dbc.collection('UsersPag').doc(user.uid).get().then((dados)=>{
+          var doc= dados.data()
+          //alert(doc.nome)
+           var nota = doc.Stars;
+
+      if (nota) {
+      //Swal.fire(`Nota: ${nota}`,'','')
+  
+  } else{
+    
+  }
+});
+        },3000)
     
   } else {
     // Usuário não está logado
     var resp= parseInt(localStorage.getItem('AvaliaçãoStar'));
     if(resp){
      document.getElementById('a_stars').click()
-    Swal.fire("Entre com sua conta google.",'','warning');
+    Swal.fire("Entre com sua conta google.",'Termine sua avaliacão, click em entrar com o google!','warning');
     document.getElementById('btnGoogle').style.display='block'
     }else{
 
