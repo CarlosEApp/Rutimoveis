@@ -1235,7 +1235,7 @@ navigator.vibrate(200);
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  const notaAVStars = parseInt(localStorage.getItem('AvaliaçãoStars'));
+  const notaAVStars = parseInt(localStorage.getItem('AvaliaçãoStar'));
   if (notaAVStars) {
     const estrelasAtivas = notaAVStars / 2;
     const labels = document.querySelectorAll('.label-estrela');
@@ -1252,13 +1252,127 @@ const labels = document.querySelectorAll('.label-estrela');
 estrelas.forEach((estrela, index) => {
   estrela.addEventListener('change', () => {
     const nota = (index + 1) * 2;
-    localStorage.setItem('AvaliaçãoStars', nota);
+    localStorage.setItem('AvaliaçãoStar', nota);
 
     labels.forEach((label, i) => {
       label.style.color = i <= index ? '#fc0' : '#ccc';
     });
 
    // swal(`${nota}`, '', 'success');
+   loginComGoogle()
      document.getElementById('lblNotaAV').innerHTML=`Nota ${nota}`
   });
 });
+
+
+//login google
+
+
+  var firebaseConfig = {
+apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
+authDomain: "rutimoveis-bc114.firebaseapp.com",
+projectId: "rutimoveis-bc114",
+storageBucket: "rutimoveis-bc114.firebasestorage.app",
+messagingSenderId: "457038463744",
+appId: "1:457038463744:web:e357570db0a9a6ce3529e5",
+measurementId: "G-K330CH24NV"
+};
+// Inicializa o Firebase apenas uma vez
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+
+// Referências
+var auth = firebase.auth();
+var provider = new firebase.auth.GoogleAuthProvider();
+provider.setCustomParameters({ prompt: "select_account" }); // força seleção de conta
+var db = firebase.firestore();
+
+var stars= parseInt(localStorage.getItem('AvaliaçãoStar'));
+// Controle para evitar múltiplos popups
+let loginEmAndamento = false;
+
+// Função de login
+function loginComGoogle() {
+  if (loginEmAndamento) return;
+  loginEmAndamento = true;
+
+  auth.signInWithPopup(provider)
+    .then((result) => {
+      loginEmAndamento = false;
+      const user = result.user;
+      const userData = {
+        nome: user.displayName,
+        email: user.email,
+        foto: user.photoURL,
+        uid: user.uid,
+        Stars: stars,
+        criadoEm: firebase.firestore.FieldValue.serverTimestamp()
+         
+      };
+
+      // Salva no Firestore
+      db.collection("UsersPag").doc(user.uid).set(userData)
+        .then(() => {
+          console.log("Usuário salvo no Firestore!");
+          document.getElementById("user-photo").src = user.photoURL;
+          document.getElementById("user-name").textContent = "Olá, " + user.displayName;
+           document.getElementById("user-email").textContent = user.email;
+        
+          localStorage.setItem('FotoUser', user.photoURL);
+           localStorage.setItem('NomeUser', user.displayName);
+        })
+        .catch((error) => {
+          console.error("Erro ao salvar no Firestore:", error);
+        });
+    })
+    .catch((error) => {
+      loginEmAndamento = false;
+      Swal.fire("Google erro!: " ,`Ops! Não conseguimos autenticar você.`,'error');
+      console.error("Erro no login:", error);
+    });
+}
+
+
+//Logado?
+
+setTimeout(function(){
+  var firebaseConfig = {
+apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
+authDomain: "rutimoveis-bc114.firebaseapp.com",
+projectId: "rutimoveis-bc114",
+storageBucket: "rutimoveis-bc114.firebasestorage.app",
+messagingSenderId: "457038463744",
+appId: "1:457038463744:web:e357570db0a9a6ce3529e5",
+measurementId: "G-K330CH24NV"
+};
+// Inicializa o Firebase apenas uma vez
+if (!firebase.apps.length) {
+  firebase.initializeApp(firebaseConfig);
+}
+auth.onAuthStateChanged((user) => {
+  if (user) {
+    // Usuário já está logado
+    document.getElementById("user-photo").src = user.photoURL;
+    document.getElementById("user-name").textContent = "Olá, " + user.displayName;
+      document.getElementById("user-email").textContent = user.email;
+       document.getElementById('btnGoogle').style.display='none'
+    
+  } else {
+    // Usuário não está logado
+    var resp= parseInt(localStorage.getItem('AvaliaçãoStar'));
+    if(resp){
+     document.getElementById('a_stars').click()
+    Swal.fire("Entre com sua conta google.",'','warning');
+    document.getElementById('btnGoogle').style.display='block'
+    }else{
+
+    }
+  }
+});
+},7000)
+
+//entre com google botão
+function entreGoogle(){
+   loginComGoogle() 
+}
