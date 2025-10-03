@@ -1235,40 +1235,40 @@ navigator.vibrate(200);
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  const notaAVStars = parseInt(localStorage.getItem('AvaliaçãoStar'));
-  if (notaAVStars) {
-    const estrelasAtivas = notaAVStars / 2;
-    const labels = document.querySelectorAll('.label-estrela');
-    labels.forEach((label, index) => {
-      label.style.color = index < estrelasAtivas ? '#fc0' : '#ccc';
-      document.getElementById('lblNotaAV').innerHTML=`Nota ${notaAVStars}`
-    });
-  }
+const notaAVStars = parseInt(localStorage.getItem('AvaliaçãoStar'));
+if (notaAVStars) {
+const estrelasAtivas = notaAVStars / 2;
+const labels = document.querySelectorAll('.label-estrela');
+labels.forEach((label, index) => {
+label.style.color = index < estrelasAtivas ? '#fc0' : '#ccc';
+document.getElementById('lblNotaAV').innerHTML=`Nota ${notaAVStars}`
+});
+}
 });
 
 const estrelas = document.querySelectorAll('.estrelas input');
 const labels = document.querySelectorAll('.label-estrela');
 
 estrelas.forEach((estrela, index) => {
-  estrela.addEventListener('change', () => {
-    const nota = (index + 1) * 2;
-    localStorage.setItem('AvaliaçãoStar', nota);
+estrela.addEventListener('change', () => {
+const nota = (index + 1) * 2;
+localStorage.setItem('AvaliaçãoStar', nota);
 
-    labels.forEach((label, i) => {
-      label.style.color = i <= index ? '#fc0' : '#ccc';
-    });
+labels.forEach((label, i) => {
+label.style.color = i <= index ? '#fc0' : '#ccc';
+});
 
-   // swal(`${nota}`, '', 'success');
-   loginComGoogle()
-     document.getElementById('lblNotaAV').innerHTML=`Nota ${nota}`
-  });
+// swal(`${nota}`, '', 'success');
+loginComGoogle()
+document.getElementById('lblNotaAV').innerHTML=`Nota ${nota}`
+});
 });
 
 
 //login google
 
 
-  var firebaseConfig = {
+var firebaseConfig = {
 apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
 authDomain: "rutimoveis-bc114.firebaseapp.com",
 projectId: "rutimoveis-bc114",
@@ -1279,7 +1279,7 @@ measurementId: "G-K330CH24NV"
 };
 // Inicializa o Firebase apenas uma vez
 if (!firebase.apps.length) {
-  firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 }
 
 // Referências
@@ -1294,53 +1294,58 @@ let loginEmAndamento = false;
 
 // Função de login
 function loginComGoogle() {
-  var stars= parseInt(localStorage.getItem('AvaliaçãoStar'));
-  if (loginEmAndamento) return;
-  loginEmAndamento = true;
+var stars= parseInt(localStorage.getItem('AvaliaçãoStar'));
+var msm= localStorage.getItem('InfoMSM')
+if (loginEmAndamento) return;
+loginEmAndamento = true;
 
-  auth.signInWithPopup(provider)
-    .then((result) => {
-      loginEmAndamento = false;
-      const user = result.user;
-      const userData = {
-        nome: user.displayName,
-        email: user.email,
-        foto: user.photoURL,
-        uid: user.uid,
-        Stars: stars,
-        criadoEm: firebase.firestore.FieldValue.serverTimestamp()
-         
-      };
+auth.signInWithPopup(provider)
+.then((result) => {
+loginEmAndamento = false;
+const user = result.user;
+const userData = {
+nome: user.displayName,
+email: user.email,
+foto: user.photoURL,
+uid: user.uid,
+Stars: stars,
+Mensagem:msm,
+criadoEm: firebase.firestore.FieldValue.serverTimestamp()
 
-      // Salva no Firestore
-      db.collection("UsersPag").doc(user.uid).set(userData)
-        .then(() => {
-          console.log("Usuário salvo no Firestore!");
-          document.getElementById("user-photo").src = user.photoURL;
-          document.getElementById("user-name").textContent = "Olá, " + user.displayName;
-           document.getElementById("user-email").textContent = user.email;
-          document.getElementById('user-photo').style.display='block'
-         document.getElementById('user-name').style.display='block'
-         document.getElementById('user-email').style.display='block'
-          localStorage.setItem('FotoUser', user.photoURL);
-           localStorage.setItem('NomeUser', user.displayName);
-        })
-        .catch((error) => {
-          console.error("Erro ao salvar no Firestore:", error);
-        });
-    })
-    .catch((error) => {
-      loginEmAndamento = false;
-      Swal.fire("Google erro!: " ,`Ops! Não conseguimos autenticar você.`,'error');
-      console.error("Erro no login:", error);
-    });
+};
+
+// Salva no Firestore
+db.collection("UsersPag").doc(user.uid).set(userData)
+.then(() => {
+console.log("Usuário salvo no Firestore!");
+document.getElementById("user-photo").src = user.photoURL;
+document.getElementById("user-name").textContent = "Olá, " + user.displayName;
+document.getElementById("user-email").textContent = user.email;
+document.getElementById('user-photo').style.display='block'
+document.getElementById('user-name').style.display='block'
+document.getElementById('user-email').style.display='block'
+document.getElementById('infoComent').style.display='block'
+localStorage.setItem('FotoUser', user.photoURL);
+localStorage.setItem('NomeUser', user.displayName);
+localStorage.setItem('EmalUser', user.email);
+
+})
+.catch((error) => {
+console.error("Erro ao salvar no Firestore:", error);
+});
+})
+.catch((error) => {
+loginEmAndamento = false;
+Swal.fire("Google erro!: " ,`Ops! Não conseguimos autenticar você.`,'error');
+console.error("Erro no login:", error);
+});
 }
 
 
 //Logado?
 
 setTimeout(function(){
-  var firebaseConfig = {
+var firebaseConfig = {
 apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
 authDomain: "rutimoveis-bc114.firebaseapp.com",
 projectId: "rutimoveis-bc114",
@@ -1351,60 +1356,177 @@ measurementId: "G-K330CH24NV"
 };
 // Inicializa o Firebase apenas uma vez
 if (!firebase.apps.length) {
-  firebase.initializeApp(firebaseConfig);
- 
+firebase.initializeApp(firebaseConfig);
+
 }
 auth.onAuthStateChanged((user) => {
-  if (user) {
-      var stars= parseInt(localStorage.getItem('AvaliaçãoStar'));
-    // Usuário já está logado
-    document.getElementById("user-photo").src = user.photoURL;
-    document.getElementById("user-name").textContent = "Olá, " + user.displayName;
-      document.getElementById("user-email").textContent = user.email;
-       document.getElementById('btnGoogle').style.display='none'
-       document.getElementById('user-photo').style.display='block'
-         document.getElementById('user-name').style.display='block'
-         document.getElementById('user-email').style.display='block'
-         var dbb = firebase.firestore();
-        dbb.collection("UsersPag").doc(user.uid).set({
-         nome: user.displayName,
-        email: user.email,
-        foto: user.photoURL,
-        uid: user.uid,
-        Stars: stars,
-        criadoEm: firebase.firestore.FieldValue.serverTimestamp(),
-        });
-        setTimeout(function(){
-         var dbc = firebase.firestore();
-         dbc.collection('UsersPag').doc(user.uid).get().then((dados)=>{
-          var doc= dados.data()
-          //alert(doc.nome)
-           var nota = doc.Stars;
+if (user) {
+var stars= parseInt(localStorage.getItem('AvaliaçãoStar'));
+var msm= localStorage.getItem('InfoMSM')
+if (msm) {
+ // alert(msm);
+  var textoFormatado = msm.length > 15 ? msm.substring(0, 28) + '...' : msm;
+  document.getElementById('user-mensagem').innerHTML = `#${textoFormatado}`;
+}
 
-      if (nota) {
-      //Swal.fire(`Nota: ${nota}`,'','')
-  
-  } else{
-    
-  }
+// Usuário já está logado
+document.getElementById("user-photo").src = user.photoURL;
+document.getElementById("user-name").textContent = "Olá, " + user.displayName;
+document.getElementById("user-email").textContent = user.email;
+document.getElementById('btnGoogle').style.display='none'
+document.getElementById('user-photo').style.display='block'
+document.getElementById('user-name').style.display='block'
+document.getElementById('user-email').style.display='block'
+document.getElementById('infoComent').style.display='block'
+localStorage.setItem('FotoUser', user.photoURL);
+localStorage.setItem('NomeUser', user.displayName);
+localStorage.setItem('EmalUser', user.email);
+
+
+var dbb = firebase.firestore();
+dbb.collection("UsersPag").doc(user.uid).set({
+nome: user.displayName,
+email: user.email,
+foto: user.photoURL,
+uid: user.uid,
+Stars: stars,
+Mensagem:msm,
+criadoEm: firebase.firestore.FieldValue.serverTimestamp(),
 });
-        },3000)
-    
-  } else {
-    // Usuário não está logado
-    var resp= parseInt(localStorage.getItem('AvaliaçãoStar'));
-    if(resp){
-     document.getElementById('a_stars').click()
-    Swal.fire("Entre com sua conta google.",'Termine sua avaliacão, click em entrar com o google!','warning');
-    document.getElementById('btnGoogle').style.display='block'
-    }else{
 
-    }
-  }
+setTimeout(function(){
+
+var itens1= 0
+var list = document.getElementById('listInfo');
+list.innerHTML = ''
+var firebaseConfigures = {
+apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
+authDomain: "rutimoveis-bc114.firebaseapp.com",
+projectId: "rutimoveis-bc114",
+storageBucket: "rutimoveis-bc114.firebasestorage.app",
+messagingSenderId: "457038463744",
+appId: "1:457038463744:web:e357570db0a9a6ce3529e5",
+measurementId: "G-K330CH24NV"
+};
+firebase.initializeApp(firebaseConfigures);
+var db = firebase.firestore()
+var produtosRef = db.collection(`UsersPag`);
+produtosRef.get().then((querySnapshot) => {
+querySnapshot.forEach(doc => {
+var doc = doc.data();
+var div= document.createElement('div')
+var div2=document.createElement('div')
+var div3=document.createElement('div')
+var label=document.createElement('label')
+var label2=document.createElement('label')
+var label3=document.createElement('label')
+var img=document.createElement('img')
+
+img.id='imgInfo'
+div.id='divInfo'
+div2.id='divInfo2'
+div3.id='divInfo3'
+label.id='lblInfo'
+label2.id='lblInfo2'
+label3.id='lblInfo3'
+
+img.src=doc.foto
+if(!doc.Stars||doc.Stars==''){
+
+}else if(doc.Stars==2){
+label.textContent='🌟'
+}else if(doc.Stars==4){
+label.textContent='🌟🌟'
+}else if(doc.Stars==6){
+label.textContent='🌟🌟🌟'
+}else if(doc.Stars==8){
+label.textContent='🌟🌟🌟🌟'
+}else if(doc.Stars==10){
+label.textContent='🌟🌟🌟🌟🌟'
+}
+
+label2.textContent= doc.nome
+if(doc.Mensagem){
+ var textoFormatado =  doc.Mensagem.length > 15 ?  doc.Mensagem.substring(0, 28) + '...' : doc.Mensagem;
+label3.textContent= `#${textoFormatado}`
+}
+
+div2.appendChild(img)
+div3.appendChild(label)
+div3.appendChild(document.createElement('br'));
+div3.appendChild(label2)
+div3.appendChild(document.createElement('br'));
+div3.appendChild(label3)
+div.appendChild(div2)
+div.appendChild(div3)
+list.appendChild(div)
+
+
+ label3.addEventListener('click',function(){
+    Swal.fire('Comentário!',`${doc.Mensagem}`,'success')
+ })
+
+})
+});
+},3000)
+
+} else {
+// Usuário não está logado
+var resp= parseInt(localStorage.getItem('AvaliaçãoStar'));
+if(resp){
+document.getElementById('a_stars').click()
+Swal.fire("Entre com sua conta google.",'Termine sua avaliacão, click em entrar com o google!','warning');
+document.getElementById('btnGoogle').style.display='block'
+}else{
+
+}
+}
 });
 },7000)
 
 //entre com google botão
-function entreGoogle(){
-   loginComGoogle() 
+function EntreGoogle(){
+loginComGoogle() 
+}
+function mensagemInfo(){
+Swal.fire({
+title: `🌟 Avaliação`,
+html:` <h5>Deixe uma breve mensagem!</h5> 
+<textarea id='inputInfo'  title='MSM' placeholder= 'Mensagem...'></textarea>
+<br>
+<label id='lblBtn1' title='Salvar'>Salvar</label> 
+<label id='lblBtn2' title='cancelar'>Cancelar</label>
+
+`,
+background: 'rgba(118, 0, 122, 1)', // Cor de fundo
+color: '#ffffffff', // Cor do texto
+allowOutsideClick: false,
+showConfirmButton: false,
+customClass: {
+popup: 'my-custom_infoMSM' // Aplica a classe CSS personalizada
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';        
+}
+});
+document.getElementById('lblBtn2').addEventListener('click',function(){
+Swal.close()
+
+})
+document.getElementById('lblBtn1').addEventListener('click',function(){
+var resp= document.getElementById('inputInfo').value;
+if(resp){
+localStorage.setItem('InfoMSM', resp)
+Swal.close()
+}else{
+
+}
+
+})
+
+}
+
+function ParagrafoMSM(){
+  var msm= localStorage.getItem('InfoMSM')
+  Swal.fire('Comentário!',`${msm}`,'success')
 }
