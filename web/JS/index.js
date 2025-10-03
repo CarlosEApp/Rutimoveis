@@ -1516,7 +1516,13 @@ Swal.close()
 document.getElementById('lblBtn1').addEventListener('click',function(){
 var resp= document.getElementById('inputInfo').value;
 if(resp){
+
 localStorage.setItem('InfoMSM', resp)
+
+ // alert(msm);
+  var textoFormatado = resp.length > 15 ? resp.substring(0, 28) + '...' : resp;
+  document.getElementById('user-mensagem').innerHTML = `#${textoFormatado}`;
+
 Swal.close()
 }else{
 
