@@ -1523,7 +1523,9 @@ localStorage.setItem('InfoMSM', resp)
   var textoFormatado = resp.length > 15 ? resp.substring(0, 28) + '...' : resp;
   document.getElementById('user-mensagem').innerHTML = `#${textoFormatado}`;
 
-Swal.close()
+setTimeout(function(){
+ window.location.reload()
+},1500)
 }else{
 
 }
