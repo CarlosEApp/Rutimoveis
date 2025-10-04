@@ -1365,7 +1365,7 @@ var stars= parseInt(localStorage.getItem('AvaliaçãoStar'));
 var msm= localStorage.getItem('InfoMSM')
 if (msm) {
  // alert(msm);
-  var textoFormatado = msm.length > 15 ? msm.substring(0, 28) + '...' : msm;
+  var textoFormatado = msm.length > 15 ? msm.substring(0, 30) + '...' : msm;
   document.getElementById('user-mensagem').innerHTML = `#${textoFormatado}`;
 }
 
@@ -1392,11 +1392,11 @@ uid: user.uid,
 Stars: stars,
 Mensagem:msm,
 criadoEm: firebase.firestore.FieldValue.serverTimestamp(),
-});
+})
 
-setTimeout(function(){
 
-var itens1= 0
+
+//var itens1= 0
 var list = document.getElementById('listInfo');
 list.innerHTML = ''
 var firebaseConfigures = {
@@ -1409,8 +1409,8 @@ appId: "1:457038463744:web:e357570db0a9a6ce3529e5",
 measurementId: "G-K330CH24NV"
 };
 firebase.initializeApp(firebaseConfigures);
-var db = firebase.firestore()
-var produtosRef = db.collection(`UsersPag`);
+var dbs = firebase.firestore()
+var produtosRef = dbs.collection(`UsersPag`);
 produtosRef.get().then((querySnapshot) => {
 querySnapshot.forEach(doc => {
 var doc = doc.data();
@@ -1432,7 +1432,6 @@ label3.id='lblInfo3'
 
 img.src=doc.foto
 if(!doc.Stars||doc.Stars==''){
-
 }else if(doc.Stars==2){
 label.textContent='🌟'
 }else if(doc.Stars==4){
@@ -1444,10 +1443,9 @@ label.textContent='🌟🌟🌟🌟'
 }else if(doc.Stars==10){
 label.textContent='🌟🌟🌟🌟🌟'
 }
-
 label2.textContent= doc.nome
 if(doc.Mensagem){
- var textoFormatado =  doc.Mensagem.length > 15 ?  doc.Mensagem.substring(0, 28) + '...' : doc.Mensagem;
+ var textoFormatado =  doc.Mensagem.length > 15 ?  doc.Mensagem.substring(0, 40) + '...' : doc.Mensagem;
 label3.textContent= `#${textoFormatado}`
 }
 
@@ -1462,13 +1460,13 @@ div.appendChild(div3)
 list.appendChild(div)
 
 
- label3.addEventListener('click',function(){
+ div.addEventListener('click',function(){
     Swal.fire('Comentário!',`${doc.Mensagem}`,'success')
  })
 
 })
 });
-},3000)
+
 
 } else {
 // Usuário não está logado
@@ -1482,7 +1480,7 @@ document.getElementById('btnGoogle').style.display='block'
 }
 }
 });
-},7000)
+},2000)
 
 //entre com google botão
 function EntreGoogle(){
@@ -1537,4 +1535,23 @@ setTimeout(function(){
 function ParagrafoMSM(){
   var msm= localStorage.getItem('InfoMSM')
   Swal.fire('Comentário!',`${msm}`,'success')
+}
+document.getElementById('div_listInfo').style.display='none'
+ var span=document.getElementById('spanInfo');
+  span.className=`fa-solid fa-eye`
+function verInfolist(){
+ var display=  document.getElementById('div_listInfo').style.display;
+ var span=document.getElementById('spanInfo');
+ if(display=='none'){
+ document.getElementById('div_listInfo').style.display='block'
+ span.className=`fa-solid fa-eye-low-vision`
+ setTimeout(function(){
+ document.getElementById('div_listInfo').style.display='none'
+  span.className=`fa-solid fa-eye`
+ },37000)
+ } else{
+  document.getElementById('div_listInfo').style.display='none'
+    span.className=`fa-solid fa-eye`
+ }
+ 
 }

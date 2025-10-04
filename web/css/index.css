@@ -963,6 +963,7 @@ align-items: center;      /* Ativa rolagem horizontal */
   margin-top: 50px;
   margin-bottom: 30px;
   padding-bottom: 30px;
+  display: none;
 
 }
 #listInfo{
@@ -1037,4 +1038,24 @@ align-items: center;      /* Ativa rolagem horizontal */
 #lblInfo3:hover,#user-mensagem:hover{
   color: #7c00cf;
   cursor: pointer;
+}
+#verlistInfo{
+  float: left;
+  cursor: pointer;
+  color: rgb(255, 255, 255);
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+ box-shadow: 0 7px 15px rgba(0, 0, 0, 0.514);
+  border-radius: 10px;
+  background-color: #eff5ff;
+   background-color: #7c0076;
+     font-size: clamp(0.800rem, 1vw + 0.5rem, 0.900rem);
+}
+#verlistInfo:hover{
+  background-color: #a5019d;
+  color: aliceblue;
+}
+#spanInfo{
+  font-size: clamp(1rem, 1vw + 0.5rem, 1.100rem);
 }
