@@ -1497,11 +1497,11 @@ loginComGoogle()
 }
 function mensagemInfo(){
 Swal.fire({
-title: `🌟 Avaliação`,
-html:` <h5>Deixe uma breve mensagem!</h5> 
+title: `<i class="fa-solid fa-pen-to-square"></i> Comente`,
+html:` <p>Deixe uma breve mensagem!</p> 
 <textarea id='inputInfo'  title='MSM' placeholder= 'Mensagem...'></textarea>
 <br>
-<label id='lblBtn1' title='Salvar'>Salvar</label> 
+<label id='lblBtn1' title='Salvar'> Salvar <i class="fa-solid fa-check-double"></i></label> 
 <label id='lblBtn2' title='cancelar'>Cancelar</label>
 
 `,
