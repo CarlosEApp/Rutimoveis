@@ -1325,6 +1325,8 @@ document.getElementById('user-photo').style.display='block'
 document.getElementById('user-name').style.display='block'
 document.getElementById('user-email').style.display='block'
 document.getElementById('infoComent').style.display='block'
+document.getElementById('verlistInfo').style.display='block'
+document.getElementById('avisoinfo').style.display='none'
 localStorage.setItem('FotoUser', user.photoURL);
 localStorage.setItem('NomeUser', user.displayName);
 localStorage.setItem('EmalUser', user.email);
@@ -1378,6 +1380,8 @@ document.getElementById('user-photo').style.display='block'
 document.getElementById('user-name').style.display='block'
 document.getElementById('user-email').style.display='block'
 document.getElementById('infoComent').style.display='block'
+document.getElementById('verlistInfo').style.display='block'
+document.getElementById('avisoinfo').style.display='none'
 localStorage.setItem('FotoUser', user.photoURL);
 localStorage.setItem('NomeUser', user.displayName);
 localStorage.setItem('EmalUser', user.email);
@@ -1414,6 +1418,8 @@ var produtosRef = dbs.collection(`UsersPag`);
 produtosRef.get().then((querySnapshot) => {
 querySnapshot.forEach(doc => {
 var doc = doc.data();
+var coment= querySnapshot.size
+
 var div= document.createElement('div')
 var div2=document.createElement('div')
 var div3=document.createElement('div')
@@ -1459,7 +1465,10 @@ div.appendChild(div2)
 div.appendChild(div3)
 list.appendChild(div)
 
-
+setTimeout(function(){
+//Swal.fire(`${coment}`,'','')
+document.getElementById('spanInfoNumero').innerHTML=` (${coment})`
+},2000)
  div.addEventListener('click',function(){
     Swal.fire('Comentário!',`${doc.Mensagem}`,'success')
  })
