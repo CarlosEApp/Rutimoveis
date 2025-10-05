@@ -1560,7 +1560,7 @@ function verInfolist(){
  document.getElementById('div_listInfo').style.display='none'
   span.className=`fa-solid fa-eye`
   //document.getElementById('a_stars').click()
- },45000)
+ },60000)
  } else{
   document.getElementById('div_listInfo').style.display='none'
     span.className=`fa-solid fa-eye`
