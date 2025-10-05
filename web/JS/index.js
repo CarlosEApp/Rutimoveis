@@ -235,11 +235,11 @@ window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blan
 });
 document.getElementById('whats').addEventListener('click',function(){
  vibração()
-var pag = `https://rutimoveis.netlify.app/paginas/mostruario.html/?codigo=${doc.Código}`
+var pag = `https://rutimoveis.netlify.app/paginas/mostruario.html/?codigo=${doc.Código}`;
 var url = "https://rutimoveis.netlify.app/";
 var img = `${doc.Titulo}: ${pag}`;
-var cod=`${doc.Código}`
-var whatsappMessage =`Pagina Web: ${url}\n\n🏡 ${img} \n\n Código: ${cod}\n\n`;
+var cod=`${doc.Código}`;
+var whatsappMessage =`Pagina Web: ${url}\n\n🏡 ${img} \n\n Código: ${cod}`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
 });
@@ -460,7 +460,7 @@ var pag = `https://rutimoveis.netlify.app/paginas/mostruario.html/?codigo=${doc.
 var url = "https://rutimoveis.netlify.app/";
 var img = `${doc.Titulo}: ${pag}`;
 var cod=`${doc.Código}`
-var whatsappMessage =`Pagina Web: ${url}\n\n🏡 ${img} \n\n Código: ${cod}\n\n`;
+var whatsappMessage =`Pagina Web: ${url}\n\n🏡 ${img} \n\n Código: ${cod}`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
 });
@@ -741,7 +741,7 @@ var pag = `https://rutimoveis.netlify.app/paginas/mostruario.html/?codigo=${doc.
 var url = "https://rutimoveis.netlify.app/";
 var img = `${doc.Titulo}: ${pag}`;
 var cod=`${doc.Código}`
-var whatsappMessage =`Pagina Web: ${url}\n\n🏡 ${img} \n\n Código: ${cod}\n\n`;
+var whatsappMessage =`Pagina Web: ${url}\n\n🏡 ${img} \n\n Código: ${cod}`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
 });
@@ -1138,7 +1138,7 @@ var pagina="https://rutimoveis.netlify.app/";
 var pag = `https://rutimoveis.netlify.app/paginas/mostruario.html/?codigo=${imovel}`
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
 var resul=`Pagina web: ${pagina} \n\n${titulo}\n\n🏡 Ver Imóvel: ${pag}\n\n Código: ${imovel}`
-var url = "https://wa.me/"+`${numero}?text=  ${encodeURIComponent(resul)}`;
+var url = "https://wa.me/"+`${numero}?text=${encodeURIComponent(resul)}`;
 window.open(url, "_blank");
 Swal.fire(`WhatsApp`,``,'success')       
 });
@@ -1471,7 +1471,7 @@ document.getElementById('spanInfoNumero').innerHTML=` (${coment})`
 },2000)
  div.addEventListener('click',function(){
   if(doc.Mensagem){
-    Swal.fire('Comentário!',`${doc.Mensagem}`,'success')
+    Swal.fire('Comentário:',`${doc.Mensagem}`,'success')
   }
  })
 
