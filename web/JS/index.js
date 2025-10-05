@@ -1470,7 +1470,9 @@ setTimeout(function(){
 document.getElementById('spanInfoNumero').innerHTML=` (${coment})`
 },2000)
  div.addEventListener('click',function(){
+  if(doc.Mensagem){
     Swal.fire('Comentário!',`${doc.Mensagem}`,'success')
+  }
  })
 
 })
@@ -1557,7 +1559,7 @@ function verInfolist(){
  setTimeout(function(){
  document.getElementById('div_listInfo').style.display='none'
   span.className=`fa-solid fa-eye`
- },37000)
+ },59000)
  } else{
   document.getElementById('div_listInfo').style.display='none'
     span.className=`fa-solid fa-eye`
