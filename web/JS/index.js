@@ -1566,3 +1566,6 @@ function verInfolist(){
  }
  
 }
+function avaliar(){
+  Menu()
+}
