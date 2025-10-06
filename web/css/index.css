@@ -849,6 +849,10 @@ align-items: center;      /* Ativa rolagem horizontal */
 
 /* Estilo para telas menores (tablet e celular) */
 @media (max-width: 768px) {
+  .fullscreen-popup img{
+    min-width: 400px;
+    height: 100%;
+  }
 #listGeral, #listDestaque, #listPesq  {
 flex-wrap: nowrap;       /* Impede quebra de linha */
 overflow-x: auto;  
@@ -859,6 +863,16 @@ justify-content: space-around ;
 align-items: center;      /* Ativa rolagem horizontal */
 }
 }
+@media (max-width: 428px) {
+  .fullscreen-popup img{
+    min-width: 380px;
+    height: 100%;
+  }}
+  @media (max-width: 390px) {
+  .fullscreen-popup img{
+    min-width: 360px;
+    height: 100%;
+  }}
 #colorh2{
   max-width: 390px;
   padding: 10px;
