@@ -89,43 +89,43 @@ document.getElementById('tituloH2').innerHTML=data.Titulo
 document.getElementById('codigoH2').innerHTML=data.Código
 document.getElementById('img1').src= data.IMG1;
 if(!data.Img1T||data.Img1T==''){
-document.getElementById('h3img1').innerHTML="#Rutimóveis"
+document.getElementById('h3img1').innerHTML="#<b id='bbr'>Rut</b>imóveis"
 }else{
 document.getElementById('h3img1').innerHTML=data.Img1T
 }
 document.getElementById('img2').src=data.IMG2;
 if(!data.Img2T||data.Img2T==''){
-document.getElementById('h3img2').innerHTML="#Rutimóveis"
+document.getElementById('h3img2').innerHTML="#<b id='bbr'>Rut</b>imóveis"
 }else{
 document.getElementById('h3img2').innerHTML=data.Img2T
 }
 document.getElementById('img3').src=data.IMG3;
 if(!data.Img3T||data.Img3T==''){
-document.getElementById('h3img3').innerHTML="#Rutimóveis"
+document.getElementById('h3img3').innerHTML="#<b id='bbr'>Rut</b>imóveis"
 }else{
 document.getElementById('h3img3').innerHTML=data.Img3T
 }
 document.getElementById('img4').src=data.IMG4;
 if(!data.Img4T||data.Img4T==''){
-document.getElementById('h3img4').innerHTML="#Rutimóveis"
+document.getElementById('h3img4').innerHTML="#<b id='bbr'>Rut</b>imóveis"
 }else{
 document.getElementById('h3img4').innerHTML=data.Img4T
 }
 document.getElementById('img5').src=data.IMG5;
 if(!data.Img5T||data.Img5T==''){
-document.getElementById('h3img5').innerHTML="#Rutimóveis"
+document.getElementById('h3img5').innerHTML="#<b id='bbr'>Rut</b>imóveis"
 }else{
 document.getElementById('h3img5').innerHTML=data.Img5T
 }
 document.getElementById('img6').src=data.IMG6;
 if(!data.Img6T||data.Img6T==''){
-document.getElementById('h3img6').innerHTML="#Rutimóveis"
+document.getElementById('h3img6').innerHTML="#<b id='bbr'>Rut</b>imóveis"
 }else{
 document.getElementById('h3img6').innerHTML=data.Img6T
 }
 document.getElementById('img7').src=data.IMG7;
 if(!data.Img7T||data.Img7T==''){
-document.getElementById('h3img7').innerHTML="#Rutimóveis"
+document.getElementById('h3img7').innerHTML="#<b id='bbr'>Rut</b>imóveis"
 }else{
 document.getElementById('h3img7').innerHTML=data.Img7T
 }
