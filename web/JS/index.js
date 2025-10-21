@@ -25,8 +25,18 @@ setTimeout(function(){
 Buscar()
 },1000)
 }
-
-
+sessionStorage.setItem('ItensTemp','')
+setTimeout(function(){
+var temp= sessionStorage.getItem('ItensTemp')
+//alert(temp)
+if(!temp||temp==''){
+document.getElementById('body03').style.display='none'
+document.getElementById('brTemp').style.display='block'
+} else{
+document.getElementById('body03').style.display='block'
+document.getElementById('brTemp').style.display='none'
+}
+},7000);
 
 //lista de destaques
 sessionStorage.setItem('Mostruario','')
@@ -48,6 +58,7 @@ var produtosRef = db.collection(`Destaques`);
 produtosRef.get().then((querySnapshot) => {
 querySnapshot.forEach(doc => {
 var doc = doc.data();
+var tempItens= querySnapshot.size
 if( !doc.EstadoAT|| doc.EstadoAT===''){
 itens1++
 // Criando os elementos
@@ -151,11 +162,13 @@ li.appendChild(div3);
 li.appendChild(div4);
 // Adicionando ao elemento principal (list)
 listD.appendChild(li);
+
+sessionStorage.setItem('ItensTemp',tempItens)
+//alert(tempItens)
 btn.addEventListener('click',function(){
 sessionStorage.setItem('Mostruario',doc.Código)
 window.open('paginas/mostruario.html','_blank')
 });
-
 //click imagem
 img.addEventListener('click',function(){
   vibração()

@@ -1099,3 +1099,6 @@ align-items: center;      /* Ativa rolagem horizontal */
    font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
    color: #414141;
 }
+#brTemp, #body03{
+  display: none;
+}
