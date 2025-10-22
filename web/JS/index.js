@@ -499,10 +499,10 @@ pesqSet();
 sessionStorage.setItem('ValorPesquisa','')
 function pesqSet(){
 document.getElementById('selectListId_moradia').value='';  
-document.getElementById('selecVL').value=''; 
 var pesq=document.getElementById('inputPesquisa').value;
 sessionStorage.setItem('ValorPesquisa',pesq)
 sessionStorage.setItem('itensList1','')
+document.getElementById('selecVL').value='Compra ou Locação'
 
 Buscar()
 };
@@ -524,6 +524,8 @@ sessionStorage.setItem('IMGIMV','')
 sessionStorage.setItem('itensList1','')
 document.getElementById('P_resutPesquisa').innerHTML=''
 AlertaListaV()
+                            
+
 sessionStorage.setItem('Mostruario','')
 var itens3 = 0;
 var select2=document.getElementById('selecVL').value; 
