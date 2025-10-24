@@ -45,7 +45,7 @@ min-height: 17vh;
 background-color: rgb(148, 0, 136); 
 margin: 0px; 
 min-height: 17vh; 
-    
+
 }       
 ::-webkit-scrollbar-track {
 /* Cor da trilha da barra de rolagem */
@@ -488,11 +488,9 @@ margin-left: 10px;
 background-color: rgba(245, 245, 220, 0);
 margin-top: 1px;
 margin-bottom: 7px;
-
 }
 #tituloLista{
 margin-left: 10px;
-
 }
 #sociais_contatos{
 margin: auto;
@@ -691,7 +689,7 @@ align-items: center;
 margin-bottom: 100px;
 padding-bottom: 100px;
 }
-  #tituloLista{
+#tituloLista{
 margin-left: 1px;
 }
 
@@ -700,7 +698,7 @@ width: 80%;
 }
 }
 @media(max-width: 600px){
-  #imgg{
+#imgg{
 height: 30vh;
 
 }
@@ -738,7 +736,7 @@ text-rendering: geometricPrecision;
 display: flex;
 align-items: center;
 position: relative;
- outline: none;
+outline: none;
 }
 #listGeral, #listDestaque, #listPesq {
 margin: auto;
@@ -748,7 +746,7 @@ justify-content: space-around ;
 align-items: center;
 overflow: auto;
 flex-wrap: wrap;
- outline: none;
+outline: none;
 }
 #listGeral #li_, #listDestaque #li_,#listPesq #li_ {
 flex: 1 1 20%;
@@ -760,12 +758,12 @@ margin: 15px;
 margin-top: 0%;
 margin-bottom: 50px;
 font-weight: normal;
- outline: none;
+outline: none;
 }
 #divCards{
 max-width: 100%;
 min-height: 50vh;
- outline: none;
+outline: none;
 }
 #cards{
 margin: auto;
@@ -775,19 +773,19 @@ justify-content: space-around;
 align-items: center;
 padding: 10px;
 flex-wrap: wrap;
- outline: none;
+outline: none;
 }
 #cd1,#cd2,#cd3{
- width: 350px;
- cursor: pointer;
- margin-left: 5px;
- margin-right: 5px;
- margin-top: 40px;
- outline: none;
+width: 350px;
+cursor: pointer;
+margin-left: 5px;
+margin-right: 5px;
+margin-top: 40px;
+outline: none;
 
 }
 #cards div:hover{
-  background-color: rgb(240, 240, 240);
+background-color: rgb(240, 240, 240);
 }
 
 @media (max-width: 1705px) {
@@ -800,15 +798,15 @@ align-items: center;      /* Ativa rolagem horizontal */
 }
 }
 @media (max-width: 1605px) {
-  #cd1,#cd2,#cd3{
- width:300px;
- cursor: pointer;
- margin-left: 5px;
- margin-right: 5px;
- margin-top: 40px;
- outline: none;
+#cd1,#cd2,#cd3{
+width:300px;
+cursor: pointer;
+margin-left: 5px;
+margin-right: 5px;
+margin-top: 40px;
+outline: none;
 
- 
+
 }
 
 #listGeral, #listDestaque, #listPesq  { 
@@ -820,14 +818,14 @@ align-items: center;      /* Ativa rolagem horizontal */
 }
 }
 @media (max-width: 1405px) {
-   #cd1,#cd2,#cd3{
- width:280px;
- cursor: pointer;
- margin-left: 5px;
- margin-right: 5px;
- margin-top: 40px;
- outline: none;
- 
+#cd1,#cd2,#cd3{
+width:280px;
+cursor: pointer;
+margin-left: 5px;
+margin-right: 5px;
+margin-top: 40px;
+outline: none;
+
 }
 #listGeral, #listDestaque , #listPesq {  
 margin: auto;
@@ -849,10 +847,10 @@ align-items: center;      /* Ativa rolagem horizontal */
 
 /* Estilo para telas menores (tablet e celular) */
 @media (max-width: 768px) {
-  .fullscreen-popup img{
-    min-width: 400px;
-    height: 100%;
-  }
+.fullscreen-popup img{
+min-width: 400px;
+height: 100%;
+}
 #listGeral, #listDestaque, #listPesq  {
 flex-wrap: nowrap;       /* Impede quebra de linha */
 overflow-x: auto;  
@@ -864,241 +862,242 @@ align-items: center;      /* Ativa rolagem horizontal */
 }
 }
 @media (max-width: 428px) {
-  .fullscreen-popup img{
-    min-width: 380px;
-    height: 100%;
-  }}
-  @media (max-width: 390px) {
-  .fullscreen-popup img{
-    min-width: 360px;
-    height: 100%;
-  }}
+.fullscreen-popup img{
+min-width: 380px;
+height: 100%;
+}}
+@media (max-width: 390px) {
+.fullscreen-popup img{
+min-width: 360px;
+height: 100%;
+}}
 #colorh2{
-  max-width: 390px;
-  padding: 10px;
-  margin-left: 3%;
+max-width: 390px;
+padding: 10px;
+margin-left: 3%;
 }
 #colorh2 h2{
-  margin-top: 16px;
-  color: #6d0067;
-  
+margin-top: 16px;
+color: #6d0067;
+
 }
 .banner{
-  margin-bottom: 0px;
+margin-bottom: 0px;
 }
 #paragrafo_inicial #h1Footer{
-  font-size: clamp(1.500rem, 1vw + 0.5rem, 1.700rem);
+font-size: clamp(1.500rem, 1vw + 0.5rem, 1.700rem);
 }
 .estrelas input {
-  display: none;
-  margin: 0%;
+display: none;
+margin: 0%;
 }
 
 .estrelas label {
-  color: #ccc;
-  cursor: pointer;
-     font-size: 4rem;
-      margin: 0%;
+color: #ccc;
+cursor: pointer;
+font-size: 4rem;
+margin: 0%;
 }
 #lblNotaAV{
-     font-size: 3rem;
+font-size: 3rem;
 }
 .estrelas input:checked ~ label {
-  color: #fc0;
+color: #fc0;
 }
 #avaliação{
-  margin: auto;
-  width: 100%;
-  min-height: 40vh;
-  background-color: aliceblue;
-  margin-top: 60px;
-  padding-top: 50px;
-  margin-bottom: 25px;
-  padding-bottom: 30px;
+margin: auto;
+width: 100%;
+min-height: 40vh;
+background-color: aliceblue;
+margin-top: 60px;
+padding-top: 50px;
+margin-bottom: 25px;
+padding-bottom: 30px;
 }
 #Stars{
-  margin: auto;
-  width: 80%;
-  max-width: 1000px;
-  min-width: 390px;
-  text-align: center;
+margin: auto;
+width: 80%;
+max-width: 1000px;
+min-width: 390px;
+text-align: center;
 }
 #Stars h2{
-  color: #818181;
-    font-size: clamp(1.700rem, 1vw + 0.5rem, 2rem);
+color: #818181;
+font-size: clamp(1.700rem, 1vw + 0.5rem, 2rem);
 }
 #user-info p{
-  color: rgb(90, 90, 90);
-    font-size: clamp(0.900rem, 1vw + 0.5rem, 1.100rem);
+color: rgb(90, 90, 90);
+font-size: clamp(0.900rem, 1vw + 0.5rem, 1.100rem);
 }
 #user-info {
-  padding-bottom: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+padding-bottom: 30px;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
 }
 #user-info img{
-  max-width: 200px;
-  max-height: 200px;
-  min-width: 100px;
-  min-height: 100px;
-  border-radius: 50%;
+max-width: 200px;
+max-height: 200px;
+min-width: 100px;
+min-height: 100px;
+border-radius: 50%;
 
 }
 #btnGoogle{
-  border: 0cap;
-  background-color: #ffffff00;
-    cursor: pointer;
-    font-size: clamp(1rem, 1vw + 0.5rem, 1rem);
-    display: none;
-   
+border: 0cap;
+background-color: #ffffff00;
+cursor: pointer;
+font-size: clamp(1rem, 1vw + 0.5rem, 1rem);
+display: none;
+
 }
 #user-info  button:hover{
-   font-size: clamp(1.100rem, 1vw + 0.5rem, 1.100rem);
+font-size: clamp(1.100rem, 1vw + 0.5rem, 1.100rem);
 }
 #i_google{
-  font-size: clamp(1.600rem, 1vw + 0.5rem, 1.800rem);
-  color: #860070;
+font-size: clamp(1.600rem, 1vw + 0.5rem, 1.800rem);
+color: #860070;
 }
 #user-photo,#user-name,#user-email, #infoComent,#verlistInfo{
-  display: none;
+display: none;
 }
 #infoComent{
-  cursor: pointer;
+cursor: pointer;
 
 }
 #infoComent:hover{
-  color: #7c00cf;
+color: #7c00cf;
 }
 #div_listInfo{
-  margin: auto;
-  width: 99%;
-  margin-top: 50px;
-  margin-bottom: 30px;
-  padding-bottom: 30px;
-  display: none;
+margin: auto;
+width: 99%;
+margin-top: 50px;
+margin-bottom: 30px;
+padding-bottom: 30px;
+display: none;
 
 }
 #listInfo{
-  float: left;
-  min-width: 370px;
-  margin-top: 30px;
-  cursor: pointer;
-  
+float: left;
+min-width: 370px;
+margin-top: 30px;
+cursor: pointer;
+
 }
 #listInfo div{
-  margin-top: 10px;
+margin-top: 10px;
 }
 #lblInfo{
-  float: left;
+float: left;
 }
 #lblInfo2{
-   font-size: clamp(0.700rem, 1vw + 0.5rem, 0.900rem);
+font-size: clamp(0.700rem, 1vw + 0.5rem, 0.900rem);
 }
 #listInfo label{
-  color: rgb(82, 81, 81);
-    cursor: pointer;
+color: rgb(82, 81, 81);
+cursor: pointer;
 }
 #listInfo img{
-    max-width: 50px;
-  max-height: 50px;
-  min-width: 30px;
-  min-height: 30px;
-  border-radius: 50%;
+max-width: 50px;
+max-height: 50px;
+min-width: 30px;
+min-height: 30px;
+border-radius: 50%;
 }
 #divInfo{
-  display: flex;
-  align-items: center;
-    cursor: pointer;
- 
+display: flex;
+align-items: center;
+cursor: pointer;
+
 }
 #divInfo2{
- margin-right: 10px;
-   cursor: pointer;
+margin-right: 10px;
+cursor: pointer;
 }
 .my-custom_infoMSM{
-  max-width: 390px;
-  background-color: #860070;
-  color: aliceblue;
-  border-radius: 25px;
- 
+max-width: 390px;
+background-color: #860070;
+color: aliceblue;
+border-radius: 25px;
+
 }
 .my-custom_infoMSM p{
-  color: #dadada;
+color: #dadada;
 }
 #inputInfo{
-  width: 91%;
-  height: 10vh;
-  padding: 10px;
-    font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
-    border: 0cap;
-    outline: none;
-    border-radius: 5px;
-     margin-top: 7px;
-     margin-bottom: 10px;
+width: 91%;
+height: 10vh;
+padding: 10px;
+font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+border: 0cap;
+outline: none;
+border-radius: 5px;
+margin-top: 7px;
+margin-bottom: 10px;
+font-family: 'Poppins', sans-serif;
 }
 #lblBtn1{
-  cursor: pointer;
-  margin-right: 100px;
-  padding: 4px;
-  border-radius: 7px;
-  color: #f9fcff;
+cursor: pointer;
+margin-right: 100px;
+padding: 4px;
+border-radius: 7px;
+color: #f9fcff;
 
 }
 #lblBtn1:hover{
-  color: #07b801;
-   
+color: #07b801;
+
 }
 #lblBtn2{
-   color: #afafafd8;
+color: #afafafd8;
 }
 #lblBtn2:hover{
-  color: #ff028d;
-  cursor: pointer;
+color: #ff028d;
+cursor: pointer;
 }
 #lblInfo2{
-  float: left;
+float: left;
 }
 #lblInfo3{
-  cursor: pointer;
-   font-size: clamp(0.700rem, 1vw + 0.5rem, 0.900rem);
-     float: left;
+cursor: pointer;
+font-size: clamp(0.700rem, 1vw + 0.5rem, 0.900rem);
+float: left;
 }
 #lblInfo3:hover,#user-mensagem:hover{
-  color: #7c00cf;
-  cursor: pointer;
+color: #7c00cf;
+cursor: pointer;
 }
 #verlistInfo{
-  float: left;
-  cursor: pointer;
-  color: rgb(255, 255, 255);
-  padding: 8px;
-  padding-left: 10px;
-  padding-right: 10px;
- box-shadow: 0 7px 15px rgba(0, 0, 0, 0.514);
-  border-radius: 10px;
-  background-color: #eff5ff;
-   background-color: #7c0076;
-     font-size: clamp(0.800rem, 1vw + 0.5rem, 0.900rem);
-     
+float: left;
+cursor: pointer;
+color: rgb(255, 255, 255);
+padding: 8px;
+padding-left: 10px;
+padding-right: 10px;
+box-shadow: 0 7px 15px rgba(0, 0, 0, 0.514);
+border-radius: 10px;
+background-color: #eff5ff;
+background-color: #7c0076;
+font-size: clamp(0.800rem, 1vw + 0.5rem, 0.900rem);
+
 }
 #verlistInfo:hover{
-  background-color: #a5019d;
-  color: aliceblue;
+background-color: #a5019d;
+color: aliceblue;
 }
 #spanInfo{
-  font-size: clamp(1rem, 1vw + 0.5rem, 1.100rem);
-   margin-left: 5px;
+font-size: clamp(1rem, 1vw + 0.5rem, 1.100rem);
+margin-left: 5px;
 }
 #spanInfoNumero{
-  font-weight: bolder;
-  margin-left: 5px;
+font-weight: bolder;
+margin-left: 5px;
 }
 #avisoinfo{
-   font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
-   color: #414141;
+font-size: clamp(0.900rem, 1vw + 0.5rem, 1rem);
+color: #414141;
 }
 #brTemp, #body03{
-  display: none;
+display: none;
 }

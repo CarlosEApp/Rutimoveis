@@ -1282,7 +1282,6 @@ document.getElementById('lblNotaAV').innerHTML=`Nota ${nota}`
 
 //login google
 
-
 var firebaseConfig = {
 apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
 authDomain: "rutimoveis-bc114.firebaseapp.com",
@@ -1493,7 +1492,6 @@ document.getElementById('spanInfoNumero').innerHTML=` (${coment})`
 })
 });
 
-
 } else {
 // Usuário não está logado
 var resp= parseInt(localStorage.getItem('AvaliaçãoStar'));
@@ -1502,7 +1500,6 @@ document.getElementById('a_stars').click()
 Swal.fire("Entre com sua conta google.",'Termine sua avaliacão, click em entrar com o google!','warning');
 document.getElementById('btnGoogle').style.display='block'
 }else{
-
 }
 }
 });
@@ -1551,13 +1548,9 @@ setTimeout(function(){
  window.location.reload()
 },1500)
 }else{
-
 }
-
 })
-
 }
-
 function ParagrafoMSM(){
   var msm= localStorage.getItem('InfoMSM')
   Swal.fire('Comentário!',`${msm}`,'success')
@@ -1580,7 +1573,6 @@ function verInfolist(){
   document.getElementById('div_listInfo').style.display='none'
     span.className=`fa-solid fa-eye`
  }
- 
 }
 function avaliar(){
   Menu()
