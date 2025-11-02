@@ -171,7 +171,7 @@ window.open('paginas/mostruario.html','_blank')
 });
 //click imagem
 img.addEventListener('click',function(){
-  vibração()
+ 
 Swal.fire({
 title: '',
 html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
@@ -216,7 +216,7 @@ sessionStorage.setItem('Titulo_MV',doc.Titulo)
 whatsapp()
 });
 btn3.addEventListener('click',function(){
-vibração()
+
 Swal.fire({
 title: `Compartilhar <i id='i_compart'  class="fa-solid fa-square-share-nodes"></i>`,
 html: `
@@ -238,16 +238,16 @@ document.body.style.paddingRight = '0px';
 }
 });
 document.getElementById('sair_').addEventListener('click',function(){
-  vibração()
+
 Swal.close()
 });
 document.getElementById('face').addEventListener('click',function(){
- vibração()
+
 var url = encodeURIComponent("https://rutimoveis.netlify.app/");
 window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
 });
 document.getElementById('whats').addEventListener('click',function(){
- vibração()
+
 var pag = `https://rutimoveis.netlify.app/paginas/mostruario.html/?codigo=${doc.Código}`;
 var url = "https://rutimoveis.netlify.app/";
 var img = `${doc.Titulo}: ${pag}`;
@@ -264,6 +264,7 @@ window.open(whatsappLink, "_blank");
 
 //Lista Inicial de imóveis
 sessionStorage.setItem('Mostruario','')
+function inicioList(){
 var itens2= 0
 var listG = document.getElementById('listGeral');
 listG.innerHTML = ''
@@ -392,7 +393,7 @@ window.open('paginas/mostruario.html','_blank')
 
 //click imagem
 img.addEventListener('click',function(){
-  vibração()
+  
 Swal.fire({
 title: '',
 html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
@@ -421,7 +422,7 @@ document.getElementById('imgSwal').addEventListener('click', function(){
 //sessionStorage.setItem('itensList1',itens)
 document.getElementById('P_resutTodosIMV').innerHTML=`Total de ${itens2} Imóveis encontrados!`;
 lbl8.addEventListener('click',function(){
-  vibração()
+
 Swal.fire({
 customClass: {
 popup: 'my-custom_compartilhar' // Aplica a classe CSS personalizada
@@ -439,7 +440,7 @@ sessionStorage.setItem('Titulo_MV',doc.Titulo)
 whatsapp()
 });
 btn3.addEventListener('click',function(){
-vibração()
+
 Swal.fire({
 title: `Compartilhar <i id='i_compart'  class="fa-solid fa-square-share-nodes"></i>`,
 html: `
@@ -482,6 +483,8 @@ window.open(whatsappLink, "_blank");
 }
 })
 })
+};
+inicioList()
 
 //click no select oque procura, 'limpa os campos para nova pesquisa'.
 function clickSelect(){
@@ -518,14 +521,13 @@ document.getElementById('resutPesquisa').style.display='none'
 }
 //botão Buscar pesquisa
 function Buscar(){
-vibração()
+
 sessionStorage.setItem('CodIMV','')   
 sessionStorage.setItem('IMGIMV','')  
 sessionStorage.setItem('itensList1','')
 document.getElementById('P_resutPesquisa').innerHTML=''
 AlertaListaV()
                             
-
 sessionStorage.setItem('Mostruario','')
 var itens3 = 0;
 var select2=document.getElementById('selecVL').value; 
@@ -674,7 +676,7 @@ window.open('paginas/mostruario.html','_blank')
 });
 //click imagem
 img.addEventListener('click',function(){
-  vibração()
+ 
 Swal.fire({
 title: '',
 html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
@@ -721,7 +723,7 @@ sessionStorage.setItem('Titulo_MV',doc.Titulo)
 whatsapp()
 });
 btn3.addEventListener('click',function(){
-vibração()
+
 Swal.fire({
 title: `Compartilhar <i id='i_compart'  class="fa-solid fa-square-share-nodes"></i>`,
 html: `
@@ -746,12 +748,12 @@ document.getElementById('sair_').addEventListener('click',function(){
 Swal.close()
 });
 document.getElementById('face').addEventListener('click',function(){
-vibração()
+
 var url = encodeURIComponent("https://rutimoveis.netlify.app/");
 window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
 });
 document.getElementById('whats').addEventListener('click',function(){
-vibração()
+
 var pag = `https://rutimoveis.netlify.app/paginas/mostruario.html/?codigo=${doc.Código}`
 var url = "https://rutimoveis.netlify.app/";
 var img = `${doc.Titulo}: ${pag}`;
@@ -771,7 +773,7 @@ window.open(whatsappLink, "_blank");
 //Abrir Pesquisa
 document.getElementById('supenpesquisa').style.display = 'none'
 function Pesquisar() {
-vibração()
+
 var resp = document.getElementById('supenpesquisa').style.display;
 var IText = document.getElementById('pesq-3');
 if (!resp || resp == 'none') {
@@ -790,7 +792,7 @@ sessionStorage.setItem('MENULateral', '')
 var BTN = document.getElementById('heaad_menu');
 BTN.className = 'fa-solid fa-bars'
 function Menu() {
-vibração()
+
 var BTN = document.getElementById('heaad_menu');
 var MENU_ = sessionStorage.getItem('MENULateral')
 if (!MENU_ || MENU_ == '') {
@@ -812,7 +814,7 @@ Menu()
 //Exite menu
 function exit() {
 Menu()
-vibração()
+
 }
 //Time Relogio
 setInterval(function() {
@@ -831,7 +833,7 @@ sessionStorage.setItem('hora', timeString)
 }, 1000)
 // Tela Cheia
 function toggleFullScreen() {
-vibração()
+
 if ((document.fullScreenElement && document.fullScreenElement !== null) ||
 (!document.mozFullScreen && !document.webkitIsFullScreen)) {
 if (document.documentElement.requestFullScreen) {
@@ -871,7 +873,7 @@ sessionStorage.setItem('PassW03',data.Master2);
 })
 //Botão Admin
 function ADMIN() {
-vibração()
+
 Swal.fire({
 title: ``,
 html: `
@@ -912,7 +914,7 @@ document.getElementById('sair_').addEventListener('click',function(){
 Swal.close()
 });
 document.getElementById('enter').addEventListener('click',function(){
-vibração()
+
 var resp= document.getElementById('inputSwalAdimin').value;
 var pass1= sessionStorage.getItem('PassW01');
 var pass2= sessionStorage.getItem('PassW02');
@@ -1003,7 +1005,7 @@ Swal.close()
 }
 AlertaInicial()
 function CompartilhamentoP(){
-vibração()
+
 Swal.fire({
 title: `Compartilhar <i id='i_compart'  class="fa-solid fa-square-share-nodes"></i>`,
 html: `
@@ -1028,16 +1030,12 @@ document.getElementById('sair_').addEventListener('click',function(){
 Swal.close()
 });
 document.getElementById('face').addEventListener('click',function(){
-if (navigator.vibrate) {
-navigator.vibrate(200); // vibra por 200ms
-}
+
 var url = encodeURIComponent("https://rutimoveis.netlify.app/");
 window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, target="_blank", rel="noopener noreferrer");
 });
 document.getElementById('whats').addEventListener('click',function(){
-if (navigator.vibrate) {
-navigator.vibrate(200); // vibra por 200ms
-}
+
 var url = "https://rutimoveis.netlify.app/";
 var whatsappMessage =`Pagina Web: ${url}`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
@@ -1049,16 +1047,12 @@ window.open(whatsappLink, "_blank");
 function ZAP(){
 whats()
 Menu() 
-vibração()
 }
 function what(){
 whats()
-vibração()
 }
 function whats(){
-if (navigator.vibrate) {
-navigator.vibrate(200); // vibra por 200ms
-}
+
 var tell= sessionStorage.getItem('Tel_Whats');
 var imagem= sessionStorage.getItem('Foto_zap');
 if(!tell||tell==''){
@@ -1107,7 +1101,6 @@ Swal.fire(`WhatsApp`,``,'success')
 
 // WhatsApp com Informações do imóvel
 function whatsapp(){
-vibração()
 var titulo= sessionStorage.getItem('Titulo_MV') 
 var imgIMV= sessionStorage.getItem('IMGIMV')      
 var imovel= sessionStorage.getItem('CodIMV')    
@@ -1168,7 +1161,7 @@ facebook()
 Menu() 
 }
 function facebook(){
-vibração()
+
 var url_face=localStorage.getItem('URL_facebook')
 if(!url_face ||url_face==''){
 var URL_facebook='https://www.facebook.com/share/1YP8t9Q7uR/'
@@ -1180,7 +1173,6 @@ Swal.fire(`Facebook`,``,'success')
 }; 
 //Instagran
 function INSTA(){
-vibração()
 instagran()
 Menu() 
 }
@@ -1201,53 +1193,8 @@ function sobre(){
 Menu() 
 }
 
-//Vibração no menu lateral
-
-// Recupera valor salvo
-var vibrar = localStorage.getItem('Vibar') || 'off'; // valor padrão: 'off'
-
-// Exibe alerta com opção marcada
-function Config(){
-Swal.fire({
-title: `Opção atual: ${vibrar === 'on' ? '🔛 On' : '🔘 Off'}`,
-input: 'radio',
-inputOptions: {
-on: '🔛 On',
-off: '🔘 Off'
-},
-inputValue: vibrar, // marca a opção salva
-inputValidator: (value) => {
-if (!value) {
-return 'Você precisa escolher uma opção!';
-}
-},
-showCancelButton: false,
-confirmButtonText: 'Confirmar',
-customClass: {
-popup: 'my-custom_vibra_Swl'
-},
-didOpen: () => {
-document.body.style.paddingRight = '0px';
-}
-}).then((result) => {
-if (result.isConfirmed) {
-localStorage.setItem('Vibar', result.value); // salva nova escolha
-Swal.fire(`Você escolheu: ${result.value === 'on' ? 'On' : 'Off'}`);
-setTimeout(function(){
-window.location.reload()
-},1000)
-}
-});
-}
-
 //função vibratória
-function vibração() {
-var vib = localStorage.getItem('Vibar')
-if (vib === 'on' && navigator.vibrate) {
-navigator.vibrate(200);
-}}
-
-
+localStorage.setItem('Vibar','')
 
 document.addEventListener('DOMContentLoaded', function () {
 const notaAVStars = parseInt(localStorage.getItem('AvaliaçãoStar'));
@@ -1279,9 +1226,7 @@ document.getElementById('lblNotaAV').innerHTML=`Nota ${nota}`
 });
 });
 
-
 //login google
-
 var firebaseConfig = {
 apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
 authDomain: "rutimoveis-bc114.firebaseapp.com",
@@ -1301,7 +1246,6 @@ var auth = firebase.auth();
 var provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: "select_account" }); // força seleção de conta
 var db = firebase.firestore();
-
 
 // Controle para evitar múltiplos popups
 let loginEmAndamento = false;
@@ -1325,7 +1269,6 @@ uid: user.uid,
 Stars: stars,
 Mensagem:msm,
 criadoEm: firebase.firestore.FieldValue.serverTimestamp()
-
 };
 
 // Salva no Firestore
@@ -1357,9 +1300,7 @@ console.error("Erro no login:", error);
 });
 }
 
-
 //Logado?
-
 setTimeout(function(){
 var firebaseConfig = {
 apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
@@ -1373,7 +1314,6 @@ measurementId: "G-K330CH24NV"
 // Inicializa o Firebase apenas uma vez
 if (!firebase.apps.length) {
 firebase.initializeApp(firebaseConfig);
-
 }
 auth.onAuthStateChanged((user) => {
 if (user) {
@@ -1400,7 +1340,6 @@ localStorage.setItem('FotoUser', user.photoURL);
 localStorage.setItem('NomeUser', user.displayName);
 localStorage.setItem('EmalUser', user.email);
 
-
 var dbb = firebase.firestore();
 dbb.collection("UsersPag").doc(user.uid).set({
 nome: user.displayName,
@@ -1411,8 +1350,6 @@ Stars: stars,
 Mensagem:msm,
 criadoEm: firebase.firestore.FieldValue.serverTimestamp(),
 })
-
-
 
 //var itens1= 0
 var list = document.getElementById('listInfo');

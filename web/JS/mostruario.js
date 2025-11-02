@@ -29,12 +29,12 @@ const btns = document.querySelectorAll('#btnIMG button');
 
 btns[0].addEventListener('click', () => {
 divIMGs.scrollBy({ left: 200, behavior: 'smooth' });
-vibração()
+
 });
 
 btns[1].addEventListener('click', () => {
 divIMGs.scrollBy({ left: -200, behavior: 'smooth' });
-vibração()
+
 });
 const divIMGs = document.getElementById('divIMGs');
 let isDown = false;
@@ -209,9 +209,7 @@ setTimeout(function(){
 },3000)
 //Botão WhatsApp
 function corretora(){
-vibração()
 var telefone=`11948865333`
-
 var Titulo_=document.getElementById('tituloH2').innerHTML;
 var codigo_=document.getElementById('codigoH2').innerHTML;
 var IMG_=document.getElementById('img1').src;
@@ -244,7 +242,6 @@ document.body.style.paddingRight = '0px';
 }
 });
 setTimeout(function(){
-vibração()
 Swal.close()
 },7000)
 }
@@ -252,11 +249,9 @@ AlertaInicial()
 
 //FullScrem imagens swal
 function img1(){
-vibração()
 Swal.fire({
 title: '',
 html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
-
 `,
 showConfirmButton: false,
 background: 'transparent',
@@ -277,7 +272,7 @@ document.getElementById('imgSwal').addEventListener('click', function(){
 })
 }
 function img2(){
-vibração()
+
 Swal.fire({
 title: '',
 html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
@@ -301,7 +296,7 @@ document.getElementById('imgSwal').addEventListener('click', function(){
 })
 }
 function img3(){
-vibração()
+
 Swal.fire({
 title: '',
 html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
@@ -325,7 +320,7 @@ document.getElementById('imgSwal').addEventListener('click', function(){
 })
 }
 function img4(){
-vibração()
+
 Swal.fire({
 title: '',
 html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
@@ -349,7 +344,7 @@ document.getElementById('imgSwal').addEventListener('click', function(){
 })
 }
 function img5(){
-vibração()
+
 Swal.fire({
 title: '',
 html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
@@ -373,7 +368,7 @@ document.getElementById('imgSwal').addEventListener('click', function(){
 })
 }
 function img6(){
-vibração()
+
 Swal.fire({
 title: '',
 html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
@@ -397,7 +392,7 @@ document.getElementById('imgSwal').addEventListener('click', function(){
 })
 }
 function img7(){
-vibração()
+
 Swal.fire({
 title: '',
 html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
@@ -420,7 +415,6 @@ document.getElementById('imgSwal').addEventListener('click', function(){
     Swal.close()
 })
 }
-
 
 //Time Relogio
 setInterval(function() {
@@ -462,14 +456,6 @@ document.webkitCancelFullScreen();
 }
 
 
-//função vibratória
-
-function vibração() {
-var vib = localStorage.getItem('Vibar')
-if (vib === 'on' && navigator.vibrate) {
-navigator.vibrate(200);
-}
-}
 
 function casaCod(){
      setTimeout(function(){
