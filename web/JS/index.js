@@ -3,7 +3,7 @@
 
 //Click card casa
 function cardCasa(){
-  document.getElementById('selectListId_moradia').value='Casas';
+document.getElementById('selectListId_moradia').value='Casas';
 document.getElementById('selecVL').value='Compra ou Locação';
 setTimeout(function(){
 Buscar()
@@ -11,7 +11,7 @@ Buscar()
 }
 //Click card sobrado
 function cardSobrado(){
-  document.getElementById('selectListId_moradia').value='Sobrados';
+document.getElementById('selectListId_moradia').value='Sobrados';
 document.getElementById('selecVL').value='Compra ou Locação';
 setTimeout(function(){
 Buscar()
@@ -19,7 +19,7 @@ Buscar()
 }
 //Click card apartamentos
 function cardAp(){
-  document.getElementById('selectListId_moradia').value='Apartamentos';
+document.getElementById('selectListId_moradia').value='Apartamentos';
 document.getElementById('selecVL').value='Compra ou Locação';
 setTimeout(function(){
 Buscar()
@@ -171,7 +171,7 @@ window.open('paginas/mostruario.html','_blank')
 });
 //click imagem
 img.addEventListener('click',function(){
- 
+
 Swal.fire({
 title: '',
 html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
@@ -193,7 +193,7 @@ document.body.style.paddingRight = '0px';
 document.getElementById('imgSwal').src= doc.IMG1
 //alert(data.IMG1)
 document.getElementById('imgSwal').addEventListener('click', function(){
-    Swal.close()
+Swal.close()
 })
 });
 //sessionStorage.setItem('itensList1',itens)
@@ -393,7 +393,7 @@ window.open('paginas/mostruario.html','_blank')
 
 //click imagem
 img.addEventListener('click',function(){
-  
+
 Swal.fire({
 title: '',
 html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
@@ -415,7 +415,7 @@ document.body.style.paddingRight = '0px';
 document.getElementById('imgSwal').src= doc.IMG1
 //alert(data.IMG1)
 document.getElementById('imgSwal').addEventListener('click', function(){
-    Swal.close()
+Swal.close()
 })
 });
 
@@ -527,13 +527,13 @@ sessionStorage.setItem('IMGIMV','')
 sessionStorage.setItem('itensList1','')
 document.getElementById('P_resutPesquisa').innerHTML=''
 AlertaListaV()
-                            
+          
 sessionStorage.setItem('Mostruario','')
 var itens3 = 0;
 var select2=document.getElementById('selecVL').value; 
 var resutPesq = (sessionStorage.getItem('ValorPesquisa') || '').trim();
 if(!resutPesq|| resutPesq==''){
-  var select1=document.getElementById('selectListId_moradia').value;  
+var select1=document.getElementById('selectListId_moradia').value;  
 }else{
 select1='Cadastros'
 }
@@ -676,7 +676,7 @@ window.open('paginas/mostruario.html','_blank')
 });
 //click imagem
 img.addEventListener('click',function(){
- 
+
 Swal.fire({
 title: '',
 html: `<img id='imgSwal' src="3" style="width:85%; height:85%;">
@@ -697,7 +697,7 @@ document.body.style.paddingRight = '0px';
 document.getElementById('imgSwal').src= doc.IMG1
 //alert(data.IMG1)
 document.getElementById('imgSwal').addEventListener('click', function(){
-    Swal.close()
+Swal.close()
 })
 
 });
@@ -973,7 +973,7 @@ var docresp=sessionStorage.getItem('ffpsquisa')
 if(!docresp||docresp==''){
 
 }else{
-  Pesquisar() 
+Pesquisar() 
 }
 
 }
@@ -1320,9 +1320,9 @@ if (user) {
 var stars= parseInt(localStorage.getItem('AvaliaçãoStar'));
 var msm= localStorage.getItem('InfoMSM')
 if (msm) {
- // alert(msm);
-  var textoFormatado = msm.length > 15 ? msm.substring(0, 30) + '...' : msm;
-  document.getElementById('user-mensagem').innerHTML = `#${textoFormatado}`;
+// alert(msm);
+var textoFormatado = msm.length > 15 ? msm.substring(0, 30) + '...' : msm;
+document.getElementById('user-mensagem').innerHTML = `#${textoFormatado}`;
 }
 
 // Usuário já está logado
@@ -1402,7 +1402,7 @@ label.textContent='🌟🌟🌟🌟🌟'
 }
 label2.textContent= doc.nome
 if(doc.Mensagem){
- var textoFormatado =  doc.Mensagem.length > 15 ?  doc.Mensagem.substring(0, 40) + '...' : doc.Mensagem;
+var textoFormatado =  doc.Mensagem.length > 15 ?  doc.Mensagem.substring(0, 40) + '...' : doc.Mensagem;
 label3.textContent= `#${textoFormatado}`
 }
 
@@ -1420,11 +1420,11 @@ setTimeout(function(){
 //Swal.fire(`${coment}`,'','')
 document.getElementById('spanInfoNumero').innerHTML=` (${coment})`
 },2000)
- div.addEventListener('click',function(){
-  if(doc.Mensagem){
-    Swal.fire('Comentário:',`${doc.Mensagem}`,'success')
-  }
- })
+div.addEventListener('click',function(){
+if(doc.Mensagem){
+Swal.fire('Comentário:',`${doc.Mensagem}`,'success')
+}
+})
 
 })
 });
@@ -1477,40 +1477,40 @@ if(resp){
 
 localStorage.setItem('InfoMSM', resp)
 
- // alert(msm);
-  var textoFormatado = resp.length > 15 ? resp.substring(0, 28) + '...' : resp;
-  document.getElementById('user-mensagem').innerHTML = `#${textoFormatado}`;
+// alert(msm);
+var textoFormatado = resp.length > 15 ? resp.substring(0, 28) + '...' : resp;
+document.getElementById('user-mensagem').innerHTML = `#${textoFormatado}`;
 
 setTimeout(function(){
- window.location.reload()
+window.location.reload()
 },1500)
 }else{
 }
 })
 }
 function ParagrafoMSM(){
-  var msm= localStorage.getItem('InfoMSM')
-  Swal.fire('Comentário!',`${msm}`,'success')
+var msm= localStorage.getItem('InfoMSM')
+Swal.fire('Comentário!',`${msm}`,'success')
 }
 document.getElementById('div_listInfo').style.display='none'
- var span=document.getElementById('spanInfo');
-  span.className=`fa-solid fa-eye`
+var span=document.getElementById('spanInfo');
+span.className=`fa-solid fa-eye`
 function verInfolist(){
- var display=  document.getElementById('div_listInfo').style.display;
- var span=document.getElementById('spanInfo');
- if(display=='none'){
- document.getElementById('div_listInfo').style.display='block'
- span.className=`fa-solid fa-eye-low-vision`
- setTimeout(function(){
- document.getElementById('div_listInfo').style.display='none'
-  span.className=`fa-solid fa-eye`
-  //document.getElementById('a_stars').click()
- },70000)
- } else{
-  document.getElementById('div_listInfo').style.display='none'
-    span.className=`fa-solid fa-eye`
- }
+var display=  document.getElementById('div_listInfo').style.display;
+var span=document.getElementById('spanInfo');
+if(display=='none'){
+document.getElementById('div_listInfo').style.display='block'
+span.className=`fa-solid fa-eye-low-vision`
+setTimeout(function(){
+document.getElementById('div_listInfo').style.display='none'
+span.className=`fa-solid fa-eye`
+//document.getElementById('a_stars').click()
+},70000)
+} else{
+document.getElementById('div_listInfo').style.display='none'
+span.className=`fa-solid fa-eye`
+}
 }
 function avaliar(){
-  Menu()
+Menu()
 }
