@@ -167,7 +167,7 @@ sessionStorage.setItem('ItensTemp',tempItens)
 //alert(tempItens)
 btn.addEventListener('click',function(){
 sessionStorage.setItem('Mostruario',doc.Código)
-window.open('paginas/mostruario.html','_blank')
+window.open('paginas/mostruario.html','_self')
 });
 //click imagem
 img.addEventListener('click',function(){
@@ -388,7 +388,7 @@ li.appendChild(div4);
 listG.appendChild(li);
 btn.addEventListener('click',function(){
 sessionStorage.setItem('Mostruario',doc.Código)
-window.open('paginas/mostruario.html','_blank')
+window.open('paginas/mostruario.html','_self')
 });
 
 //click imagem
@@ -671,7 +671,7 @@ sessionStorage.setItem('ffpsquisa', resutPesq)
 document.getElementById('a_result').click()
 btn.addEventListener('click',function(){
 sessionStorage.setItem('Mostruario',doc.Código)
-window.open('paginas/mostruario.html','_blank')
+window.open('paginas/mostruario.html','_self')
 
 });
 //click imagem
@@ -921,7 +921,7 @@ var pass2= sessionStorage.getItem('PassW02');
 var pass3=  sessionStorage.getItem('PassW03')
 //swal(`P1= ${pass1} , P2= ${pass2},P3= ${pass3}`)
 if(resp===pass1|| resp===pass2||resp===pass3 ){
-window.open('paginas/cadastro.html', '_blank')
+window.open('paginas/cadastro.html', '_self')
 Swal.close()
 }else{
 setTimeout(function(){
