@@ -252,7 +252,7 @@ var pag = `https://rutimoveis.netlify.app/paginas/mostruario.html/?codigo=${doc.
 var url = "https://rutimoveis.netlify.app/";
 var img = `${doc.Titulo}: ${pag}`;
 var cod=`${doc.Código}`;
-var whatsappMessage =`Pagina Web: ${url}\n\n🏡 ${img} \n\n Código: ${cod}`;
+var whatsappMessage =`\n\n🏡 ${img} \n\n Código: ${cod}`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
 });
@@ -474,7 +474,7 @@ var pag = `https://rutimoveis.netlify.app/paginas/mostruario.html/?codigo=${doc.
 var url = "https://rutimoveis.netlify.app/";
 var img = `${doc.Titulo}: ${pag}`;
 var cod=`${doc.Código}`
-var whatsappMessage =`Pagina Web: ${url}\n\n🏡 ${img} \n\n Código: ${cod}`;
+var whatsappMessage =`\n\n🏡 ${img} \n\n Código: ${cod}`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
 });
@@ -758,7 +758,7 @@ var pag = `https://rutimoveis.netlify.app/paginas/mostruario.html/?codigo=${doc.
 var url = "https://rutimoveis.netlify.app/";
 var img = `${doc.Titulo}: ${pag}`;
 var cod=`${doc.Código}`
-var whatsappMessage =`Pagina Web: ${url}\n\n🏡 ${img} \n\n Código: ${cod}`;
+var whatsappMessage =`\n\n🏡 ${img} \n\n Código: ${cod}`;
 var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
 });
