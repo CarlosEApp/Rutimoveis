@@ -2,7 +2,10 @@
 
 
 
-
+// pagina inicial
+function paginaInicialRT(){
+    window.open('../index.html','_self')
+}
 
 
 sessionStorage.setItem('casaExist','')

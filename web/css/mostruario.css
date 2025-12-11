@@ -237,6 +237,22 @@ color: rgb(60, 255, 0);
 #buttons p{
 font-size: clamp(0.700, 1vw + 0.5rem, 0.800rem);
 }
+#buttons #btbt{
+    cursor: pointer;
+width: 90%;
+padding: 15px;
+border: 0cap;
+background-color: rgb(43, 0, 26);
+color: aliceblue;
+max-width: 600px;
+border-radius: 5px;
+font-size: clamp(1rem, 1vw + 0.5rem, 1.100rem);
+text-rendering: geometricPrecision;
+margin: 7px;
+}
+#buttons #btbt:hover{
+    background-color: darkred;
+}
 #OBS{
 margin: auto;
 width:95%;
