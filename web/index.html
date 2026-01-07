@@ -33,6 +33,7 @@
 <body>
     <div id="div_Geral">
         <div id="div_container">
+          <footer>
            <div id="div_header">
              <div id="header01">
                 <h2><b>Rut</b>imóveis</h2>  <button title="Tela cheia" onclick="toggleFullScreen()"><i class="fa-solid fa-desktop"></i></button> <button id="heaad_compartilhar" onclick="CompartilhamentoP()" title="Compartilhar Pagina"> <i class="fa-solid fa-square-share-nodes"></i></button> 
@@ -43,6 +44,7 @@
            </div>
              <div id="menu_lateral">
         <div id="MenuIMG"> <img src="src/Rutimoveis img.png" alt="" width="100%"></div> 
+        <nav>
         <ul>
           <li><a href="#" onclick="init()">🏠 Início</a></li>
            <li><a  href="#avaliação" onclick="avaliar()">🌟 Avaliar</a></li>
@@ -54,7 +56,9 @@
           <li><a id="exitMenu" onclick="exit()"><i class="fa-solid fa-delete-left"></i> Fecha </a></li> 
           <!-- Adicione mais itens se quiser -->
         </ul>
+        </nav>
       </div>
+      <main>
            <div id="div_body">
             <a id="a_inputp" href="#body01" title="pesquisa"></a>
             <div id="body01">
@@ -182,10 +186,10 @@
                   </div>
                 </div>
               </div><br><br>
-      
+           </main>
+            <footer>
            <div id="div_footer">
-            <div id="footer01">
-              
+            <div id="footer01">            
                  <div id="paragrafo_inicial">
                  <img src="src/Logo novo lar 01 PNG.png" alt="" width="100">
                     <p id="paragrafo_inf_cont"><h1 id="h1Footer">🏡  <b>Rut</b>imóveis – Soluções  Residenciais 🏡  </h1><br>
@@ -195,8 +199,7 @@
                     </p>
                     <label id="lbl_contact" for="">
                       📞 Telefone: (11) 94886-5333 📧 E-mail: rutimoveis@gmail.com 📍Toda grande São Paulo e Região</label>       
-                </div>
-                
+                </div>             
             </div>
             <div id="footer02">
                <div id="sociais_contatos">
@@ -205,9 +208,8 @@
 
             </div>
            </div>
-
+           </footer>
         </div>
-
     </div>
   <script src="JS/index.js"></script>
 </body>

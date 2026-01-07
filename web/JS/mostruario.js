@@ -18,11 +18,11 @@ sessionStorage.setItem('casaExist','')
     var codigo = params.get("codigo");
 
     if (codigo) {
-      swal("Código capturado: " + codigo);
+     //wal("Código capturado: " + codigo);
       sessionStorage.setItem("Mostruario", codigo);
     } else {
       console.log("Nenhum código encontrado na URL.");
-      swal("Código capturado: " + codigo);
+     //wal("Código capturado: " + codigo);
     }
   };
  },3000)
