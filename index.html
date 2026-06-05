@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title id="TITULO"> Rutimóveis</title>
+<link rel="shortcut icon" href="src/Rute_avatar_.png" type="image/x-icon">  
+<meta property="og:title" content="Rutimóveis soluções residenciais">
+<meta property="og:description" content="Imóveis em Itanhaém com preços acessíveis. Casas, sobrados e apartamentos. A Rutimóveis ajuda você a realizar o sonho da casa própria com confiança...">
+<meta property="og:image" content="https://rutimoveis.netlify.app/assets/Rutimoveis-img.png">
+<meta property="og:url" content="https://rutimoveis.netlify.app/">
+<meta property="og:type" content="website">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="https://kit.fontawesome.com/60de48ee9a.js" crossorigin="anonymous"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-database-compat.js"></script>
+<!--<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-storage-compat.js"></script> -->
+<!--<script src="https://www.gstatic.com/firebasejs/10.9.0/firebase-messaging-compat.js"></script> -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+<script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script> -->
+<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script> -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/index.css">
+</head>
+<body>
+<div id="conteudoGeral">
+<header>
+<div id="headerUm">
+
+<h1 class="h2Header">Rut<b>imóveis</b></h1> 
+<div id="headerFlex">     
+<div id="bannerUm">  <img id="imgHeader"  src="https://firebasestorage.googleapis.com/v0/b/rutimoveis-bc114.firebasestorage.app/o/BANNERS%2Fbanner_Maior%2FbannerGif.gif?alt=media&token=ea091079-c9fb-4030-b146-ceb39cf89dbc" width="100%" alt=""> <img id="imgDoisHeader" src="https://firebasestorage.googleapis.com/v0/b/rutimoveis-bc114.firebasestorage.app/o/BANNERS%2Fbanner_menor%2FGifMenor.gif?alt=media&token=fa0b742b-e012-44a0-8a41-3e4eb15db0f9" width="100%"  alt=""></div>
+
+</div>
+<div id="headerMenu">
+<div id="divMenuHeader">
+<div id="HM1"> <i id="I_Casa" class="fa-solid fa-house"></i> 
+<select title="Seleção" id="select_Imoveis" onchange="select_imovel()">
+<option value="" disabled>Lista de Imóveis</option>
+<option value="COLL_Casas">Casas Térrea </option>
+<option value="COLL_Sobrados">Sobrados</option>
+<option value="COLL_Apartamentos">Apartamentos</option>
+<option value="COLL_Terrenos">Terrenos</option>
+<option value="COLL_Lojas">Lojas</option>
+<option value="COLL_Galpões">Galpões</option>
+<option value="COLL_Armazens">Armazens</option>
+<option value="COLL_Chacaras">Chácaras</option>
+<option value="COLL_Sítios">Sítios</option>
+<option value="Fechar" disabled></option>
+<option value="Fechar">Fechar</option>
+</select>  <button id="btnCad" onclick="funçaocad()">Cadastro</button></div> <button id="btnMenuH" onclick=" initList()">MENU</button></div>
+</div>
+</div>
+
+</header>
+
+<main>
+<div id="mainUm">
+<div id="MaiflaxUm">
+<div id="DivPesquisador">
+<h2 class="h2P">Encontre Imóveis</h2>
+<div id="divPesquisa"> 
+
+<div id="divP2">
+<i id="i_pequisa_imovel" class="fa-solid fa-magnifying-glass"></i>  <input id="PesquInput" type="text" title="Pesquise por Imóvel" placeholder="Rua, bairro, cidade..."> <button id="BTNPSQ" onclick="pesquisar()" ><i id="pesq" class="fa-solid fa-magnifying-glass"></i> Buscar</button>
+</div><br>
+<p id="P_division"></p>
+
+<p onclick="ICodigo()" >Código <i id="i_codigo_imovel" class="fa-solid fa-eye"></i></p>
+<div id="divP1" class="classeCodigo">
+<input id="CodigoInput" type="text" title="Código do Imóvel" placeholder="Digite ou cole o código... "> <button id="BTNBuscar" onclick="pesquiCod()" ><i id="pesq" class="fa-solid fa-magnifying-glass"></i> Buscar</button>
+</div><br>
+<p id="P_division"></p>
+
+<p  onclick="IValaor()" ></i>Valor do imóvel R$ <i id="i_valor_imovel" class="fa-solid fa-eye"></i> </p>
+
+<div  class="diValores">
+    <select name="" id="tranzação"  title="Tipo de tranzação ">
+<option value=""disabled selected>Transação ?</option>
+<option value="Venda">Venda</option>
+<option value="Locação">Locação</option>
+<option value="Temporada">Temporada</option>
+<option value="Lançamento">Lançamento</option>
+</select><br>
+<div id="divP1">
+<Label>Max R$ </Label> <input id="ValorMaxInput" type="text" title="Valor maxímo do Imóvel" placeholder="Digite o valor maxímo... ">
+</div>
+<div id="divP1" >
+<Label>MIn R$ </Label> <input id="ValorMinInput" type="text" title="Valor minimo do Imóvel" placeholder="Digite o valor minimo... ">
+</div>
+<div id="divP1" ><button id="btnBuscaValor"><i id="pesq" class="fa-solid fa-magnifying-glass"></i>  Busca por imóvel</button></div> 
+</div>
+<br>
+</div>
+
+</div>
+<br><br>
+<div id="divCarrocel">
+<h2>✨Imóveis com economia, segurança e qualidade!</h2> 
+<div id="divApresntação">
+<div id="imgApresent"> <img  src="src/BannerRute.png" id="IMGAP" alt=""> <br>  <h3  id="LBLAP"></h3> <p id="ALBAP2"></Label> </p>
+</div>
+</div>      
+</div>
+
+</div>
+<div id="divMainDois">
+<div id="flexdiv2"> 
+
+<div id="CorretoresDiv">
+<h2>Fale Conosco </h2>
+<div id="div_Corretor">
+<div id="Corr_um">
+<div id="divCorretora">
+    <img src="src/Rute_foto_perfil.png" alt="" title="Corretora Rute">
+    
+    <p> Corretora <b id="bcr">Rute</b></p>
+</div>
+</div>
+<div id="Corr_dois">
+<h2>Mensagens</h2>
+<div id="divContato">
+<button id="btnEmal" onclick="Email()"> Mensagem por email <i class="fa-regular fa-envelope"></i></button> <br>
+<button id="btnZap" onclick="WhatsApp()">Mensagem por whatsApp <i class="fa-brands fa-whatsapp"></i></button>
+</div>
+</div>
+</div>
+</div>
+
+<div id="lista_imoveis_destaque">
+    <br>
+<h2 id="Div_IMV_DestaqueH2">✨Imóvens em Destaque</h2>
+<div id="list"></div>
+<h2 id="Div_IMV_DestaqueH2_" onclick="verMaisIMV()">🏡 Ver mais imóveis <b id="Bred"> >>></b></h2>
+
+</div>
+</div>
+
+</div>
+
+</main>
+</div>
+<div id="cp_QuemSomos">
+   <div id="quemSomos">
+  <h2>Quem Somos</h2>
+<p>A Rutimóveis nasceu com o propósito de oferecer soluções imobiliárias completas em Itanhaém e região. Trabalhamos com dedicação e transparência para ajudar nossos clientes a encontrar o imóvel ideal.</p>
+<p>Nosso compromisso é garantir segurança em cada negociação, oferecendo casas, sobrados e apartamentos que atendem diferentes perfis e necessidades. Com experiência e credibilidade, transformamos o sonho da casa própria em realidade.</p>
+<p>Na Rutimóveis, você conta com atendimento personalizado, confiança e suporte em todas as etapas da compra ou venda do seu imóvel.</p>
+  </div></div>
+<footer>
+    
+</footer>
+<script src="js/index.js"></script>
+<script>
+
+</script>
+</body>
+</html>
