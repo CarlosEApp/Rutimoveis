@@ -12,6 +12,22 @@ measurementId: "G-K330CH24NV"
 };
 firebase.initializeApp(firebaseConfig);
 /////////////////////////////////////////////////////////////////
+
+
+//Dados Admin Password
+var dbp= firebase.firestore();
+dbp.collection('Password').doc('passwords').get().then((doc)=>{
+if(doc){
+  var dados=doc.data()
+   var dados=doc.data()
+  sessionStorage.setItem('Pasword', dados.Senha);
+  sessionStorage.setItem('Pasword2', dados.Master1);
+  sessionStorage.setItem('Pasword3', dados.Master2);
+  sessionStorage.setItem('TelefoneAdmin', dados.Telefone);
+  sessionStorage.setItem('EmailAdmin', dados.Email)
+}
+})
+
 // Tela Cheia
 function toggleFullScreen() {
 if ((document.fullScreenElement && document.fullScreenElement !== null) ||

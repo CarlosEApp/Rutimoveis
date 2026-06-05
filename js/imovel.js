@@ -1,3 +1,21 @@
+
+
+  window.onload = function () {
+    var params = new URLSearchParams(window.location.search);
+    var codigo = params.get("codigo");
+
+    if (codigo) {
+     //wal("Código capturado: " + codigo);
+  
+    sessionStorage.setItem('Coll_ID', codigo);
+     sessionStorage.setItem('Lista_IMV_Menu','GeralColl')
+     inicialIMV()
+    } else {
+      console.log("Nenhum código encontrado na URL.");
+     //wal("Código capturado: " + codigo);
+    }
+  };
+
 // Tela Cheia
 function toggleFullScreen() {
 if ((document.fullScreenElement && document.fullScreenElement !== null) ||
@@ -51,6 +69,23 @@ appId: "1:457038463744:web:e357570db0a9a6ce3529e5",
 measurementId: "G-K330CH24NV"
 };
 firebase.initializeApp(firebaseConfig);
+//////////////////////////////////////////////////////////
+
+//Dados Admin Password
+var dbp= firebase.firestore();
+dbp.collection('Password').doc('passwords').get().then((doc)=>{
+if(doc){
+  var dados=doc.data()
+   var dados=doc.data()
+  sessionStorage.setItem('Pasword', dados.Senha);
+  sessionStorage.setItem('Pasword2', dados.Master1);
+  sessionStorage.setItem('Pasword3', dados.Master2);
+  sessionStorage.setItem('TelefoneAdmin', dados.Telefone);
+  sessionStorage.setItem('EmailAdmin', dados.Email)
+}
+})
+
+
 document.getElementById('divVenda').style.display='none';
 document.getElementById('divlocaçao').style.display='none';
 document.getElementById('divIptu').style.display='none';
@@ -230,7 +265,10 @@ document.getElementById('img_count').innerText = index + 1;
 };
 }
 
+setTimeout(function(){
 inicialIMV();
+},700)
+
 
 
 

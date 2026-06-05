@@ -349,12 +349,22 @@ BTN_Mais.addEventListener('click',function(){
     sessionStorage.setItem('Lista_IMV_Menu', data.Coll_Lista);
    sessionStorage.setItem('Transação_IMV_Menu', ''  );
    window.open('html/imovel.html','_self')
-})
+});
 div_label.addEventListener('click',function(){
     sessionStorage.setItem('Coll_ID', data.Código);
     sessionStorage.setItem('Lista_IMV_Menu', data.Coll_Lista);
    sessionStorage.setItem('Transação_IMV_Menu', ''  );
    window.open('html/imovel.html','_self')
+});
+BTN_Compart.addEventListener('click', function(){
+
+var pag = `https://rutimoveis.netlify.app/html/imovel.html/?codigo=${data.Código}`
+var url = "https://rutimoveis.netlify.app/";
+var Titulo = `${data.Titulo}: ${pag}`;
+var cod=`${data.Código}`
+var whatsappMessage =`\n\n🏡 ${Titulo} \n\n Código: ${cod}`;
+var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
+window.open(whatsappLink, "_blank");
 })
 }
 }
