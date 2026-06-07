@@ -45,27 +45,28 @@ const hours = now.getHours().toString().padStart(2, '0');
 const minutes = now.getMinutes().toString().padStart(2, '0');
 const seconds = now.getSeconds().toString().padStart(2, '0');
 const timeString = `${hours}:${minutes}:${seconds}`;
-//const lbl_data = document.getElementById('lbl-data');
-//lbl_data.innerHTML = `${data}`
-//localStorage.setItem('data', data)
 sessionStorage.setItem('hora', timeString)
 sessionStorage.setItem('data', data)
 }, 1000)
 function casa(){
 window.open('../index.html','_self')
-
 }
-
-
-
+sessionStorage.setItem('SETT', '')
 function pesquisar() {
+var sett= sessionStorage.getItem('SETT')
+if(!sett||sett==''){
+    var sett= 4
+    sessionStorage.setItem('SETT', 4)
+}else{
+    var sett=sessionStorage.getItem('SETT')
+}
 sessionStorage.setItem('itens','')
- var itens=0
+var itens=0
 var termo = sessionStorage.getItem('Termo')    
- document.getElementById('resultnumber').innerHTML=`${0} Não foram encontrados imóveis`     //document.getElementById("PesquInput").value.toLowerCase();
+document.getElementById('resultnumber').innerHTML=`${0} Não foram encontrados imóveis`     //document.getElementById("PesquInput").value.toLowerCase();
 var li = document.getElementById('list');
 li.innerHTML=''
- dbP = firebase.firestore();
+dbP = firebase.firestore();
 dbP.collection("GeralColl").get().then(snapshot => {
 snapshot.forEach(docSnap => {
 var data = docSnap.data();
@@ -74,16 +75,22 @@ var data = docSnap.data();
 let campos = [data.Rua, data.Bairro, data.Código, data.Titulo, data.Cidade];
 if (campos.some(c => c && c.toLowerCase().includes(termo))) {
 if (data.IMV_Disponivel?.toLowerCase() === 'ativo') {
- itens++
+itens++
 if (itens){
 
-    if(itens<=2){
-        
+if(itens<=2){
 document.getElementById('resultnumber').innerHTML=`${itens} imóvel encontrado`
-    } else{
-        document.getElementById('resultnumber').innerHTML=`${itens} imóveis encontrados`
-    }
+} else{
+document.getElementById('resultnumber').innerHTML=`${itens} imóveis encontrados`
+}
 
+if(itens>=4){
+document.getElementById('btnnVerMais').style.display='block'
+} else{
+document.getElementById('btnnVerMais').style.display='none'
+}
+if(itens<= sett){
+   
 var conntainer = document.createElement('div');
 var divFlex = document.createElement('div');
 var div_label = document.createElement('div');
@@ -231,33 +238,38 @@ conntainer.appendChild(div_botao)
 li.appendChild(conntainer);
 
 BTN_Mais.addEventListener('click',function(){
-    sessionStorage.setItem('Coll_ID', data.Código);
-    sessionStorage.setItem('Lista_IMV_Menu', data.Coll_Lista);
-   sessionStorage.setItem('Transação_IMV_Menu', ''  );
-   window.open('../html/imovel.html','_self')
+sessionStorage.setItem('Coll_ID', data.Código);
+sessionStorage.setItem('Lista_IMV_Menu', data.Coll_Lista);
+sessionStorage.setItem('Transação_IMV_Menu', ''  );
+window.open('../html/imovel.html','_self')
 })
 div_label.addEventListener('click',function(){
-    sessionStorage.setItem('Coll_ID', data.Código);
-    sessionStorage.setItem('Lista_IMV_Menu', data.Coll_Lista);
-   sessionStorage.setItem('Transação_IMV_Menu', ''  );
-   window.open('../html/imovel.html','_self')
+sessionStorage.setItem('Coll_ID', data.Código);
+sessionStorage.setItem('Lista_IMV_Menu', data.Coll_Lista);
+sessionStorage.setItem('Transação_IMV_Menu', ''  );
+window.open('../html/imovel.html','_self')
 })
-
-//sessionStorage.setItem('itens', JSON.stringify(data));
+BTN_Compart.addEventListener('click', function(){
+var pag = `https://rutimoveis.netlify.app/html/imovel.html/?codigo=${data.Código}`
+var url = "https://rutimoveis.netlify.app/";
+var Titulo = `${data.Titulo}: ${pag}`;
+var cod=`${data.Código}`
+var whatsappMessage =`\n\n🏡 ${Titulo} \n\n Código: ${cod}`;
+var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
+window.open(whatsappLink, "_blank");
+})
+}
 }
 }
 }
 })
 })
 }
-
-//window.open('html/imovel.html','_self')
 pesquisar() 
 
-
 sessionStorage.setItem('itens','')
-function Pesquisar(){
-    sessionStorage.setItem('itens','')
+function Pesquisar_(){
+sessionStorage.setItem('itens','')
 var termo = document.getElementById("input_pesquisa").value.toLowerCase().trim();
 
 
@@ -265,13 +277,23 @@ if (!termo) {
 Swal.fire('', 'Preencha o campo de pesquisa!', '')
 return;
 } else{
- 
-      //  sessionStorage.setItem('Coll_ID', data.Código);
-    //sessionStorage.setItem('Lista_IMV_Menu', data.Coll_Lista);
-  // sessionStorage.setItem('Transação_IMV_Menu', ''  );
- sessionStorage.setItem('Termo', termo)
-  setTimeout(function(){
- pesquisar() 
-  },300)
+
+ //  sessionStorage.setItem('Coll_ID', data.Código);
+//sessionStorage.setItem('Lista_IMV_Menu', data.Coll_Lista);
+// sessionStorage.setItem('Transação_IMV_Menu', ''  );
+sessionStorage.setItem('Termo', termo)
+setTimeout(function(){
+pesquisar() 
+},300)
 }
+}
+
+
+
+function QueroVermais(){
+    var resp=sessionStorage.getItem('SETT')
+    var valor = Number(resp) + 4;
+
+sessionStorage.setItem('SETT', valor)
+ pesquisar()
 }

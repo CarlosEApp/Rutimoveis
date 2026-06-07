@@ -35,7 +35,7 @@
             <h2>Pesquisa</h2>
             <div id="head_dois">
  <i id="I_Casa" class="fa-solid fa-house" onclick="casa()"></i> <div id="divInput"> <i id="i_pequisa_imovel" class="fa-solid fa-magnifying-glass"></i> 
-<input id="input_pesquisa"  type="text" title="Pesquisar" placeholder="Pesquisa..."> <button id="btnPesquisar" onclick="Pesquisar()" title="Pesquisar"><i class="fa-solid fa-arrow-right-to-bracket"></i>
+<input id="input_pesquisa"  type="text" title="Pesquisar" placeholder="Pesquisa..."> <button id="btnPesquisar" onclick="Pesquisar_()" title="Pesquisar"><i class="fa-solid fa-arrow-right-to-bracket"></i>
 </button></div> <button title="tela cheia" id="btnTela" onclick="toggleFullScreen()"> <i class="fa-solid fa-desktop"></i> </button> 
 </div>
         </header>
@@ -48,10 +48,11 @@
                 </div>
                 <div id="corpo">
                     <div id="divFlex">
-                        <div id="opções">  </div>
                         <br>
                         <div id="listRep">
                             <div id="list"></div>
+                            <br>
+                            <button id="btnnVerMais" onclick="QueroVermais()">Ver Mais</button>
                         </div>
 
                     </div>

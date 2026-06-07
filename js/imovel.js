@@ -1,20 +1,20 @@
 
 
-  window.onload = function () {
-    var params = new URLSearchParams(window.location.search);
-    var codigo = params.get("codigo");
+window.onload = function () {
+var params = new URLSearchParams(window.location.search);
+var codigo = params.get("codigo");
 
-    if (codigo) {
-     //wal("Código capturado: " + codigo);
-  
-    sessionStorage.setItem('Coll_ID', codigo);
-     sessionStorage.setItem('Lista_IMV_Menu','GeralColl')
-     inicialIMV()
-    } else {
-      console.log("Nenhum código encontrado na URL.");
-     //wal("Código capturado: " + codigo);
-    }
-  };
+if (codigo) {
+//wal("Código capturado: " + codigo);
+
+sessionStorage.setItem('Coll_ID', codigo);
+sessionStorage.setItem('Lista_IMV_Menu','GeralColl')
+inicialIMV()
+} else {
+console.log("Nenhum código encontrado na URL.");
+//wal("Código capturado: " + codigo);
+}
+};
 
 // Tela Cheia
 function toggleFullScreen() {
@@ -75,13 +75,13 @@ firebase.initializeApp(firebaseConfig);
 var dbp= firebase.firestore();
 dbp.collection('Password').doc('passwords').get().then((doc)=>{
 if(doc){
-  var dados=doc.data()
-   var dados=doc.data()
-  sessionStorage.setItem('Pasword', dados.Senha);
-  sessionStorage.setItem('Pasword2', dados.Master1);
-  sessionStorage.setItem('Pasword3', dados.Master2);
-  sessionStorage.setItem('TelefoneAdmin', dados.Telefone);
-  sessionStorage.setItem('EmailAdmin', dados.Email)
+var dados=doc.data()
+var dados=doc.data()
+sessionStorage.setItem('Pasword', dados.Senha);
+sessionStorage.setItem('Pasword2', dados.Master1);
+sessionStorage.setItem('Pasword3', dados.Master2);
+sessionStorage.setItem('TelefoneAdmin', dados.Telefone);
+sessionStorage.setItem('EmailAdmin', dados.Email)
 }
 })
 
@@ -138,7 +138,9 @@ const doc = await db.collection(resp2).doc(resp).get();
 if (!doc.exists) return;
 
 var dados = doc.data();
-
+sessionStorage.setItem('Coll_ID', dados.Código);
+sessionStorage.setItem('Lista_IMV_Menu', dados.Coll_Lista)
+sessionStorage.setItem('Lista_IMV_Titulo', dados.Titulo)
 // --- MAPA ---
 var map = L.map('map', {
 zoomControl: false // remove o controle padrão
@@ -264,14 +266,9 @@ container.style.transform = `translateX(-${index * 100}%)`;
 document.getElementById('img_count').innerText = index + 1;
 };
 }
-
 setTimeout(function(){
 inicialIMV();
-},700)
-
-
-
-
+},300)
 
 var resp=sessionStorage.getItem('Coll_ID');
 var resp2=sessionStorage.getItem('Lista_IMV_Menu');
@@ -284,7 +281,7 @@ input.focus();
 
 //ir para o topo
 document.getElementById('Topo_Página').addEventListener('click',function(){
-  document.getElementById('a_topo').click()
+document.getElementById('a_topo').click()
 })
 
 
@@ -297,12 +294,12 @@ if (!termo) {
 Swal.fire('', 'Preencha o campo de pesquisa!', '')
 return;
 } else{
- 
-      //  sessionStorage.setItem('Coll_ID', data.Código);
-    //sessionStorage.setItem('Lista_IMV_Menu', data.Coll_Lista);
-  // sessionStorage.setItem('Transação_IMV_Menu', ''  );
- sessionStorage.setItem('Termo', termo)
-   window.open('../html/pesquisa.html','_self')
+
+//  sessionStorage.setItem('Coll_ID', data.Código);
+//sessionStorage.setItem('Lista_IMV_Menu', data.Coll_Lista);
+// sessionStorage.setItem('Transação_IMV_Menu', ''  );
+sessionStorage.setItem('Termo', termo)
+window.open('../html/pesquisa.html','_self')
 }
 }
 
@@ -318,9 +315,22 @@ Swal.fire(``,`WhatsApp`,'success')
 
 //Email
 function Email() {
-  var destinatario = sessionStorage.getItem('EmailAdmin');
-  var assunto = "Rutimóveis contato";
-  var corpo = "Olá, gostaria de mais informações.";
-  window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${destinatario}&su=${assunto}&body=${corpo}`,"_blank");
-  Swal.fire(``,`Email`,'success')  
+var destinatario = sessionStorage.getItem('EmailAdmin');
+var assunto = "Rutimóveis contato";
+var corpo = "Olá, gostaria de mais informações.";
+window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${destinatario}&su=${assunto}&body=${corpo}`,"_blank");
+Swal.fire(``,`Email`,'success')  
+}
+
+function comp(){
+var cod=sessionStorage.getItem('Coll_ID');
+var lista= sessionStorage.getItem('Lista_IMV_Menu')
+var titulo=sessionStorage.getItem('Lista_IMV_Titulo')
+var pag = `https://rutimoveis.netlify.app/html/imovel.html/?codigo=${cod}`
+var url = "https://rutimoveis.netlify.app/";
+var Titulo = `${titulo}: ${pag}`;
+var whatsappMessage =`\n\n🏡 ${Titulo} \n\n Código: ${cod}`;
+var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
+window.open(whatsappLink, "_blank");
+
 }
