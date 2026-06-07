@@ -37,8 +37,8 @@
 <h1 class="h2Header">Rut<b>imóveis</b></h1> 
 <div id="headerFlex">     
 <div id="bannerUm">  <img id="imgHeader"  src="https://firebasestorage.googleapis.com/v0/b/rutimoveis-bc114.firebasestorage.app/o/BANNERS%2Fbanner_Maior%2FbannerGif.gif?alt=media&token=ea091079-c9fb-4030-b146-ceb39cf89dbc" width="100%" alt=""> <img id="imgDoisHeader" src="https://firebasestorage.googleapis.com/v0/b/rutimoveis-bc114.firebasestorage.app/o/BANNERS%2Fbanner_menor%2FGifMenor.gif?alt=media&token=fa0b742b-e012-44a0-8a41-3e4eb15db0f9" width="100%"  alt=""></div>
-
 </div>
+
 <div id="headerMenu">
 <div id="divMenuHeader">
 <div id="HM1"> <i id="I_Casa" class="fa-solid fa-house"></i> 
@@ -54,13 +54,28 @@
 <option value="COLL_Chacaras">Chácaras</option>
 <option value="COLL_Sítios">Sítios</option>
 <option value="Fechar" disabled></option>
-<option value="Fechar">Fechar</option>
-</select>  <button id="btnCad" onclick="funçaocad()">Cadastro</button></div> <button id="btnMenuH" onclick=" initList()">MENU</button></div>
+<option value="Fechar">Exit</option>
+</select>  </div> <div> <button  id="heaad_menu_"  onclick="Menu()" title="Menu Lateral" > <i id="iMenu" class="fa-solid fa-bars"></i></button> </div>
 </div>
 </div>
-
 </header>
-
+           <div id="menu_lateral">
+        <div id="MenuIMG"> <img src="src/BannerRute.png" alt="" width="100%"></div> 
+        <nav>
+        <ul>
+         <li><a class="exit" id="exitMenu" onclick="exit()"><i class="fa-solid fa-delete-left"></i></a></li> 
+          <li><a href="#" onclick="init()">🏠 Início</a></li>
+           <li><a  href="#avaliação" onclick="avaliar()">🌟 Avaliar</a></li>
+          <li><a onclick="INSTA()"> <i class="fa-brands fa-instagram"></i> Instagran</a></li>
+          <li><a onclick=" ZAP()"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a></li>
+           <li><a onclick="emailLA()"><i class="fa-solid fa-envelope"></i> Email</a></li>
+          <li><a href="#lbl_contact" onclick="sobre()">📦 Sobre</a></li>
+          <li><a onclick="ADMIN()">👨‍💼 Administração</a></li>
+          <li><a id="exitMenu" onclick="exit()"><i class="fa-solid fa-delete-left"></i> Exit </a></li> 
+          <!-- Adicione mais itens se quiser -->
+        </ul>
+        </nav>
+      </div>
 <main>
 <div id="mainUm">
 <div id="MaiflaxUm">

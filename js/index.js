@@ -609,3 +609,46 @@ function Email() {
   Swal.fire(``,`Email`,'success')  
 }
 
+//Menu Lateral
+sessionStorage.setItem('MENULateral', '')
+var BTN = document.getElementById('heaad_menu');
+BTN.className = 'fa-solid fa-bars'
+function Menu() {
+
+var BTN = document.getElementById('iMenu');
+var MENU_ = sessionStorage.getItem('MENULateral')
+if (!MENU_ || MENU_ == '') {
+BTN.className = 'fa-solid fa-delete-left'
+sessionStorage.setItem('MENULateral', 'Aberto')
+document.getElementById("menu_lateral").classList.add("menu-ativo");
+} else {
+BTN.className = 'fa-solid fa-bars'
+sessionStorage.setItem('MENULateral', '')
+document.getElementById("menu_lateral").classList.remove("menu-ativo");
+}
+}
+//fechar Menu
+function fecharMenu() {
+sessionStorage.setItem('MENULateral', '')
+document.getElementById("menu_lateral").classList.remove("menu-ativo");
+Menu() 
+}
+//Exite menu
+function exit() {
+Menu()
+
+}
+
+
+// Adminidtração
+function ADMIN(){
+  funçaocad()
+}
+
+function ZAP(){
+  WhatsApp()
+}
+
+function emailLA(){
+  Email() 
+}
