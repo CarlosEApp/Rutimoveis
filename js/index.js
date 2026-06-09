@@ -612,7 +612,7 @@ function Email() {
 //Menu Lateral
 sessionStorage.setItem('MENULateral', '')
 var BTN = document.getElementById('heaad_menu');
-BTN.className = 'fa-solid fa-bars'
+//BTN.className = 'fa-solid fa-bars'
 function Menu() {
 
 var BTN = document.getElementById('iMenu');
@@ -651,4 +651,51 @@ function ZAP(){
 
 function emailLA(){
   Email() 
+}
+
+// Valor em real
+
+var campoValorEl = document.getElementById("ValorMaxInput");
+campoValorEl.addEventListener("input", () => {
+var valor = campoValorEl.value.replace(/\D/g, ""); // remove tudo que não é dígito
+if (valor) {
+var numero = parseInt(valor, 10) / 100; // transforma em número e divide por 100
+campoValorEl.value = new Intl.NumberFormat("pt-BR", {
+style: "currency",
+currency: "BRL"
+}).format(numero); // aplica formatação
+} else {
+campoValorEl.value = ""; // limpa se não houver valor
+}
+});
+
+var campoValorEl2 = document.getElementById("ValorMinInput");
+campoValorEl2.addEventListener("input", () => {
+var valor = campoValorEl2.value.replace(/\D/g, ""); // remove tudo que não é dígito
+if (valor) {
+var numero = parseInt(valor, 10) / 100; // transforma em número e divide por 100
+campoValorEl2.value = new Intl.NumberFormat("pt-BR", {
+style: "currency",
+currency: "BRL"
+}).format(numero); // aplica formatação
+
+} else {
+campoValorEl2.value = ""; // limpa se não houver valor
+}
+});
+
+//botão buscar por valores
+function buscarValores(){
+  var resp= document.getElementById("ValorMaxInput").value;
+  var resp2= document.getElementById("ValorMinInput").value
+  var resp3 = document.getElementById('tranzação').value;
+  if(!resp||resp==''||!resp2||resp2==''||!resp3||resp3==''){
+ Swal.fire('','Presencha os campos transação, valor maxímo e valor minimo','warning')
+  }else{
+    sessionStorage.setItem('valorMAX', resp); sessionStorage.setItem('valorMIN', resp2); sessionStorage.setItem('valorTransação', resp3);
+    setTimeout(function(){
+    window.open('html/mais_imoveis.html','_self')
+    },500)
+
+  }
 }

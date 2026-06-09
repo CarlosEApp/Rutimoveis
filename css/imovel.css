@@ -135,9 +135,11 @@ flex-wrap: wrap;
 #div_carrocel{
 margin: auto;
 width: 60%;
+min-height: 40vh;
 margin-right:10px;
 margin-left: 20px;
 background-color: #000000;
+
 
 }
 #div_info{
@@ -221,6 +223,7 @@ overflow: hidden;
 #faixa_imagens {
 display: flex;
 transition: transform 0.5s ease;
+max-height: 82vh;
 }
 #faixa_imagens img {
 width: 100%;
@@ -553,39 +556,39 @@ box-shadow: 0 4px 12px rgba(0,0,0,0.2); /* sombra para destacar */
 }
 
 #Topo{
-  margin: auto;
-  width: 100%;
-  text-align: center;
-  background-color: #2ee60000;
+margin: auto;
+width: 100%;
+text-align: center;
+background-color: #2ee60000;
 }
 #Topo button{
-    padding: 7px;
-    cursor: pointer;
-    border-radius: 50%;
-    border: 0cap;
-    box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.527);
-    padding-left: 10px;
-    padding-right: 10px;
-    color: #646464;
+padding: 7px;
+cursor: pointer;
+border-radius: 50%;
+border: 0cap;
+box-shadow: 0px 3px 7px rgba(0, 0, 0, 0.527);
+padding-left: 10px;
+padding-right: 10px;
+color: #646464;
 }
 #Topo i{
-    font-size: clamp(1.700rem, 0.3vw  + 0.5rem, 1.700rem);
+font-size: clamp(1.700rem, 0.3vw  + 0.5rem, 1.700rem);
 }
- #Topo button:hover i{
-    color: #000000;
+#Topo button:hover i{
+color: #000000;
 }
 #Topo p{
-     font-size: clamp(0.800rem, 0.3vw  + 0.5rem,0.800rem);
-     margin-top: 5px;
-     color: #0000008a;
-     text-shadow: 0px 0px 1px rgb(85, 85, 85);
+font-size: clamp(0.800rem, 0.3vw  + 0.5rem,0.800rem);
+margin-top: 5px;
+color: #0000008a;
+text-shadow: 0px 0px 1px rgb(85, 85, 85);
 }
 #btnTela{
-    border: 0cap;
-    cursor: pointer;
-    background-color: transparent;
-     font-size: clamp(1.500rem, 0.3vw  + 0.5rem, 1.600rem);
-     margin-right: 20px;
+border: 0cap;
+cursor: pointer;
+background-color: transparent;
+font-size: clamp(1.500rem, 0.3vw  + 0.5rem, 1.600rem);
+margin-right: 20px;
 }
 
 footer{

@@ -55,9 +55,12 @@ const timeString = `${hours}:${minutes}:${seconds}`;
 sessionStorage.setItem('hora', timeString)
 sessionStorage.setItem('data', data)
 }, 1000)
+
+//retornar
 function casa(){
 window.open('../index.html','_self')
 }
+
 // Iniciar Firebase
 var firebaseConfig = {
 apiKey: "AIzaSyDZXtGGNJwRYxy8EKAj85JFGLHfLD3DMbk",
@@ -334,3 +337,6 @@ var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
 
 }
+
+
+
