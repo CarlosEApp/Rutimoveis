@@ -63,7 +63,7 @@ if(!sett||sett==''){
 sessionStorage.setItem('itens','')
 var itens=0
 var termo = sessionStorage.getItem('Termo')    
-document.getElementById('resultnumber').innerHTML=`${0} Não foram encontrados imóveis`     //document.getElementById("PesquInput").value.toLowerCase();
+document.getElementById('resultnumber').innerHTML=`${0} Imóveis encontrados `     //document.getElementById("PesquInput").value.toLowerCase();
 var li = document.getElementById('list');
 li.innerHTML=''
 dbP = firebase.firestore();
@@ -79,9 +79,9 @@ itens++
 if (itens){
 
 if(itens<=2){
-document.getElementById('resultnumber').innerHTML=`${itens} imóvel encontrado`
+document.getElementById('resultnumber').innerHTML=`${itens} Imóvel encontrado`
 } else{
-document.getElementById('resultnumber').innerHTML=`${itens} imóveis encontrados`
+document.getElementById('resultnumber').innerHTML=`${itens} Imóveis encontrados`
 }
 
 if(itens>=4){

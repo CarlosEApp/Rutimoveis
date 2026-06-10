@@ -138,17 +138,22 @@ margin-right: 20px;
 }
 .diValores{
 margin: auto;
-width: 95%;
+width: 97%;
+max-width: 1300px;
 display: flex;
 gap: 10px;
-justify-content: baseline;
+justify-content: center;
 align-items: center;
 flex-wrap: wrap;
 margin-top: 20px;
-margin-bottom: 10px;
+margin-bottom: 20px;
+border-radius: 7px;
+ background-color: #ffffff;
+padding-top: 15px;
+padding-bottom: 15px;
+box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.295);
 }
 .diValores div{
-margin-bottom: 10px;
 max-width: 250px;
 }
 .diValores select{
@@ -175,7 +180,6 @@ border: 0cap;
 color: rgb(7, 7, 7);
 text-shadow: 0px 1px 1px rgb(10, 9, 9);
 font-size: clamp(1.200rem, 0.3vw  + 0.5rem, 1.200rem);
-margin-bottom: 3px;
 }
 .diValores button{
 border: 0cap;
@@ -194,7 +198,18 @@ box-shadow:  0px 2px 4px rgba(0, 0, 0, 0.411);
 background-color: aqua;
 color: brown;
 }
-
+#div_lista{
+margin: auto;
+width: 100%;
+max-width: 1300px;
+min-height: 70vh;
+padding-bottom: 100px;
+background-color: #ffffff;
+border-radius: 20px;
+box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.432);
+padding-top: 10px;
+margin-top: 10px;
+}
 #list {
 display:flex;
 justify-content: space-around;
