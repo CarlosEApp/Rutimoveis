@@ -59,10 +59,24 @@ firebase.initializeApp(firebaseConfig);
 
 
 function Lista(){
-    document.getElementById('h3_subtitulo').innerHTML=`${0} imóvel encontrado`
+document.getElementById('h3_subtitulo').innerHTML=`${0} imóvel encontrado`
 var resp= sessionStorage.getItem('valorMAX');
+document.getElementById('ValorMaxInput').value= resp
+var respost= resp.split('R$');
+var rss=respost[1]
+rss=rss.replace(/\./g, "").replace(",", ".");
+//alert(rss)
+
 var resp2= sessionStorage.getItem('valorMIN'); 
+document.getElementById('ValorMinInput').value= resp2
+var respost_= resp2.split('R$');
+var rss_=respost_[1]
+rss_=rss_.replace(/\./g, "").replace(",", ".");
+//alert(rss_)
+
 var resp3= sessionStorage.getItem('valorTransação');
+document.getElementById('tranzação').value= resp3
+
 var itens=0;
 var li = document.getElementById('list');
 li.innerHTML=''
@@ -72,9 +86,23 @@ snapshot.forEach(docSnap => {
 var data = docSnap.data();
 
 // Verifica se algum campo contém o termo
-
+ if(resp3=='Venda'||resp3=='Lançamento'){
+    var VTR= data.Valor_Venda
+ } else if(resp3=='Locação'||resp3=='Temporada'){
+ var VTR= data.Valor_Locação
+ }
+ 
 if (data.Tranzação== resp3) {
 if (data.IMV_Disponivel?.toLowerCase() === 'ativo') {
+var MV= VTR.split('R$');
+var MeuValor=MV[1]
+MeuValor=MeuValor.replace(/\./g, "").replace(",", ".");
+MeuValor = parseFloat(MeuValor);
+rss = parseFloat(rss);
+rss_ = parseFloat(rss_);
+//alert(`${MeuValor} - ${rss} - ${rss_}`)
+if( MeuValor<=rss && MeuValor>=rss_){
+
 itens++
 if (itens){
 
@@ -84,8 +112,6 @@ document.getElementById('h3_subtitulo').innerHTML=`${itens} imóvel encontrado`
 document.getElementById('h3_subtitulo').innerHTML=`${itens} imóveis encontrados`
 }
 
-
-   
 var conntainer = document.createElement('div');
 var divFlex = document.createElement('div');
 var div_label = document.createElement('div');
@@ -254,7 +280,7 @@ var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
 })
 }
-
+}
 }
 }else{
 
@@ -329,3 +355,22 @@ function buscarValores(){
 
   }
 }
+
+function parseCurrency(value) {
+  // Remove "R$" e espaços
+  let numeric = value.replace("R$", "").trim();
+  
+  // Remove pontos de milhar e troca vírgula por ponto
+  numeric = numeric.replace(/\./g, "").replace(",", ".");
+  
+  // Converte para número
+  return parseFloat(numeric);
+}
+
+// Exemplo de uso
+const valor1 = parseCurrency("R$ 100.000,00");
+const valor2 = parseCurrency("R$ 50.000,00");
+
+const soma = valor1 + valor2;
+
+console.log(soma); // 150000
