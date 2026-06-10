@@ -32,8 +32,6 @@ if(doc){
 }
 })
 
-
-
 // Tela Cheia
 function toggleFullScreen() {
 if ((document.fullScreenElement && document.fullScreenElement !== null) ||
@@ -95,7 +93,6 @@ function mostrarbanner() {
 var bann = banner[index3];
 var img = document.getElementById("imgHeader")
 document.getElementById("imgHeader").src = bann.Imagem; // campo da imagem no Firestore
-
 index3 = (index3 + 1) % banner.length; // avança e reinicia no final
 };
 //Menor
@@ -140,13 +137,11 @@ setInterval(mostrarItem, 5000); // muda a cada 7 segundos
 function mostrarItem() {
 var item = itens[index];
 var img = document.getElementById("IMGAP")
-
 document.getElementById("IMGAP").src = item.Imagem1; // campo da imagem no Firestore
 document.getElementById("ALBAP2").innerHTML = ``;
 document.getElementById('LBLAP').innerHTML='';
 document.getElementById("ALBAP2").style.display='none';
 document.getElementById("LBLAP").style.display='none';
-
 //document.getElementById("LBLAP").textContent = ` ${ item.Cidad} ${item.UF}`// campo do título
 setTimeout(function(){
 document.getElementById("ALBAP2").style.display='block';
@@ -154,7 +149,6 @@ document.getElementById("LBLAP").style.display='block';
 document.getElementById('LBLAP').innerHTML=`${item.Cidade} - ${item.UF}`
 document.getElementById("ALBAP2").innerHTML = `${item.Titulo}<br> ${item.SubTitulo} `;
 // campo da descrição
-
 },1000)
 
 index = (index + 1) % itens.length; // avança e reinicia no final
@@ -253,10 +247,8 @@ index = 0;
 IMG_Imovel.src = imagens[index]; // troca imagem
 p_Imovel.style.display='none'
 setTimeout(function(){
-
 //p_Imovel.textContent=`${index+1}`;
 //p_Imovel.style.display='block'
-
 //alert(p_Imovel.textContent)
 },1000)
 //p_Imovel.textContent=``;
@@ -386,7 +378,7 @@ return;
 //sessionStorage.setItem('Coll_ID', data.Código);
 //sessionStorage.setItem('Lista_IMV_Menu', data.Coll_Lista);
 // sessionStorage.setItem('Transação_IMV_Menu', ''  );
-sessionStorage.setItem('Termo', termo)
+sessionStorage.setItem('Termo', termo);
   window.open('html/pesquisa.html','_self')
 }
 //window.open('html/imovel.html','_self')
@@ -485,7 +477,6 @@ if (width >= 100) {
 i = 0;
 sessionStorage.setItem('SeçãoAberta','ok')
 document.getElementById('myProgresos').style.display = 'none'
-
 swalclose()
 clearInterval(id)
 //document.getElementById('imgcad').value = `${url_imagem}`
@@ -510,7 +501,7 @@ var resp= document.getElementById('select_Imoveis');
 resp.value=''
 function select_imovel() {
 var valor = document.getElementById('select_Imoveis').value;
-alert(valor)
+
 if(!valor || valor===''|| valor==='Fechar'){
 var resp= document.getElementById('select_Imoveis');
 resp.value=''
@@ -550,47 +541,71 @@ document.getElementById('h3_C_R').innerHTML= resp
 document.getElementById('lbl_c_1').addEventListener('click',function(){
 var resp1= valor;
 var resp2= 'Venda';
+var max= 'R$ 999.999.999,00';
+var min= 'R$ 0,00'
 sessionStorage.setItem('Lista_IMV_Menu', resp1)
 sessionStorage.setItem('Transação_IMV_Menu', resp2)
- var resp= document.getElementById('select_Imoveis');
- resp.value=''
+sessionStorage.setItem('valorMAX', max); sessionStorage.setItem('valorMIN', min); sessionStorage.setItem('valorTransação', resp2); sessionStorage.setItem('valorLista', resp1);
+var resp= document.getElementById('select_Imoveis');
+resp.value=''
 //alert(`${resp1} para ${resp2} `)
+setTimeout(function(){
+window.open('html/mais_imoveis.html','_self')
 Swal.close()
+},500)
+
 });
 document.getElementById('lbl_c_2').addEventListener('click',function(){
 var resp1= valor;
 var resp2= 'Locação';
+var max= 'R$ 999.999.999,00';
+var min= 'R$ 0,00'
 sessionStorage.setItem('Lista_IMV_Menu', resp1)
 sessionStorage.setItem('Transação_IMV_Menu', resp2)
- var resp= document.getElementById('select_Imoveis');
- resp.value=''
+sessionStorage.setItem('valorMAX', max); sessionStorage.setItem('valorMIN', min); sessionStorage.setItem('valorTransação', resp2); sessionStorage.setItem('valorLista', resp1);
+var resp= document.getElementById('select_Imoveis');
+resp.value=''
 //alert(`${resp1} para ${resp2} `)
+setTimeout(function(){
+window.open('html/mais_imoveis.html','_self')
 Swal.close()
-});
+},500)
+})
 document.getElementById('lbl_c_3').addEventListener('click',function(){
 var resp1= valor;
 var resp2= 'Temporada';
+var max= 'R$ 999.999.999,00';
+var min= 'R$ 0,00'
 sessionStorage.setItem('Lista_IMV_Menu', resp1)
 sessionStorage.setItem('Transação_IMV_Menu', resp2)
- var resp= document.getElementById('select_Imoveis');
- resp.value=''
+sessionStorage.setItem('valorMAX', max); sessionStorage.setItem('valorMIN', min); sessionStorage.setItem('valorTransação', resp2); sessionStorage.setItem('valorLista', resp1);
+var resp= document.getElementById('select_Imoveis');
+resp.value=''
 //alert(`${resp1} para ${resp2} `)
+setTimeout(function(){
+window.open('html/mais_imoveis.html','_self')
 Swal.close()
+},500)
 });
 document.getElementById('lbl_c_4').addEventListener('click',function(){
 var resp1= valor;
 var resp2= 'Lançamento';
+var max= 'R$ 999.999.999,00';
+var min= 'R$ 0,00'
 sessionStorage.setItem('Lista_IMV_Menu', resp1)
 sessionStorage.setItem('Transação_IMV_Menu', resp2)
- var resp= document.getElementById('select_Imoveis');
- resp.value=''
+sessionStorage.setItem('valorMAX', max); sessionStorage.setItem('valorMIN', min); sessionStorage.setItem('valorTransação', resp2); sessionStorage.setItem('valorLista', resp1);
+var resp= document.getElementById('select_Imoveis');
+resp.value=''
 //alert(`${resp1} para ${resp2} `)
+setTimeout(function(){
+window.open('html/mais_imoveis.html','_self')
 Swal.close()
+},500)
 })
 }
 }
 //ICodigo()
- 
 // WhatsApp
 function WhatsApp(){
 var telefone =sessionStorage.getItem('TelefoneAdmin');
@@ -602,11 +617,11 @@ Swal.fire(``,`WhatsApp`,'success')
 
 //Email
 function Email() {
-  var destinatario = sessionStorage.getItem('EmailAdmin');
-  var assunto = "Rutimóveis contato";
-  var corpo = "Olá, gostaria de mais informações.";
-  window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${destinatario}&su=${assunto}&body=${corpo}`,"_blank");
-  Swal.fire(``,`Email`,'success')  
+var destinatario = sessionStorage.getItem('EmailAdmin');
+var assunto = "Rutimóveis contato";
+var corpo = "Olá, gostaria de mais informações.";
+window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${destinatario}&su=${assunto}&body=${corpo}`,"_blank");
+Swal.fire(``,`Email`,'success')  
 }
 
 //Menu Lateral
@@ -614,7 +629,6 @@ sessionStorage.setItem('MENULateral', '')
 var BTN = document.getElementById('heaad_menu');
 //BTN.className = 'fa-solid fa-bars'
 function Menu() {
-
 var BTN = document.getElementById('iMenu');
 var MENU_ = sessionStorage.getItem('MENULateral')
 if (!MENU_ || MENU_ == '') {
@@ -636,25 +650,20 @@ Menu()
 //Exite menu
 function exit() {
 Menu()
-
 }
-
 
 // Adminidtração
 function ADMIN(){
   funçaocad()
 }
-
 function ZAP(){
   WhatsApp()
 }
-
 function emailLA(){
   Email() 
 }
 
 // Valor em real
-
 var campoValorEl = document.getElementById("ValorMaxInput");
 campoValorEl.addEventListener("input", () => {
 var valor = campoValorEl.value.replace(/\D/g, ""); // remove tudo que não é dígito
@@ -692,7 +701,7 @@ function buscarValores(){
   if(!resp||resp==''||!resp2||resp2==''||!resp3||resp3==''){
  Swal.fire('','Presencha os campos transação, valor maxímo e valor minimo','warning')
   }else{
-    sessionStorage.setItem('valorMAX', resp); sessionStorage.setItem('valorMIN', resp2); sessionStorage.setItem('valorTransação', resp3);
+    sessionStorage.setItem('valorMAX', resp); sessionStorage.setItem('valorMIN', resp2); sessionStorage.setItem('valorTransação', resp3); sessionStorage.setItem('valorLista', 'GeralColl');
     setTimeout(function(){
     window.open('html/mais_imoveis.html','_self')
     },500)

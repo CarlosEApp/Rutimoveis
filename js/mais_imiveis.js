@@ -77,11 +77,12 @@ rss_=rss_.replace(/\./g, "").replace(",", ".");
 var resp3= sessionStorage.getItem('valorTransação');
 document.getElementById('tranzação').value= resp3
 
+var respLista= sessionStorage.getItem('valorLista');
 var itens=0;
 var li = document.getElementById('list');
 li.innerHTML=''
 dbP = firebase.firestore();
-dbP.collection("GeralColl").get().then(snapshot => {
+dbP.collection(`${respLista}`).get().then(snapshot => {
 snapshot.forEach(docSnap => {
 var data = docSnap.data();
 
@@ -341,36 +342,31 @@ campoValorEl2.value = ""; // limpa se não houver valor
 
 //botão buscar por valores
 function buscarValores(){
-  var resp= document.getElementById("ValorMaxInput").value;
-  var resp2= document.getElementById("ValorMinInput").value
-  var resp3 = document.getElementById('tranzação').value;
-  if(!resp||resp==''||!resp2||resp2==''||!resp3||resp3==''){
- Swal.fire('','Presencha os campos transação, valor maxímo e valor minimo','warning')
-  }else{
-    sessionStorage.setItem('valorMAX', resp); sessionStorage.setItem('valorMIN', resp2); sessionStorage.setItem('valorTransação', resp3);
-    setTimeout(function(){
-    //window.open('html/mais_imoveis.html','_self')
-    Lista() 
-    },500)
-
-  }
+var resp= document.getElementById("ValorMaxInput").value;
+var resp2= document.getElementById("ValorMinInput").value
+var resp3 = document.getElementById('tranzação').value;
+var respLista= sessionStorage.getItem('valorLista')
+if(!resp||resp==''||!resp2||resp2==''||!resp3||resp3==''){
+Swal.fire('','Presencha os campos transação, valor maxímo e valor minimo','warning')
+}else{
+sessionStorage.setItem('valorMAX', resp); sessionStorage.setItem('valorMIN', resp2); sessionStorage.setItem('valorTransação', resp3); sessionStorage.setItem('valorLista', respLista);
+setTimeout(function(){
+//window.open('html/mais_imoveis.html','_self')
+Lista() 
+},500)
+}
 }
 
 function parseCurrency(value) {
-  // Remove "R$" e espaços
-  let numeric = value.replace("R$", "").trim();
-  
-  // Remove pontos de milhar e troca vírgula por ponto
-  numeric = numeric.replace(/\./g, "").replace(",", ".");
-  
-  // Converte para número
-  return parseFloat(numeric);
+// Remove "R$" e espaços
+let numeric = value.replace("R$", "").trim();
+// Remove pontos de milhar e troca vírgula por ponto
+numeric = numeric.replace(/\./g, "").replace(",", ".");
+// Converte para número
+return parseFloat(numeric);
 }
-
 // Exemplo de uso
 const valor1 = parseCurrency("R$ 100.000,00");
 const valor2 = parseCurrency("R$ 50.000,00");
-
 const soma = valor1 + valor2;
-
 console.log(soma); // 150000
