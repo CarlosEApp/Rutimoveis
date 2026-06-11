@@ -1,7 +1,4 @@
 
-function funçaocad(){
-window.open('html/Cadastro.html','_self')
-}
 document.getElementById("imgHeader").src='https://i.imgur.com/uR8QrjI.gif';
 document.getElementById("imgDoisHeader").src='https://i.imgur.com/eGav3O4.gi';
 
@@ -652,10 +649,6 @@ function exit() {
 Menu()
 }
 
-// Adminidtração
-function ADMIN(){
-  funçaocad()
-}
 function ZAP(){
   WhatsApp()
 }
@@ -708,3 +701,60 @@ function buscarValores(){
 
   }
 }
+
+
+//Administração
+function ADMIN(){
+Swal.fire({ 
+title: ``,
+text: ``, 
+html:`
+<div id="administrar">
+<h2>Administradores</h2>
+<label id="lblAd">digíte sua senha de administrador <br>
+<input id="inputAD" type="password" placeholder="Password">  <i id='iPasWord' class="fa-solid fa-eye"></i>
+</label> <br>
+<button id="entrebtn" o">Click enter</button>
+</div> 
+`,
+imageUrl: ``,
+background: '#ffffff00',
+color: '#a7a7a7', // cor do texto });
+showCloseButton: true,   // habilita o "X"
+allowOutsideClick: false,
+showConfirmButton: false,
+customClass: {
+popup: 'my-admin' // Aplica a classe CSS personalizada
+},
+didOpen: () => {
+document.body.style.paddingRight = '0px';   
+}
+})
+document.getElementById('iPasWord').addEventListener('click',function(){
+var ii= document.getElementById('iPasWord');
+var iPW= document.getElementById('inputAD');
+if(iPW.type=='password'){
+iPW.type='text'
+ii.className='fa-solid fa-eye-low-vision';
+} else{
+iPW.type='password';
+ii.className='fa-solid fa-eye';
+}
+});
+document.getElementById("entrebtn").addEventListener('click',function(){
+var resp1= sessionStorage.getItem('Pasword')
+var resp2= sessionStorage.getItem('Pasword2')
+var resp3= sessionStorage.getItem('Pasword3')
+
+var pass = document.getElementById('inputAD').value;
+if(pass== resp1|| pass== resp2 || pass== resp2){
+swal('Sucesso','Você seráredirecionado(a)!\n (Tela de cadastros!)','success');
+setTimeout(function(){
+window.open('html/cadastro.html','_self')
+Swal.close()
+},2000)
+}else{
+swal('Senha incorreta!','','error');
+}
+})
+};

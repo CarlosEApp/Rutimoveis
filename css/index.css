@@ -1320,7 +1320,7 @@ transform: translateY(100%);
 opacity: 0;
 transition: transform 0.2s ease, opacity 0.2s ease;
 font-family: 'Poppins', sans-serif;
-z-index: 999;
+z-index: 99;
 }
 #MaiflaxUm{
 margin: auto;
@@ -1457,7 +1457,7 @@ transform: translateY(100%);
 opacity: 0;
 transition: transform 0.2s ease, opacity 0.2s ease;
 font-family: 'Poppins', sans-serif;
-z-index: 999;
+z-index: 99;
 outline: none;
 }
 }
@@ -1728,7 +1728,7 @@ min-height: 30vh;
 background-color: #000000;
 color: white;
 transition: left 0rgba(117, 2, 111, 0.957);
-z-index: 9999;
+z-index: 999;
 padding: 0px;
 overflow-y: auto;
 font-family: 'Poppins', sans-serif;
@@ -1769,12 +1769,80 @@ font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 color: rgb(223, 0, 111);
 }
 
+.my-admin{
+width: 99%;
+max-width: 460px;
+font-family: 'Poppins', sans-serif;
+margin-bottom: 100px;
+z-index: 9999;
+color: #333333;
+}
+#iPasWord{
+margin-right: 2px;
+}
+.my-admin button{
+  border-radius: 50%;
+  cursor: pointer;
+color: rgb(0, 0, 0);
+  margin-right: 10px;
+  background-color: rgba(235, 235, 235, 0.384);
+  padding: 0;
+}
+
+#administrar{
+  background-color: rgb(0, 0, 0);
+  padding-bottom: 30px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.my-admin h2{
+  padding: 5px;
+  background-color: yellow;
+  color: #333333;
+}
+#administrar label{
+  font-size: clamp(0.900rem, 0.3vw  + 0.5rem, 1rem);
+  color: rgb(217, 221, 224);
+  text-shadow:  0px 1px 1px rgb(43, 42, 42);
+}
+#administrar input{
+  margin: auto;
+  background-color: rgba(240, 248, 255, 0);
+  cursor: pointer;
+  padding: 11px;
+  border: 0cap;
+  outline: none;
+  width: 71%;
+    font-size: clamp(1rem, 0.3vw  + 0.5rem, 1.000rem);
+    margin-top: 10px;
+    color: aliceblue;
+    margin-left: 10px;
+    border-radius: 5px;
+    margin-bottom: 2px;
+    
+}
+#administrar #entrebtn{
+  background-color: rgb(0, 132, 255);
+  color: rgb(255, 255, 255);
+  border-radius: 0px;
+  border: 0cap;
+  cursor: pointer;
+  outline: none;
+  width: 77%;
+  padding: 10px;
+     font-size: clamp(1.100rem, 0.3vw  + 0.5rem, 1.200rem);
+}
+#administrar #entrebtn:hover{
+  background-color: aqua;
+  color: red;
+}
+
  @media (max-width: 600px) {
 #menu_lateral {
 left: -100%;
 width: 100%;
 height: 100%;
-
+z-index: 999;
 }
  }
 footer{
