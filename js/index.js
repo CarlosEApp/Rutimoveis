@@ -609,7 +609,8 @@ var telefone =sessionStorage.getItem('TelefoneAdmin');
 var numero = `+55${telefone}`; // Substitua pelo número de destino, incluindo o código do país
 var url = "https://wa.me/"+`${numero}?text= Pedido de contato com corretora Rute - (Rutimóveis)`;
 window.open(url, "_blank");
-Swal.fire(``,`WhatsApp`,'success')     
+Swal.fire(``,`WhatsApp`,'success')  
+exit()   
 }
 
 //Email
@@ -619,6 +620,7 @@ var assunto = "Rutimóveis contato";
 var corpo = "Olá, gostaria de mais informações.";
 window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${destinatario}&su=${assunto}&body=${corpo}`,"_blank");
 Swal.fire(``,`Email`,'success')  
+exit()
 }
 
 //Menu Lateral
@@ -654,6 +656,9 @@ function ZAP(){
 }
 function emailLA(){
   Email() 
+}
+function INSTA(){
+  window.open('https://www.instagram.com/rutimoveis.seu.lar.feliz/','_self')
 }
 
 // Valor em real
