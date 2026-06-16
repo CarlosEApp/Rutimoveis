@@ -58,61 +58,78 @@ firebase.initializeApp(firebaseConfig);
 //////////////////////////////////////////////////////////
 
 
-function Lista(){
-document.getElementById('h3_subtitulo').innerHTML=`${0} imóvel encontrado`
-var resp= sessionStorage.getItem('valorMAX');
-document.getElementById('ValorMaxInput').value= resp
-var respost= resp.split('R$');
-var rss=respost[1]
-rss=rss.replace(/\./g, "").replace(",", ".");
-//alert(rss)
 
-var resp2= sessionStorage.getItem('valorMIN'); 
-document.getElementById('ValorMinInput').value= resp2
-var respost_= resp2.split('R$');
-var rss_=respost_[1]
-rss_=rss_.replace(/\./g, "").replace(",", ".");
-//alert(rss_)
 
-var resp3= sessionStorage.getItem('valorTransação');
-document.getElementById('tranzação').value= resp3
 
-var respLista= sessionStorage.getItem('valorLista');
-var itens=0;
-var li = document.getElementById('list');
+function Pesquisar() {
+sessionStorage.setItem('itens','')
+var termo = document.getElementById("input_pesquisa").value.toLowerCase().trim();
+if (!termo) {
+Swal.fire('', 'Preencha o campo de pesquisa!', '')
+return;
+} else{
+ 
+//sessionStorage.setItem('Coll_ID', data.Código);
+//sessionStorage.setItem('Lista_IMV_Menu', data.Coll_Lista);
+// sessionStorage.setItem('Transação_IMV_Menu', ''  );
+sessionStorage.setItem('Termo', termo)
+  window.open('../html/pesquisa.html','_self')
+}
+//window.open('html/imovel.html','_self')
+}
+
+
+//botão buscar por valores
+function buscarValores(){
+var resp= document.getElementById("ValorMaxInput").value;
+var resp2= document.getElementById("ValorMinInput").value
+var resp3 = document.getElementById('tranzação').value;
+var respLista= sessionStorage.getItem('valorLista')
+if(!resp||resp==''||!resp2||resp2==''||!resp3||resp3==''){
+Swal.fire('','Presencha os campos transação, valor maxímo e valor minimo','warning')
+}else{
+sessionStorage.setItem('valorMAX', resp); sessionStorage.setItem('valorMIN', resp2); sessionStorage.setItem('valorTransação', resp3); sessionStorage.setItem('valorLista', respLista);
+setTimeout(function(){
+//window.open('html/mais_imoveis.html','_self')
+Lista() 
+},500)
+}
+}
+
+function parseCurrency(value) {
+// Remove "R$" e espaços
+let numeric = value.replace("R$", "").trim();
+// Remove pontos de milhar e troca vírgula por ponto
+numeric = numeric.replace(/\./g, "").replace(",", ".");
+// Converte para número
+return parseFloat(numeric);
+}
+// Exemplo de uso
+const valor1 = parseCurrency("R$ 100.000,00");
+const valor2 = parseCurrency("R$ 50.000,00");
+const soma = valor1 + valor2;
+console.log(soma); // 150000
+
+
+
+/// Ver mais IMV
+
+document.getElementById('maisImóveis').style.display='none'
+sessionStorage.setItem('ListaMais', 'GeralColl')
+function verMaisIMV(){
+  document.getElementById('h3_subtitulo').innerHTML=`${0} Imóveis encontrados`
+var ListaMais=sessionStorage.getItem('ListaMais');
+var Itens=0
+var dtb = firebase.firestore();
+dtb.collection(ListaMais).where("IMV_Disponivel", "==", "ativo").get()
+.then(snapshot => {
+var li = document.getElementById('MaisList');
 li.innerHTML=''
-dbP = firebase.firestore();
-dbP.collection(`${respLista}`).get().then(snapshot => {
 snapshot.forEach(docSnap => {
 var data = docSnap.data();
 
-// Verifica se algum campo contém o termo
- if(resp3=='Venda'||resp3=='Lançamento'){
-    var VTR= data.Valor_Venda
- } else if(resp3=='Locação'||resp3=='Temporada'){
- var VTR= data.Valor_Locação
- }
- 
-if (data.Tranzação== resp3) {
-if (data.IMV_Disponivel?.toLowerCase() === 'ativo') {
-var MV= VTR.split('R$');
-var MeuValor=MV[1]
-MeuValor=MeuValor.replace(/\./g, "").replace(",", ".");
-MeuValor = parseFloat(MeuValor);
-rss = parseFloat(rss);
-rss_ = parseFloat(rss_);
-//alert(`${MeuValor} - ${rss} - ${rss_}`)
-if( MeuValor<=rss && MeuValor>=rss_){
-
-itens++
-if (itens){
-
-if(itens<=2){
-document.getElementById('h3_subtitulo').innerHTML=`${itens} imóvel encontrado`
-} else{
-document.getElementById('h3_subtitulo').innerHTML=`${itens} imóveis encontrados`
-}
-
+Itens++
+if (Itens <=73){
 var conntainer = document.createElement('div');
 var divFlex = document.createElement('div');
 var div_label = document.createElement('div');
@@ -173,10 +190,33 @@ IMG_Imovel.title = 'imagem do Imóvel';
 p_Imovel.id='p_IMG_I';
 label_cinco.textContent=data.SubTitulo
 // monta array com todas as imagens disponíveis
-//p_Imovel.textContent=1;
+var imagens = [];
+for (let i = 1; i <= 10; i++) {
+const key = `Imagem${i}`;
+if (data[key]) {
+imagens.push(data[key]);
+}
+}
 
-IMG_Imovel.src = data.Imagem1; // troca imagem
+let index = 0;
+IMG_Imovel.src = imagens[index];
+//p_Imovel.textContent=1;
+setInterval(() => {
+index++;
+if (index >= imagens.length) {
+index = 0;
+}
+
+IMG_Imovel.src = imagens[index]; // troca imagem
 p_Imovel.style.display='none'
+setTimeout(function(){
+//p_Imovel.textContent=`${index+1}`;
+//p_Imovel.style.display='block'
+//alert(p_Imovel.textContent)
+},1000)
+//p_Imovel.textContent=``;
+//p_Imovel.style.display='none'
+}, 4000);// 5 segundos
 
 label_um.textContent = `🏡 ${data.Titulo}`;
 label_tres.textContent = `${data.Código}`;
@@ -258,20 +298,23 @@ conntainer.appendChild(div_cvc);
 conntainer.appendChild(div_cvic);
 conntainer.appendChild(div_botao)
 li.appendChild(conntainer);
-
+document.getElementById('maisImóveis').style.display='block'
+document.getElementById('h3_subtitulo').innerHTML=`${Itens} Imóveis encontrados`
+document.getElementById('a_MaisLista').click()
 BTN_Mais.addEventListener('click',function(){
 sessionStorage.setItem('Coll_ID', data.Código);
 sessionStorage.setItem('Lista_IMV_Menu', data.Coll_Lista);
 sessionStorage.setItem('Transação_IMV_Menu', ''  );
 window.open('../html/imovel.html','_self')
-})
+});
 div_label.addEventListener('click',function(){
 sessionStorage.setItem('Coll_ID', data.Código);
 sessionStorage.setItem('Lista_IMV_Menu', data.Coll_Lista);
 sessionStorage.setItem('Transação_IMV_Menu', ''  );
 window.open('../html/imovel.html','_self')
-})
+});
 BTN_Compart.addEventListener('click', function(){
+
 var pag = `https://rutimoveis.netlify.app/html/imovel.html/?codigo=${data.Código}`
 var url = "https://rutimoveis.netlify.app/";
 var Titulo = `${data.Titulo}: ${pag}`;
@@ -281,95 +324,24 @@ var whatsappLink = `https://wa.me/?text=${encodeURIComponent(whatsappMessage)}`;
 window.open(whatsappLink, "_blank");
 })
 }
-}
-}
-}else{
-
-}
-})
-})
-}
-Lista() 
-
-
-function Pesquisar() {
-sessionStorage.setItem('itens','')
-var termo = document.getElementById("input_pesquisa").value.toLowerCase().trim();
-if (!termo) {
-Swal.fire('', 'Preencha o campo de pesquisa!', '')
-return;
-} else{
- 
-//sessionStorage.setItem('Coll_ID', data.Código);
-//sessionStorage.setItem('Lista_IMV_Menu', data.Coll_Lista);
-// sessionStorage.setItem('Transação_IMV_Menu', ''  );
-sessionStorage.setItem('Termo', termo)
-  window.open('../html/pesquisa.html','_self')
-}
-//window.open('html/imovel.html','_self')
-}
-
-
-var campoValorEl = document.getElementById("ValorMaxInput");
-campoValorEl.addEventListener("input", () => {
-var valor = campoValorEl.value.replace(/\D/g, ""); // remove tudo que não é dígito
-if (valor) {
-var numero = parseInt(valor, 10) / 100; // transforma em número e divide por 100
-campoValorEl.value = new Intl.NumberFormat("pt-BR", {
-style: "currency",
-currency: "BRL"
-}).format(numero); // aplica formatação
-
-} else {
-campoValorEl.value = ""; // limpa se não houver valor
-}
 });
-
-var campoValorEl2 = document.getElementById("ValorMinInput");
-campoValorEl2.addEventListener("input", () => {
-var valor = campoValorEl2.value.replace(/\D/g, ""); // remove tudo que não é dígito
-if (valor) {
-var numero = parseInt(valor, 10) / 100; // transforma em número e divide por 100
-campoValorEl2.value = new Intl.NumberFormat("pt-BR", {
-style: "currency",
-currency: "BRL"
-}).format(numero); // aplica formatação
-
-} else {
-campoValorEl2.value = ""; // limpa se não houver valor
-}
 })
-
-//botão buscar por valores
-function buscarValores(){
-var resp= document.getElementById("ValorMaxInput").value;
-var resp2= document.getElementById("ValorMinInput").value
-var resp3 = document.getElementById('tranzação').value;
-var respLista= sessionStorage.getItem('valorLista')
-if(!resp||resp==''||!resp2||resp2==''||!resp3||resp3==''){
-Swal.fire('','Presencha os campos transação, valor maxímo e valor minimo','warning')
-}else{
-sessionStorage.setItem('valorMAX', resp); sessionStorage.setItem('valorMIN', resp2); sessionStorage.setItem('valorTransação', resp3); sessionStorage.setItem('valorLista', respLista);
-setTimeout(function(){
-//window.open('html/mais_imoveis.html','_self')
-Lista() 
-},500)
+};
+verMaisIMV()
+function Mcasa(){
+sessionStorage.setItem('ListaMais', 'COLL_Casas')
+verMaisIMV()
+};
+function Mapartamanto(){
+sessionStorage.setItem('ListaMais', 'COLL_Apartamentos')
+verMaisIMV()
+};
+function Msobrado(){
+sessionStorage.setItem('ListaMais', 'COLL_Sobrados')
+verMaisIMV()
+};
+function Mterrenos(){
+sessionStorage.setItem('ListaMais', 'COLL_Terrenos')
+verMaisIMV()
 }
-}
-
-function parseCurrency(value) {
-// Remove "R$" e espaços
-let numeric = value.replace("R$", "").trim();
-// Remove pontos de milhar e troca vírgula por ponto
-numeric = numeric.replace(/\./g, "").replace(",", ".");
-// Converte para número
-return parseFloat(numeric);
-}
-// Exemplo de uso
-const valor1 = parseCurrency("R$ 100.000,00");
-const valor2 = parseCurrency("R$ 50.000,00");
-const soma = valor1 + valor2;
-console.log(soma); // 150000
-
-
 
