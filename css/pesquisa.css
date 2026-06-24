@@ -31,7 +31,7 @@ body {
 font-family: 'Poppins', sans-serif;
 margin: auto;
 width: 100%;
-background-color: rgb(228, 228, 228)
+background-color: rgb(243, 243, 243);
 }
 #containner{
 margin: auto;
@@ -42,7 +42,7 @@ background-color: rgba(250, 235, 215, 0);
 header{
 width: 100%;
 max-width: 1400px;
-background-color: rgb(228, 228, 228);
+background-color: rgb(243, 243, 243);
 position: fixed;
 z-index: 999;
 }
@@ -128,7 +128,7 @@ color: rgb(153, 0, 133);
 main{
 width: 100%;
 max-width: 1400px;
-min-height: 200vh;
+min-height: 30vh;
 background-color: rgba(0, 255, 255, 0);
 padding-top: 150px;
 padding-bottom: 150px;
@@ -407,5 +407,39 @@ background-color: rgba(240, 248, 255, 0);
 
 
 footer{
-    width: 100%;
+width: 100%;
+max-width: 1920px;
+height: 40vh;
+background-color: #ffffff00;
+padding-bottom: 70px;
+background-image: url('../src/Bannerjpg2.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+position: relative;
+bottom: 0px;
+border-top: 150px solid rgb(243, 243, 243);
+border-bottom: 10px solid rgba(255, 255, 255, 0);
 }
+@media (max-width: 1370px) {
+footer{
+background-image: url('../src/Bannerjpg13.jpg');
+}
+}
+@media (max-width: 1050px) {
+footer{
+background-image: url('../src/Bannerjpg14.jpg');
+}}
+@media (max-width: 690px) {
+footer{
+background-image: url('../src/Bannerjpg15.jpg');
+}
+}
+footer::before {
+content: "";
+position: absolute;
+inset: 0px;
+background:#dbdbdb15; /* sombra/overlay */
+fill-opacity: 0.5;
+filter: brightness(0.5); 
+}
+

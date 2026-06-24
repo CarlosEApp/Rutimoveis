@@ -218,7 +218,7 @@ var cidade= document.getElementById('CidadeInput').value;
 var uf = document.getElementById('UFInput').value;
 
 if(!rua|| rua==''||!bairro|| bairro==''||!cidade|| cidade==''||!uf|| uf==''){
-Swal.fire({
+/*Swal.fire({
 title: `Preencha!`,
 html: `
 <div id='custonAtenção'>
@@ -236,15 +236,15 @@ popup: 'my-custom_Atenção' // Aplica a classe CSS personalizada
 didOpen: () => {
 document.body.style.paddingRight = '0px';
 }
-});
-}else{
+});*/
+}
 sessionStorage.setItem('BLC', 'fichaDiv')
 document.getElementById('EndDiv').style.display='none'
 document.getElementById('valorDiv').style.display='none'
 document.getElementById('divImagens').style.display='none'
 document.getElementById('fichaDiv').style.display='block'
 document.getElementById('btnsVoltar').style.display='block'
-}
+
 } else if( blc== 'fichaDiv'){
 var input_9= document.getElementById("ListaSeleção").value;
 var input_11= document.getElementById("TituloInput").value;
