@@ -922,6 +922,23 @@ margin-top: 20px;
 float: right;
 margin-right: 10px;
 }
+
+
+
+.file{
+  display: none;
+}
+#divImagens #I_IMG,#divImagens #I_IMG2,#divImagens #I_IMG3 ,#divImagens #I_IMG4 ,#divImagens #I_IMG5 ,#divImagens #I_IMG6 ,#divImagens #I_IMG7,#divImagens #I_IMG8 ,#divImagens #I_IMG9,#divImagens #I_IMG10   {
+ font-size: clamp(1.500rem, 0.3vw  + 0.5rem, 1.600rem);
+
+}
+
+
+
+
+
+
+
 footer{
 margin: auto;
 width: 100%;

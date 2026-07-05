@@ -151,6 +151,7 @@ document.getElementById("ALBAP2").innerHTML = `${item.Titulo}<br> ${item.SubTitu
 index = (index + 1) % itens.length; // avança e reinicia no final
 };
 function initList(){
+  sessionStorage.setItem('NoBarra', '');
 var Itens=1
 var dtb = firebase.firestore();
 dtb.collection("GeralColl").where("IMV_Disponivel", "==", "ativo").get()
@@ -365,6 +366,7 @@ initList()
 // Pesquisar
 sessionStorage.setItem('itens','')
 function pesquisar() {
+  sessionStorage.setItem('NoBarra', '');
 sessionStorage.setItem('itens','')
 var termo = document.getElementById("PesquInput").value.toLowerCase().trim();
 if (!termo) {
@@ -530,7 +532,7 @@ didOpen: () => {
 document.body.style.paddingRight = '0px';   
 }
 })
-
+sessionStorage.setItem('NoBarra', '');
 var res= valor.split('_');
 var resp=res[1]
 // alert(resp)
@@ -540,6 +542,7 @@ var resp1= valor;
 var resp2= 'Venda';
 var max= 'R$ 999.999.999,00';
 var min= 'R$ 0,00'
+sessionStorage.setItem('NoBarra', 'No Barra');
 sessionStorage.setItem('Lista_IMV_Menu', resp1)
 sessionStorage.setItem('Transação_IMV_Menu', resp2)
 sessionStorage.setItem('valorMAX', max); sessionStorage.setItem('valorMIN', min); sessionStorage.setItem('valorTransação', resp2); sessionStorage.setItem('valorLista', resp1);
@@ -557,6 +560,7 @@ var resp1= valor;
 var resp2= 'Locação';
 var max= 'R$ 999.999.999,00';
 var min= 'R$ 0,00'
+sessionStorage.setItem('NoBarra', 'No Barra');
 sessionStorage.setItem('Lista_IMV_Menu', resp1)
 sessionStorage.setItem('Transação_IMV_Menu', resp2)
 sessionStorage.setItem('valorMAX', max); sessionStorage.setItem('valorMIN', min); sessionStorage.setItem('valorTransação', resp2); sessionStorage.setItem('valorLista', resp1);
@@ -573,6 +577,7 @@ var resp1= valor;
 var resp2= 'Temporada';
 var max= 'R$ 999.999.999,00';
 var min= 'R$ 0,00'
+sessionStorage.setItem('NoBarra', 'No Barra');
 sessionStorage.setItem('Lista_IMV_Menu', resp1)
 sessionStorage.setItem('Transação_IMV_Menu', resp2)
 sessionStorage.setItem('valorMAX', max); sessionStorage.setItem('valorMIN', min); sessionStorage.setItem('valorTransação', resp2); sessionStorage.setItem('valorLista', resp1);
@@ -589,6 +594,7 @@ var resp1= valor;
 var resp2= 'Lançamento';
 var max= 'R$ 999.999.999,00';
 var min= 'R$ 0,00'
+sessionStorage.setItem('NoBarra', 'No Barra');
 sessionStorage.setItem('Lista_IMV_Menu', resp1)
 sessionStorage.setItem('Transação_IMV_Menu', resp2)
 sessionStorage.setItem('valorMAX', max); sessionStorage.setItem('valorMIN', min); sessionStorage.setItem('valorTransação', resp2); sessionStorage.setItem('valorLista', resp1);
@@ -693,6 +699,7 @@ campoValorEl2.value = ""; // limpa se não houver valor
 
 //botão buscar por valores
 function buscarValores(){
+  sessionStorage.setItem('NoBarra', '');
 var resp= document.getElementById("ValorMaxInput").value;
 var resp2= document.getElementById("ValorMinInput").value
 var resp3 = document.getElementById('tranzação').value;
@@ -765,6 +772,7 @@ swal('Senha incorreta!','','error');
 };
 
 function verMaisIMV(){
+  sessionStorage.setItem('NoBarra', '');
   sessionStorage.setItem('ListaMais', 'GeralColl')
   window.open('html/IMV.html','_self')
 }

@@ -372,4 +372,15 @@ const soma = valor1 + valor2;
 console.log(soma); // 150000
 
 
+function barraValor(){
+  var barra=sessionStorage.getItem('NoBarra');
+ 
+  if(!barra||barra==''){
+       
+  }else{
+  document.getElementById('diValores').style.display='none'
 
+  }
+ 
+}
+barraValor()
