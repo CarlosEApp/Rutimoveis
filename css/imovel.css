@@ -639,3 +639,10 @@ box-shadow: 0px 0px 0px rgba(0, 0, 0, 0.322);
 }
 
 }
+#btn_prev, #btn_next{
+    font-size: clamp(1.600rem, 0.3vw  + 0.5rem, 1.600rem);
+    border-radius: 7px;
+}
+#btn_prev:hover, #btn_next:hover{
+background-color: #810257;
+}

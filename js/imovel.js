@@ -205,6 +205,7 @@ document.getElementById('div5_p2').innerHTML = dados.Rua;
 document.getElementById('divOBS').innerHTML = dados.OBS || '';
 document.getElementById('div9_p2').innerHTML = dados.Piscinas ? `${dados.Piscinas} m²` : '';
 document.getElementById('div10_p2').innerHTML = dados.CEP || '';
+document.getElementById('div11_p2').innerHTML = dados.Suites || '';
 if( !dados.CEP|| dados.CEP===''){
 document.getElementById('map').style.display='none'
 }
@@ -215,6 +216,10 @@ document.getElementById('div2_p2').innerHTML = `${dados.Area_Const} m²`;
 if (dados.Quartos && dados.Quartos !== '0') {
 document.getElementById('inf_quartos').innerHTML = `${dados.Quartos} quartos`;
 document.getElementById('div6_p2').innerHTML = dados.Quartos;
+}
+if (dados.Suites && dados.Suites !== '0') {
+document.getElementById('inf_quartos').innerHTML = `${dados.Suites} Suítes`;
+document.getElementById('div11_p2').innerHTML = dados.Suites;
 }
 if (dados.Banheiros && dados.Banheiros !== '0') {
 document.getElementById('inf_banheiros').innerHTML = `${dados.Banheiros} banh.`;
