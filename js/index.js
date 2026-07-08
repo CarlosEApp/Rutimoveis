@@ -620,14 +620,18 @@ exit()
 }
 
 //Email
-function Email() {
-var destinatario = sessionStorage.getItem('EmailAdmin');
-var assunto = "Rutimóveis contato";
-var corpo = "Olá, gostaria de mais informações.";
-window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${destinatario}&su=${assunto}&body=${corpo}`,"_blank");
-Swal.fire(``,`Email`,'success')  
-exit()
+function Email(){
+  var destinatario = sessionStorage.getItem('EmailAdmin');
+  var assunto = "Rutimóveis contato";
+  var corpo = "Olá, gostaria de mais informações.";
+  var isMobile = /Android|iPhone/i.test(navigator.userAgent);
+  if(isMobile){
+    window.location.href = `mailto:${destinatario}?subject=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`;
+  } else {
+    window.open(`https://mail.google.com/mail/?view=cm&fs=1&to=${destinatario}&su=${encodeURIComponent(assunto)}&body=${encodeURIComponent(corpo)}`,"_blank");
+  }
 }
+
 
 //Menu Lateral
 sessionStorage.setItem('MENULateral', '')
