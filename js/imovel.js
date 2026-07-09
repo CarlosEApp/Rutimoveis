@@ -218,7 +218,7 @@ document.getElementById('inf_quartos').innerHTML = `${dados.Quartos} quartos`;
 document.getElementById('div6_p2').innerHTML = dados.Quartos;
 }
 if (dados.Suites && dados.Suites !== '0') {
-document.getElementById('inf_suite').innerHTML = `${dados.Suites} Suítes`;
+
 document.getElementById('div11_p2').innerHTML = dados.Suites;
 }
 if (dados.Banheiros && dados.Banheiros !== '0') {
