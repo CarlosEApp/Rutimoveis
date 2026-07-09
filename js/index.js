@@ -50,6 +50,10 @@ document.webkitCancelFullScreen();
 }
 }
 }
+
+
+
+
 //Data e Hora
 setInterval(function() {
 const newDate = new Date()
