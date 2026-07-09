@@ -152,7 +152,7 @@ index = (index + 1) % itens.length; // avança e reinicia no final
 };
 function initList(){
   sessionStorage.setItem('NoBarra', '');
-var Itens=1
+var Itens=0
 var dtb = firebase.firestore();
 dtb.collection("GeralColl").where("IMV_Disponivel", "==", "ativo").get()
 .then(snapshot => {
@@ -164,7 +164,7 @@ if(!data.Destaque|| data.Destaque==''){
 }else{
 
 Itens++
-if (Itens <= 9){
+if (Itens <= 12){
 var conntainer = document.createElement('div');
 var divFlex = document.createElement('div');
 var div_label = document.createElement('div');
