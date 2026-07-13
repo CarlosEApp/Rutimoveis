@@ -98,7 +98,7 @@ function abrirCarrosselSwal(imagens) {
 Swal.fire({
 title: '',
 html: `
-<div id="swal_carrossel" style="position:relative;overflow:hidden;width:100%;max-width:1200px;">
+<div id="swal_carrossel" style="position:relative;overflow:hidden;max-width:800px; max-height:96vh; min-height:44vh">
 <div id="swal_faixa" style="display:flex;transition:transform 0.5s ease;">
 ${imagens.map(src => `<img src="${src}" style="width:100%;flex-shrink:0;">`).join('')}
 </div>
@@ -109,7 +109,7 @@ ${imagens.map(src => `<img src="${src}" style="width:100%;flex-shrink:0;">`).joi
 showCloseButton: true,  
 showConfirmButton: false,
 width: '100%',
-background: '#000',
+background: '#000000',
 customClass: {
 popup: 'my-custom_carrocel' // Aplica a classe CSS personalizada
 },

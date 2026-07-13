@@ -1949,3 +1949,13 @@ cursor: pointer;
 #btnCad:hover{
 text-shadow: 0px 0px 1px rgb(65, 64, 64);
 }
+@media (max-width: 390px) {
+#divMenuHeader i{
+  font-size: clamp(1rem, 0.3vw  + 0.5rem, 1rem);
+
+}
+#divMenuHeader select {
+  font-size: clamp(1rem, 0.3vw  + 0.5rem, 1rem);
+
+}
+}
