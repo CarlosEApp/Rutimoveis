@@ -1959,3 +1959,42 @@ text-shadow: 0px 0px 1px rgb(65, 64, 64);
 
 }
 }
+
+#divIMG{
+     background-color: #ffd900;
+
+}
+#ConntDiv{
+  text-align: center;
+  
+}
+#ConntDiv #divIMG img{
+ max-width: 100%;
+ max-height: 100%;
+   border-top-left-radius: 40%;
+
+}
+#divApresntação{
+    background-color: #000000;
+ padding-top: 30px;
+ padding-bottom: 0px;
+ margin-top: 0px;
+ overflow: hidden;
+ margin: 0%;
+
+}
+#divCarrocel h2{
+  width: 100%;
+  margin: 0px;
+     background-color: #ffd900;
+      border: 0cap;
+      color: #000000;
+}
+#divCarrocel {
+     background-color: #000000;
+  margin-top: 30px;
+  margin-bottom: 30px;
+   overflow: hidden;
+     border-radius: 15px;
+
+}
