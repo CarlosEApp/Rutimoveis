@@ -98,9 +98,9 @@ function abrirCarrosselSwal(imagens) {
 Swal.fire({
 title: '',
 html: `
-<div id="swal_carrossel" style="position:relative;overflow:hidden;max-width:800px; max-height:96vh; min-height:44vh">
+<div id="swal_carrossel" style="position:relative;overflow:hidden;width:100%;max-width:570px; min-height:93vh">
 <div id="swal_faixa" style="display:flex;transition:transform 0.5s ease;">
-${imagens.map(src => `<img src="${src}" style="width:100%;flex-shrink:0;">`).join('')}
+${imagens.map(src => `<img id='imgg' src="${src}" style="width:100%;min-height:auto;flex-shrink:0;">`).join('')}
 </div>
 <button id="swal_prev" style="position:absolute;top:50%;left:10px;">◀</button>
 <button id="swal_next" style="position:absolute;top:50%;right:10px;">▶</button>
