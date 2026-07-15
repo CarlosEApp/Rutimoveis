@@ -151,7 +151,7 @@ document.getElementById("LBLAP").style.display='none';
 var img = document.getElementById("IMGAP")
  img.addEventListener('click',function(){
  // alert(img.title)
- window.open(`https://rutimoveis.netlify.app/html/imovel.html/?codigo=${img.title}`,'_blank')
+ window.open(`https://rutimoveis.netlify.app/html/imovel.html/?codigo=${img.title}`,'_self')
  })
 setTimeout(function(){
 document.getElementById("ALBAP2").style.display='block';
