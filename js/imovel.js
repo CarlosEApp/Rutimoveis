@@ -257,7 +257,7 @@ imagens.push(dados[campo]);
 img.src = dados[campo];
 img.alt = "Imagem " + i;
 container.appendChild(img);
-img.addEventListener('click', () => abrirCarrosselSwal(imagens));
+img.addEventListener('dblclick', () => abrirCarrosselSwal(imagens));
 }
 }
 // Navegação do carrossel
