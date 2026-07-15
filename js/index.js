@@ -127,23 +127,32 @@ db.collection("GeralColl").where("IMV_Disponivel", "==", "ativo").get()
 .then(snapshot => {
 snapshot.forEach(doc => {
 itens.push(doc.data());
+
 });
 // Inicia o ciclo de exibição
 if (itens.length > 0) {
+  
 mostrarItem();
 setInterval(mostrarItem, 5000); // muda a cada 7 segundos
 }
+
 }).catch(err => console.error("Erro ao carregar dados:", err));
 // 🔹 Função que atualiza a imagem e os textos
+
 function mostrarItem() {
 var item = itens[index];
-var img = document.getElementById("IMGAP")
+ document.getElementById("IMGAP").title=item.Código;
 document.getElementById("IMGAP").src = item.Imagem1; // campo da imagem no Firestore
 document.getElementById("ALBAP2").innerHTML = ``;
 document.getElementById('LBLAP').innerHTML='';
 document.getElementById("ALBAP2").style.display='none';
 document.getElementById("LBLAP").style.display='none';
 //document.getElementById("LBLAP").textContent = ` ${ item.Cidad} ${item.UF}`// campo do título
+var img = document.getElementById("IMGAP")
+ img.addEventListener('click',function(){
+ // alert(img.title)
+ window.open(`https://rutimoveis.netlify.app/html/imovel.html/?codigo=${img.title}`,'_blank')
+ })
 setTimeout(function(){
 document.getElementById("ALBAP2").style.display='block';
 document.getElementById("LBLAP").style.display='block';
